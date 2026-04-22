@@ -12,9 +12,7 @@ const i18n = {
   tr: {
     "#phone h1":            'Her güne göre<br/><em>tasarlanmış</em> telefon.',
     "#phone .lede":         "6.56 inç 90 Hz ekran, 50 MP yapay zekâ destekli kamera ve günü çıkaran 5000 mAh batarya. İstanbul'da tasarlandı, Türkiye'de üretildi.",
-    "#design h2":           'Olması gereken yerde ince.<br/>Önemli yerde kalıcı.',
-    "#design .kicker-sub":  "164 mm gövdede ergonomik 8.45 mm profil. İnci Beyazı yüzey parmak izine dirençli; alüminyum çerçeve her kenarda milimetrenin onda biri hassasiyetinde eşleşir.",
-    "#camera h2":           "50 MP sensör, ışığı okumak için eğitildi.",
+"#camera h2":           "50 MP sensör, ışığı okumak için eğitildi.",
     "#camera .kicker-sub":  "Yapay zekâ sahne algılama, siz deklanşöre basmadan pozlamayı dengeler. Phase-detect otomatik odaklama 0.3 sn altında kilitlenir. HDR, gözünüzün affettiği ters ışığı düzeltir.",
     "#buy h2":              "Siz hazır olduğunuzda.",
   }

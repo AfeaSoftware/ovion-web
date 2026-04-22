@@ -215,37 +215,6 @@
   </div>
 </section>
 
-<!-- DESIGN -->
-<section class="section" id="design">
-  <div class="wrap">
-    <div class="section-kicker"><span>01</span><span>Design</span></div>
-    <h2>Thin where it should be.<br/>Present where it matters.</h2>
-    <p class="kicker-sub">
-      An ergonomic 8.45 mm profile in a 164 mm body. The Pearl White finish
-      is treated to resist fingerprints; the aluminium rail is matched to
-      within a tenth of a millimetre around every edge.
-    </p>
-  </div>
-
-  <div class="wrap gallery">
-    <figure class="g-item g-1">
-      <img src="{{ asset('assets/v11-back.png') }}" alt="Back of the Ovion V11 Lite showing the circular camera module and Ovion wordmark" loading="lazy" decoding="async" width="1000" height="1333" />
-    </figure>
-    <figure class="g-item g-2">
-      <img src="{{ asset('assets/v11-side-a.png') }}" alt="Profile view of the V11 Lite showing the camera bump" loading="lazy" decoding="async" width="700" height="1280" />
-    </figure>
-    <figure class="g-item g-3">
-      <img src="{{ asset('assets/v11-front.png') }}" alt="Front of the V11 Lite with wallpaper" loading="lazy" decoding="async" width="1000" height="1250" />
-    </figure>
-    <figure class="g-item g-4">
-      <img src="{{ asset('assets/v11-side-b.png') }}" alt="Other profile view with power and volume keys" loading="lazy" decoding="async" width="700" height="1280" />
-    </figure>
-    <figure class="g-item g-5">
-      <img src="{{ asset('assets/v11-landscape.png') }}" alt="V11 Lite in landscape orientation" loading="lazy" decoding="async" width="1000" height="500" />
-    </figure>
-  </div>
-</section>
-
 <!-- CAMERA (DARK) -->
 <section class="showcase" id="camera">
   <div class="wrap section">

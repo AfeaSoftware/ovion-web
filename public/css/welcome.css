@@ -774,7 +774,7 @@ img[data-loading="true"] { filter: blur(10px) saturate(.8); }
 /* ========== Blog / Haberler ========== */
 .news-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: clamp(16px, 2vw, 24px);
   margin-top: clamp(40px, 5vw, 64px);
   align-items: start;
