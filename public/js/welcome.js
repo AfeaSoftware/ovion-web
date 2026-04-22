@@ -1,3 +1,14 @@
+// Nav dropdowns — delay on close so mouse can travel button → menu
+document.querySelectorAll('.nav-has-drop').forEach(li => {
+  let closeTimer;
+  const open  = () => { clearTimeout(closeTimer); li.classList.add('is-open'); };
+  const close = () => { closeTimer = setTimeout(() => li.classList.remove('is-open'), 180); };
+  li.addEventListener('mouseenter', open);
+  li.addEventListener('mouseleave', close);
+  li.querySelector('.nav-drop')?.addEventListener('mouseenter', open);
+  li.querySelector('.nav-drop')?.addEventListener('mouseleave', close);
+});
+
 const TWEAK_DEFAULTS = { "theme": "dark", "accent": "emerald", "lang": "en" };
 
 const accents = {
