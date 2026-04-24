@@ -1,3 +1,21 @@
+// Mobile hamburger toggle
+(function () {
+  const nav = document.querySelector('.nav');
+  const btn = document.querySelector('.nav-hamburger');
+  if (!nav || !btn) return;
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+  });
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target)) {
+      nav.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+
 // Nav dropdowns — delay on close so mouse can travel button → menu
 document.querySelectorAll('.nav-has-drop').forEach(li => {
   let closeTimer;

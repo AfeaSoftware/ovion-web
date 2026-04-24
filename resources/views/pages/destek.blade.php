@@ -1,272 +1,15 @@
-<!doctype html>
-<html lang="tr">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Destek — Ovion</title>
-<meta name="description" content="Ovion ürünleri için garanti sorgulama, servis talebi, kullanım kılavuzları ve teknik destek." />
-<link rel="canonical" href="{{ url('/destek') }}" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="{{ asset('css/welcome.css') }}" />
-<style>
-/* ── Support hero ── */
-.sp-hero {
-  padding: clamp(96px, 14vw, 180px) 0 clamp(64px, 9vw, 120px);
-  background: var(--bg);
-  text-align: center;
-  position: relative; overflow: hidden;
-}
-.sp-hero::before {
-  content: "";
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 55% 45% at 50% 70%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 65%);
-  pointer-events: none;
-}
-.sp-hero .wrap { position: relative; z-index: 1; }
-.sp-hero h1 {
-  font-size: clamp(44px, 7vw, 100px);
-  letter-spacing: -0.04em; line-height: 0.95; font-weight: 500;
-  margin: 16px auto 24px; max-width: 18ch;
-}
-.sp-hero-sub {
-  font-size: clamp(15px, 1.3vw, 19px);
-  color: var(--ink-2); max-width: 44ch; margin: 0 auto 40px;
-}
+@extends('main')
 
-/* ── Search visual ── */
-.sp-search-wrap {
-  display: flex; align-items: center;
-  max-width: 560px; margin: 0 auto;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 4px 6px 4px 20px;
-  gap: 8px;
-  box-shadow: 0 2px 20px color-mix(in oklab, var(--ink) 6%, transparent);
-}
-.sp-search-wrap input {
-  flex: 1; background: none; border: none; outline: none;
-  font-family: inherit; font-size: 15px; color: var(--ink);
-  padding: 8px 0;
-}
-.sp-search-wrap input::placeholder { color: var(--muted); }
-.sp-search-btn {
-  height: 38px; padding: 0 18px; border-radius: 999px;
-  background: var(--ink); color: var(--bg);
-  border: none; cursor: pointer; font-family: inherit;
-  font-size: 14px; font-weight: 500; white-space: nowrap;
-  transition: transform .2s var(--ease);
-}
-.sp-search-btn:hover { transform: scale(1.02); }
-.sp-search-hint {
-  font-size: 12.5px; color: var(--muted); margin-top: 12px;
-  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
-}
-.sp-search-hint button {
-  background: none; border: 1px solid var(--line-2); border-radius: 6px;
-  padding: 3px 10px; cursor: pointer; font-family: inherit;
-  font-size: 12px; color: var(--muted);
-  transition: border-color .15s, color .15s;
-}
-.sp-search-hint button:hover { border-color: var(--ink); color: var(--ink); }
+@section('title', 'Destek — Ovion')
+@section('description', 'Ovion ürünleri için garanti sorgulama, servis talebi, kullanım kılavuzları ve teknik destek.')
+@section('canonical', url('/destek'))
+@section('theme', 'dark')
 
-/* ── Quick action cards ── */
-.sp-actions-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: clamp(40px, 6vw, 72px);
-}
-@media (max-width: 860px) { .sp-actions-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .sp-actions-grid { grid-template-columns: 1fr; } }
-.sp-action {
-  background: var(--card);
-  border: 1px solid var(--line-2);
-  border-radius: calc(var(--radius) * 1.2);
-  padding: clamp(20px, 3vw, 32px);
-  display: flex; flex-direction: column; gap: 12px;
-  text-decoration: none; color: inherit;
-  transition: border-color .2s, transform .2s var(--ease), box-shadow .2s;
-  cursor: pointer;
-}
-.sp-action:hover {
-  border-color: var(--accent);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px color-mix(in oklab, var(--ink) 8%, transparent);
-}
-.sp-action-icon {
-  width: 44px; height: 44px; border-radius: 12px;
-  background: color-mix(in oklab, var(--accent) 12%, var(--bg));
-  display: grid; place-items: center;
-  color: var(--accent-ink);
-}
-.sp-action h3 {
-  font-size: clamp(15px, 1.2vw, 17px); font-weight: 500;
-  letter-spacing: -0.01em; margin: 0;
-}
-.sp-action p { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin: 0; }
-.sp-action-arrow {
-  margin-top: auto; padding-top: 8px;
-  font-size: 13px; color: var(--accent-ink); font-weight: 500;
-  display: flex; align-items: center; gap: 4px;
-}
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/destek.css') }}" />
+@endpush
 
-/* ── FAQ section ── */
-.sp-faq { border-top: 1px solid var(--line); }
-.sp-faq-item {
-  border-bottom: 1px solid var(--line-2);
-}
-.sp-faq-q {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; padding: 22px 0;
-  cursor: pointer; list-style: none;
-  font-size: clamp(15px, 1.2vw, 17px); font-weight: 500;
-  color: var(--ink);
-  transition: color .15s;
-}
-.sp-faq-q:hover { color: var(--accent-ink); }
-.sp-faq-q::marker, .sp-faq-q::-webkit-details-marker { display: none; }
-.sp-faq-icon {
-  flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px;
-  background: color-mix(in oklab, var(--ink) 6%, transparent);
-  display: grid; place-items: center;
-  transition: transform .3s var(--ease), background .2s;
-}
-details[open] .sp-faq-icon { transform: rotate(45deg); background: color-mix(in oklab, var(--accent) 12%, transparent); }
-details[open] .sp-faq-q { color: var(--ink); }
-.sp-faq-a {
-  padding: 0 0 22px;
-  font-size: 15px; color: var(--ink-2); line-height: 1.65;
-  max-width: 72ch;
-}
-.sp-faq-a a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
-
-/* ── Warranty section ── */
-.sp-warranty-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 4vw, 64px);
-  align-items: start;
-  margin-top: clamp(40px, 6vw, 72px);
-}
-@media (max-width: 720px) { .sp-warranty-grid { grid-template-columns: 1fr; } }
-.sp-warranty-copy h2 {
-  font-size: clamp(26px, 3vw, 44px);
-  letter-spacing: -0.03em; line-height: 1.04;
-}
-.sp-warranty-copy p {
-  margin-top: 16px; font-size: clamp(14px, 1.1vw, 16px);
-  color: var(--ink-2); line-height: 1.65; max-width: 46ch;
-}
-.sp-warranty-list {
-  display: flex; flex-direction: column; gap: 12px;
-  margin-top: 28px; list-style: none; padding: 0;
-}
-.sp-warranty-list li {
-  display: grid; grid-template-columns: 20px 1fr;
-  gap: 10px; align-items: start;
-  font-size: 14.5px; color: var(--ink-2);
-}
-.sp-warranty-list li::before {
-  content: "";
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--accent);
-  margin-top: 7px;
-}
-.sp-warranty-card {
-  background: var(--card);
-  border: 1px solid var(--line-2);
-  border-radius: calc(var(--radius) * 1.4);
-  padding: clamp(24px, 3vw, 40px);
-  display: flex; flex-direction: column; gap: 20px;
-}
-.sp-warranty-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
-  background: color-mix(in oklab, var(--accent) 10%, var(--bg));
-  border: 1px solid color-mix(in oklab, var(--accent) 20%, transparent);
-  padding: 5px 12px; border-radius: 999px;
-  width: fit-content;
-}
-.sp-warranty-num {
-  font-size: clamp(52px, 8vw, 96px); font-weight: 500;
-  letter-spacing: -0.05em; line-height: 0.85;
-  color: var(--ink);
-}
-.sp-warranty-num span { font-size: .32em; color: var(--muted); font-weight: 400; letter-spacing: -0.02em; }
-.sp-warranty-card p { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.6; }
-
-/* ── Service steps ── */
-.sp-steps {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 1px; background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--radius); overflow: hidden;
-  margin-top: clamp(40px, 6vw, 72px);
-}
-@media (max-width: 820px) { .sp-steps { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .sp-steps { grid-template-columns: 1fr; } }
-.sp-step {
-  background: var(--card); padding: clamp(20px, 3vw, 36px);
-  display: flex; flex-direction: column; gap: 14px;
-}
-.sp-step-num {
-  font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--accent-ink);
-}
-.sp-step h4 {
-  font-size: clamp(16px, 1.3vw, 18px); font-weight: 500;
-  letter-spacing: -0.015em;
-}
-.sp-step p { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin: 0; }
-
-/* ── Contact ── */
-.sp-contact-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: clamp(40px, 6vw, 72px);
-}
-@media (max-width: 720px) { .sp-contact-grid { grid-template-columns: 1fr; } }
-.sp-contact-card {
-  background: var(--card);
-  border: 1px solid var(--line-2);
-  border-radius: calc(var(--radius) * 1.2);
-  padding: clamp(24px, 3vw, 40px);
-  display: flex; flex-direction: column; gap: 16px;
-}
-.sp-contact-icon {
-  width: 48px; height: 48px; border-radius: 14px;
-  background: color-mix(in oklab, var(--accent) 12%, var(--bg));
-  display: grid; place-items: center; color: var(--accent-ink);
-}
-.sp-contact-card h3 {
-  font-size: clamp(16px, 1.3vw, 19px); font-weight: 500;
-  letter-spacing: -0.015em; margin: 0;
-}
-.sp-contact-card p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.6; }
-.sp-contact-card .sp-contact-detail {
-  font-size: 15px; font-weight: 500; color: var(--ink); margin: 0;
-}
-.sp-contact-card .btn { margin-top: 4px; align-self: flex-start; }
-
-/* ── Reveal ── */
-.sp-reveal {
-  opacity: 0; transform: translateY(22px);
-  transition: opacity .65s var(--ease), transform .65s var(--ease);
-}
-.sp-reveal.is-in { opacity: 1; transform: none; }
-.sp-reveal-d1 { transition-delay: .1s; }
-.sp-reveal-d2 { transition-delay: .2s; }
-.sp-reveal-d3 { transition-delay: .3s; }
-</style>
-</head>
-<body data-theme="dark">
-
-@include('components.navbar')
+@section('content')
 
 {{-- ════════════════════ HERO ════════════════════ --}}
 <section class="sp-hero">
@@ -561,9 +304,9 @@ details[open] .sp-faq-q { color: var(--ink); }
   </div>
 </section>
 
-@include('components.footer')
+@endsection
 
-<script src="{{ asset('js/welcome.js') }}"></script>
+@push('scripts')
 <script>
 (function () {
   const els = document.querySelectorAll('.sp-reveal');
@@ -574,5 +317,4 @@ details[open] .sp-faq-q { color: var(--ink); }
   els.forEach(el => io.observe(el));
 })();
 </script>
-</body>
-</html>
+@endpush

@@ -1,23 +1,21 @@
-<!doctype html>
-<html lang="tr">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ovion H1 Pro — ANC Kablosuz Kulak Üstü Kulaklık · 30 Saat Batarya</title>
-<meta name="description" content="Ovion H1 Pro: Hibrit ANC, 40 mm Hi-Fi sürücüler, 30 saat batarya ve Bluetooth 5.3 multipoint. Sessizlik, müzik, özgürlük." />
-<link rel="canonical" href="{{ url('/kulakliklar/h1-pro') }}" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="{{ asset('css/welcome.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/headphone-detail.css') }}" />
+@extends('main')
+
+@section('title', 'Ovion H1 Pro — ANC Kablosuz Kulak Üstü Kulaklık · 30 Saat Batarya')
+@section('description', 'Ovion H1 Pro: Hibrit ANC, 40 mm Hi-Fi sürücüler, 30 saat batarya ve Bluetooth 5.3 multipoint. Sessizlik, müzik, özgürlük.')
+@section('canonical', url('/kulakliklar/h1-pro'))
+@section('theme', 'dark')
+
+@push('preload')
 @if(file_exists(public_path('assets/h1-hero.png')))
 <link rel="preload" as="image" href="{{ asset('assets/h1-hero.png') }}" fetchpriority="high" />
 @endif
-</head>
-<body data-theme="dark">
+@endpush
 
-@include('components.navbar')
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/headphone-detail.css') }}" />
+@endpush
+
+@section('content')
 
 {{-- ═══════════════════════════════════════ SUB-NAV ════════ --}}
 <div class="hd-subnav" id="hd-subnav">
@@ -390,9 +388,8 @@
   </div>
 </section>
 
-@include('components.footer')
+@endsection
 
-<script src="{{ asset('js/welcome.js') }}"></script>
+@push('scripts')
 <script src="{{ asset('js/headphone-detail.js') }}"></script>
-</body>
-</html>
+@endpush

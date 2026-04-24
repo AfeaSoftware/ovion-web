@@ -1,86 +1,16 @@
-<!doctype html>
-<html lang="tr">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ovion S3 Pro — Sağlık · GPS · 14 Gün Batarya</title>
-<meta name="description" content="Ovion S3 Pro akıllı saat: 100'den fazla spor modu, 14 gün batarya ömrü, kalp ritmi ve SpO2 takibi ile her anınızda yanınızda." />
-<link rel="canonical" href="{{ url('/saatler/s3-pro') }}" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="{{ asset('css/welcome.css') }}" />
+@extends('main')
+
+@section('title', 'Ovion S3 Pro — Sağlık · GPS · 14 Gün Batarya')
+@section('description', 'Ovion S3 Pro akıllı saat: 100\'den fazla spor modu, 14 gün batarya ömrü, kalp ritmi ve SpO2 takibi ile her anınızda yanınızda.')
+@section('canonical', url('/saatler/s3-pro'))
+@section('theme', 'dark')
+
+@push('styles')
 <link rel="stylesheet" href="{{ asset('css/phone-detail.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/watch-detail.css') }}" />
-</head>
-<body data-theme="dark">
+@endpush
 
-{{-- ═══════════════════════════════════════ NAV (shared) ══ --}}
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a href="{{ url('/') }}" class="brand" aria-label="Ovion ana sayfa">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span>ovion</span>
-    </a>
-    <nav aria-label="Ana menü">
-      <ul class="nav-links">
-        <li class="nav-has-drop">
-          <a href="{{ url('/') }}#products">Telefonlar
-            <svg class="nav-chevron" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <div class="nav-mega">
-            <div class="wrap mega-inner">
-              <div class="mega-grid">
-                <a href="{{ url('/telefonlar/v11-lite') }}" class="mega-card">
-                  <div class="mega-card-media"><img src="{{ asset('assets/v11-hero.png') }}" alt="V11 Lite" /></div>
-                  <div class="mega-card-body"><span class="mega-card-cat">Telefon</span><h4>V11 Lite <span>→</span></h4><p>90 Hz · 50 MP AI · 5000 mAh</p></div>
-                </a>
-                <a href="#" class="mega-card">
-                  <div class="mega-card-media mega-card-media--ph"><span>V10 Pro<br/><small>Yakında</small></span></div>
-                  <div class="mega-card-body"><span class="mega-card-cat">Telefon</span><h4>V10 Pro <span>→</span></h4><p>AMOLED · 64 MP · 4800 mAh</p></div>
-                </a>
-                <a href="#" class="mega-card">
-                  <div class="mega-card-media mega-card-media--ph"><span>V9<br/><small>Yakında</small></span></div>
-                  <div class="mega-card-body"><span class="mega-card-cat">Telefon</span><h4>V9 <span>→</span></h4><p>IPS · 48 MP · 4500 mAh</p></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="nav-has-drop">
-          <a href="#">Saatler
-            <svg class="nav-chevron" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <div class="nav-mega">
-            <div class="wrap mega-inner">
-              <div class="mega-grid">
-                <a href="{{ url('/saatler/s3-pro') }}" class="mega-card">
-                  <div class="mega-card-media mega-card-media--ph" style="background:linear-gradient(135deg,#1c1c1e,#2c2c2e)"><span style="color:#fff">S3 Pro</span></div>
-                  <div class="mega-card-body"><span class="mega-card-cat">Saat</span><h4>S3 Pro <span>→</span></h4><p>GPS · 14 Gün · Sağlık</p></div>
-                </a>
-                <a href="#" class="mega-card">
-                  <div class="mega-card-media mega-card-media--ph"><span>S2<br/><small>Yakında</small></span></div>
-                  <div class="mega-card-body"><span class="mega-card-cat">Saat</span><h4>S2 <span>→</span></h4><p>AMOLED · 7 Gün · Spor</p></div>
-                </a>
-                <a href="#" class="mega-card">
-                  <div class="mega-card-media mega-card-media--ph"><span>S1 Lite<br/><small>Yakında</small></span></div>
-                  <div class="mega-card-body"><span class="mega-card-cat">Saat</span><h4>S1 Lite <span>→</span></h4><p>IPS · 10 Gün · Giriş</p></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li><a href="#">Kulaklık</a></li>
-        <li><a href="#">Aksesuarlar</a></li>
-        <li><a href="#wd-support">Destek</a></li>
-      </ul>
-    </nav>
-    <a class="nav-cta" href="#wd-buy">
-      Satın Al
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </div>
-</header>
+@section('content')
 
 {{-- ═══════════════════════════════════════ SUB-NAV ════════ --}}
 <div class="pd-subnav">
@@ -490,73 +420,8 @@
   </div>
 </section>
 
-{{-- ═══════════════════════════════════════ FOOTER (shared) ══ --}}
-<footer id="wd-support">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand-col">
-        <div class="brand" style="font-size:18px">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span>ovion</span>
-        </div>
-        <p class="foot-about">Ovion, günlük yaşamı kolaylaştıran akıllı cihazlar tasarlayan bir Türk elektroniği markasıdır. Tüm ürünler Türkiye'de üretilir.</p>
-      </div>
-      <div>
-        <h4>Telefonlar</h4>
-        <ul>
-          <li><a href="{{ url('/telefonlar/v11-lite') }}">V11 Lite</a></li>
-          <li><a href="#">V10 Pro</a></li>
-          <li><a href="#">V9</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Saatler &amp; Kulaklık</h4>
-        <ul>
-          <li><a href="{{ url('/saatler/s3-pro') }}">S3 Pro</a></li>
-          <li><a href="#">S2</a></li>
-          <li><a href="#">S1 Lite</a></li>
-          <li><a href="#">H1 Pro Kulaklık</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Aksesuarlar</h4>
-        <ul>
-          <li><a href="#">Kılıflar</a></li>
-          <li><a href="#">Ekran Koruyucular</a></li>
-          <li><a href="#">Şarj Adaptörleri</a></li>
-          <li><a href="#">Kordonlar</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Destek</h4>
-        <ul>
-          <li><a href="#">Teknik Destek</a></li>
-          <li><a href="#">Servis Merkezleri</a></li>
-          <li><a href="#">Garanti</a></li>
-          <li><a href="#">Kullanım Kılavuzları</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Kurumsal</h4>
-        <ul>
-          <li><a href="#">Hakkımızda</a></li>
-          <li><a href="#">Kariyer</a></li>
-          <li><a href="#">Basın</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bot">
-      <div>© 2026 Ovion Elektronik A.Ş. — İstanbul, Türkiye</div>
-      <div style="display:flex;gap:18px;">
-        <a href="#">Gizlilik</a>
-        <a href="#">Çerezler</a>
-        <a href="#">Kullanım Şartları</a>
-      </div>
-    </div>
-  </div>
-</footer>
+@endsection
 
-<script src="{{ asset('js/welcome.js') }}"></script>
+@push('scripts')
 <script src="{{ asset('js/watch-detail.js') }}"></script>
-</body>
-</html>
+@endpush
