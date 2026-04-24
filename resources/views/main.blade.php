@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="tr">
+<html lang="{{ $locale ?? 'tr' }}">
 
 <head>
     <meta charset="utf-8" />
@@ -25,40 +25,38 @@
 </head>
 
 <body data-theme="@yield('theme', 'dark')">
+    <a class="skip-link" href="#main-content">{{ __('ui.a11y_skip') }}</a>
     @include('components.navbar')
 
-    @yield('content')
+    <main id="main-content">
+        @yield('content')
+    </main>
 
     @include('components.footer')
 
     <!-- TWEAKS -->
-    <aside class="tweaks" id="tweaks" aria-label="Tweaks">
-    <h5>Tweaks</h5>
-    <div class="tweaks-row">
-        <span>Theme</span>
-        <div class="tweaks-btns" data-group="theme">
-        <button data-val="light">Light</button>
-        <button data-val="dark">Dark</button>
+    <aside class="tweaks" id="tweaks" aria-label="{{ __('ui.tw_label') }}">
+        <p class="tweaks-label">{{ __('ui.tw_label') }}</p>
+        <div class="tweaks-row">
+            <span>{{ __('ui.tw_theme') }}</span>
+            <div class="tweaks-btns" data-group="theme">
+                <button data-val="light">{{ __('ui.tw_theme_light') }}</button>
+                <button data-val="dark">{{ __('ui.tw_theme_dark') }}</button>
+            </div>
         </div>
-    </div>
-    <div class="tweaks-row">
-        <span>Accent</span>
-        <div class="tweaks-btns" data-group="accent">
-        <button data-val="amber">Amber</button>
-        <button data-val="slate">Slate</button>
-        <button data-val="emerald">Emerald</button>
-        <button data-val="ink">Ink</button>
+        <div class="tweaks-row">
+            <span>{{ __('ui.tw_accent') }}</span>
+            <div class="tweaks-btns" data-group="accent">
+                <button data-val="amber">{{ __('ui.tw_accent_amber') }}</button>
+                <button data-val="slate">{{ __('ui.tw_accent_slate') }}</button>
+                <button data-val="emerald">{{ __('ui.tw_accent_emerald') }}</button>
+                <button data-val="ink">{{ __('ui.tw_accent_ink') }}</button>
+            </div>
         </div>
-    </div>
-    <div class="tweaks-row">
-        <span>Language</span>
-        <div class="tweaks-btns" data-group="lang">
-        <button data-val="en">EN</button>
-        <button data-val="tr">TR</button>
-        </div>
-    </div>
     </aside>
 
+    <script src="{{ asset('js/subnav.js') }}"></script>
+    <script src="{{ asset('js/reveal.js') }}"></script>
     <script src="{{ asset('js/welcome.js') }}"></script>
     @stack('scripts')
 </body>

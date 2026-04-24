@@ -48,8 +48,22 @@
   display: flex; list-style: none; margin: 0; padding: 0;
   gap: 2px; font-size: 13px; color: var(--muted);
   overflow-x: auto; scrollbar-width: none;
+  flex: 1; min-width: 0;
 }
 .hd-subnav-links::-webkit-scrollbar { display: none; }
+
+.hd-subnav-arrow {
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  width: 30px; height: 30px;
+  padding: 0; appearance: none;
+  border-radius: 50%;
+  background: none; border: 1.5px solid var(--line);
+  color: var(--ink-2); cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s, opacity .2s;
+}
+.hd-subnav-arrow:hover { background: color-mix(in oklab, var(--ink) 8%, transparent); color: var(--ink); }
+.hd-subnav-arrow[data-hidden] { opacity: 0; pointer-events: none; }
 .hd-subnav-links a {
   display: block; padding: 4px 10px; border-radius: 6px;
   white-space: nowrap;

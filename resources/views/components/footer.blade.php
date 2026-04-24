@@ -1,3 +1,7 @@
+@php
+  $isEn = ($locale ?? 'tr') === 'en';
+  $r = fn (string $tr, string $en) => route($isEn ? $en : $tr);
+@endphp
 <footer id="support">
   <div class="wrap">
     <div class="foot-grid">
@@ -6,71 +10,67 @@
           <span class="brand-mark" aria-hidden="true"></span>
           <span>ovion</span>
         </div>
-        <p class="foot-about">
-          Ovion, günlük yaşamı kolaylaştıran akıllı cihazlar tasarlayan
-          bir Türk elektroniği markasıdır. Tüm ürünler Türkiye'de üretilir,
-          Türkiye genelinde garantiyle sunulur.
-        </p>
+        <p class="foot-about">{{ __('ui.footer_brand_desc') }}</p>
       </div>
 
       <div>
-        <h4>Telefonlar</h4>
+        <p class="foot-col-heading">{{ __('ui.footer_phones') }}</p>
         <ul>
-          <li><a href="#">V11 Lite</a></li>
+          <li><a href="{{ $r('phones.v11-lite', 'en.phones.v11-lite') }}">V11 Lite</a></li>
           <li><a href="#">V10 Pro</a></li>
           <li><a href="#">V9</a></li>
-          <li><a href="#">Modelleri Karşılaştır</a></li>
+          <li><a href="#">{{ __('ui.footer_compare') }}</a></li>
         </ul>
       </div>
 
       <div>
-        <h4>Saatler &amp; Kulaklık</h4>
+        <p class="foot-col-heading">{{ __('ui.footer_watches_hp') }}</p>
         <ul>
-          <li><a href="#">S3 Pro</a></li>
+          <li><a href="{{ $r('watches.s3-pro', 'en.watches.s3-pro') }}">S3 Pro</a></li>
           <li><a href="#">S2</a></li>
           <li><a href="#">S1 Lite</a></li>
-          <li><a href="#">H1 Pro Kulaklık</a></li>
+          <li><a href="{{ $r('headphones.h1-pro', 'en.headphones.h1-pro') }}">H1 Pro</a></li>
         </ul>
       </div>
 
       <div>
-        <h4>Aksesuarlar</h4>
+        <p class="foot-col-heading">{{ __('ui.footer_accessories') }}</p>
         <ul>
-          <li><a href="#">Kılıflar</a></li>
-          <li><a href="#">Ekran Koruyucular</a></li>
-          <li><a href="#">Şarj Adaptörleri</a></li>
-          <li><a href="#">Tüm Aksesuarlar</a></li>
+          <li><a href="{{ $r('aksesuarlar', 'en.accessories') }}">{{ __('ui.footer_cases') }}</a></li>
+          <li><a href="{{ $r('aksesuarlar', 'en.accessories') }}">{{ __('ui.footer_screen_protect') }}</a></li>
+          <li><a href="{{ $r('aksesuarlar', 'en.accessories') }}">{{ __('ui.footer_chargers') }}</a></li>
+          <li><a href="{{ $r('aksesuarlar', 'en.accessories') }}">{{ __('ui.footer_all_accessories') }}</a></li>
         </ul>
       </div>
 
       <div>
-        <h4>Destek</h4>
+        <p class="foot-col-heading">{{ __('ui.footer_support') }}</p>
         <ul>
-          <li><a href="#">Teknik Destek</a></li>
-          <li><a href="#">Servis Merkezleri</a></li>
-          <li><a href="#">Garanti</a></li>
-          <li><a href="#">Kullanım Kılavuzları</a></li>
-          <li><a href="#">İletişim</a></li>
+          <li><a href="{{ $r('destek', 'en.support') }}">{{ __('ui.footer_tech_support') }}</a></li>
+          <li><a href="{{ $r('destek', 'en.support') }}">{{ __('ui.footer_service_centers') }}</a></li>
+          <li><a href="{{ $r('destek', 'en.support') }}">{{ __('ui.footer_warranty') }}</a></li>
+          <li><a href="{{ $r('destek', 'en.support') }}">{{ __('ui.footer_manuals') }}</a></li>
+          <li><a href="{{ $r('destek', 'en.support') }}">{{ __('ui.footer_contact') }}</a></li>
         </ul>
       </div>
 
       <div>
-        <h4>Kurumsal</h4>
+        <p class="foot-col-heading">{{ __('ui.footer_corporate') }}</p>
         <ul>
-          <li><a href="#">Hakkımızda</a></li>
-          <li><a href="#">Basın &amp; Haberler</a></li>
-          <li><a href="#">Kariyer</a></li>
-          <li><a href="#">Sürdürülebilirlik</a></li>
+          <li><a href="{{ $r('about', 'en.about') }}">{{ __('ui.footer_about') }}</a></li>
+          <li><a href="#">{{ __('ui.footer_press') }}</a></li>
+          <li><a href="#">{{ __('ui.footer_careers') }}</a></li>
+          <li><a href="#">{{ __('ui.footer_sustainability') }}</a></li>
         </ul>
       </div>
 
     </div>
     <div class="foot-bot">
-      <div>© 2026 Ovion Elektronik A.Ş. — İstanbul, Türkiye </div>
+      <div>{{ __('ui.footer_copyright') }}</div>
       <div style="display:flex; gap:18px;">
-        <a href="#">Gizlilik</a>
-        <a href="#">Çerezler</a>
-        <a href="#">Kullanım Şartları</a>
+        <a href="#">{{ __('ui.footer_privacy') }}</a>
+        <a href="#">{{ __('ui.footer_cookies') }}</a>
+        <a href="#">{{ __('ui.footer_terms') }}</a>
       </div>
     </div>
     <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--line-2); text-align:center; font-size:12px; color:var(--muted); letter-spacing:0.02em;">

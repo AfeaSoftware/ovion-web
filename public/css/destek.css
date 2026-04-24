@@ -203,7 +203,7 @@ details[open] .sp-faq-q { color: var(--ink); }
   font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--accent-ink);
 }
-.sp-step h4 {
+.sp-step h3 {
   font-size: clamp(16px, 1.3vw, 18px); font-weight: 500;
   letter-spacing: -0.015em;
 }

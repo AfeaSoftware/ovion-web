@@ -3,10 +3,12 @@
   const nav = document.querySelector('.nav');
   const btn = document.querySelector('.nav-hamburger');
   if (!nav || !btn) return;
+  const labelOpen  = btn.dataset.labelOpen  || 'Menu';
+  const labelClose = btn.dataset.labelClose || 'Close';
   btn.addEventListener('click', () => {
     const open = nav.classList.toggle('is-open');
     btn.setAttribute('aria-expanded', open);
-    btn.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+    btn.setAttribute('aria-label', open ? labelClose : labelOpen);
   });
   document.addEventListener('click', e => {
     if (!nav.contains(e.target)) {
@@ -15,6 +17,18 @@
     }
   });
 })();
+
+// Mobile nav accordion — ürün dropdown'larını tıkla/aç
+document.querySelectorAll('.nav-has-drop > a').forEach(link => {
+  link.addEventListener('click', e => {
+    if (window.innerWidth > 820) return;
+    e.preventDefault();
+    const li = link.closest('.nav-has-drop');
+    const wasOpen = li.classList.contains('is-open');
+    document.querySelectorAll('.nav-has-drop.is-open').forEach(el => el.classList.remove('is-open'));
+    if (!wasOpen) li.classList.add('is-open');
+  });
+});
 
 // Nav dropdowns — delay on close so mouse can travel button → menu
 document.querySelectorAll('.nav-has-drop').forEach(li => {
@@ -27,67 +41,38 @@ document.querySelectorAll('.nav-has-drop').forEach(li => {
   li.querySelector('.nav-drop')?.addEventListener('mouseleave', close);
 });
 
-const TWEAK_DEFAULTS = { "theme": "dark", "accent": "emerald", "lang": "en" };
+const TWEAK_DEFAULTS = { theme: 'dark', accent: 'emerald' };
 
 const accents = {
-  slate:  { a: "oklch(0.66 0.09 235)",  ink: "oklch(0.34 0.06 235)" },
-  amber:  { a: "oklch(0.78 0.12 75)",   ink: "oklch(0.58 0.11 70)" },
-  emerald:{ a: "oklch(0.72 0.11 160)",  ink: "oklch(0.48 0.09 160)" },
-  ink:    { a: "oklch(0.40 0.01 260)",  ink: "oklch(0.25 0.01 260)" },
-};
-
-const i18n = {
-  en: null,
-  tr: {
-    "#phone h1":            'Her güne göre<br/><em>tasarlanmış</em> telefon.',
-    "#phone .lede":         "6.56 inç 90 Hz ekran, 50 MP yapay zekâ destekli kamera ve günü çıkaran 5000 mAh batarya. İstanbul'da tasarlandı, Türkiye'de üretildi.",
-"#camera h2":           "50 MP sensör, ışığı okumak için eğitildi.",
-    "#camera .kicker-sub":  "Yapay zekâ sahne algılama, siz deklanşöre basmadan pozlamayı dengeler. Phase-detect otomatik odaklama 0.3 sn altında kilitlenir. HDR, gözünüzün affettiği ters ışığı düzeltir.",
-    "#buy h2":              "Siz hazır olduğunuzda.",
-  }
+  slate:   { a: 'oklch(0.66 0.09 235)',  ink: 'oklch(0.34 0.06 235)' },
+  amber:   { a: 'oklch(0.78 0.12 75)',   ink: 'oklch(0.58 0.11 70)'  },
+  emerald: { a: 'oklch(0.72 0.11 160)',  ink: 'oklch(0.48 0.09 160)' },
+  ink:     { a: 'oklch(0.40 0.01 260)',  ink: 'oklch(0.25 0.01 260)' },
 };
 
 const tw = {
-  apply(key, val, persist = true) {
+  apply(key, val) {
     TWEAK_DEFAULTS[key] = val;
-    if (key === "theme") document.body.dataset.theme = val;
-    if (key === "accent") {
+    if (key === 'theme') document.body.dataset.theme = val;
+    if (key === 'accent') {
       const a = accents[val] || accents.slate;
-      document.documentElement.style.setProperty("--accent", a.a);
-      document.documentElement.style.setProperty("--accent-ink", a.ink);
-    }
-    if (key === "lang") {
-      document.documentElement.lang = val;
-      const strings = i18n[val];
-      if (strings) {
-        for (const sel in strings) {
-          const el = document.querySelector(sel);
-          if (el) el.innerHTML = strings[sel];
-        }
-      } else if (val === "en") {
-        document.querySelectorAll("[data-en]").forEach(el => el.innerHTML = el.dataset.en);
-      }
+      document.documentElement.style.setProperty('--accent', a.a);
+      document.documentElement.style.setProperty('--accent-ink', a.ink);
     }
     document.querySelectorAll(`.tweaks-btns[data-group="${key}"] button`).forEach(b => {
-      b.setAttribute("aria-pressed", String(b.dataset.val === val));
+      b.setAttribute('aria-pressed', String(b.dataset.val === val));
     });
-  }
+  },
 };
 
-["#phone h1", "#phone .lede", "#design h2", "#design .kicker-sub", "#camera h2", "#camera .kicker-sub", "#buy h2"]
-  .forEach(sel => {
-    const el = document.querySelector(sel);
-    if (el) el.dataset.en = el.innerHTML;
-  });
-
-document.querySelectorAll(".tweaks-btns").forEach(group => {
+document.querySelectorAll('.tweaks-btns').forEach(group => {
   const key = group.dataset.group;
-  group.querySelectorAll("button").forEach(btn => {
-    btn.addEventListener("click", () => tw.apply(key, btn.dataset.val));
+  group.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => tw.apply(key, btn.dataset.val));
   });
 });
 
-Object.entries(TWEAK_DEFAULTS).forEach(([k, v]) => tw.apply(k, v, false));
+Object.entries(TWEAK_DEFAULTS).forEach(([k, v]) => tw.apply(k, v));
 
 // Animations
 document.querySelectorAll('[data-split]').forEach(h => {

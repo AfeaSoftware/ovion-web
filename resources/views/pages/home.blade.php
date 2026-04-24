@@ -1,31 +1,27 @@
 @extends('main')
 
+@section('title', __('ui.home_meta_title'))
+@section('description', __('ui.home_meta_desc'))
+@section('canonical', ($locale ?? 'tr') === 'en' ? route('en.home') : route('home'))
+@section('theme', 'dark')
+
 @section('content')
     <!-- HERO -->
     <section class="hero" id="phone">
-        <!-- Video arka planı — Gerçek videonu şu şekilde ekleyebilirsin:
-           <video autoplay muted loop playsinline class="hero-video-bg">
-             <source src="{{ asset('videos/hero.mp4') }}" type="video/mp4" />
-           </video>
-           Öneri: 1920×1080, 10-15 sn loop, karanlık tonda sinematik ürün geçişi -->
         <div class="hero-video-bg" aria-hidden="true">
             <div class="img-placeholder img-placeholder--hero">
-                <p>Video / Hero Görsel<br />1920 × 1080 — Sinematik ürün loop videosu<br />veya yüksek çözünürlüklü
-                    full-bleed ürün fotoğrafı<br />Koyu, filmik ton — Ovion logolu kapanış önerilir</p>
+                <p><strong>{{ __('ui.home_ph_video_title') }}</strong><br />{!! __('ui.home_ph_video_desc') !!}</p>
             </div>
         </div>
 
         <div class="wrap hero-grid">
             <div class="hero-copy stagger">
-                <p class="eyebrow" style="--i:0">New — V11 Lite</p>
-                <h1 style="--i:1" data-split>Teknolojiyle<br />gelen <em>deneyim.</em></h1>
-                <p class="lede" style="--i:2">
-                    6.56 inç 90 Hz ekran, 50 MP yapay zekâ kamera ve tüm günü karşılayan 5000 mAh batarya. İstanbul
-                    tasarımı, Türkiye üretimi.
-                </p>
+                <p class="eyebrow" style="--i:0">{{ __('ui.home_hero_eyebrow') }}</p>
+                <h1 style="--i:1" data-split>{!! __('ui.home_hero_title') !!}</h1>
+                <p class="lede" style="--i:2">{{ __('ui.home_hero_lede') }}</p>
                 <div class="hero-cta" style="--i:3">
-                    <a class="btn btn-primary" href="#products">OVION Deneyimini Keşfet</a>
-                    <a class="btn btn-ghost" href="#specs">Teknik Özellikler</a>
+                    <a class="btn btn-primary" href="#products">{{ __('ui.home_hero_cta_primary') }}</a>
+                    <a class="btn btn-ghost" href="#specs">{{ __('ui.home_hero_cta_ghost') }}</a>
                 </div>
             </div>
             <div class="hero-media">
@@ -36,7 +32,7 @@
     </section>
 
     <!-- STAT STRIP -->
-    <section class="stat-strip" aria-label="At a glance">
+    <section class="stat-strip" aria-label="{{ __('ui.home_strip_aria') }}">
         <div class="wrap stat-row stagger">
             <div class="stat" style="--i:0">
                 <span class="stat-num" data-count="6.56" data-suffix="″" data-decimals="2">6.56″</span>
@@ -60,24 +56,22 @@
     <!-- PRODUCT GROUPS -->
     <section class="section" id="products">
         <div class="wrap">
-            <div class="section-kicker"><span>Koleksiyon</span></div>
-            <h2>Her ihtiyacınız için<br />bir OVION var.</h2>
+            <div class="section-kicker"><span>{{ __('ui.home_collection_kicker') }}</span></div>
+            <h2>{!! __('ui.home_collection_title') !!}</h2>
         </div>
         <div class="wrap product-grid stagger">
 
             <article class="product-card" style="--i:0">
                 <div class="product-card-media">
-                    <img src="{{ asset('assets/v11-hero.png') }}" alt="Ovion V11 Lite Telefon" loading="lazy"
-                        decoding="async" />
+                    <img src="{{ asset('assets/v11-hero.png') }}" alt="Ovion V11 Lite" loading="lazy" decoding="async" />
                 </div>
                 <div class="product-card-body">
-                    <span class="product-card-cat">Telefon</span>
+                    <span class="product-card-cat">{{ __('ui.home_cat_phone') }}</span>
                     <h3 class="product-card-name">V11 Lite</h3>
-                    <p class="product-card-desc">90 Hz · 50 MP AI · 5000 mAh</p>
-                    <a href="#phone" class="btn btn-ghost">Keşfet
+                    <p class="product-card-desc">{{ __('ui.home_phone_desc') }}</p>
+                    <a href="#phone" class="btn btn-ghost">{{ __('ui.btn_explore') }}
                         <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                            <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-                                stroke-linejoin="round" />
+                            <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </a>
                 </div>
@@ -86,18 +80,17 @@
             <article class="product-card" style="--i:1">
                 <div class="product-card-media product-card-media--placeholder">
                     <div class="img-placeholder">
-                        <strong>Kulaklık Görseli</strong>
-                        <p>Ovion kulaklık — ¾ açı<br />Şeffaf / gradient zemin<br />Min. 1000 × 1200 px PNG</p>
+                        <strong>{{ __('ui.home_ph_hp_title') }}</strong>
+                        <p>{!! __('ui.home_ph_hp_desc') !!}</p>
                     </div>
                 </div>
                 <div class="product-card-body">
-                    <span class="product-card-cat">Kulaklık</span>
-                    <h3 class="product-card-name">Yakında</h3>
-                    <p class="product-card-desc">Gürültü engelleme · Hi-Fi ses</p>
-                    <a href="#" class="btn btn-ghost">Keşfet
+                    <span class="product-card-cat">{{ __('ui.home_cat_headphone') }}</span>
+                    <h3 class="product-card-name">{{ __('ui.home_coming_soon') }}</h3>
+                    <p class="product-card-desc">{{ __('ui.home_hp_desc') }}</p>
+                    <a href="#" class="btn btn-ghost">{{ __('ui.btn_explore') }}
                         <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                            <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-                                stroke-linejoin="round" />
+                            <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </a>
                 </div>
@@ -106,19 +99,17 @@
             <article class="product-card" style="--i:2">
                 <div class="product-card-media product-card-media--placeholder">
                     <div class="img-placeholder">
-                        <strong>Saat Görseli</strong>
-                        <p>Ovion akıllı saat — frontal açı<br />Kordon görünür, koyu/açık arka plan<br />Min. 1000 × 1200 px
-                            PNG</p>
+                        <strong>{{ __('ui.home_ph_watch_title') }}</strong>
+                        <p>{!! __('ui.home_ph_watch_desc') !!}</p>
                     </div>
                 </div>
                 <div class="product-card-body">
-                    <span class="product-card-cat">Saat</span>
-                    <h3 class="product-card-name">Yakında</h3>
-                    <p class="product-card-desc">Sağlık takibi · AMOLED ekran</p>
-                    <a href="#" class="btn btn-ghost">Keşfet
+                    <span class="product-card-cat">{{ __('ui.home_cat_watch') }}</span>
+                    <h3 class="product-card-name">{{ __('ui.home_coming_soon') }}</h3>
+                    <p class="product-card-desc">{{ __('ui.home_watch_desc') }}</p>
+                    <a href="#" class="btn btn-ghost">{{ __('ui.btn_explore') }}
                         <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                            <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-                                stroke-linejoin="round" />
+                            <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </a>
                 </div>
@@ -131,15 +122,13 @@
     <section class="tech-banner">
         <div class="wrap tech-banner-inner">
             <div class="tech-banner-copy stagger">
-                <p class="eyebrow" style="--i:0">Öne Çıkan Teknoloji</p>
-                <h2 style="--i:1">Yapay Zeka<br />Destekli Kamera</h2>
-                <p style="--i:2">50 MP sensör ve akıllı sahne tanıma, her ışık koşulunda mükemmel fotoğrafı yakalar.
-                    Deklanşöre basmadan önce pozlama otomatik dengelenir.</p>
-                <div style="--i:3"><a href="#camera" class="btn btn-primary">Kamerayı Keşfet</a></div>
+                <p class="eyebrow" style="--i:0">{{ __('ui.home_tech_ey') }}</p>
+                <h2 style="--i:1">{!! __('ui.home_tech_title') !!}</h2>
+                <p style="--i:2">{{ __('ui.home_tech_desc') }}</p>
+                <div style="--i:3"><a href="#camera" class="btn btn-primary">{{ __('ui.home_tech_cta') }}</a></div>
             </div>
             <div class="tech-banner-media">
-                <img src="{{ asset('assets/v11-duo.png') }}" alt="V11 Lite kamera detay" loading="lazy"
-                    decoding="async" />
+                <img src="{{ asset('assets/v11-duo.png') }}" alt="V11 Lite kamera detay" loading="lazy" decoding="async" />
             </div>
         </div>
     </section>
@@ -147,13 +136,9 @@
     <!-- CAMERA (DARK) -->
     <section class="showcase" id="camera">
         <div class="wrap section">
-            <div class="section-kicker"><span>02</span><span>Camera</span></div>
-            <h2>A 50 MP sensor, trained to read the light.</h2>
-            <p class="kicker-sub">
-                AI scene recognition balances exposure before you tap the shutter.
-                Phase-detect autofocus locks in under 0.3 s. HDR handles the
-                awkward backlight your eye already forgave.
-            </p>
+            <div class="section-kicker"><span>02</span><span>{{ __('ui.home_cam_kicker') }}</span></div>
+            <h2>{{ __('ui.home_cam_title') }}</h2>
+            <p class="kicker-sub">{{ __('ui.home_cam_sub') }}</p>
 
             <div class="camera-grid">
                 <div class="camera-photo">
@@ -165,31 +150,29 @@
                         <li>
                             <span class="f-num">01</span>
                             <div>
-                                <h3>50 MP main camera</h3>
-                                <p>A large-pixel sensor that holds detail in low light without flattening skin tones.</p>
+                                <h3>{{ __('ui.home_cam_f1_title') }}</h3>
+                                <p>{{ __('ui.home_cam_f1_desc') }}</p>
                             </div>
                         </li>
                         <li>
                             <span class="f-num">02</span>
                             <div>
-                                <h3>AI scene mode</h3>
-                                <p>Recognises over forty common scenes — night, food, portrait — and tunes colour, contrast
-                                    and sharpening to match.</p>
+                                <h3>{{ __('ui.home_cam_f2_title') }}</h3>
+                                <p>{{ __('ui.home_cam_f2_desc') }}</p>
                             </div>
                         </li>
                         <li>
                             <span class="f-num">03</span>
                             <div>
-                                <h3>Phase-detect autofocus</h3>
-                                <p>Locks focus in a fraction of a second. A burst mode keeps the moment that would have been
-                                    gone.</p>
+                                <h3>{{ __('ui.home_cam_f3_title') }}</h3>
+                                <p>{{ __('ui.home_cam_f3_desc') }}</p>
                             </div>
                         </li>
                         <li>
                             <span class="f-num">04</span>
                             <div>
-                                <h3>8 MP front camera</h3>
-                                <p>Punch-hole, in-display. Tuned for natural skin tones in daylight and indoors.</p>
+                                <h3>{{ __('ui.home_cam_f4_title') }}</h3>
+                                <p>{{ __('ui.home_cam_f4_desc') }}</p>
                             </div>
                         </li>
                     </ul>
@@ -199,41 +182,37 @@
     </section>
 
     <!-- SCROLL SHOWCASE 3D -->
-    <section class="scroll-stage" id="showcase-3d" aria-label="360 derece ürün görünümü">
+    <section class="scroll-stage" id="showcase-3d" aria-label="{{ __('ui.home_360_aria') }}">
         <div class="scroll-sticky">
             <div class="wrap scroll-layout">
 
                 <div class="scroll-media-wrap">
-                    <img class="scroll-img is-active" src="{{ asset('assets/v11-front.png') }}" alt="V11 Lite ön yüz"
-                        loading="lazy" decoding="async" />
-                    <img class="scroll-img" src="{{ asset('assets/v11-side-a.png') }}" alt="V11 Lite profil A"
-                        loading="lazy" decoding="async" />
-                    <img class="scroll-img" src="{{ asset('assets/v11-back.png') }}" alt="V11 Lite arka yüz"
-                        loading="lazy" decoding="async" />
-                    <img class="scroll-img" src="{{ asset('assets/v11-side-b.png') }}" alt="V11 Lite profil B"
-                        loading="lazy" decoding="async" />
+                    <img class="scroll-img is-active" src="{{ asset('assets/v11-front.png') }}" alt="V11 Lite ön yüz" loading="lazy" decoding="async" />
+                    <img class="scroll-img" src="{{ asset('assets/v11-side-a.png') }}" alt="V11 Lite profil A" loading="lazy" decoding="async" />
+                    <img class="scroll-img" src="{{ asset('assets/v11-back.png') }}" alt="V11 Lite arka yüz" loading="lazy" decoding="async" />
+                    <img class="scroll-img" src="{{ asset('assets/v11-side-b.png') }}" alt="V11 Lite profil B" loading="lazy" decoding="async" />
                 </div>
 
                 <div class="scroll-texts">
                     <div class="scroll-text is-active">
-                        <p class="eyebrow">Ön Tasarım</p>
-                        <h2>90 Hz'de her<br />kıvrım önemli.</h2>
-                        <p>6.56 inç HD+ ekran, punch-hole kamera ve ince çerçeveler ile tam ekran deneyimi sunar.</p>
+                        <p class="eyebrow">{{ __('ui.home_scroll_s1_ey') }}</p>
+                        <h2>{!! __('ui.home_scroll_s1_title') !!}</h2>
+                        <p>{{ __('ui.home_scroll_s1_desc') }}</p>
                     </div>
                     <div class="scroll-text">
-                        <p class="eyebrow">İnce Profil</p>
-                        <h2>8.45 mm.<br />Elde kaybolur.</h2>
-                        <p>Ergonomik 164 mm gövde, alüminyum çerçeve ve parmak izi dirençli Pearl White yüzey.</p>
+                        <p class="eyebrow">{{ __('ui.home_scroll_s2_ey') }}</p>
+                        <h2>{!! __('ui.home_scroll_s2_title') !!}</h2>
+                        <p>{{ __('ui.home_scroll_s2_desc') }}</p>
                     </div>
                     <div class="scroll-text">
-                        <p class="eyebrow">Arka Tasarım</p>
-                        <h2>Kamera mühendisliği<br />sahnede.</h2>
-                        <p>50 MP ana kamera, dairesel modül tasarımı ve Ovion imzası ile dikkat çeken bir arka yüz.</p>
+                        <p class="eyebrow">{{ __('ui.home_scroll_s3_ey') }}</p>
+                        <h2>{!! __('ui.home_scroll_s3_title') !!}</h2>
+                        <p>{{ __('ui.home_scroll_s3_desc') }}</p>
                     </div>
                     <div class="scroll-text">
-                        <p class="eyebrow">Her Detay</p>
-                        <h2>Yan tuştan<br />güce ulaş.</h2>
-                        <p>Yan yerleşimli parmak izi sensörü, fiziksel ses tuşları ve USB-C şarj girişi.</p>
+                        <p class="eyebrow">{{ __('ui.home_scroll_s4_ey') }}</p>
+                        <h2>{!! __('ui.home_scroll_s4_title') !!}</h2>
+                        <p>{{ __('ui.home_scroll_s4_desc') }}</p>
                     </div>
                 </div>
 
@@ -247,24 +226,19 @@
     <!-- DISPLAY / BATTERY -->
     <section class="section">
         <div class="wrap">
-            <div class="section-kicker"><span>03</span><span>Display &amp; Battery</span></div>
-            <h2>A calmer 90 Hz.<br />A battery that keeps going.</h2>
+            <div class="section-kicker"><span>03</span><span>{!! __('ui.home_disp_kicker') !!}</span></div>
+            <h2>{!! __('ui.home_disp_title') !!}</h2>
         </div>
         <div class="wrap showcase-hero">
             <div class="showcase-copy">
                 <p style="font-size: clamp(16px, 1.25vw, 19px); max-width: 42ch; color: var(--ink-2);">
-                    The 6.56-inch HD+ panel refreshes at 90 Hz, so scrolling feels like
-                    the page moves with your thumb, not after it. Multi-touch, always-on
-                    display, and a punch-hole front camera keep the frame clean.
+                    {{ __('ui.home_disp_p1') }}
                 </p>
                 <p style="font-size: clamp(16px, 1.25vw, 19px); max-width: 42ch; color: var(--ink-2); margin-top: 18px;">
-                    Underneath, a 5000 mAh cell and 18 W fast charging. A full day of
-                    heavy use, or two lighter ones. Top up to hours of playback in a
-                    coffee break.
+                    {{ __('ui.home_disp_p2') }}
                 </p>
             </div>
-            <figure class="camera-photo"
-                style="aspect-ratio: 4/5; background: var(--bg-2); border:1px solid var(--line-2);">
+            <figure class="camera-photo" style="aspect-ratio: 4/5; background: var(--bg-2); border:1px solid var(--line-2);">
                 <img src="{{ asset('assets/v11-pair.png') }}"
                     alt="V11 Lite front display showing the wave wallpaper, with the back in soft focus behind it"
                     loading="lazy" decoding="async" width="1000" height="1250" />
@@ -276,8 +250,8 @@
     <section class="section" id="specs"
         style="background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
         <div class="wrap">
-            <div class="section-kicker"><span>04</span><span>Specifications</span></div>
-            <h2>Everything you'd check.</h2>
+            <div class="section-kicker"><span>04</span><span>{{ __('ui.home_specs_kicker') }}</span></div>
+            <h2>{{ __('ui.home_specs_title') }}</h2>
 
             <div class="specs">
                 <div class="spec">
@@ -332,8 +306,8 @@
     <!-- BLOG / HABERLER -->
     <section class="section" id="news">
         <div class="wrap">
-            <div class="section-kicker"><span>05</span><span>Haberler &amp; Lansman</span></div>
-            <h2>Güncel &amp; Lansman.</h2>
+            <div class="section-kicker"><span>05</span><span>{!! __('ui.home_news_kicker') !!}</span></div>
+            <h2>{!! __('ui.home_news_title') !!}</h2>
         </div>
         <div class="wrap news-grid stagger">
 
@@ -341,17 +315,15 @@
                 <a href="#" class="news-card-link">
                     <div class="news-media">
                         <div class="img-placeholder img-placeholder--news">
-                            <strong>Lansman / Hero Görseli</strong>
-                            <p>Sinematik ürün sahnesi, koyu arka plan<br />V11 Lite veya yeni model lansmanı<br />Min. 1400
-                                × 800 px — 16:9 oran</p>
+                            <strong>{{ __('ui.home_ph_news_launch') }}</strong>
+                            <p>{{ __('ui.home_ph_news_size_lg') }}</p>
                         </div>
                     </div>
                     <div class="news-body">
-                        <span class="news-tag">Lansman</span>
-                        <h3>Yeni Modelimiz Yayında</h3>
-                        <p>Ovion V11 Lite, Türkiye'nin en uygun fiyatlı 50 MP AI kameralı telefonu olarak kullanıcılarla
-                            buluşuyor.</p>
-                        <span class="news-date">22 Nisan 2026</span>
+                        <span class="news-tag">{{ __('ui.home_news_tag_launch') }}</span>
+                        <h3>{{ __('ui.home_news_1_title') }}</h3>
+                        <p>{{ __('ui.home_news_1_desc') }}</p>
+                        <span class="news-date">{{ __('ui.home_news_1_date') }}</span>
                     </div>
                 </a>
             </article>
@@ -360,15 +332,15 @@
                 <a href="#" class="news-card-link">
                     <div class="news-media news-media--sm">
                         <div class="img-placeholder img-placeholder--news">
-                            <strong>Teknoloji Görseli</strong>
-                            <p>Kamera makro veya AI grafik<br />Min. 800 × 500 px</p>
+                            <strong>{{ __('ui.home_ph_news_tech') }}</strong>
+                            <p>{{ __('ui.home_ph_news_size_sm') }}</p>
                         </div>
                     </div>
                     <div class="news-body">
-                        <span class="news-tag">Teknoloji</span>
-                        <h3>Yapay Zeka Kamera Nasıl Çalışır?</h3>
-                        <p>V11 Lite'ın sahne tanıma motoru 40'tan fazla kategoriyi saniyeler içinde analiz eder.</p>
-                        <span class="news-date">15 Nisan 2026</span>
+                        <span class="news-tag">{{ __('ui.home_news_tag_tech') }}</span>
+                        <h3>{{ __('ui.home_news_2_title') }}</h3>
+                        <p>{{ __('ui.home_news_2_desc') }}</p>
+                        <span class="news-date">{{ __('ui.home_news_2_date') }}</span>
                     </div>
                 </a>
             </article>
@@ -377,15 +349,15 @@
                 <a href="#" class="news-card-link">
                     <div class="news-media news-media--sm">
                         <div class="img-placeholder img-placeholder--news">
-                            <strong>Fabrika / Üretim Görseli</strong>
-                            <p>Türkiye üretim tesisi<br />veya montaj sahnesi<br />Min. 800 × 500 px</p>
+                            <strong>{{ __('ui.home_ph_news_factory') }}</strong>
+                            <p>{{ __('ui.home_ph_news_size_sm') }}</p>
                         </div>
                     </div>
                     <div class="news-body">
-                        <span class="news-tag">Şirket</span>
-                        <h3>Türkiye Üretiminin Gururunu Taşıyoruz</h3>
-                        <p>Her Ovion cihazı, yerli üretim tesislerimizde titizlikle tasarlanıp üretiliyor.</p>
-                        <span class="news-date">8 Nisan 2026</span>
+                        <span class="news-tag">{{ __('ui.home_news_tag_company') }}</span>
+                        <h3>{{ __('ui.home_news_3_title') }}</h3>
+                        <p>{{ __('ui.home_news_3_desc') }}</p>
+                        <span class="news-date">{{ __('ui.home_news_3_date') }}</span>
                     </div>
                 </a>
             </article>
@@ -397,15 +369,15 @@
     <section class="buy" id="buy">
         <div class="wrap buy-inner">
             <div>
-                <h2>Ready when you are.</h2>
+                <h2>{{ __('ui.home_buy_title') }}</h2>
                 <div class="price">
-                    <strong>From ₺4,999</strong>
-                    <span>— free shipping in Türkiye · 24-month warranty</span>
+                    <strong>{{ __('ui.home_buy_price') }}</strong>
+                    <span>— {{ __('ui.home_buy_shipping') }}</span>
                 </div>
             </div>
             <div style="display:flex; gap:12px; flex-wrap: wrap;">
-                <a class="btn btn-primary" href="#">Configure &amp; buy</a>
-                <a class="btn btn-ghost" href="#support">Find a reseller</a>
+                <a class="btn btn-primary" href="#">{!! __('ui.home_buy_cta1') !!}</a>
+                <a class="btn btn-ghost" href="#support">{!! __('ui.home_buy_cta2') !!}</a>
             </div>
         </div>
     </section>

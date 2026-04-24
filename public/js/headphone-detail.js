@@ -1,70 +1,22 @@
-(function () {
-  const links = document.querySelectorAll('.hd-subnav-link[href^="#"]');
-  if (!links.length) return;
-
-  const map = {};
-  links.forEach(a => {
-    const id = a.getAttribute('href').slice(1);
-    const el = document.getElementById(id);
-    if (el) map[id] = a;
-  });
-
-  const setActive = id => {
-    links.forEach(a => a.classList.remove('is-active'));
-    if (map[id]) map[id].classList.add('is-active');
-  };
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
-  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
-
-  Object.keys(map).forEach(id => {
-    const el = document.getElementById(id);
-    if (el) observer.observe(el);
-  });
-})();
-
-(function () {
-  const els = document.querySelectorAll('.hd-reveal');
-  if (!els.length) return;
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('is-visible');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  els.forEach(el => io.observe(el));
-})();
-
-document.querySelectorAll('.nav-has-drop').forEach(li => {
-  let closeTimer;
-  const open  = () => { clearTimeout(closeTimer); li.classList.add('is-open'); };
-  const close = () => { closeTimer = setTimeout(() => li.classList.remove('is-open'), 180); };
-  li.addEventListener('mouseenter', open);
-  li.addEventListener('mouseleave', close);
-  const mega = li.querySelector('.nav-mega');
-  if (mega) {
-    mega.addEventListener('mouseenter', open);
-    mega.addEventListener('mouseleave', close);
-  }
+window.OvionSubnav?.init({
+  list:    '.hd-subnav-links',
+  link:    '.hd-subnav-link',
+  prevBtn: '.hd-subnav-arrow--prev',
+  nextBtn: '.hd-subnav-arrow--next',
+  subnav:  '#hd-subnav',
 });
 
+window.OvionReveal?.init('.hd-reveal');
+
+/* ── ANC interactive slider ── */
 (function () {
-  const slider = document.getElementById('hd-anc-range');
+  const slider  = document.getElementById('hd-anc-range');
   const display = document.getElementById('hd-anc-value');
   const caption = document.getElementById('hd-anc-caption');
   if (!slider || !display) return;
 
   const MAX_DB = 38;
-  const captions = [
-    'Gürültü engelleme kapalı — tüm çevre sesi geçer.',
-    'Hafif azaltma — genel ofis gürültüsü.',
-    'Orta seviye — trafik ve kalabalık için.',
-    'Yüksek ANC — uçak ve metro gürültüsü.',
-    'Maksimum — –38 dB tam gürültü engelleme.',
-  ];
+  const captions = JSON.parse(slider.dataset.captions || '[]');
 
   const getCaption = pct => {
     if (pct < 0.15) return captions[0];

@@ -1,99 +1,61 @@
+@php
+  $isEn = ($locale ?? 'tr') === 'en';
+  $r = fn (string $tr, string $en) => route($isEn ? $en : $tr);
+@endphp
 <header class="nav">
   <div class="wrap nav-inner">
-    <a href="#" class="brand" aria-label="Ovion ana sayfa">
+    <a href="{{ $r('home', 'en.home') }}" class="brand" aria-label="{{ __('ui.nav_homepage') }}">
       <span class="brand-mark" aria-hidden="true"></span>
       <span>ovion</span>
     </a>
-    <button class="nav-hamburger" aria-label="Menüyü aç" aria-expanded="false">
+    <button class="nav-hamburger"
+            aria-label="{{ __('ui.nav_open_menu') }}"
+            aria-expanded="false"
+            data-label-open="{{ __('ui.nav_open_menu') }}"
+            data-label-close="{{ __('ui.nav_close_menu') }}">
       <span></span><span></span><span></span>
     </button>
-    <nav aria-label="Ana menü">
+    <nav aria-label="{{ __('ui.nav_main_menu') }}">
       <ul class="nav-links">
 
         <li class="nav-has-drop">
-          <a href="#products">Telefonlar
+          <a href="#">{{ __('ui.nav_phones') }}
             <svg class="nav-chevron" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <div class="nav-mega">
             <div class="wrap mega-inner">
               <div class="mega-grid">
 
-                <a href="#phone" class="mega-card">
+                <a href="{{ $r('phones.v11-lite', 'en.phones.v11-lite') }}" class="mega-card">
                   <div class="mega-card-media">
                     <img src="{{ asset('assets/v11-hero.png') }}" alt="V11 Lite" />
                   </div>
                   <div class="mega-card-body">
-                    <span class="mega-card-cat">Telefon</span>
-                    <h4>V11 Lite <span aria-hidden="true">→</span></h4>
-                    <p>90 Hz · 50 MP AI · 5000 mAh</p>
+                    <span class="mega-card-cat">{{ __('ui.nav_cat_phone') }}</span>
+                    <p class="mega-card-name">V11 Lite <span aria-hidden="true">→</span></p>
+                    <p>{{ __('ui.nav_v11_specs') }}</p>
                   </div>
                 </a>
 
                 <a href="#" class="mega-card">
                   <div class="mega-card-media mega-card-media--ph">
-                    <span>V10 Pro<br/><small>Görsel yakında</small></span>
+                    <span>V10 Pro<br/><small>{{ __('ui.nav_coming_soon') }}</small></span>
                   </div>
                   <div class="mega-card-body">
-                    <span class="mega-card-cat">Telefon</span>
-                    <h4>V10 Pro <span aria-hidden="true">→</span></h4>
-                    <p>AMOLED · 64 MP · 4800 mAh</p>
+                    <span class="mega-card-cat">{{ __('ui.nav_cat_phone') }}</span>
+                    <p class="mega-card-name">V10 Pro <span aria-hidden="true">→</span></p>
+                    <p>{{ __('ui.nav_v10_specs') }}</p>
                   </div>
                 </a>
 
                 <a href="#" class="mega-card">
                   <div class="mega-card-media mega-card-media--ph">
-                    <span>V9<br/><small>Görsel yakında</small></span>
+                    <span>V9<br/><small>{{ __('ui.nav_coming_soon') }}</small></span>
                   </div>
                   <div class="mega-card-body">
-                    <span class="mega-card-cat">Telefon</span>
-                    <h4>V9 <span aria-hidden="true">→</span></h4>
-                    <p>IPS · 48 MP · 4500 mAh</p>
-                  </div>
-                </a>
-
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <li class="nav-has-drop">
-          <a href="#">Saatler
-            <svg class="nav-chevron" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <div class="nav-mega">
-            <div class="wrap mega-inner">
-              <div class="mega-grid">
-
-                <a href="#" class="mega-card">
-                  <div class="mega-card-media mega-card-media--ph">
-                    <span>S3 Pro<br/><small>Görsel yakında</small></span>
-                  </div>
-                  <div class="mega-card-body">
-                    <span class="mega-card-cat">Saat</span>
-                    <h4>S3 Pro <span aria-hidden="true">→</span></h4>
-                    <p>AMOLED · GPS · 3 günlük pil</p>
-                  </div>
-                </a>
-
-                <a href="#" class="mega-card">
-                  <div class="mega-card-media mega-card-media--ph">
-                    <span>S2<br/><small>Görsel yakında</small></span>
-                  </div>
-                  <div class="mega-card-body">
-                    <span class="mega-card-cat">Saat</span>
-                    <h4>S2 <span aria-hidden="true">→</span></h4>
-                    <p>Sağlık takibi · Su geçirmez</p>
-                  </div>
-                </a>
-
-                <a href="#" class="mega-card">
-                  <div class="mega-card-media mega-card-media--ph">
-                    <span>S1 Lite<br/><small>Görsel yakında</small></span>
-                  </div>
-                  <div class="mega-card-body">
-                    <span class="mega-card-cat">Saat</span>
-                    <h4>S1 Lite <span aria-hidden="true">→</span></h4>
-                    <p>Adım sayar · Uyku analizi</p>
+                    <span class="mega-card-cat">{{ __('ui.nav_cat_phone') }}</span>
+                    <p class="mega-card-name">V9 <span aria-hidden="true">→</span></p>
+                    <p>{{ __('ui.nav_v9_specs') }}</p>
                   </div>
                 </a>
 
@@ -103,21 +65,67 @@
         </li>
 
         <li class="nav-has-drop">
-          <a href="#">Kulaklık
+          <a href="#">{{ __('ui.nav_watches') }}
             <svg class="nav-chevron" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <div class="nav-mega">
             <div class="wrap mega-inner">
               <div class="mega-grid">
 
-                <a href="#" class="mega-card">
+                <a href="{{ $r('watches.s3-pro', 'en.watches.s3-pro') }}" class="mega-card">
                   <div class="mega-card-media mega-card-media--ph">
-                    <span>H1 Pro<br/><small>Görsel yakında</small></span>
+                    <span>S3 Pro<br/><small>{{ __('ui.nav_coming_soon') }}</small></span>
                   </div>
                   <div class="mega-card-body">
-                    <span class="mega-card-cat">Kulaklık</span>
-                    <h4>H1 Pro <span aria-hidden="true">→</span></h4>
-                    <p>ANC · Hi-Fi · 30 saat pil</p>
+                    <span class="mega-card-cat">{{ __('ui.nav_cat_watch') }}</span>
+                    <p class="mega-card-name">S3 Pro <span aria-hidden="true">→</span></p>
+                    <p>{{ __('ui.nav_s3_specs') }}</p>
+                  </div>
+                </a>
+
+                <a href="#" class="mega-card">
+                  <div class="mega-card-media mega-card-media--ph">
+                    <span>S2<br/><small>{{ __('ui.nav_coming_soon') }}</small></span>
+                  </div>
+                  <div class="mega-card-body">
+                    <span class="mega-card-cat">{{ __('ui.nav_cat_watch') }}</span>
+                    <p class="mega-card-name">S2 <span aria-hidden="true">→</span></p>
+                    <p>{{ __('ui.nav_s2_specs') }}</p>
+                  </div>
+                </a>
+
+                <a href="#" class="mega-card">
+                  <div class="mega-card-media mega-card-media--ph">
+                    <span>S1 Lite<br/><small>{{ __('ui.nav_coming_soon') }}</small></span>
+                  </div>
+                  <div class="mega-card-body">
+                    <span class="mega-card-cat">{{ __('ui.nav_cat_watch') }}</span>
+                    <p class="mega-card-name">S1 Lite <span aria-hidden="true">→</span></p>
+                    <p>{{ __('ui.nav_s1_specs') }}</p>
+                  </div>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-has-drop">
+          <a href="#">{{ __('ui.nav_headphones') }}
+            <svg class="nav-chevron" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-mega">
+            <div class="wrap mega-inner">
+              <div class="mega-grid">
+
+                <a href="{{ $r('headphones.h1-pro', 'en.headphones.h1-pro') }}" class="mega-card">
+                  <div class="mega-card-media mega-card-media--ph">
+                    <span>H1 Pro<br/><small>{{ __('ui.nav_coming_soon') }}</small></span>
+                  </div>
+                  <div class="mega-card-body">
+                    <span class="mega-card-cat">{{ __('ui.nav_cat_headphone') }}</span>
+                    <p class="mega-card-name">H1 Pro <span aria-hidden="true">→</span></p>
+                    <p>{{ __('ui.nav_h1_specs') }}</p>
                   </div>
                 </a>
 
@@ -127,14 +135,18 @@
         </li>
 
         <li>
-          <a href="{{ url('/aksesuarlar') }}">Aksesuarlar</a>
+          <a href="{{ $r('aksesuarlar', 'en.accessories') }}">{{ __('ui.nav_accessories') }}</a>
         </li>
 
-        <li><a href="{{ url('/hakkimizda') }}">Hakkımızda</a></li>
+        <li><a href="{{ $r('about', 'en.about') }}">{{ __('ui.nav_about') }}</a></li>
 
-        <li><a href="{{ url('/destek') }}">Destek</a></li>
+        <li><a href="{{ $r('destek', 'en.support') }}">{{ __('ui.nav_support') }}</a></li>
 
       </ul>
     </nav>
+
+    <a href="{{ $altUrl ?? '#' }}" class="nav-lang-switch" aria-label="{{ __('ui.lang_switch_label') }}">
+      {{ __('ui.lang_switch') }}
+    </a>
   </div>
 </header>
