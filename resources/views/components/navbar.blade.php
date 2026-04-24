@@ -129,7 +129,7 @@
 
         <li><a href="{{ url('/hakkimizda') }}">Hakkımızda</a></li>
 
-        <li><a href="#support">Destek</a></li>
+        <li><a href="{{ url('/destek') }}">Destek</a></li>
 
       </ul>
     </nav>

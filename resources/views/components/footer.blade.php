@@ -73,5 +73,8 @@
         <a href="#">Kullanım Şartları</a>
       </div>
     </div>
+    <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--line-2); text-align:center; font-size:12px; color:var(--muted); letter-spacing:0.02em;">
+      Produced by <a href="https://afeayazilim.com" target="_blank" rel="noopener" style="color:var(--muted); text-decoration:underline; text-underline-offset:3px; transition:color .15s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--muted)'">AFEA Software</a>
+    </div>
   </div>
 </footer>
