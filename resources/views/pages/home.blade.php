@@ -6,29 +6,94 @@
 @section('theme', 'dark')
 
 @section('content')
-    <!-- HERO -->
-    <section class="hero" id="phone">
-        <div class="hero-video-bg" aria-hidden="true">
-            <div class="img-placeholder img-placeholder--hero">
-                <p><strong>{{ __('ui.home_ph_video_title') }}</strong><br />{!! __('ui.home_ph_video_desc') !!}</p>
-            </div>
-        </div>
+    <!-- HERO SLIDER -->
+    <section class="hero hero-slider" id="phone" aria-label="Öne çıkan ürünler">
 
-        <div class="wrap hero-grid">
-            <div class="hero-copy stagger">
-                <p class="eyebrow" style="--i:0">{{ __('ui.home_hero_eyebrow') }}</p>
-                <h1 style="--i:1" data-split>{!! __('ui.home_hero_title') !!}</h1>
-                <p class="lede" style="--i:2">{{ __('ui.home_hero_lede') }}</p>
-                <div class="hero-cta" style="--i:3">
-                    <a class="btn btn-primary" href="#products">{{ __('ui.home_hero_cta_primary') }}</a>
-                    <a class="btn btn-ghost" href="#specs">{{ __('ui.home_hero_cta_ghost') }}</a>
+        <div class="hero-slides" aria-live="polite">
+
+            {{-- Slide 1 — V11 Lite --}}
+            <div class="hero-slide is-active" data-slide="0" aria-hidden="false">
+                <div class="hero-video-bg" aria-hidden="true">
+                    <div class="img-placeholder img-placeholder--hero">
+                        <p><strong>{{ __('ui.home_ph_video_title') }}</strong><br />{!! __('ui.home_ph_video_desc') !!}</p>
+                    </div>
+                </div>
+                <div class="wrap hero-grid">
+                    <div class="hero-copy">
+                        <p class="eyebrow">{{ __('ui.home_hero_eyebrow') }}</p>
+                        <h1>{!! __('ui.home_hero_title') !!}</h1>
+                        <p class="lede">{{ __('ui.home_hero_lede') }}</p>
+                        <div class="hero-cta">
+                            <a class="btn btn-primary" href="#products">{{ __('ui.home_hero_cta_primary') }}</a>
+                            <a class="btn btn-ghost" href="#specs">{{ __('ui.home_hero_cta_ghost') }}</a>
+                        </div>
+                    </div>
+                    <div class="hero-media">
+                        <img src="{{ asset('assets/v11-hero.png') }}" alt="Ovion V11 Lite Pearl White, ön ve arka görünüm"
+                            width="1000" height="1250" fetchpriority="high" decoding="async" />
+                    </div>
                 </div>
             </div>
-            <div class="hero-media">
-                <img src="{{ asset('assets/v11-hero.png') }}" alt="Ovion V11 Lite Pearl White, ön ve arka görünüm"
-                    width="1000" height="1250" fetchpriority="high" decoding="async" />
+
+            {{-- Slide 2 — S3 Pro --}}
+            <div class="hero-slide" data-slide="1" aria-hidden="true">
+                <div class="hero-slide-bg hero-slide-bg--watch" aria-hidden="true"></div>
+                <div class="wrap hero-grid">
+                    <div class="hero-copy">
+                        <p class="eyebrow">Yeni — Akıllı Saat</p>
+                        <h1>Özgürlüğün<br/><em>ritmi.</em></h1>
+                        <p class="lede">14 gün pil ömrü, GPS ve AMOLED ekranla hayatınızı bilek bilekte takip edin. S3 Pro şimdi satışta.</p>
+                        <div class="hero-cta">
+                            <a class="btn btn-primary" href="{{ url('/saatler/s3-pro') }}">S3 Pro'yu Keşfet</a>
+                            <a class="btn btn-ghost" href="#products">Tüm Ürünler</a>
+                        </div>
+                    </div>
+                    <div class="hero-media hero-media--placeholder">
+                        <span>S3 Pro<br/><small>Görsel yakında</small></span>
+                    </div>
+                </div>
             </div>
+
+            {{-- Slide 3 — H1 Pro --}}
+            <div class="hero-slide" data-slide="2" aria-hidden="true">
+                <div class="hero-slide-bg hero-slide-bg--headphone" aria-hidden="true"></div>
+                <div class="wrap hero-grid">
+                    <div class="hero-copy">
+                        <p class="eyebrow">Yeni — Kulaklık</p>
+                        <h1>Sessizliği<br/><em>hisset.</em></h1>
+                        <p class="lede">Hibrit ANC, Hi-Fi ses ve 30 saatlik pil ömrü. Müziğinize gerçekten odaklanın. H1 Pro şimdi satışta.</p>
+                        <div class="hero-cta">
+                            <a class="btn btn-primary" href="{{ url('/kulakliklar/h1-pro') }}">H1 Pro'yu Keşfet</a>
+                            <a class="btn btn-ghost" href="#products">Tüm Ürünler</a>
+                        </div>
+                    </div>
+                    <div class="hero-media hero-media--placeholder">
+                        <span>H1 Pro<br/><small>Görsel yakında</small></span>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        {{-- Slider controls --}}
+        <div class="hero-slider-ui" aria-label="Slider kontrolleri">
+            <button class="hero-slider-btn hero-slider-prev" aria-label="Önceki slayt">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="hero-slider-dots" role="tablist" aria-label="Slaytlar">
+                <button class="hero-dot is-active" data-slide="0" role="tab" aria-selected="true" aria-label="Slayt 1"></button>
+                <button class="hero-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Slayt 2"></button>
+                <button class="hero-dot" data-slide="2" role="tab" aria-selected="false" aria-label="Slayt 3"></button>
+            </div>
+            <button class="hero-slider-btn hero-slider-next" aria-label="Sonraki slayt">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+
     </section>
 
     <!-- STAT STRIP -->
@@ -54,67 +119,93 @@
     </section>
 
     <!-- PRODUCT GROUPS -->
-    <section class="section" id="products">
+    <section class="section pshowcase-section" id="products">
         <div class="wrap">
             <div class="section-kicker"><span>{{ __('ui.home_collection_kicker') }}</span></div>
             <h2>{!! __('ui.home_collection_title') !!}</h2>
-        </div>
-        <div class="wrap product-grid stagger">
 
-            <article class="product-card" style="--i:0">
-                <div class="product-card-media">
-                    <img src="{{ asset('assets/v11-hero.png') }}" alt="Ovion V11 Lite" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-card-body">
-                    <span class="product-card-cat">{{ __('ui.home_cat_phone') }}</span>
-                    <h3 class="product-card-name">V11 Lite</h3>
-                    <p class="product-card-desc">{{ __('ui.home_phone_desc') }}</p>
-                    <a href="#phone" class="btn btn-ghost">{{ __('ui.btn_explore') }}
-                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                            <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </a>
-                </div>
-            </article>
+            {{-- Category filter tabs --}}
+            <div class="pcat-tabs" role="tablist">
+                <button class="pcat-tab is-active" data-cat="all">Tümü</button>
+                <button class="pcat-tab" data-cat="phone">Telefonlar</button>
+                <button class="pcat-tab" data-cat="watch">Saatler</button>
+                <button class="pcat-tab" data-cat="headphone">Kulaklıklar</button>
+                <button class="pcat-tab" data-cat="accessory">Aksesuarlar</button>
+            </div>
 
-            <article class="product-card" style="--i:1">
-                <div class="product-card-media product-card-media--placeholder">
-                    <div class="img-placeholder">
-                        <strong>{{ __('ui.home_ph_hp_title') }}</strong>
-                        <p>{!! __('ui.home_ph_hp_desc') !!}</p>
+            {{-- Showcase grid --}}
+            <div class="pshowcase">
+
+                {{-- Featured hero card (left) --}}
+                <a href="#phone" class="pshowcase-hero" data-cat="phone">
+                    <div class="pshowcase-hero-media">
+                        <img src="{{ asset('assets/v11-hero.png') }}" alt="Ovion V11 Lite" loading="lazy" decoding="async" />
                     </div>
-                </div>
-                <div class="product-card-body">
-                    <span class="product-card-cat">{{ __('ui.home_cat_headphone') }}</span>
-                    <h3 class="product-card-name">{{ __('ui.home_coming_soon') }}</h3>
-                    <p class="product-card-desc">{{ __('ui.home_hp_desc') }}</p>
-                    <a href="#" class="btn btn-ghost">{{ __('ui.btn_explore') }}
-                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                            <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </a>
-                </div>
-            </article>
-
-            <article class="product-card" style="--i:2">
-                <div class="product-card-media product-card-media--placeholder">
-                    <div class="img-placeholder">
-                        <strong>{{ __('ui.home_ph_watch_title') }}</strong>
-                        <p>{!! __('ui.home_ph_watch_desc') !!}</p>
+                    <div class="pshowcase-hero-body">
+                        <span class="pshowcase-cat">Telefon</span>
+                        <h3>Ovion V11 Lite</h3>
+                        <p>90 Hz · 50 MP AI Kamera · 5000 mAh</p>
+                        <span class="pshowcase-link">Daha fazlası için
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
                     </div>
-                </div>
-                <div class="product-card-body">
-                    <span class="product-card-cat">{{ __('ui.home_cat_watch') }}</span>
-                    <h3 class="product-card-name">{{ __('ui.home_coming_soon') }}</h3>
-                    <p class="product-card-desc">{{ __('ui.home_watch_desc') }}</p>
-                    <a href="#" class="btn btn-ghost">{{ __('ui.btn_explore') }}
-                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                            <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </a>
-                </div>
-            </article>
+                </a>
 
+                {{-- 2×2 right grid --}}
+                <div class="pshowcase-grid">
+
+                    <a href="{{ url('/saatler/s3-pro') }}" class="pshowcase-card" data-cat="watch">
+                        <div class="pshowcase-card-media pshowcase-card-media--ph">
+                            <span>S3 Pro</span>
+                        </div>
+                        <div class="pshowcase-card-body">
+                            <span class="pshowcase-cat">Saat</span>
+                            <h4>Ovion S3 Pro</h4>
+                            <span class="pshowcase-link">Daha fazlası için
+                                <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                        </div>
+                    </a>
+
+                    <a href="{{ url('/kulakliklar/h1-pro') }}" class="pshowcase-card" data-cat="headphone">
+                        <div class="pshowcase-card-media pshowcase-card-media--ph">
+                            <span>H1 Pro</span>
+                        </div>
+                        <div class="pshowcase-card-body">
+                            <span class="pshowcase-cat">Kulaklık</span>
+                            <h4>Ovion H1 Pro</h4>
+                            <span class="pshowcase-link">Daha fazlası için
+                                <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="pshowcase-card pshowcase-card--soon" data-cat="phone">
+                        <div class="pshowcase-card-media pshowcase-card-media--ph">
+                            <span>V10 Pro</span>
+                        </div>
+                        <div class="pshowcase-card-body">
+                            <span class="pshowcase-cat">Telefon</span>
+                            <h4>Ovion V10 Pro</h4>
+                            <span class="pshowcase-badge">Yakında</span>
+                        </div>
+                    </a>
+
+                    <a href="{{ url('/aksesuarlar') }}" class="pshowcase-card" data-cat="accessory">
+                        <div class="pshowcase-card-media pshowcase-card-media--ph">
+                            <span>Aksesuarlar</span>
+                        </div>
+                        <div class="pshowcase-card-body">
+                            <span class="pshowcase-cat">Aksesuar</span>
+                            <h4>Tüm Aksesuarlar</h4>
+                            <span class="pshowcase-link">Daha fazlası için
+                                <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
         </div>
     </section>
 

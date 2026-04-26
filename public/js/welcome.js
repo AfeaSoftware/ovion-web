@@ -1,3 +1,97 @@
+// Hero Slider
+(function () {
+  const slider  = document.querySelector('.hero-slider');
+  if (!slider) return;
+
+  const slides  = slider.querySelectorAll('.hero-slide');
+  const dots    = slider.querySelectorAll('.hero-dot');
+  const prev    = slider.querySelector('.hero-slider-prev');
+  const next    = slider.querySelector('.hero-slider-next');
+  const DELAY   = 5500; // ms between auto-advance
+  let current   = 0;
+  let timer     = null;
+
+  function goTo(index) {
+    // Bounds wrap
+    index = (index + slides.length) % slides.length;
+
+    // Deactivate current
+    slides[current].classList.remove('is-active');
+    slides[current].setAttribute('aria-hidden', 'true');
+    dots[current].classList.remove('is-active');
+    dots[current].setAttribute('aria-selected', 'false');
+
+    // Activate next
+    current = index;
+    slides[current].classList.add('is-active');
+    slides[current].setAttribute('aria-hidden', 'false');
+    dots[current].classList.add('is-active');
+    dots[current].setAttribute('aria-selected', 'true');
+  }
+
+  function startAuto() {
+    stopAuto();
+    timer = setInterval(() => goTo(current + 1), DELAY);
+  }
+
+  function stopAuto() {
+    clearInterval(timer);
+  }
+
+  // Dot clicks
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      goTo(parseInt(dot.dataset.slide, 10));
+      startAuto(); // reset timer
+    });
+  });
+
+  // Arrow buttons
+  prev?.addEventListener('click', () => { goTo(current - 1); startAuto(); });
+  next?.addEventListener('click', () => { goTo(current + 1); startAuto(); });
+
+  // Pause on hover/focus
+  slider.addEventListener('mouseenter', stopAuto);
+  slider.addEventListener('mouseleave', startAuto);
+  slider.addEventListener('focusin', stopAuto);
+  slider.addEventListener('focusout', startAuto);
+
+  // Touch / swipe
+  let touchStartX = 0;
+  slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  slider.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) { goTo(dx < 0 ? current + 1 : current - 1); startAuto(); }
+  }, { passive: true });
+
+  // Respect reduced-motion
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    startAuto();
+  }
+})();
+
+// Product showcase category filter
+(function () {
+  const tabs  = document.querySelectorAll('.pcat-tab');
+  const items = document.querySelectorAll('.pshowcase-hero, .pshowcase-card');
+  if (!tabs.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+      const cat = tab.dataset.cat;
+      items.forEach(item => {
+        if (cat === 'all' || item.dataset.cat === cat) {
+          item.removeAttribute('hidden');
+        } else {
+          item.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+})();
+
 // Mobile hamburger toggle
 (function () {
   const nav = document.querySelector('.nav');
