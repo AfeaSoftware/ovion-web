@@ -305,3 +305,26 @@ if (heroStage && heroImg && !matchMedia('(prefers-reduced-motion: reduce)').matc
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
+
+// ========== Campaign slider prev / next ==========
+(function () {
+  const track = document.getElementById('campTrack');
+  const prev  = document.querySelector('.camp-prev');
+  const next  = document.querySelector('.camp-next');
+  if (!track || !prev || !next) return;
+
+  function cardWidth() {
+    const first = track.querySelector('.camp-card');
+    if (!first) return 0;
+    const style = getComputedStyle(track);
+    const gap   = parseFloat(style.gap) || 20;
+    return first.offsetWidth + gap;
+  }
+
+  prev.addEventListener('click', () => {
+    track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+  });
+  next.addEventListener('click', () => {
+    track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+  });
+})();
