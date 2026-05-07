@@ -13,6 +13,7 @@ class LocalizationMiddleware
     {
         $locale = $request->segment(1) === 'en' ? 'en' : 'tr';
         App::setLocale($locale);
+
         return $next($request);
     }
 }

@@ -2,7 +2,6 @@
 
 namespace App\Support;
 
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /**
@@ -15,8 +14,7 @@ use Illuminate\Support\Facades\Route;
 class LocaleResolver
 {
     private const RENAMES = [
-        'destek'      => 'support',
-        'aksesuarlar' => 'accessories',
+        'destek' => 'support',
     ];
 
     public static function altUrl(?string $currentRoute, string $locale): string
@@ -50,6 +48,6 @@ class LocaleResolver
     {
         $en = self::RENAMES[$name] ?? $name;
 
-        return 'en.' . $en;
+        return 'en.'.$en;
     }
 }

@@ -1,0 +1,94 @@
+Sayfanın en üstündeki büyük slider/banner.
+3:4 oran (dikey banner)
+
+Ürün gruplarının altında, kaydırmalı kategori bölümü.
+Görsel başına boyut: 900×1100 px.
+Her tip için görsel, Telefon-Saat-Kulaklık-Aksesuar.
+
+Konum: Scroll showcase'in altındaki bento grid.
+Geniş kart görseli: 800×500 px (yatay).
+İçerik: Pil / performans / ekran / bağlantı gibi özellik gösterimi.
+
+Konum: Güvence bölümünün altındaki "Özel Teklifler" kart sıralaması.
+Boyut: 800×600 px.
+İçerik: Kampanya kapak görseli.
+
+
+
+- telefon detay
+
+Telefon detay sayfası en üstü sağ ana telefon görseli.
+900×1100 px.
+Buraya yüklenen görsel sitede gösterilen modelin kapak görseli olarak kullanılacak. 
+
+Telefon detay, hero'dan sonra ilk büyük yatay banner (Kamera).
+1600×900 px (object-fit: cover).
+
+Telefon detay, kamera bölümünden sonra ekran billboard'u.
+1000×1250 px (dikey, object-fit: cover).
+
+Telefon detay, ekran bölümünden sonra kaydırmalı 3D tasarım vitrini (Cinema).
+900×1600 px (her bir görsel — dikey, object-fit: contain).
+Görsel adedi: 3-5 (önerilen 4).
+Telefon arka, yan, ikili gibi farklı açılar. Şeffaf arka plan PNG.
+
+Telefon detay, performance ve battery bölümleri arasında split görsel.
+1000×1250 px (dikey).
+Telefon ikili çekim veya pil/şarj sahnesi.
+
+
+
+- saat detay
+
+Saat detay sayfası en üstü, sağda saat görseli.
+600×700 px.
+
+Saat detay, hero'dan sonra büyük yatay banner (Sağlık & Fitness).
+1600×900 px (object-fit: cover, object-position: center 30%).
+
+Saat detay, watch faces'in altındaki tasarım split.
+1000×1200 px (object-fit: cover).
+
+Saat detay, tasarımdan sonra kare aktivite billboard'u.
+800×800 px (kare, object-fit: cover).
+
+Saat detay, aktiviteden sonra son split görsel (Pil).
+800×860 px (object-fit: cover).
+Saatin yan profili veya şarj sahnesi.
+
+
+
+- kulaklık detay
+
+Konum: Kulaklık detay sayfası en üstü, sağda kulaklık görseli.
+Boyut: 800×700 px.
+İçerik: Kulaklık önden veya 3/4 perspektif. Şeffaf arka plan PNG.
+
+Konum: Kulaklık detay, hero'dan sonra büyük yatay banner (ANC).
+Boyut: 1600×900 px (object-fit: cover).
+İçerik: Kulaklık takan kişi, sessiz/yoğun ortam vurgusu.
+
+Konum: Kulaklık detay, ANC features'tan sonra ses kalitesi split görseli.
+Boyut: 900×900 px (kare, object-fit: cover).
+İçerik: Kulaklık driver yakın çekim, ses dalga kompozisyonu.
+
+Konum: Kulaklık detay, ses kalitesinden sonra tasarım split görseli.
+Boyut: 900×900 px (kare, object-fit: cover).
+İçerik: Kulaklık materyali, ergonomik kapanma yakın çekim.
+
+
+
+- aksesuar detay
+
+Konum: Aksesuar liste sayfası, listede her aksesuarın küçük kart görseli.
+Boyut: 600×600 px (thumbnail otomatik kırpılır).
+İçerik: Aksesuar ürünü tek görsel. Şeffaf arka plan PNG.
+
+Konum: Aksesuar detay sayfası en üstü, ana ürün görseli.
+Boyut: 800×800 px (kare, object-fit: contain).
+İçerik: Aksesuar ürünü tek görsel. Şeffaf arka plan PNG.
+
+Konum: Aksesuar detay, hero'nun altındaki galeri ızgarası.
+Boyut: 800×800 px (kare, object-fit: cover).
+Görsel adedi: 1-10.
+İçerik: Aksesuarın farklı açılarından görseller.

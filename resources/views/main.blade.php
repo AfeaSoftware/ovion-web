@@ -59,5 +59,9 @@
     <script src="{{ asset('js/reveal.js') }}"></script>
     <script src="{{ asset('js/welcome.js') }}"></script>
     @stack('scripts')
+
+    @if(!empty($popups) && $popups->isNotEmpty())
+        @include('components.popups', ['popups' => $popups])
+    @endif
 </body>
 </html>
