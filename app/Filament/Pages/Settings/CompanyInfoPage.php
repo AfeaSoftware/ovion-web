@@ -16,6 +16,8 @@ use Filament\Support\Icons\Heroicon;
 
 class CompanyInfoPage extends AbstractSettingsPage
 {
+    protected string $view = 'filament.pages.settings.with-spacing';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBuildingOffice2;
 
     protected static ?int $navigationSort = 5;
@@ -162,29 +164,6 @@ class CompanyInfoPage extends AbstractSettingsPage
                         ->deletable(false)
                         ->collapsible(false),
                 ])
-                ->collapsible(),
-
-            Section::make('Konum')
-                ->description('Harita ve koordinat bilgileri')
-                ->schema([
-                    Grid::make(2)->schema([
-                        TextInput::make('location_latitude')
-                            ->label('Enlem')
-                            ->numeric(),
-                        TextInput::make('location_longitude')
-                            ->label('Boylam')
-                            ->numeric(),
-                    ]),
-                    TextInput::make('location_map_link')
-                        ->label('Harita Linki')
-                        ->url()
-                        ->columnSpanFull(),
-                    TextInput::make('location_iframe_url')
-                        ->label('Embed URL')
-                        ->url()
-                        ->columnSpanFull(),
-                ])
-                ->collapsible()
                 ->collapsed(),
 
             Section::make('Sosyal Ağlar')

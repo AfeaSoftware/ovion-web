@@ -4,7 +4,6 @@ namespace App\Providers\Filament;
 
 use Afea\Cms\Blog\Filament\BlogPlugin;
 use Afea\Cms\Faq\Filament\FaqPlugin;
-use Afea\Cms\Hero\Filament\HeroPlugin;
 use Afea\Cms\Popup\Filament\PopupPlugin;
 use Afea\Cms\Testimonials\Filament\TestimonialsPlugin;
 use App\Filament\Pages\Settings\CompanyInfoPage;
@@ -76,7 +75,6 @@ class AdminPanelProvider extends PanelProvider
             ->plugin(BlogPlugin::make())
             ->plugin(PopupPlugin::make())
             ->plugin(FaqPlugin::make())
-            ->plugin(TestimonialsPlugin::make())
-            ->plugin(HeroPlugin::make());
+            ->plugin(TestimonialsPlugin::make());
     }
 }

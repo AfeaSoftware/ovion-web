@@ -13,7 +13,8 @@
         "afea/filament-cms-starter": "@dev",
         "filament/filament": "^4.0",
         "laravel/framework": "^12.0",
-        "laravel/tinker": "^3.0"
+        "laravel/tinker": "^3.0",
+        "spatie/laravel-translatable": "^6.14"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

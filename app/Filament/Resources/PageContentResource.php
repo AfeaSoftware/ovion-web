@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use Afea\Cms\Settings\Filament\Clusters\SettingsCluster;
 use App\Filament\Resources\PageContentResource\Pages;
 use App\Models\PageContent;
 use Filament\Actions\ActionGroup;
@@ -29,7 +30,7 @@ class PageContentResource extends Resource
 {
     protected static ?string $model = PageContent::class;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'İçerik';
+    protected static ?string $cluster = SettingsCluster::class;
 
     protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentText;
 
@@ -67,6 +68,7 @@ class PageContentResource extends Resource
                                     'home' => 'Anasayfa',
                                     'about' => 'Hakkımızda',
                                     'support' => 'Destek',
+                                    'accessories' => 'Aksesuarlar',
                                 ])
                                 ->required()
                                 ->native(false)
@@ -90,11 +92,64 @@ class PageContentResource extends Resource
                 //  ANASAYFA
                 // ════════════════════════════════════════
 
+                Section::make('Hero Slider')
+                    ->description('Anasayfa hero slaytları (full banner). Her slayt için arka plan görseli, başlık, açıklama ve buton tanımla.')
+                    ->schema([
+                        Repeater::make('content.home_hero')
+                            ->hiddenLabel()
+                            ->reorderable()
+                            ->collapsible()
+                            ->collapsed()
+                            ->itemLabel(fn (array $state): ?string => $state['title'] ?? null)
+                            ->maxItems(10)
+                            ->addActionLabel('Slayt Ekle')
+                            ->schema([
+                                FileUpload::make('image')
+                                    ->label('Banner Görseli')
+                                    ->helperText('Önerilen: 1920×1080 px (yatay), JPG veya PNG.')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('page-content/home/hero')
+                                    ->visibility('public')
+                                    ->maxSize(50 * 1024)
+                                    ->columnSpanFull(),
+                                TextInput::make('badge_text')
+                                    ->label('Üst Etiket (Eyebrow)')
+                                    ->maxLength(255)
+                                    ->columnSpanFull(),
+                                TextInput::make('title')
+                                    ->label('Başlık')
+                                    ->required()
+                                    ->maxLength(255)
+                                    ->helperText('HTML kullanılabilir (örn: <br>).')
+                                    ->columnSpanFull(),
+                                Textarea::make('description')
+                                    ->label('Açıklama')
+                                    ->rows(3)
+                                    ->maxLength(1000)
+                                    ->columnSpanFull(),
+                                Grid::make(2)->schema([
+                                    TextInput::make('cta_text')
+                                        ->label('Buton Metni')
+                                        ->maxLength(255),
+                                    TextInput::make('cta_url')
+                                        ->label('Buton URL')
+                                        ->url()
+                                        ->maxLength(2048),
+                                ]),
+                            ])
+                            ->columnSpanFull(),
+                    ])
+                    ->visible(fn (Get $get): bool => $get('type') === 'home')
+                    ->collapsible(),
+
                 Section::make('Stat Strip — Sayılar')
                     ->description('Hero altındaki sayı şeridi (max 4). Boş bırakılırsa varsayılanlar görünür.')
                     ->schema([
                         Repeater::make('content.home_stats')
                             ->hiddenLabel()
+                            ->collapsed()
+                            ->itemLabel(fn (array $state): ?string => $state['label'] ?? null)
                             ->maxItems(4)
                             ->reorderable()
                             ->defaultItems(0)
@@ -110,11 +165,42 @@ class PageContentResource extends Resource
                     ->visible(fn (Get $get): bool => $get('type') === 'home')
                     ->collapsible(),
 
+                Section::make('Tüm Ürünler — Showcase')
+                    ->description('Anasayfa "Tüm Ürünler" bölümü. Kartlar Ürünler ve Aksesuarlar panellerinden otomatik çekilir; sekmeler de mevcut ürün tipi ve aksesuar kategorilerinden dinamik oluşur.')
+                    ->schema([
+                        Grid::make(2)->schema([
+                            TextInput::make('content.home_showcase_kicker')
+                                ->label('Üst Etiket (Kicker)')
+                                ->helperText('örn: Koleksiyon')
+                                ->maxLength(100),
+                            TextInput::make('content.home_showcase_title')
+                                ->label('Bölüm Başlığı')
+                                ->helperText('örn: Tüm Ürünler')
+                                ->maxLength(150),
+                        ]),
+
+                        TextInput::make('content.home_showcase_tab_all')
+                            ->label('"Tümü" Sekmesi Etiketi')
+                            ->helperText('Diğer sekmeler ürün tipi ve aksesuar kategorisi adlarından otomatik gelir.')
+                            ->maxLength(50)
+                            ->columnSpanFull(),
+
+                        TextInput::make('content.home_showcase_link_text')
+                            ->label('Kart Bağlantı Metni')
+                            ->helperText('örn: Daha fazlası için')
+                            ->maxLength(100)
+                            ->columnSpanFull(),
+                    ])
+                    ->visible(fn (Get $get): bool => $get('type') === 'home')
+                    ->collapsible(),
+
                 Section::make('Scroll Showcase — Kategori Kartları')
                     ->description('Kaydırmalı kategori bölümü. Her kart için görsel + içerik.')
                     ->schema([
                         Repeater::make('content.home_scroll')
                             ->hiddenLabel()
+                            ->collapsed()
+                            ->itemLabel(fn (array $state): ?string => $state['title'] ?? null)
                             ->reorderable()
                             ->defaultItems(0)
                             ->addActionLabel('Kart Ekle')
@@ -126,7 +212,7 @@ class PageContentResource extends Resource
                                     ->disk('public')
                                     ->directory('page-content/home/scroll')
                                     ->visibility('public')
-                                    ->maxSize(10 * 1024)
+                                    ->maxSize(50 * 1024)
                                     ->columnSpanFull(),
                                 Grid::make(2)->schema([
                                     TextInput::make('eyebrow')->label('Üst Etiket')->maxLength(150),
@@ -154,6 +240,8 @@ class PageContentResource extends Resource
                         Repeater::make('content.home_feat_cards')
                             ->label('Kartlar')
                             ->maxItems(6)
+                            ->collapsed()
+                            ->itemLabel(fn (array $state): ?string => $state['title'] ?? null)
                             ->reorderable()
                             ->defaultItems(0)
                             ->addActionLabel('Kart Ekle')
@@ -185,7 +273,7 @@ class PageContentResource extends Resource
                                     ->disk('public')
                                     ->directory('page-content/home/feat')
                                     ->visibility('public')
-                                    ->maxSize(10 * 1024)
+                                    ->maxSize(50 * 1024)
                                     ->columnSpanFull(),
                                 TextInput::make('title')->label('Başlık')->required()->maxLength(150)->columnSpanFull(),
                                 Textarea::make('description')->label('Açıklama')->rows(3)->columnSpanFull(),
@@ -210,6 +298,8 @@ class PageContentResource extends Resource
                             ->label('Kartlar')
                             ->maxItems(8)
                             ->reorderable()
+                            ->collapsed()
+                            ->itemLabel(fn (array $state): ?string => $state['title'] ?? null)
                             ->defaultItems(0)
                             ->addActionLabel('Kart Ekle')
                             ->schema([
@@ -387,24 +477,44 @@ class PageContentResource extends Resource
                     ->collapsible(),
 
                 Section::make('Hızlı Erişim')
-                    ->description('6 hızlı erişim kartının başlık ve açıklamaları.')
+                    ->description('Hızlı erişim kartları. İstediğin kadar kart ekleyebilirsin.')
                     ->schema([
                         TextInput::make('content.quick_eyebrow')->label('Üst Etiket')->maxLength(255),
                         TextInput::make('content.quick_title')->label('Bölüm Başlığı')->maxLength(255)->columnSpanFull(),
-                        Grid::make(2)->schema([
-                            TextInput::make('content.act1_title')->label('1. Kart Başlığı')->maxLength(150),
-                            Textarea::make('content.act1_desc')->label('1. Kart Açıklama')->rows(2),
-                            TextInput::make('content.act2_title')->label('2. Kart Başlığı')->maxLength(150),
-                            Textarea::make('content.act2_desc')->label('2. Kart Açıklama')->rows(2),
-                            TextInput::make('content.act3_title')->label('3. Kart Başlığı')->maxLength(150),
-                            Textarea::make('content.act3_desc')->label('3. Kart Açıklama')->rows(2),
-                            TextInput::make('content.act4_title')->label('4. Kart Başlığı')->maxLength(150),
-                            Textarea::make('content.act4_desc')->label('4. Kart Açıklama')->rows(2),
-                            TextInput::make('content.act5_title')->label('5. Kart Başlığı')->maxLength(150),
-                            Textarea::make('content.act5_desc')->label('5. Kart Açıklama')->rows(2),
-                            TextInput::make('content.act6_title')->label('6. Kart Başlığı')->maxLength(150),
-                            Textarea::make('content.act6_desc')->label('6. Kart Açıklama')->rows(2),
-                        ]),
+                        Repeater::make('content.quick_actions')
+                            ->label('Kartlar')
+                            ->reorderable()
+                            ->collapsible()
+                            ->collapsed()
+                            ->itemLabel(fn (array $state): ?string => $state['title'] ?? null)
+                            ->defaultItems(0)
+                            ->addActionLabel('Kart Ekle')
+                            ->schema([
+                                Grid::make(2)->schema([
+                                    Select::make('icon')
+                                        ->label('İkon')
+                                        ->options([
+                                            'shield' => 'Kalkan (Garanti)',
+                                            'wrench' => 'Anahtar (Servis)',
+                                            'book' => 'Kitap (Kılavuz)',
+                                            'question' => 'Soru (SSS)',
+                                            'chat' => 'Sohbet (Destek)',
+                                            'pin' => 'Konum (Bayi/Servis)',
+                                            'phone' => 'Telefon',
+                                            'mail' => 'E-posta',
+                                        ])
+                                        ->default('shield')
+                                        ->native(false)
+                                        ->required(),
+                                    TextInput::make('title')->label('Başlık')->required()->maxLength(150),
+                                ]),
+                                Textarea::make('desc')->label('Açıklama')->rows(2)->columnSpanFull(),
+                                Grid::make(2)->schema([
+                                    TextInput::make('cta')->label('Buton Metni')->maxLength(100),
+                                    TextInput::make('url')->label('Buton URL')->maxLength(500),
+                                ]),
+                            ])
+                            ->columnSpanFull(),
                     ])
                     ->visible(fn (Get $get): bool => $get('type') === 'support')
                     ->collapsible(),
@@ -473,6 +583,90 @@ class PageContentResource extends Resource
                     ->visible(fn (Get $get): bool => $get('type') === 'support')
                     ->collapsible(),
 
+                // ════════════════════════════════════════
+                //  AKSESUARLAR
+                // ════════════════════════════════════════
+
+                Section::make('Hero Bölümü')
+                    ->description('Aksesuarlar sayfasının üst başlık alanı.')
+                    ->schema([
+                        TextInput::make('content.hero_eyebrow')
+                            ->label('Üst Etiket')
+                            ->maxLength(255),
+                        TextInput::make('content.hero_title')
+                            ->label('Başlık')
+                            ->helperText('HTML kullanılabilir.')
+                            ->maxLength(500)
+                            ->columnSpanFull(),
+                        Textarea::make('content.hero_lede')
+                            ->label('Açıklama')
+                            ->rows(3)
+                            ->columnSpanFull(),
+                        Grid::make(2)->schema([
+                            TextInput::make('content.cta_all_text')->label('Buton: Tümünü Gör')->maxLength(100),
+                            TextInput::make('content.cta_device_text')->label('Buton: Cihazına Göre')->maxLength(100),
+                        ]),
+                    ])
+                    ->visible(fn (Get $get): bool => $get('type') === 'accessories')
+                    ->collapsible(),
+
+                Section::make('Öne Çıkan Başlığı')
+                    ->description('Üstteki spotlight kartının başlık alanı. Görsel, açıklama, fiyat ve buton bilgileri "Aksesuarlar" panelinde "Öne Çıkan" işaretli aksesuardan otomatik gelir.')
+                    ->schema([
+                        Grid::make(2)->schema([
+                            TextInput::make('content.spot_eyebrow')->label('Üst Etiket')->maxLength(255),
+                            TextInput::make('content.spot_title')
+                                ->label('Başlık')
+                                ->helperText('HTML kullanılabilir.')
+                                ->maxLength(500),
+                        ]),
+                    ])
+                    ->visible(fn (Get $get): bool => $get('type') === 'accessories')
+                    ->collapsible(),
+
+                Section::make('Ürün Grid Başlığı')
+                    ->description('Aksesuar listesi başlık alanı. Kartlar Aksesuarlar panelinden otomatik çekilir.')
+                    ->schema([
+                        Grid::make(2)->schema([
+                            TextInput::make('content.grid_eyebrow')->label('Üst Etiket')->maxLength(255),
+                            TextInput::make('content.grid_title')->label('Başlık')->maxLength(255),
+                        ]),
+                    ])
+                    ->visible(fn (Get $get): bool => $get('type') === 'accessories')
+                    ->collapsible(),
+
+                Section::make('Uyumluluk Bölümü')
+                    ->schema([
+                        Grid::make(2)->schema([
+                            TextInput::make('content.compat_eyebrow')->label('Üst Etiket')->maxLength(255),
+                            TextInput::make('content.compat_title')
+                                ->label('Başlık')
+                                ->helperText('HTML kullanılabilir.')
+                                ->maxLength(500),
+                        ]),
+                    ])
+                    ->visible(fn (Get $get): bool => $get('type') === 'accessories')
+                    ->collapsible(),
+
+                Section::make('CTA Bölümü')
+                    ->schema([
+                        TextInput::make('content.cta_eyebrow')->label('Üst Etiket')->maxLength(255),
+                        TextInput::make('content.cta_title')
+                            ->label('Başlık')
+                            ->helperText('HTML kullanılabilir.')
+                            ->maxLength(500)
+                            ->columnSpanFull(),
+                        Textarea::make('content.cta_desc')->label('Açıklama')->rows(2)->columnSpanFull(),
+                        Grid::make(2)->schema([
+                            TextInput::make('content.cta_btn1_text')->label('Buton 1 Metni')->maxLength(100),
+                            TextInput::make('content.cta_btn1_url')->label('Buton 1 URL')->maxLength(500),
+                            TextInput::make('content.cta_btn2_text')->label('Buton 2 Metni')->maxLength(100),
+                            TextInput::make('content.cta_btn2_url')->label('Buton 2 URL')->maxLength(500),
+                        ]),
+                    ])
+                    ->visible(fn (Get $get): bool => $get('type') === 'accessories')
+                    ->collapsible(),
+
             ])->columnSpanFull(),
         ]);
     }
@@ -488,6 +682,7 @@ class PageContentResource extends Resource
                         'home' => 'Anasayfa',
                         'about' => 'Hakkımızda',
                         'support' => 'Destek',
+                        'accessories' => 'Aksesuarlar',
                         default => $state ?? '-',
                     })
                     ->sortable(),
@@ -514,6 +709,7 @@ class PageContentResource extends Resource
                         'home' => 'Anasayfa',
                         'about' => 'Hakkımızda',
                         'support' => 'Destek',
+                        'accessories' => 'Aksesuarlar',
                     ])
                     ->native(false),
                 SelectFilter::make('locale')

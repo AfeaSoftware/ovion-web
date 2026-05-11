@@ -5,62 +5,110 @@ namespace App\Models;
 use Afea\Cms\Core\Concerns\HasSeo;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\Translatable\HasTranslations;
 
 class Product extends Model implements HasMedia
 {
-    use HasSeo, InteractsWithMedia;
+    use HasSeo, HasTranslations, InteractsWithMedia;
 
-    protected $fillable = [
-        'type',
-        'name',
+    /**
+     * Translatable attributes — Spatie stores each as {"tr":..., "en":...}.
+     * Includes JSON blocks (strip_stats, content, specs) so every visible
+     * piece of copy on the detail page can be edited per-locale.
+     */
+    public array $translatable = [
         'slug',
+        'name',
         'eyebrow',
         'tagline',
         'price_label',
         'price_note',
-        'buy_url',
         'cta_primary',
         'cta_secondary',
-        'cta_secondary_url',
+        'meta_title',
+        'meta_description',
         'strip_stats',
         'content',
         'specs',
+    ];
+
+    protected $fillable = [
+        'type',
+        'slug',
+        'name',
+        'eyebrow',
+        'tagline',
+        'strip_stats',
+        'content',
+        'specs',
+        'price',
+        'price_label',
+        'price_note',
+        'cta_primary',
+        'cta_secondary',
+        'buy_url',
+        'cta_secondary_url',
+        'meta_title',
+        'meta_description',
         'is_active',
+        'is_spotlight',
         'order',
     ];
 
     protected function casts(): array
     {
         return [
-            'strip_stats' => 'array',
-            'content' => 'array',
-            'specs' => 'array',
+            'price' => 'decimal:2',
             'is_active' => 'boolean',
+            'is_spotlight' => 'boolean',
             'order' => 'integer',
         ];
     }
 
+    protected static function booted(): void
+    {
+        static::saving(function (Product $product): void {
+            if ($product->is_spotlight && $product->isDirty('is_spotlight')) {
+                static::query()
+                    ->when($product->exists, fn ($q) => $q->whereKeyNot($product->getKey()))
+                    ->where('is_spotlight', true)
+                    ->update(['is_spotlight' => false]);
+            }
+        });
+    }
+
+    public function priceLabel(): ?string
+    {
+        if ($this->price === null) {
+            return null;
+        }
+
+        return '₺'.number_format((float) $this->price, 2, ',', '.');
+    }
+
     public function registerMediaCollections(): void
     {
-        // Common
+        // Hero & home-page card (every type)
         $this->addMediaCollection('hero')->singleFile();
+        $this->addMediaCollection('collection_card')->singleFile();
 
-        // Phone
+        // Phone-only
         $this->addMediaCollection('camera')->singleFile();
-        $this->addMediaCollection('cinema');
         $this->addMediaCollection('display')->singleFile();
+        $this->addMediaCollection('cinema'); // multi: design scroll
 
-        // Watch
+        // Watch-only
         $this->addMediaCollection('health')->singleFile();
         $this->addMediaCollection('design')->singleFile();
         $this->addMediaCollection('activity')->singleFile();
         $this->addMediaCollection('battery_img')->singleFile();
 
-        // Headphone
+        // Headphone-only
         $this->addMediaCollection('anc')->singleFile();
         $this->addMediaCollection('sound')->singleFile();
         $this->addMediaCollection('headphone_design')->singleFile();
@@ -107,5 +155,34 @@ class Product extends Model implements HasMedia
     public function scopeOfType(Builder $query, string $type): Builder
     {
         return $query->where('type', $type);
+    }
+
+    public function getFallbackLocale(): string
+    {
+        return 'tr';
+    }
+
+    public function resolveRouteBinding($value, $field = null)
+    {
+        $field ??= $this->getRouteKeyName();
+
+        if ($field === 'slug') {
+            $locale = app()->getLocale();
+
+            return $this->newQuery()
+                ->where(fn ($q) => $q
+                    ->where('slug->'.$locale, $value)
+                    ->orWhere('slug->tr', $value)
+                    ->orWhere('slug->en', $value)
+                )
+                ->first();
+        }
+
+        return parent::resolveRouteBinding($value, $field);
+    }
+
+    public function accessories(): BelongsToMany
+    {
+        return $this->belongsToMany(Accessory::class)->withTimestamps();
     }
 }

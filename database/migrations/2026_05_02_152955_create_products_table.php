@@ -11,33 +11,31 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table): void {
             $table->id();
 
-            // Type
+            // Type & identity
             $table->enum('type', ['phone', 'watch', 'headphone', 'accessory']);
-
-            // Identity
-            $table->string('name');
             $table->string('slug')->unique();
-            $table->string('eyebrow')->nullable();       // "Yeni — Telefon"
-            $table->string('tagline')->nullable();       // "Gücü hisset."
 
-            // Purchase
-            $table->string('price_label')->nullable();   // "₺6.499"
-            $table->string('price_note')->nullable();    // "Ücretsiz kargo · 2 yıl garanti"
-            $table->string('buy_url')->nullable();
-            $table->string('cta_primary')->nullable();   // "Hemen Satın Al"
-            $table->string('cta_secondary')->nullable(); // "Teknik Özellikler"
+            // Translatable scalar text — Spatie HasTranslations stores {"tr":"...","en":"..."}
+            $table->text('name')->nullable();
+            $table->text('eyebrow')->nullable();
+            $table->text('tagline')->nullable();
 
-            // Quick-stat strip [{value, label}, ...]
-            $table->json('strip_stats')->nullable();
+            // Translatable JSON blocks — Spatie wraps as {"tr":{...},"en":{...}}
+            $table->text('strip_stats')->nullable();
+            $table->text('content')->nullable();
+            $table->text('specs')->nullable();
 
-            // Feature cards [{metric, title, description}, ...]
-            $table->json('features')->nullable();
-
-            // Full specs table [{key, value, note}, ...]
-            $table->json('specs')->nullable();
+            // Pricing & purchase
+            $table->decimal('price', 10, 2)->nullable();
+            $table->text('price_label')->nullable();
+            $table->text('price_note')->nullable();
+            $table->text('cta_primary')->nullable();
+            $table->text('cta_secondary')->nullable();
+            $table->string('buy_url', 2048)->nullable();
+            $table->string('cta_secondary_url', 2048)->nullable();
 
             // SEO
-            $table->string('meta_title')->nullable();
+            $table->text('meta_title')->nullable();
             $table->text('meta_description')->nullable();
 
             // Visibility & ordering

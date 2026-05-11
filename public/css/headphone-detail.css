@@ -39,7 +39,8 @@
   border-bottom: 1px solid var(--line-2);
   transition: top .25s var(--ease);
 }
-.nav.shrunk ~ .hd-subnav { top: 54px; }
+.nav.shrunk ~ .hd-subnav,
+.nav.shrunk + * .hd-subnav { top: 54px; }
 .hd-subnav-inner {
   display: flex; align-items: center; justify-content: space-between;
   height: 48px; gap: 24px;

@@ -8,15 +8,15 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->string('cta_secondary_url', 2048)->nullable()->after('cta_secondary');
+        Schema::table('users', function (Blueprint $table): void {
+            $table->string('phone', 30)->nullable()->after('email');
         });
     }
 
     public function down(): void
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('cta_secondary_url');
+        Schema::table('users', function (Blueprint $table): void {
+            $table->dropColumn('phone');
         });
     }
 };

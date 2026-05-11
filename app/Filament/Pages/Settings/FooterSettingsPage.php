@@ -18,6 +18,8 @@ use Filament\Support\Icons\Heroicon;
 
 class FooterSettingsPage extends AbstractSettingsPage
 {
+    protected string $view = 'filament.pages.settings.with-spacing';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBars3BottomLeft;
 
     protected static ?int $navigationSort = 15;

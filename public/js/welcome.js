@@ -1,10 +1,10 @@
-// Hero Slider
+// Hero Slider (supports both legacy `.hero-slider` and new `.ov-hero`)
 (function () {
-  const slider  = document.querySelector('.hero-slider');
+  const slider  = document.querySelector('.ov-hero, .hero-slider');
   if (!slider) return;
 
-  const slides  = slider.querySelectorAll('.hero-slide');
-  const dots    = slider.querySelectorAll('.hero-dot');
+  const slides  = slider.querySelectorAll('.ov-hero-slide, .hero-slide');
+  const dots    = slider.querySelectorAll('.ov-hero-dot, .hero-dot');
   const prev    = slider.querySelector('.hero-slider-prev');
   const next    = slider.querySelector('.hero-slider-next');
   const DELAY   = 5500; // ms between auto-advance
@@ -73,23 +73,43 @@
 // Product showcase category filter
 (function () {
   const tabs  = document.querySelectorAll('.pcat-tab');
-  const items = document.querySelectorAll('.pshowcase-hero, .pshowcase-card');
+  const cards = document.querySelectorAll('.pshowcase-card');
   if (!tabs.length) return;
+
+  // 1 featured (left, spans 2 rows) + 4 grid (2×2 right) = 5 cards in "all" view
+  const MAX_ALL_VISIBLE = 5;
+
+  function applyFilter(cat) {
+    let shown = 0;
+    let firstVisible = null;
+
+    cards.forEach(card => {
+      const matches = cat === 'all' || card.dataset.cat === cat;
+      const limitReached = cat === 'all' && shown >= MAX_ALL_VISIBLE;
+
+      if (matches && !limitReached) {
+        card.removeAttribute('hidden');
+        if (!firstVisible) firstVisible = card;
+        shown++;
+      } else {
+        card.setAttribute('hidden', '');
+      }
+
+      card.classList.remove('is-featured');
+    });
+
+    if (firstVisible) firstVisible.classList.add('is-featured');
+  }
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('is-active'));
       tab.classList.add('is-active');
-      const cat = tab.dataset.cat;
-      items.forEach(item => {
-        if (cat === 'all' || item.dataset.cat === cat) {
-          item.removeAttribute('hidden');
-        } else {
-          item.setAttribute('hidden', '');
-        }
-      });
+      applyFilter(tab.dataset.cat);
     });
   });
+
+  applyFilter('all');
 })();
 
 // Mobile hamburger toggle

@@ -33,8 +33,7 @@
 <header class="nav">
   <div class="wrap nav-inner">
     <a href="{{ $r('home', 'en.home') }}" class="brand" aria-label="{{ __('ui.nav_homepage') }}">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span>ovion</span>
+      <img src="{{ asset('images/ovion-logo.png') }}" alt="Ovion" class="brand-logo" />
     </a>
     <button class="nav-hamburger"
             aria-label="{{ __('ui.nav_open_menu') }}"
@@ -87,6 +86,8 @@
         @endif
         @endforeach
 
+        <li><a href="{{ $r('aksesuarlar', 'en.accessories') }}">{{ __('ui.nav_accessories') }}</a></li>
+
         <li><a href="{{ $r('about', 'en.about') }}">{{ __('ui.nav_about') }}</a></li>
 
         <li><a href="{{ $r('destek', 'en.support') }}">{{ __('ui.nav_support') }}</a></li>
@@ -94,8 +95,21 @@
       </ul>
     </nav>
 
-    <a href="{{ $altUrl ?? '#' }}" class="nav-lang-switch" aria-label="{{ __('ui.lang_switch_label') }}">
-      {{ __('ui.lang_switch') }}
-    </a>
+    <div class="nav-actions" style="display:flex; align-items:center; gap:12px;">
+      <a href="{{ $r('cart.index', 'en.cart.index') }}" class="nav-icon-btn" aria-label="{{ __('ui.nav_cart') }}" title="{{ __('ui.nav_cart') }}">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+      </a>
+      <a href="{{ auth()->check() ? $r('account', 'en.account') : $r('login', 'en.login') }}" class="nav-icon-btn" aria-label="{{ auth()->check() ? __('ui.nav_account') : __('ui.nav_login') }}" title="{{ auth()->check() ? __('ui.nav_account') : __('ui.nav_login') }}">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+        </svg>
+      </a>
+      <a href="{{ $altUrl ?? '#' }}" class="nav-lang-switch" aria-label="{{ __('ui.lang_switch_label') }}">
+        {{ __('ui.lang_switch') }}
+      </a>
+    </div>
   </div>
 </header>

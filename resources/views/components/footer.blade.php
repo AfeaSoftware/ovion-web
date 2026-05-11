@@ -30,9 +30,8 @@
         <div class="foot-block foot-block--{{ $block['type'] }}" style="grid-column: span {{ $block['colspan'] }};">
           @if($block['type'] === 'brand')
             <div class="foot-brand-col">
-              <div class="brand" style="font-size:18px">
-                <span class="brand-mark" aria-hidden="true"></span>
-                <span>{{ $block['title'] }}</span>
+              <div class="brand">
+                <img src="{{ asset('images/ovion-logo.png') }}" alt="{{ $block['title'] }}" class="brand-logo" />
               </div>
               @if(!empty($block['description']))
                 <p class="foot-about">{{ $block['description'] }}</p>
@@ -119,9 +118,8 @@
       @endphp
       <div class="foot-grid">
         <div class="foot-brand-col">
-          <div class="brand" style="font-size:18px">
-            <span class="brand-mark" aria-hidden="true"></span>
-            <span>ovion</span>
+          <div class="brand">
+            <img src="{{ asset('images/ovion-logo.png') }}" alt="Ovion" class="brand-logo" />
           </div>
           <p class="foot-about">{{ __('ui.footer_brand_desc') }}</p>
         </div>
