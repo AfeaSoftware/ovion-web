@@ -2094,3 +2094,25 @@ a.trust-card:hover .trust-link { gap: 8px; }
   background: color-mix(in oklab, var(--ink) 6%, transparent);
   border-color: var(--ink);
 }
+
+/* ── Mobile footer fixes ─────────────────────── */
+@media (max-width: 860px) {
+  .foot-grid--dynamic {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 28px !important;
+  }
+  .foot-grid--dynamic .foot-block { grid-column: span 1 !important; }
+  .foot-grid--dynamic .foot-block--brand { grid-column: 1 / -1 !important; }
+  .foot-grid--dynamic .foot-block--contact { grid-column: 1 / -1 !important; }
+}
+@media (max-width: 560px) {
+  .foot-grid--dynamic {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .foot-grid--dynamic .foot-block,
+  .foot-grid--dynamic .foot-block--brand,
+  .foot-grid--dynamic .foot-block--contact { grid-column: 1 / -1 !important; }
+  .foot-bot { flex-direction: column; align-items: flex-start; text-align: left; gap: 8px; }
+  .foot-bot > div:last-child { flex-wrap: wrap; }
+}

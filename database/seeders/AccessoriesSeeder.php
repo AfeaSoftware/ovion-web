@@ -3,89 +3,298 @@
 namespace Database\Seeders;
 
 use App\Models\Accessory;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class AccessoriesSeeder extends Seeder
 {
+    use WithoutModelEvents;
+
     public function run(): void
     {
-        $items = [
+        $rows = [
             [
-                'slug' => 'v11-lite-silikon-kilif',
                 'category' => 'kilif',
-                'price' => 299.00,
-                'name' => ['tr' => 'V11 Lite Silikon Kılıf', 'en' => 'V11 Lite Silicone Case'],
-                'summary' => ['tr' => 'Siyah · Beyaz · Lacivert · Kırmızı', 'en' => 'Black · White · Navy · Red'],
+                'slug' => [
+                    'tr' => 'v11-lite-silikon-kilif',
+                    'en' => 'silicone-case-en-test',
+                ],
+                'name' => [
+                    'tr' => 'V11 Lite Silikon Kılıf',
+                    'en' => 'V11 Lite Silicone Case',
+                ],
+                'summary' => [
+                    'tr' => 'Siyah · Beyaz · Lacivert · Kırmızı',
+                    'en' => 'Black · White · Navy · Red',
+                ],
+                'description' => [],
+                'price' => 299,
+                'price_note' => [],
+                'buy_url' => null,
+                'meta_title' => [
+                    'tr' => null,
+                ],
+                'meta_description' => [
+                    'tr' => null,
+                ],
+                'is_active' => 1,
+                'order' => 0,
+                'is_spotlight' => 1,
             ],
             [
-                'slug' => 'v11-lite-seffaf-kilif',
                 'category' => 'kilif',
-                'price' => 199.00,
-                'name' => ['tr' => 'V11 Lite Şeffaf Kılıf', 'en' => 'V11 Lite Clear Case'],
-                'summary' => ['tr' => 'Sararmaya dayanıklı polikarbonat', 'en' => 'Yellowing-resistant polycarbonate'],
+                'slug' => [
+                    'tr' => 'v11-lite-seffaf-kilif',
+                ],
+                'name' => [
+                    'tr' => 'V11 Lite Şeffaf Kılıf',
+                    'en' => 'V11 Lite Clear Case',
+                ],
+                'summary' => [
+                    'tr' => 'Sararmaya dayanıklı polikarbonat',
+                    'en' => 'Yellowing-resistant polycarbonate',
+                ],
+                'description' => [
+                    'tr' => null,
+                ],
+                'price' => 199,
+                'price_note' => [
+                    'tr' => null,
+                ],
+                'buy_url' => null,
+                'meta_title' => [
+                    'tr' => null,
+                ],
+                'meta_description' => [
+                    'tr' => null,
+                ],
+                'is_active' => 1,
+                'order' => 1,
+                'is_spotlight' => 0,
             ],
             [
-                'slug' => 'v11-lite-premium-deri',
                 'category' => 'kilif',
-                'price' => 499.00,
-                'name' => ['tr' => 'V11 Lite Premium Deri', 'en' => 'V11 Lite Premium Leather'],
-                'summary' => ['tr' => 'Camel · Siyah · Koyu Yeşil', 'en' => 'Camel · Black · Dark Green'],
+                'slug' => [
+                    'tr' => 'v11-lite-premium-deri',
+                ],
+                'name' => [
+                    'tr' => 'V11 Lite Premium Deri',
+                    'en' => 'V11 Lite Premium Leather',
+                ],
+                'summary' => [
+                    'tr' => 'Camel · Siyah · Koyu Yeşil',
+                    'en' => 'Camel · Black · Dark Green',
+                ],
+                'description' => [
+                    'tr' => null,
+                ],
+                'price' => 499,
+                'price_note' => [
+                    'tr' => null,
+                ],
+                'buy_url' => null,
+                'meta_title' => [
+                    'tr' => null,
+                ],
+                'meta_description' => [
+                    'tr' => null,
+                ],
+                'is_active' => 1,
+                'order' => 2,
+                'is_spotlight' => 0,
             ],
             [
-                'slug' => 'v11-lite-temperli-cam',
                 'category' => 'ekran',
-                'price' => 149.00,
-                'name' => ['tr' => 'V11 Lite Temperli Cam', 'en' => 'V11 Lite Tempered Glass'],
-                'summary' => ['tr' => '9H sertlik · 2.5D kenar · 2\'li paket', 'en' => '9H hardness · 2.5D edge · 2-pack'],
+                'slug' => [
+                    'tr' => 'v11-lite-temperli-cam',
+                ],
+                'name' => [
+                    'tr' => 'V11 Lite Temperli Cam',
+                    'en' => 'V11 Lite Tempered Glass',
+                ],
+                'summary' => [
+                    'tr' => '9H sertlik · 2.5D kenar · 2\'li paket',
+                    'en' => '9H hardness · 2.5D edge · 2-pack',
+                ],
+                'description' => [
+                    'tr' => null,
+                ],
+                'price' => 149,
+                'price_note' => [
+                    'tr' => null,
+                ],
+                'buy_url' => null,
+                'meta_title' => [
+                    'tr' => null,
+                ],
+                'meta_description' => [
+                    'tr' => null,
+                ],
+                'is_active' => 1,
+                'order' => 3,
+                'is_spotlight' => 0,
             ],
             [
-                'slug' => 'v11-lite-mat-film',
                 'category' => 'ekran',
-                'price' => 129.00,
-                'name' => ['tr' => 'V11 Lite Mat Film', 'en' => 'V11 Lite Matte Film'],
-                'summary' => ['tr' => 'Parmak izi gizleyici · Anti-yansıma', 'en' => 'Anti-fingerprint · Anti-glare'],
+                'slug' => [
+                    'tr' => 'v11-lite-mat-film',
+                ],
+                'name' => [
+                    'tr' => 'V11 Lite Mat Film',
+                    'en' => 'V11 Lite Matte Film',
+                ],
+                'summary' => [
+                    'tr' => 'Parmak izi gizleyici · Anti-yansıma',
+                    'en' => 'Anti-fingerprint · Anti-glare',
+                ],
+                'description' => [
+                    'tr' => null,
+                ],
+                'price' => 129,
+                'price_note' => [
+                    'tr' => null,
+                ],
+                'buy_url' => null,
+                'meta_title' => [
+                    'tr' => null,
+                ],
+                'meta_description' => [
+                    'tr' => null,
+                ],
+                'is_active' => 1,
+                'order' => 4,
+                'is_spotlight' => 0,
             ],
             [
-                'slug' => 'ovion-65w-gan-adapter',
                 'category' => 'sarj',
-                'price' => 349.00,
-                'name' => ['tr' => 'Ovion 65W GaN Adaptör', 'en' => 'Ovion 65W GaN Adapter'],
-                'summary' => ['tr' => 'USB-C PD · Katlanabilir priz', 'en' => 'USB-C PD · Foldable plug'],
+                'slug' => [
+                    'tr' => 'ovion-65w-gan-adapter',
+                ],
+                'name' => [
+                    'tr' => 'Ovion 65W GaN Adaptör',
+                    'en' => 'Ovion 65W GaN Adapter',
+                ],
+                'summary' => [
+                    'tr' => 'USB-C PD · Katlanabilir priz',
+                    'en' => 'USB-C PD · Foldable plug',
+                ],
+                'description' => [
+                    'tr' => null,
+                ],
+                'price' => 349,
+                'price_note' => [
+                    'tr' => null,
+                ],
+                'buy_url' => null,
+                'meta_title' => [
+                    'tr' => null,
+                ],
+                'meta_description' => [
+                    'tr' => null,
+                ],
+                'is_active' => 1,
+                'order' => 5,
+                'is_spotlight' => 0,
             ],
             [
-                'slug' => 'usb-c-orgulu-kablo',
                 'category' => 'sarj',
-                'price' => 99.00,
-                'name' => ['tr' => 'USB-C Örgülü Kablo', 'en' => 'USB-C Braided Cable'],
-                'summary' => ['tr' => '100W · 2 metre · Naylon örgü', 'en' => '100W · 2 metres · Nylon braid'],
+                'slug' => [
+                    'tr' => 'usb-c-orgulu-kablo',
+                ],
+                'name' => [
+                    'tr' => 'USB-C Örgülü Kablo',
+                    'en' => 'USB-C Braided Cable',
+                ],
+                'summary' => [
+                    'tr' => '100W · 2 metre · Naylon örgü',
+                    'en' => '100W · 2 metres · Nylon braid',
+                ],
+                'description' => [
+                    'tr' => null,
+                ],
+                'price' => 99,
+                'price_note' => [
+                    'tr' => null,
+                ],
+                'buy_url' => null,
+                'meta_title' => [
+                    'tr' => null,
+                ],
+                'meta_description' => [
+                    'tr' => null,
+                ],
+                'is_active' => 1,
+                'order' => 6,
+                'is_spotlight' => 0,
             ],
             [
-                'slug' => 's3-pro-spor-kayis',
                 'category' => 'kayis',
-                'price' => 179.00,
-                'name' => ['tr' => 'S3 Pro Spor Kayış', 'en' => 'S3 Pro Sport Strap'],
-                'summary' => ['tr' => 'Gece Mavisi · Koyu Kırmızı · Siyah', 'en' => 'Midnight Blue · Deep Red · Black'],
+                'slug' => [
+                    'tr' => 's3-pro-spor-kayis',
+                ],
+                'name' => [
+                    'tr' => 'S3 Pro Spor Kayış',
+                    'en' => 'S3 Pro Sport Strap',
+                ],
+                'summary' => [
+                    'tr' => 'Gece Mavisi · Koyu Kırmızı · Siyah',
+                    'en' => 'Midnight Blue · Deep Red · Black',
+                ],
+                'description' => [
+                    'tr' => null,
+                ],
+                'price' => 179,
+                'price_note' => [
+                    'tr' => null,
+                ],
+                'buy_url' => null,
+                'meta_title' => [
+                    'tr' => null,
+                ],
+                'meta_description' => [
+                    'tr' => null,
+                ],
+                'is_active' => 1,
+                'order' => 7,
+                'is_spotlight' => 0,
             ],
             [
-                'slug' => 's3-pro-milan-orgu',
                 'category' => 'kayis',
-                'price' => 379.00,
-                'name' => ['tr' => 'S3 Pro Milan Örgü', 'en' => 'S3 Pro Milanese Loop'],
-                'summary' => ['tr' => 'Paslanmaz çelik · Gümüş · Gold', 'en' => 'Stainless steel · Silver · Gold'],
+                'slug' => [
+                    'tr' => 's3-pro-milan-orgu',
+                ],
+                'name' => [
+                    'tr' => 'S3 Pro Milan Örgü',
+                    'en' => 'S3 Pro Milanese Loop',
+                ],
+                'summary' => [
+                    'tr' => 'Paslanmaz çelik · Gümüş · Gold',
+                    'en' => 'Stainless steel · Silver · Gold',
+                ],
+                'description' => [
+                    'tr' => null,
+                ],
+                'price' => 379,
+                'price_note' => [
+                    'tr' => null,
+                ],
+                'buy_url' => null,
+                'meta_title' => [
+                    'tr' => null,
+                ],
+                'meta_description' => [
+                    'tr' => null,
+                ],
+                'is_active' => 1,
+                'order' => 8,
+                'is_spotlight' => 0,
             ],
         ];
 
-        foreach ($items as $i => $data) {
+        foreach ($rows as $row) {
             Accessory::updateOrCreate(
-                ['slug' => $data['slug']],
-                [
-                    'category' => $data['category'],
-                    'name' => $data['name'],
-                    'summary' => $data['summary'],
-                    'price' => $data['price'],
-                    'is_active' => true,
-                    'order' => $i,
-                ],
+                ['slug->tr' => $row['slug']['tr'] ?? null],
+                $row,
             );
         }
     }

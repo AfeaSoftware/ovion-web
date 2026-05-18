@@ -1387,23 +1387,21 @@
 }
 
 @media (max-width: 960px) {
-  .pd-story-cinema { height: auto; }
+  /* Cinema swap stays active on mobile — sticky stage flips to single column */
   .pd-story-cinema-sticky {
-    position: relative;
-    top: auto;
-    height: auto;
     grid-template-columns: 1fr;
-    gap: clamp(24px, 5vw, 40px);
-    padding: clamp(48px, 9vw, 80px) clamp(16px, 4vw, 32px);
+    gap: clamp(20px, 4vw, 32px);
+    padding: clamp(20px, 4vw, 32px) clamp(16px, 4vw, 32px);
+    align-items: stretch;
+    grid-template-rows: minmax(260px, 60vh) auto;
   }
-  .pd-story-cinema-visual { height: clamp(320px, 60vw, 460px); }
-  .pd-story-cinema-caps { min-height: 0; }
-  /* On mobile, swap mode disabled — show only first slide. Caps stack. */
-  .pd-story-cinema-img { position: relative; opacity: 1; }
-  .pd-story-cinema-img:not(:first-child) { display: none; }
-  .pd-story-cinema-cap { position: relative; opacity: 1; transform: none; }
-  .pd-story-cinema-cap:not(:first-child) { display: none; }
-  .pd-story-cinema-dots { display: none; }
+  .pd-story-cinema-visual {
+    height: 100%;
+    min-height: clamp(260px, 56vw, 380px);
+  }
+  .pd-story-cinema-copy { height: auto; }
+  .pd-story-cinema-caps { min-height: clamp(140px, 22vh, 200px); }
+  .pd-story-cinema-cap h2 { font-size: clamp(24px, 5vw, 36px); }
 }
 
 /* ── BATTERY: stylized cell ──────────────────── */
