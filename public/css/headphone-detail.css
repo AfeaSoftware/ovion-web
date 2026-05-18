@@ -646,3 +646,143 @@
   .hd-buy-actions .btn, .hd-buy-actions .btn-hd-primary { width: 100%; }
   .hd-specs-table { grid-template-columns: 1fr; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   DECORATIVE BLOCKS (image-free replacements)
+   ═══════════════════════════════════════════════════════════ */
+
+.hd-billboard--decor {
+  position: relative;
+  min-height: clamp(440px, 58vw, 620px);
+  background: linear-gradient(135deg, #0b1c33, #050a18);
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.hd-billboard--decor .hd-billboard-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  padding: 48px clamp(20px, 5vw, 80px);
+}
+.hd-billboard-decor {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  z-index: 1;
+  opacity: .8;
+}
+
+/* ANC waveform */
+.hd-wave {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1vw, 14px);
+  height: clamp(120px, 18vw, 180px);
+}
+.hd-wave-bar {
+  width: clamp(6px, .8vw, 10px);
+  background: linear-gradient(180deg, rgba(10,132,255,.95), rgba(10,132,255,.35));
+  border-radius: 999px;
+  animation: hd-wave-bounce 1.4s ease-in-out infinite;
+}
+.hd-wave-bar:nth-child(1) { height: 32%; animation-delay: -1.4s; }
+.hd-wave-bar:nth-child(2) { height: 58%; animation-delay: -1.2s; }
+.hd-wave-bar:nth-child(3) { height: 78%; animation-delay: -1.0s; }
+.hd-wave-bar:nth-child(4) { height: 92%; animation-delay: -.8s; }
+.hd-wave-bar:nth-child(5) { height: 100%; animation-delay: -.6s; }
+.hd-wave-bar:nth-child(6) { height: 88%; animation-delay: -.4s; }
+.hd-wave-bar:nth-child(7) { height: 70%; animation-delay: -.2s; }
+.hd-wave-bar:nth-child(8) { height: 50%; animation-delay: 0s; }
+.hd-wave-bar:nth-child(9) { height: 28%; animation-delay: .2s; }
+@keyframes hd-wave-bounce {
+  0%, 100% { transform: scaleY(.45); }
+  50% { transform: scaleY(1); }
+}
+
+/* Driver mock — sound split */
+.hd-split--decor .hd-split-media--decor {
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 50%, var(--bg-2), var(--bg));
+  min-height: 440px;
+}
+.hd-driver-mock {
+  position: relative;
+  width: clamp(220px, 28vw, 340px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
+.hd-driver-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid color-mix(in oklab, var(--ink) 30%, transparent);
+}
+.hd-driver-ring--1 { inset: 0;   animation: hd-driver-pulse 2.8s ease-out infinite; }
+.hd-driver-ring--2 { inset: 14%; animation: hd-driver-pulse 2.8s ease-out infinite .4s; }
+.hd-driver-ring--3 { inset: 28%; animation: hd-driver-pulse 2.8s ease-out infinite .8s; }
+.hd-driver-core {
+  width: 40%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, color-mix(in oklab, var(--ink) 35%, var(--bg-2)), var(--bg));
+  box-shadow: inset 0 0 0 2px color-mix(in oklab, var(--ink) 18%, transparent),
+              inset 0 8px 18px rgba(0,0,0,.25);
+}
+@keyframes hd-driver-pulse {
+  0% { opacity: 0; transform: scale(.85); }
+  50% { opacity: .6; }
+  100% { opacity: 0; transform: scale(1.1); }
+}
+
+/* Headphone mock — design split */
+.hd-headphone-mock {
+  position: relative;
+  width: clamp(220px, 28vw, 340px);
+  aspect-ratio: 1.2 / 1;
+  display: grid;
+  place-items: center;
+}
+.hd-headphone-band {
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  right: 12%;
+  height: 50%;
+  border: 6px solid color-mix(in oklab, var(--ink) 40%, transparent);
+  border-bottom: 0;
+  border-radius: 999px 999px 0 0;
+}
+.hd-headphone-cup {
+  position: absolute;
+  bottom: 8%;
+  width: 28%;
+  aspect-ratio: 1;
+  border-radius: 28%;
+  background: linear-gradient(160deg, color-mix(in oklab, var(--ink) 28%, var(--bg-2)), color-mix(in oklab, var(--ink) 14%, var(--bg-2)));
+  box-shadow: 0 12px 32px rgba(0,0,0,.18);
+}
+.hd-headphone-cup--l { left: 10%; }
+.hd-headphone-cup--r { right: 10%; }
+
+@media (max-width: 900px) {
+  .hd-billboard--decor { min-height: 0; }
+  .hd-billboard--decor .hd-billboard-content {
+    padding-top: clamp(36px, 7vw, 56px);
+    padding-bottom: clamp(160px, 28vw, 220px);
+  }
+  .hd-billboard-decor {
+    inset: auto 0 clamp(24px, 4vw, 48px) 0;
+    top: auto;
+    height: clamp(120px, 22vw, 180px);
+  }
+}
+@media (max-width: 640px) {
+  .hd-driver-mock, .hd-headphone-mock { transform: scale(.85); }
+  .hd-wave { gap: 6px; height: clamp(90px, 22vw, 130px); }
+  .hd-wave-bar { width: 5px; }
+}

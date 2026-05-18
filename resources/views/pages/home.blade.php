@@ -106,7 +106,7 @@
         'watch' => $isEnglish ? 'en.watches.show' : 'watches.show',
         'headphone' => $isEnglish ? 'en.headphones.show' : 'headphones.show',
       ];
-      $accessoryRouteName = $isEnglish ? 'en.accessories.show' : 'aksesuarlar.show';
+      $accessoryListRoute = $isEnglish ? 'en.accessories' : 'aksesuarlar';
 
       $showcaseTabs ??= [];
       $showcaseProducts ??= collect();
@@ -168,7 +168,7 @@
                 @foreach($showcaseAccessories as $accessory)
                     @php
                       $aImg = $accessoryCardImg($accessory);
-                      $aHref = route($accessoryRouteName, $accessory->slug);
+                      $aHref = $accessory->buy_url ?: route($accessoryListRoute);
                       $aCatLabel = $showcaseTabs[$accessory->category] ?? '';
                       $aDesc = $accessory->summary;
                     @endphp
@@ -191,46 +191,6 @@
             </div>
         </div>
     </section>
-
-    <!-- SCROLL SHOWCASE — KATEGORİLER -->
-    @php
-      $homeScroll = collect($content?->get('home_scroll') ?? []);
-    @endphp
-    @if($homeScroll->isNotEmpty())
-    <section class="scroll-stage" id="kategoriler" aria-label="Ürün kategorileri">
-        <div class="scroll-sticky">
-            <div class="wrap scroll-layout">
-                <div class="scroll-media-wrap">
-                    @foreach($homeScroll as $i => $row)
-                      @php $img = !empty($row['image']) ? \Illuminate\Support\Facades\Storage::url($row['image']) : null; @endphp
-                      @if($img)
-                        <img class="scroll-img{{ $i === 0 ? ' is-active' : '' }}" src="{{ $img }}" alt="{{ $row['title'] ?? '' }}" loading="lazy" decoding="async" />
-                      @endif
-                    @endforeach
-                </div>
-
-                <div class="scroll-texts">
-                    @foreach($homeScroll as $i => $row)
-                      <div class="scroll-text{{ $i === 0 ? ' is-active' : '' }}">
-                        <div class="scroll-cat-icon">
-                          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="14" height="24" rx="3"/><circle cx="14" cy="21" r="1" fill="currentColor" stroke="none"/></svg>
-                        </div>
-                        @if(!empty($row['eyebrow']))<p class="eyebrow">{{ $row['eyebrow'] }}</p>@endif
-                        <h2>{{ $row['title'] ?? '' }}</h2>
-                        @if(!empty($row['description']))<p>{{ $row['description'] }}</p>@endif
-                        @if(!empty($row['btn_text']) && !empty($row['btn_url']))
-                          <a href="{{ $row['btn_url'] }}" class="btn btn-primary" style="align-self: flex-start; margin-top: 8px;">{{ $row['btn_text'] }}</a>
-                        @endif
-                      </div>
-                    @endforeach
-                </div>
-            </div>
-            <div class="scroll-progress-track" aria-hidden="true">
-                <div class="scroll-progress-bar"></div>
-            </div>
-        </div>
-    </section>
-    @endif
 
     <!-- NEDEN OVİON — FEATURE BENTO -->
     @php

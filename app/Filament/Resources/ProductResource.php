@@ -3,43 +3,32 @@
 namespace App\Filament\Resources;
 
 use Afea\Cms\Core\Filament\Schemas\SeoSchema;
+use App\Filament\Resources\ProductResource\Pages;
+use App\Filament\Resources\ProductResource\RelationManagers\AccessoriesRelationManager;
 use App\Models\Product;
+use Filament\Actions\ActionGroup;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Table;
 use Illuminate\Support\Str;
-
-use App\Filament\Resources\ProductResource\{
-    RelationManagers\AccessoriesRelationManager,
-    Pages
-};
-use Filament\Actions\{
-    ActionGroup,
-    BulkActionGroup,
-    DeleteAction,
-    DeleteBulkAction,
-    EditAction
-};
-use Filament\Forms\Components\{
-    Repeater,
-    Select,
-    SpatieMediaLibraryFileUpload,
-    Textarea,
-    TextInput,
-    Toggle
-};
-use Filament\Schemas\Components\{
-    Utilities\Get,
-    Grid,
-    Section
-};
-use Filament\Tables\{
-    Columns\IconColumn,
-    Columns\SpatieMediaLibraryImageColumn,
-    Columns\TextColumn,
-    Filters\SelectFilter,
-    Table
-};
 
 class ProductResource extends Resource
 {
@@ -422,7 +411,6 @@ class ProductResource extends Resource
                     ->description('Billboard metni + alt kart grid.')
                     ->schema([
                         ...self::sectionTextBlock('content.camera'),
-                        self::imageUpload('camera', hint: '1600×900 px — yatay billboard. object-fit: cover.'),
 
                         ...self::subHeading('content.camera_cards', 'Kamera Kartları'),
                         self::featureCards('content.camera'),
@@ -431,18 +419,28 @@ class ProductResource extends Resource
                     ->collapsible(),
 
                 Section::make('Telefon · Ekran Bölümü')
-                    ->description('Billboard görseli + ekran teknolojisi liste bloğu.')
+                    ->description('Ekran teknolojisi içerik + liste.')
                     ->schema([
                         ...self::sectionTextBlock('content.display'),
-                        self::imageUpload('display', hint: '1000×1250 px — dikey ekran görseli. object-fit: cover.'),
-
-                        ...self::subHeading('content.display_list', 'Ekran Teknolojisi'),
-                        Textarea::make('content.display_list.description')
-                            ->label('Ekran Teknolojisi — Açıklama')
-                            ->rows(2)
-                            ->maxLength(800)
-                            ->columnSpanFull(),
                         self::featureList('content.display'),
+                    ])
+                    ->visible(fn (Get $get) => $get('type') === 'phone')
+                    ->collapsible(),
+
+                Section::make('Telefon · Performans Bölümü')
+                    ->description('İşlemci, RAM, şarj vb. özellik kartları.')
+                    ->schema([
+                        ...self::sectionTextBlock('content.performance'),
+                        self::featureCards('content.performance'),
+                    ])
+                    ->visible(fn (Get $get) => $get('type') === 'phone')
+                    ->collapsible(),
+
+                Section::make('Telefon · Pil Bölümü')
+                    ->description('Pil kapasitesi ve şarj özellik listesi.')
+                    ->schema([
+                        ...self::sectionTextBlock('content.battery'),
+                        self::featureList('content.battery'),
                     ])
                     ->visible(fn (Get $get) => $get('type') === 'phone')
                     ->collapsible(),
@@ -472,33 +470,14 @@ class ProductResource extends Resource
                     ->visible(fn (Get $get) => $get('type') === 'phone')
                     ->collapsible(),
 
-                Section::make('Telefon · Performans Bölümü')
-                    ->description('İşlemci, RAM, şarj vb. özellik kartları.')
-                    ->schema([
-                        ...self::sectionTextBlock('content.performance'),
-                        self::featureCards('content.performance'),
-                    ])
-                    ->visible(fn (Get $get) => $get('type') === 'phone')
-                    ->collapsible(),
-
-                Section::make('Telefon · Pil Bölümü')
-                    ->description('Pil kapasitesi ve şarj özellik listesi.')
-                    ->schema([
-                        ...self::sectionTextBlock('content.battery'),
-                        self::featureList('content.battery'),
-                    ])
-                    ->visible(fn (Get $get) => $get('type') === 'phone')
-                    ->collapsible(),
-
                 // ════════════════════════════════════════════════════════
                 //  SAAT (sırasıyla: Sağlık → Yüzler → Tasarım → Aktivite → Pil)
                 // ════════════════════════════════════════════════════════
 
                 Section::make('Saat · Sağlık Bölümü')
-                    ->description('Billboard görseli + nabız/SpO2/uyku kart grid.')
+                    ->description('Nabız/SpO2/uyku kart grid.')
                     ->schema([
                         ...self::sectionTextBlock('content.health'),
-                        self::imageUpload('health', hint: '1600×900 px yatay billboard. object-fit: cover, object-position: center 30%.'),
 
                         ...self::subHeading('content.health_cards', 'Sağlık Kartları'),
                         self::featureCards('content.health'),
@@ -529,10 +508,9 @@ class ProductResource extends Resource
                     ->collapsible(),
 
                 Section::make('Saat · Tasarım Bölümü')
-                    ->description('Kasa, kayış, ekran özellik listesi + tasarım görseli.')
+                    ->description('Kasa, kayış, ekran özellik listesi.')
                     ->schema([
                         ...self::sectionTextBlock('content.design'),
-                        self::imageUpload('design', hint: '1000×1200 px dikey split görsel. object-fit: cover.'),
                         self::featureList('content.design'),
                     ])
                     ->visible(fn (Get $get) => $get('type') === 'watch')
@@ -542,17 +520,15 @@ class ProductResource extends Resource
                     ->description('Spor modu sayısı, GPS, su geçirmezlik istatistikleri.')
                     ->schema([
                         ...self::sectionTextBlock('content.activity'),
-                        self::imageUpload('activity', hint: '800×800 px kare billboard. object-fit: cover.'),
                         self::statRow('content.activity'),
                     ])
                     ->visible(fn (Get $get) => $get('type') === 'watch')
                     ->collapsible(),
 
                 Section::make('Saat · Pil Bölümü')
-                    ->description('Pil ömrü, şarj listesi + pil görseli.')
+                    ->description('Pil ömrü, şarj listesi.')
                     ->schema([
                         ...self::sectionTextBlock('content.battery'),
-                        self::imageUpload('battery_img', hint: '800×860 px kare. object-fit: cover.'),
                         self::featureList('content.battery'),
                     ])
                     ->visible(fn (Get $get) => $get('type') === 'watch')
@@ -563,10 +539,9 @@ class ProductResource extends Resource
                 // ════════════════════════════════════════════════════════
 
                 Section::make('Kulaklık · ANC Bölümü')
-                    ->description('Gürültü engelleme billboard + alt kart grid + dB slider.')
+                    ->description('Gürültü engelleme alt kart grid + dB slider.')
                     ->schema([
                         ...self::sectionTextBlock('content.anc'),
-                        self::imageUpload('anc', hint: '1600×900 px yatay billboard.'),
 
                         ...self::subHeading('content.anc_cards', 'ANC Kartları'),
                         self::featureCards('content.anc', 3),
@@ -581,20 +556,18 @@ class ProductResource extends Resource
                     ->collapsible(),
 
                 Section::make('Kulaklık · Ses Kalitesi Bölümü')
-                    ->description('Sürücü, frekans, codec özellik listesi + sürücü görseli.')
+                    ->description('Sürücü, frekans, codec özellik listesi.')
                     ->schema([
                         ...self::sectionTextBlock('content.sound'),
-                        self::imageUpload('sound', hint: '900×900 px kare split görsel.'),
                         self::featureList('content.sound'),
                     ])
                     ->visible(fn (Get $get) => $get('type') === 'headphone')
                     ->collapsible(),
 
                 Section::make('Kulaklık · Tasarım Bölümü')
-                    ->description('Ergonomi, ağırlık, malzeme listesi + tasarım görseli.')
+                    ->description('Ergonomi, ağırlık, malzeme listesi.')
                     ->schema([
                         ...self::sectionTextBlock('content.design'),
-                        self::imageUpload('headphone_design', hint: '900×900 px kare split görsel.'),
                         self::featureList('content.design'),
                     ])
                     ->visible(fn (Get $get) => $get('type') === 'headphone')

@@ -6,7 +6,6 @@
 @if($compatibleAccessories->isNotEmpty())
   @php
     $isEnglish = ($locale ?? 'tr') === 'en';
-    $accessoryShowRoute = $isEnglish ? 'en.accessories.show' : 'aksesuarlar.show';
     $accessoryIndexRoute = $isEnglish ? 'en.accessories' : 'aksesuarlar';
     $categoryLabels = [
       'kilif' => $isEnglish ? 'Case' : 'Kılıf',
@@ -27,7 +26,7 @@
           @php
             $catLabel = $categoryLabels[$accessory->category] ?? $accessory->category;
             $imgUrl = $accessory->imageUrl('thumb');
-            $href = route($accessoryShowRoute, ['slug' => $accessory->slug]);
+            $href = $accessory->buy_url ?: route($accessoryIndexRoute);
           @endphp
           <a href="{{ $href }}" class="pd-compat-card">
             <div class="pd-compat-card-media">

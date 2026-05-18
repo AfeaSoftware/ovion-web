@@ -20,9 +20,6 @@
 @php
   $heroMedia = $product->getFirstMedia('hero');
   $heroImg = $heroMedia?->getUrl();
-  $ancImg = $product->getFirstMediaUrl('anc', 'webp') ?: ($product->getFirstMediaUrl('anc') ?: null);
-  $soundImg = $product->getFirstMediaUrl('sound', 'webp') ?: ($product->getFirstMediaUrl('sound') ?: null);
-  $designImg = $product->getFirstMediaUrl('headphone_design', 'webp') ?: ($product->getFirstMediaUrl('headphone_design') ?: null);
   $stripStats = collect($product->strip_stats ?? []);
   $ancCards = collect(data_get($product->content, 'anc.cards') ?? []);
   $ancDb = data_get($product->content, 'anc.db_value') ?: '38';
@@ -98,13 +95,14 @@
 @endif
 
 {{-- ═══════════════════════════════════════ ANC BILLBOARD ═══ --}}
-<section class="hd-billboard" id="pd-anc" data-pd-section="pd-anc">
-  <div class="hd-billboard-media">
-    @if($ancImg)
-      <img src="{{ $ancImg }}" alt="{{ $product->name }}" loading="lazy" decoding="async" width="1600" height="900" />
-    @endif
+<section class="hd-billboard hd-billboard--decor" id="pd-anc" data-pd-section="pd-anc">
+  <div class="hd-billboard-decor" aria-hidden="true">
+    <span class="hd-wave">
+      <span class="hd-wave-bar"></span><span class="hd-wave-bar"></span><span class="hd-wave-bar"></span>
+      <span class="hd-wave-bar"></span><span class="hd-wave-bar"></span><span class="hd-wave-bar"></span>
+      <span class="hd-wave-bar"></span><span class="hd-wave-bar"></span><span class="hd-wave-bar"></span>
+    </span>
   </div>
-  <div class="hd-billboard-overlay" aria-hidden="true"></div>
   <div class="hd-billboard-content hd-reveal">
     <p class="eyebrow" style="color:rgba(10,132,255,.9)">@pc('anc.eyebrow', '')</p>
     <h2>@pcRaw('anc.title', '')</h2>
@@ -155,11 +153,14 @@
 </section>
 
 {{-- ═══════════════════════════════════════ SOUND SPLIT ══════ --}}
-<section class="hd-split" id="pd-sound" data-pd-section="pd-sound">
-  <div class="hd-split-media">
-    @if($soundImg)
-      <img src="{{ $soundImg }}" alt="{{ $product->name }}" loading="lazy" decoding="async" width="900" height="900" />
-    @endif
+<section class="hd-split hd-split--decor" id="pd-sound" data-pd-section="pd-sound">
+  <div class="hd-split-media hd-split-media--decor" aria-hidden="true">
+    <span class="hd-driver-mock">
+      <span class="hd-driver-ring hd-driver-ring--1"></span>
+      <span class="hd-driver-ring hd-driver-ring--2"></span>
+      <span class="hd-driver-ring hd-driver-ring--3"></span>
+      <span class="hd-driver-core"></span>
+    </span>
   </div>
   <div class="hd-split-copy hd-reveal">
     <p class="eyebrow">@pc('sound.eyebrow', '')</p>
@@ -174,7 +175,14 @@
 </section>
 
 {{-- ═══════════════════════════════════════ DESIGN SPLIT ═════ --}}
-<section class="hd-split hd-split--flip" id="pd-design" data-pd-section="pd-design" style="background:var(--bg-2);">
+<section class="hd-split hd-split--flip hd-split--decor" id="pd-design" data-pd-section="pd-design" style="background:var(--bg-2);">
+  <div class="hd-split-media hd-split-media--decor" aria-hidden="true">
+    <span class="hd-headphone-mock">
+      <span class="hd-headphone-band"></span>
+      <span class="hd-headphone-cup hd-headphone-cup--l"></span>
+      <span class="hd-headphone-cup hd-headphone-cup--r"></span>
+    </span>
+  </div>
   <div class="hd-split-copy hd-reveal" style="background:var(--bg-2);">
     <p class="eyebrow">@pc('design.eyebrow', '')</p>
     <h2>@pcRaw('design.title', '')</h2>
@@ -184,11 +192,6 @@
         <li data-n="{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}">{{ $item['text'] ?? '' }}</li>
       @endforeach
     </ul>
-  </div>
-  <div class="hd-split-media">
-    @if($designImg)
-      <img src="{{ $designImg }}" alt="{{ $product->name }}" loading="lazy" decoding="async" width="900" height="900" />
-    @endif
   </div>
 </section>
 

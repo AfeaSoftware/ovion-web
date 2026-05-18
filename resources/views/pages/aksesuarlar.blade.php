@@ -97,9 +97,11 @@
               <span class="ak-spotlight-compat">{{ $spotlightCompat }}</span>
             @endif
           </div>
+          @if($spotlight->buy_url)
           <div class="ak-reveal ak-reveal-d3">
-            <a class="btn btn-primary" href="{{ $spotlight->buy_url ?: $r('aksesuarlar.show', 'en.accessories.show', ['slug' => $spotlight->slug]) }}">{{ __('ui.ak_inspect') }} →</a>
+            <a class="btn btn-primary" href="{{ $spotlight->buy_url }}">{{ __('ui.ak_inspect') }} →</a>
           </div>
+          @endif
         </div>
 
       </div>
@@ -155,7 +157,9 @@
                 @else
                   <span class="ak-card-price"></span>
                 @endif
-                <a href="{{ $r('aksesuarlar.show', 'en.accessories.show', ['slug' => $accessory->slug]) }}" class="ak-card-link">{{ __('ui.ak_inspect') }} <span aria-hidden="true">→</span></a>
+                @if($accessory->buy_url)
+                  <a href="{{ $accessory->buy_url }}" class="ak-card-link">{{ __('ui.ak_inspect') }} <span aria-hidden="true">→</span></a>
+                @endif
               </div>
             </div>
           </article>

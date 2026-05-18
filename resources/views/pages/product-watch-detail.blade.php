@@ -13,10 +13,6 @@
 
 @php
   $heroImg = $product->heroUrl('webp') ?? $product->heroUrl();
-  $healthImg = $product->getFirstMediaUrl('health', 'webp') ?: ($product->getFirstMediaUrl('health') ?: null);
-  $designImg = $product->getFirstMediaUrl('design', 'webp') ?: ($product->getFirstMediaUrl('design') ?: null);
-  $activityImg = $product->getFirstMediaUrl('activity', 'webp') ?: ($product->getFirstMediaUrl('activity') ?: null);
-  $batteryImg = $product->getFirstMediaUrl('battery_img', 'webp') ?: ($product->getFirstMediaUrl('battery_img') ?: null);
   $stripStats = collect($product->strip_stats ?? []);
   $healthCards = collect(data_get($product->content, 'health.cards') ?? []);
   $faces = collect(data_get($product->content, 'customization.faces') ?? []);
@@ -95,13 +91,12 @@
 @endif
 
 {{-- ═══════════════════════════════════════ HEALTH BILLBOARD ══ --}}
-<section class="wd-health-billboard" id="wd-health" data-wd-section="wd-health">
-  <div class="wd-health-billboard-media">
-    @if($healthImg)
-      <img src="{{ $healthImg }}" alt="{{ $product->name }}" loading="lazy" decoding="async" />
-    @endif
+<section class="wd-health-billboard wd-health-billboard--decor" id="wd-health" data-wd-section="wd-health">
+  <div class="wd-health-billboard-decor" aria-hidden="true">
+    <svg viewBox="0 0 600 200" preserveAspectRatio="none" class="wd-pulse-svg" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 100 L120 100 L150 60 L180 140 L210 40 L240 160 L270 100 L600 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="100" />
+    </svg>
   </div>
-  <div class="wd-health-billboard-overlay" aria-hidden="true"></div>
   <div class="wd-health-billboard-content wd-reveal">
     <p class="wd-eyebrow">@pc('health.eyebrow', '')</p>
     <h2>@pcRaw('health.title', '')</h2>
@@ -129,35 +124,18 @@
   </div>
 </section>
 
-{{-- ═══════════════════════════════════════ WATCH FACES ════════ --}}
-<section class="wd-faces-section" id="wd-faces" data-wd-section="wd-faces">
-  <div class="wrap">
-    <p class="wd-eyebrow wd-reveal">@pc('customization.eyebrow', '')</p>
-    <h2 class="wd-reveal wd-reveal-delay-1">@pcRaw('customization.title', '')</h2>
-    <div class="wd-faces-grid">
-      @foreach($faces as $i => $face)
-        <div class="wd-face-card wd-reveal{{ $i > 0 ? ' wd-reveal-delay-'.min($i, 3) : '' }}">
-          <div class="wd-face-preview wd-face-preview--sport">
-            <div class="wd-face-mock wd-face-mock--sport">
-              <div class="wd-face-time">10:09</div>
-            </div>
-          </div>
-          <div class="wd-face-info">
-            <h3>{{ $face['name'] ?? '' }}</h3>
-            <p>{{ $face['tags'] ?? '' }}</p>
-          </div>
-        </div>
-      @endforeach
-    </div>
-  </div>
-</section>
-
 {{-- ═══════════════════════════════════════ DESIGN SPLIT ═══════ --}}
-<section class="wd-split" id="wd-design" data-wd-section="wd-design">
-  <div class="wd-split-media" style="background:#e8e8ed; min-height:520px;">
-    @if($designImg)
-      <img src="{{ $designImg }}" alt="{{ $product->name }}" loading="lazy" decoding="async" />
-    @endif
+<section class="wd-split wd-split--decor" id="wd-design" data-wd-section="wd-design">
+  <div class="wd-split-media wd-split-media--decor" style="background:#e8e8ed; min-height:520px;" aria-hidden="true">
+    <span class="wd-watch-mock">
+      <span class="wd-watch-mock-dial">
+        <span class="wd-watch-mock-hand wd-watch-mock-hand--h"></span>
+        <span class="wd-watch-mock-hand wd-watch-mock-hand--m"></span>
+        <span class="wd-watch-mock-center"></span>
+      </span>
+      <span class="wd-watch-mock-strap wd-watch-mock-strap--top"></span>
+      <span class="wd-watch-mock-strap wd-watch-mock-strap--bot"></span>
+    </span>
   </div>
   <div class="wd-split-copy wd-reveal" style="background:var(--bg-2);">
     <p class="wd-eyebrow">@pc('design.eyebrow', '')</p>
@@ -172,12 +150,7 @@
 </section>
 
 {{-- ═══════════════════════════════════════ ACTIVITY BILLBOARD ══ --}}
-<section class="wd-activity-billboard" id="wd-activity" data-wd-section="wd-activity">
-  <div class="wd-activity-media">
-    @if($activityImg)
-      <img src="{{ $activityImg }}" alt="{{ $product->name }}" loading="lazy" decoding="async" />
-    @endif
-  </div>
+<section class="wd-activity-billboard wd-activity-billboard--decor" id="wd-activity" data-wd-section="wd-activity">
   <div class="wd-activity-content wd-reveal">
     <p class="wd-eyebrow" style="color:var(--watch-coral,#ff6b5b)">@pc('activity.eyebrow', '')</p>
     <h2>@pcRaw('activity.title', '')</h2>
@@ -191,15 +164,22 @@
       @endforeach
     </div>
   </div>
+  <div class="wd-activity-decor" aria-hidden="true">
+    <svg viewBox="0 0 200 200" class="wd-rings-svg" xmlns="http://www.w3.org/2000/svg">
+      <g transform="rotate(-90 100 100)">
+        <circle cx="100" cy="100" r="84" class="wd-ring-track wd-ring-track--move" />
+        <circle cx="100" cy="100" r="84" class="wd-ring-fill wd-ring-fill--move" pathLength="100" />
+        <circle cx="100" cy="100" r="64" class="wd-ring-track wd-ring-track--ex" />
+        <circle cx="100" cy="100" r="64" class="wd-ring-fill wd-ring-fill--ex" pathLength="100" />
+        <circle cx="100" cy="100" r="44" class="wd-ring-track wd-ring-track--stand" />
+        <circle cx="100" cy="100" r="44" class="wd-ring-fill wd-ring-fill--stand" pathLength="100" />
+      </g>
+    </svg>
+  </div>
 </section>
 
 {{-- ═══════════════════════════════════════ BATTERY SPLIT ═══════ --}}
-<section class="wd-split wd-split--flip" style="background:var(--bg);">
-  <div class="wd-split-media" style="background:#f2f2f7; min-height:480px;">
-    @if($batteryImg)
-      <img src="{{ $batteryImg }}" alt="{{ $product->name }}" loading="lazy" decoding="async" />
-    @endif
-  </div>
+<section class="wd-split wd-split--flip wd-split--decor" style="background:var(--bg);">
   <div class="wd-split-copy wd-reveal" style="background:var(--bg);">
     <p class="wd-eyebrow">@pc('battery.eyebrow', '')</p>
     <h2>@pcRaw('battery.title', '')</h2>
@@ -209,6 +189,12 @@
         <li data-n="{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}">{{ $item['text'] ?? '' }}</li>
       @endforeach
     </ul>
+  </div>
+  <div class="wd-split-media wd-split-media--decor" style="background:#f2f2f7; min-height:480px;" aria-hidden="true">
+    <span class="wd-battery-mock">
+      <span class="wd-battery-mock-fill"></span>
+      <span class="wd-battery-mock-tip"></span>
+    </span>
   </div>
 </section>
 

@@ -433,6 +433,7 @@ return [
     'pd_design' => 'Design',
     'pd_performance' => 'Performance',
     'pd_specs' => 'Specifications',
+    'pd_battery' => 'Battery',
     'pd_health' => 'Health',
     'pd_watch_faces' => 'Watch Faces',
     'pd_activity' => 'Activity',

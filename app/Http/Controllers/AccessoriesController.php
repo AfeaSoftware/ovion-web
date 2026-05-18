@@ -31,20 +31,4 @@ class AccessoriesController extends Controller
 
         return view('pages.aksesuarlar', compact('content', 'accessories', 'compatProducts', 'spotlight'));
     }
-
-    public function show(string $slug)
-    {
-        $locale = App::getLocale();
-
-        $accessory = Accessory::active()
-            ->where(fn ($q) => $q
-                ->where('slug->'.$locale, $slug)
-                ->orWhere('slug->tr', $slug)
-                ->orWhere('slug->en', $slug)
-            )
-            ->with(['media', 'products' => fn ($q) => $q->where('is_active', true)])
-            ->firstOrFail();
-
-        return view('pages.aksesuar-detay', compact('accessory'));
-    }
 }

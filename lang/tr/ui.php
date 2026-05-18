@@ -433,6 +433,7 @@ return [
     'pd_design' => 'Tasarım',
     'pd_performance' => 'Performans',
     'pd_specs' => 'Teknik Özellikler',
+    'pd_battery' => 'Pil',
     'pd_health' => 'Sağlık',
     'pd_watch_faces' => 'Saat Yüzleri',
     'pd_activity' => 'Aktivite',

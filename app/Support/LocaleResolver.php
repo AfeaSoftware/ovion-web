@@ -2,7 +2,6 @@
 
 namespace App\Support;
 
-use App\Models\Accessory;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -18,17 +17,12 @@ class LocaleResolver
     private const RENAMES = [
         'destek' => 'support',
         'aksesuarlar' => 'accessories',
-        'aksesuarlar.show' => 'accessories.show',
         'arama' => 'search',
     ];
 
     private const PRODUCT_SLUG_ROUTES = [
         'phones.show', 'watches.show', 'headphones.show',
         'en.phones.show', 'en.watches.show', 'en.headphones.show',
-    ];
-
-    private const ACCESSORY_SLUG_ROUTES = [
-        'aksesuarlar.show', 'en.accessories.show',
     ];
 
     public static function altUrl(?string $currentRoute, string $locale): string
@@ -104,15 +98,6 @@ class LocaleResolver
                 ->first();
 
             return $product?->getTranslation('slug', $altLocale, false) ?: $product?->getTranslation('slug', $currentLocale, false);
-        }
-
-        if (in_array($currentRoute, self::ACCESSORY_SLUG_ROUTES, true)) {
-            $accessory = Accessory::query()
-                ->where('slug->'.$currentLocale, $slug)
-                ->orWhere('slug->'.$altLocale, $slug)
-                ->first();
-
-            return $accessory?->getTranslation('slug', $altLocale, false) ?: $accessory?->getTranslation('slug', $currentLocale, false);
         }
 
         return null;

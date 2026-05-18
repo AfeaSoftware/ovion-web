@@ -19,7 +19,6 @@ Route::get('/telefonlar/{slug}', [ProductController::class, 'phone'])->name('pho
 Route::get('/saatler/{slug}', [ProductController::class, 'watch'])->name('watches.show');
 Route::get('/kulakliklar/{slug}', [ProductController::class, 'headphone'])->name('headphones.show');
 Route::get('/aksesuarlar', [AccessoriesController::class, 'index'])->name('aksesuarlar');
-Route::get('/aksesuarlar/{slug}', [AccessoriesController::class, 'show'])->name('aksesuarlar.show');
 Route::get('/arama', [SearchController::class, 'index'])->name('search');
 
 // Auth
@@ -53,7 +52,6 @@ Route::prefix('en')->name('en.')->group(function (): void {
     Route::get('/watches/{slug}', [ProductController::class, 'watch'])->name('watches.show');
     Route::get('/headphones/{slug}', [ProductController::class, 'headphone'])->name('headphones.show');
     Route::get('/accessories', [AccessoriesController::class, 'index'])->name('accessories');
-    Route::get('/accessories/{slug}', [AccessoriesController::class, 'show'])->name('accessories.show');
     Route::get('/search', [SearchController::class, 'index'])->name('search');
 
     Route::middleware('guest')->group(function (): void {

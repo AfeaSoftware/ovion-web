@@ -98,20 +98,7 @@ class Product extends Model implements HasMedia
         $this->addMediaCollection('collection_card')->singleFile();
 
         // Phone-only
-        $this->addMediaCollection('camera')->singleFile();
-        $this->addMediaCollection('display')->singleFile();
         $this->addMediaCollection('cinema'); // multi: design scroll
-
-        // Watch-only
-        $this->addMediaCollection('health')->singleFile();
-        $this->addMediaCollection('design')->singleFile();
-        $this->addMediaCollection('activity')->singleFile();
-        $this->addMediaCollection('battery_img')->singleFile();
-
-        // Headphone-only
-        $this->addMediaCollection('anc')->singleFile();
-        $this->addMediaCollection('sound')->singleFile();
-        $this->addMediaCollection('headphone_design')->singleFile();
     }
 
     public function registerMediaConversions(?Media $media = null): void
