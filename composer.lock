@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "11cde024f054f8e8b8e0cd18d9ae8658",
+    "content-hash": "a1d72c6b0e258252caf7ceb961b39ccf",
     "packages": [
         {
             "name": "afea/filament-activity-log",
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-activity-log",
-                "reference": "ee592007880aa1ae249a2d865b5b1a3ad4c23690"
+                "url": "../afea-filament-cms/packages/filament-activity-log",
+                "reference": "ba4b2b9e39ea887bcbfefa63f3caaa417671ef21"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -68,7 +68,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -76,8 +76,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-blog",
-                "reference": "3b2f9bd8ee4242c48a8ef5f2e76e06b6ac8248a4"
+                "url": "../afea-filament-cms/packages/filament-blog",
+                "reference": "6d932471f2ded4817d0d509dfa67504a64fc3466"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -133,7 +133,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -141,8 +141,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-cms-core",
-                "reference": "0733aade0b6611ad96abbd4c4f2c636fb37a7d89"
+                "url": "../afea-filament-cms/packages/filament-cms-core",
+                "reference": "06bcb4a5c722a0bc25188253933a2fef340c8e25"
             },
             "require": {
                 "filament/filament": "^4.0",
@@ -200,7 +200,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -208,8 +208,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-cms-starter",
-                "reference": "3634ebe01e367693721ee5bf0497d12dd60773fc"
+                "url": "../afea-filament-cms/packages/filament-cms-starter",
+                "reference": "4354717b7aba704aa5c44316a4ec9ce3ffec200c"
             },
             "require": {
                 "afea/filament-activity-log": "@dev",
@@ -277,7 +277,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -285,8 +285,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-faq",
-                "reference": "2e2bb23775131b2845d480c5d05a59c242d5e4a6"
+                "url": "../afea-filament-cms/packages/filament-faq",
+                "reference": "cd6b3ef85aca656040bc2a1cc5cec228366f9ca0"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -340,7 +340,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -348,8 +348,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-files",
-                "reference": "cc15633fc2ef3b20302de66c66e4041200754d39"
+                "url": "../afea-filament-cms/packages/filament-files",
+                "reference": "a4393daa7ed8ad5949efaa656fdaa0a9b291434d"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -405,7 +405,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -413,8 +413,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-hero",
-                "reference": "c0420e444c946dc96d8af9faef96216338c04b24"
+                "url": "../afea-filament-cms/packages/filament-hero",
+                "reference": "bd308c285de346aa1a1ebffa8894e2f9f528b5e1"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -470,7 +470,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -478,8 +478,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-media",
-                "reference": "227b0be4c30ab142021c0103dd7cae6ab2d1c21e"
+                "url": "../afea-filament-cms/packages/filament-media",
+                "reference": "cdd8b08a438b1cd221db1c4ad3a0205395ce7337"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -536,7 +536,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -544,8 +544,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-pages",
-                "reference": "c4dd56fc6fa68f47398206cc6b89bc469eb57497"
+                "url": "../afea-filament-cms/packages/filament-pages",
+                "reference": "11f0fb49f49d82060c53ff1b52d85de7ed7029c3"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -599,7 +599,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -607,8 +607,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-partners",
-                "reference": "a94b59cb2be98f77422bed677175820631ce3611"
+                "url": "../afea-filament-cms/packages/filament-partners",
+                "reference": "b05ca493fa28e9b74d2fd545fd05acbc5db54d16"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -665,7 +665,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -673,8 +673,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-popup",
-                "reference": "37cd6a4f038f3a809ef8475968c45446b4be90cc"
+                "url": "../afea-filament-cms/packages/filament-popup",
+                "reference": "c82f0631984bfd4500576f9c357d3b27122d151d"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -730,7 +730,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -738,8 +738,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-positions",
-                "reference": "eeabac732bb433b70d6735a828b7d7ff3f700d31"
+                "url": "../afea-filament-cms/packages/filament-positions",
+                "reference": "11192677c84ce8a470f83d4a4eb61a6bf92b85d1"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -794,7 +794,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -802,8 +802,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-redirect",
-                "reference": "8894b2ccb6213da1042339e995a60987e419acae"
+                "url": "../afea-filament-cms/packages/filament-redirect",
+                "reference": "0cc9ac76b39c3cd0605d672fb56a7760c1e388e0"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -857,7 +857,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -865,8 +865,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-services",
-                "reference": "e294a3eca81e7fec0fc922bdb0f972df57589123"
+                "url": "../afea-filament-cms/packages/filament-services",
+                "reference": "7fea37646bf1555440cbd0e450385630469305bb"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -922,7 +922,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -930,8 +930,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-settings",
-                "reference": "462066ca5f86655fb266bd6e34555c0e209ce75e"
+                "url": "../afea-filament-cms/packages/filament-settings",
+                "reference": "0450f847290ab8508f7f481016775d8a61b0feb8"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -987,7 +987,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -995,8 +995,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-testimonials",
-                "reference": "189bf540a70635236185a7406b1e1ca935553a9f"
+                "url": "../afea-filament-cms/packages/filament-testimonials",
+                "reference": "8805164b06268b26d60f0a3d8a398101643235ed"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -1052,7 +1052,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {
@@ -1060,8 +1060,8 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/filament-users",
-                "reference": "5da373b04df897290b9199c2fa914c1791a4ffa4"
+                "url": "../afea-filament-cms/packages/filament-users",
+                "reference": "a44859bec78d45fe69f5905bc21850ce3ca369bd"
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -1119,7 +1119,7 @@
             ],
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             }
         },
         {

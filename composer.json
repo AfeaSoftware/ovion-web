@@ -94,7 +94,7 @@
         {
             "name": "afea-packages",
             "type": "path",
-            "url": "/Users/acardagdelen/Documents/Projects/afea-filament-cms/packages/*",
+            "url": "../afea-filament-cms/packages/*",
             "options": {
                 "symlink": true
             }
