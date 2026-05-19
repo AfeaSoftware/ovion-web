@@ -89,15 +89,5 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "name": "afea-packages",
-            "type": "path",
-            "url": "../afea-filament-cms/packages/*",
-            "options": {
-                "symlink": true
-            }
-        }
-    ]
+    "prefer-stable": true
 }

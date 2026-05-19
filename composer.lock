@@ -4,24 +4,30 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1d72c6b0e258252caf7ceb961b39ccf",
+    "content-hash": "9d406d80efa17559590d8fb4775acd4f",
     "packages": [
         {
             "name": "afea/filament-activity-log",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-activity-log.git",
+                "reference": "9948d6f1c36e6265d09faa60774c6a39e07e4ee5"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-activity-log",
-                "reference": "ba4b2b9e39ea887bcbfefa63f3caaa417671ef21"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-activity-log/zipball/9948d6f1c36e6265d09faa60774c6a39e07e4ee5",
+                "reference": "9948d6f1c36e6265d09faa60774c6a39e07e4ee5",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
-                "alizharb/filament-activity-log": "^1.3",
                 "filament/filament": "^4.0",
                 "illuminate/contracts": "^12.0",
                 "illuminate/support": "^12.0",
                 "laravel/prompts": "^0.3",
                 "php": "^8.4",
+                "rmsramos/activitylog": "^2.0",
                 "spatie/laravel-activitylog": "^4.8"
             },
             "require-dev": {
@@ -43,11 +49,7 @@
                     "Afea\\Cms\\ActivityLog\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\ActivityLog\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -57,27 +59,34 @@
                     "email": "info@afeayazilim.com"
                 }
             ],
-            "description": "Activity log module for the Afea Filament CMS package ecosystem: wraps alizharb/filament-activity-log with opinionated config + idempotent install command.",
+            "description": "Activity log module for the Afea Filament CMS package ecosystem: wraps rmsramos/activitylog with opinionated config + idempotent install command.",
             "keywords": [
+                "Audit",
                 "activitylog",
                 "afea",
-                "audit",
                 "cms",
                 "filament",
                 "laravel"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-activity-log/issues",
+                "source": "https://github.com/AfeaSoftware/filament-activity-log/tree/v0.1.0"
+            },
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-blog",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-blog.git",
+                "reference": "4ef6402e693c21fd9319ce9fff15d4da989bb80c"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-blog",
-                "reference": "6d932471f2ded4817d0d509dfa67504a64fc3466"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-blog/zipball/4ef6402e693c21fd9319ce9fff15d4da989bb80c",
+                "reference": "4ef6402e693c21fd9319ce9fff15d4da989bb80c",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -109,11 +118,7 @@
                     "Afea\\Cms\\Blog\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Blog\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -131,18 +136,25 @@
                 "filament",
                 "laravel"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-blog/issues",
+                "source": "https://github.com/AfeaSoftware/filament-blog/tree/v0.1.0"
+            },
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-cms-core",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-cms-core.git",
+                "reference": "1472553fcedfe3fcef3de77508f15303d911d987"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-cms-core",
-                "reference": "06bcb4a5c722a0bc25188253933a2fef340c8e25"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-cms-core/zipball/1472553fcedfe3fcef3de77508f15303d911d987",
+                "reference": "1472553fcedfe3fcef3de77508f15303d911d987",
+                "shasum": ""
             },
             "require": {
                 "filament/filament": "^4.0",
@@ -175,11 +187,7 @@
                     "Afea\\Cms\\Core\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Core\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -191,25 +199,32 @@
             ],
             "description": "Shared infrastructure for the Afea Filament CMS package ecosystem: SEO metadata, polymorphic forms, routing strategy, Filament plugin base.",
             "keywords": [
+                "Forms",
                 "afea",
                 "cms",
                 "filament",
-                "forms",
                 "laravel",
                 "seo"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-cms-core/issues",
+                "source": "https://github.com/AfeaSoftware/filament-cms-core/tree/v0.1.0"
+            },
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-cms-starter",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-cms-starter.git",
+                "reference": "23c167458632b88ee6c4005c5e8e3b3d57aab3b2"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-cms-starter",
-                "reference": "4354717b7aba704aa5c44316a4ec9ce3ffec200c"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-cms-starter/zipball/23c167458632b88ee6c4005c5e8e3b3d57aab3b2",
+                "reference": "23c167458632b88ee6c4005c5e8e3b3d57aab3b2",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-activity-log": "@dev",
@@ -224,7 +239,6 @@
                 "afea/filament-popup": "@dev",
                 "afea/filament-positions": "@dev",
                 "afea/filament-redirect": "@dev",
-                "afea/filament-services": "@dev",
                 "afea/filament-settings": "@dev",
                 "afea/filament-testimonials": "@dev",
                 "afea/filament-users": "@dev",
@@ -240,6 +254,7 @@
                 "pestphp/pest": "^4.0",
                 "pestphp/pest-plugin-laravel": "^4.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -253,11 +268,7 @@
                     "Afea\\Cms\\Starter\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Starter\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -275,18 +286,25 @@
                 "laravel",
                 "starter"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-cms-starter/issues",
+                "source": "https://github.com/AfeaSoftware/filament-cms-starter/tree/v0.1.0"
+            },
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-faq",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-faq.git",
+                "reference": "303501c7aa8495e88c8553a2dc6606d5c3c4ab0d"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-faq",
-                "reference": "cd6b3ef85aca656040bc2a1cc5cec228366f9ca0"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-faq/zipball/303501c7aa8495e88c8553a2dc6606d5c3c4ab0d",
+                "reference": "303501c7aa8495e88c8553a2dc6606d5c3c4ab0d",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -316,11 +334,7 @@
                     "Afea\\Cms\\Faq\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Faq\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -332,24 +346,31 @@
             ],
             "description": "FAQ module for the Afea Filament CMS package ecosystem: categorized FAQs with polymorphic attachment to any content model.",
             "keywords": [
+                "FAQ",
                 "afea",
                 "cms",
-                "faq",
                 "filament",
                 "laravel"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-faq/issues",
+                "source": "https://github.com/AfeaSoftware/filament-faq/tree/v0.1.0"
+            },
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-files",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-files.git",
+                "reference": "069697bec4ebb5d771fbef7a914fe16aece1128f"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-files",
-                "reference": "a4393daa7ed8ad5949efaa656fdaa0a9b291434d"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-files/zipball/069697bec4ebb5d771fbef7a914fe16aece1128f",
+                "reference": "069697bec4ebb5d771fbef7a914fe16aece1128f",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -381,11 +402,7 @@
                     "Afea\\Cms\\Files\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Files\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -403,18 +420,25 @@
                 "files",
                 "laravel"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-files/issues",
+                "source": "https://github.com/AfeaSoftware/filament-files/tree/v0.1.0"
+            },
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-hero",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-hero.git",
+                "reference": "4fc8d7644782de7e244140ddbcc8541d6f29000c"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-hero",
-                "reference": "bd308c285de346aa1a1ebffa8894e2f9f528b5e1"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-hero/zipball/4fc8d7644782de7e244140ddbcc8541d6f29000c",
+                "reference": "4fc8d7644782de7e244140ddbcc8541d6f29000c",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -446,11 +470,7 @@
                     "Afea\\Cms\\Hero\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Hero\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -468,18 +488,25 @@
                 "hero",
                 "laravel"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-hero/issues",
+                "source": "https://github.com/AfeaSoftware/filament-hero/tree/v0.1.0"
+            },
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-media",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-media.git",
+                "reference": "a053a755a6167ee1c1a332460c9c538791ca2453"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-media",
-                "reference": "cdd8b08a438b1cd221db1c4ad3a0205395ce7337"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-media/zipball/a053a755a6167ee1c1a332460c9c538791ca2453",
+                "reference": "a053a755a6167ee1c1a332460c9c538791ca2453",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -511,11 +538,7 @@
                     "Afea\\Cms\\Media\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Media\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -534,18 +557,25 @@
                 "laravel",
                 "media"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-media/issues",
+                "source": "https://github.com/AfeaSoftware/filament-media/tree/v0.1.0"
+            },
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-pages",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-pages.git",
+                "reference": "beb93f7abe1c754a91de8f49fba4948bda96073d"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-pages",
-                "reference": "11f0fb49f49d82060c53ff1b52d85de7ed7029c3"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-pages/zipball/beb93f7abe1c754a91de8f49fba4948bda96073d",
+                "reference": "beb93f7abe1c754a91de8f49fba4948bda96073d",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -575,11 +605,7 @@
                     "Afea\\Cms\\Pages\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Pages\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -597,18 +623,25 @@
                 "laravel",
                 "pages"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-pages/issues",
+                "source": "https://github.com/AfeaSoftware/filament-pages/tree/v0.1.0"
+            },
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-partners",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-partners.git",
+                "reference": "c0f753d881f0bfecbca88f3f4d04a41a05207650"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-partners",
-                "reference": "b05ca493fa28e9b74d2fd545fd05acbc5db54d16"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-partners/zipball/c0f753d881f0bfecbca88f3f4d04a41a05207650",
+                "reference": "c0f753d881f0bfecbca88f3f4d04a41a05207650",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -640,11 +673,7 @@
                     "Afea\\Cms\\Partners\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Partners\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -663,18 +692,25 @@
                 "partners",
                 "references"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-partners/issues",
+                "source": "https://github.com/AfeaSoftware/filament-partners/tree/v0.1.0"
+            },
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-popup",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-popup.git",
+                "reference": "1e28bda34e2302a037c922f992a40dc619d586df"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-popup",
-                "reference": "c82f0631984bfd4500576f9c357d3b27122d151d"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-popup/zipball/1e28bda34e2302a037c922f992a40dc619d586df",
+                "reference": "1e28bda34e2302a037c922f992a40dc619d586df",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -706,11 +742,7 @@
                     "Afea\\Cms\\Popup\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Popup\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -728,18 +760,25 @@
                 "laravel",
                 "popup"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-popup/issues",
+                "source": "https://github.com/AfeaSoftware/filament-popup/tree/v0.1.0"
+            },
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-positions",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-positions.git",
+                "reference": "8699ee7b70fd3817a0c2142c9a9051efa253dd6a"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-positions",
-                "reference": "11192677c84ce8a470f83d4a4eb61a6bf92b85d1"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-positions/zipball/8699ee7b70fd3817a0c2142c9a9051efa253dd6a",
+                "reference": "8699ee7b70fd3817a0c2142c9a9051efa253dd6a",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -769,11 +808,7 @@
                     "Afea\\Cms\\Positions\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Positions\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -792,18 +827,25 @@
                 "laravel",
                 "positions"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-positions/issues",
+                "source": "https://github.com/AfeaSoftware/filament-positions/tree/v0.1.0"
+            },
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-redirect",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-redirect.git",
+                "reference": "569f437b717209c6eb07c01d3d0c432c32c062c5"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-redirect",
-                "reference": "0cc9ac76b39c3cd0605d672fb56a7760c1e388e0"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-redirect/zipball/569f437b717209c6eb07c01d3d0c432c32c062c5",
+                "reference": "569f437b717209c6eb07c01d3d0c432c32c062c5",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -833,11 +875,7 @@
                     "Afea\\Cms\\Redirect\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Redirect\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -855,83 +893,25 @@
                 "laravel",
                 "redirect"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
-        },
-        {
-            "name": "afea/filament-services",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-services",
-                "reference": "7fea37646bf1555440cbd0e450385630469305bb"
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-redirect/issues",
+                "source": "https://github.com/AfeaSoftware/filament-redirect/tree/v0.1.0"
             },
-            "require": {
-                "afea/filament-cms-core": "@dev",
-                "filament/filament": "^4.0",
-                "filament/spatie-laravel-media-library-plugin": "^4.0",
-                "illuminate/contracts": "^12.0",
-                "illuminate/database": "^12.0",
-                "illuminate/support": "^12.0",
-                "laravel/prompts": "^0.3",
-                "php": "^8.4",
-                "spatie/laravel-medialibrary": "^11.0"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.0",
-                "orchestra/testbench": "^10.0",
-                "pestphp/pest": "^4.0",
-                "pestphp/pest-plugin-laravel": "^4.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Afea\\Cms\\Services\\AfeaFilamentServicesServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Afea\\Cms\\Services\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Services\\Tests\\": "tests/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Afea Yazilim",
-                    "email": "info@afeayazilim.com"
-                }
-            ],
-            "description": "Services module for the Afea Filament CMS package ecosystem: multi-section service pages with hero, description, info, features, and stats.",
-            "keywords": [
-                "afea",
-                "cms",
-                "filament",
-                "laravel",
-                "services"
-            ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-settings",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-settings.git",
+                "reference": "087f57192b413a480b10414a68a9cc9cda81ebcf"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-settings",
-                "reference": "0450f847290ab8508f7f481016775d8a61b0feb8"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-settings/zipball/087f57192b413a480b10414a68a9cc9cda81ebcf",
+                "reference": "087f57192b413a480b10414a68a9cc9cda81ebcf",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -962,11 +942,7 @@
                     "Afea\\Cms\\Settings\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Settings\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -978,25 +954,32 @@
             ],
             "description": "Settings module for the Afea Filament CMS package ecosystem: Spatie Settings-backed Company, Site, Footer, Mailing and Notification settings with a Filament cluster UI.",
             "keywords": [
+                "Settings",
                 "afea",
                 "cms",
                 "filament",
                 "laravel",
-                "settings",
                 "spatie"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-settings/issues",
+                "source": "https://github.com/AfeaSoftware/filament-settings/tree/v0.1.0"
+            },
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-testimonials",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-testimonials.git",
+                "reference": "1d1537f4f0cc5f88fa8d431541c95792638b0c9d"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-testimonials",
-                "reference": "8805164b06268b26d60f0a3d8a398101643235ed"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-testimonials/zipball/1d1537f4f0cc5f88fa8d431541c95792638b0c9d",
+                "reference": "1d1537f4f0cc5f88fa8d431541c95792638b0c9d",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
@@ -1028,11 +1011,7 @@
                     "Afea\\Cms\\Testimonials\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Testimonials\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1050,22 +1029,28 @@
                 "laravel",
                 "testimonials"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/AfeaSoftware/filament-testimonials/issues",
+                "source": "https://github.com/AfeaSoftware/filament-testimonials/tree/v0.1.0"
+            },
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "afea/filament-users",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AfeaSoftware/filament-users.git",
+                "reference": "3587b73de8c2b060769930a76a83a831e299e3b1"
+            },
             "dist": {
-                "type": "path",
-                "url": "../afea-filament-cms/packages/filament-users",
-                "reference": "a44859bec78d45fe69f5905bc21850ce3ca369bd"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AfeaSoftware/filament-users/zipball/3587b73de8c2b060769930a76a83a831e299e3b1",
+                "reference": "3587b73de8c2b060769930a76a83a831e299e3b1",
+                "shasum": ""
             },
             "require": {
                 "afea/filament-cms-core": "@dev",
-                "bezhansalleh/filament-shield": "^4.0",
                 "filament/filament": "^4.0",
                 "illuminate/contracts": "^12.0",
                 "illuminate/database": "^12.0",
@@ -1080,6 +1065,9 @@
                 "pestphp/pest": "^4.0",
                 "pestphp/pest-plugin-laravel": "^4.0"
             },
+            "suggest": {
+                "bezhansalleh/filament-shield": "Auto-generates policy classes and per-resource permissions; when present, `afea:install:users` runs `shield:install` + `shield:generate --all` for you."
+            },
             "type": "library",
             "extra": {
                 "laravel": {
@@ -1093,11 +1081,7 @@
                     "Afea\\Cms\\Users\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Afea\\Cms\\Users\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1109,278 +1093,19 @@
             ],
             "description": "User management module for the Afea Filament CMS package ecosystem: user listing/editing, role management and permission assignment backed by spatie/laravel-permission.",
             "keywords": [
+                "Users",
                 "afea",
                 "cms",
                 "filament",
                 "laravel",
                 "permissions",
-                "roles",
-                "users"
-            ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
-        },
-        {
-            "name": "alizharb/filament-activity-log",
-            "version": "v1.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/AlizHarb/filament-activity-log.git",
-                "reference": "6b84e8d9548e66fa548eba73bd22a7a28f7882d5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/AlizHarb/filament-activity-log/zipball/6b84e8d9548e66fa548eba73bd22a7a28f7882d5",
-                "reference": "6b84e8d9548e66fa548eba73bd22a7a28f7882d5",
-                "shasum": ""
-            },
-            "require": {
-                "filament/actions": "^4.2|^5.0",
-                "filament/filament": "^4.0|^5.0",
-                "filament/tables": "^4.0|^5.0",
-                "phiki/phiki": "^1.1|^2.0",
-                "php": "^8.3",
-                "spatie/laravel-activitylog": "^4.0|^5.0"
-            },
-            "require-dev": {
-                "larastan/larastan": "^3.0",
-                "laravel/pint": "^1.0",
-                "orchestra/testbench": "^10.0|^11.0",
-                "pestphp/pest": "^3.0|^4.0",
-                "pestphp/pest-plugin-laravel": "^3.0|^4.0",
-                "pestphp/pest-plugin-livewire": "^3.0|^4.0",
-                "phpstan/phpstan": "^2.0"
-            },
-            "type": "filament-plugin",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "AlizHarb\\ActivityLog\\ActivityLogServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "AlizHarb\\ActivityLog\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ali Harb",
-                    "email": "harbzali@gmail.com",
-                    "homepage": "https://github.com/alizharb",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A powerful, feature-rich activity logging solution for FilamentPHP v4 & v5 with timeline views, dashboard widgets, and revert actions.",
-            "homepage": "https://github.com/alizharb/filament-activity-log",
-            "keywords": [
-                "activity-log",
-                "activity-tracking",
-                "audit-log",
-                "audit-trail",
-                "dashboard-widget",
-                "filament",
-                "filament-plugin",
-                "filament-v4",
-                "filament-v5",
-                "laravel",
-                "laravel-12",
-                "php",
-                "spatie",
-                "timeline"
+                "roles"
             ],
             "support": {
-                "docs": "https://github.com/alizharb/filament-activity-log#readme",
-                "issues": "https://github.com/alizharb/filament-activity-log/issues",
-                "source": "https://github.com/alizharb/filament-activity-log"
+                "issues": "https://github.com/AfeaSoftware/filament-users/issues",
+                "source": "https://github.com/AfeaSoftware/filament-users/tree/v0.1.0"
             },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/alizharb",
-                    "type": "github"
-                }
-            ],
-            "time": "2026-04-16T10:02:46+00:00"
-        },
-        {
-            "name": "bezhansalleh/filament-plugin-essentials",
-            "version": "1.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bezhanSalleh/filament-plugin-essentials.git",
-                "reference": "de3a8a07edcf1bc9fe829480ae09aa00265e7f03"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bezhanSalleh/filament-plugin-essentials/zipball/de3a8a07edcf1bc9fe829480ae09aa00265e7f03",
-                "reference": "de3a8a07edcf1bc9fe829480ae09aa00265e7f03",
-                "shasum": ""
-            },
-            "require": {
-                "filament/filament": "^4.0|^5.0",
-                "illuminate/contracts": "^11.28|^12.0|^13.0",
-                "php": "^8.2|^8.3",
-                "spatie/laravel-package-tools": "^1.0"
-            },
-            "require-dev": {
-                "larastan/larastan": "^3.0",
-                "laravel/pint": "^1.14",
-                "nunomaduro/collision": "^7.10.0|^8.1.1",
-                "orchestra/testbench": "^9.0.0|^10.0.0|^11.0.0",
-                "pestphp/pest": "^3.0|^4.0",
-                "pestphp/pest-plugin-arch": "^3.0|^4.0",
-                "pestphp/pest-plugin-laravel": "^3.0|^4.0",
-                "pestphp/pest-plugin-type-coverage": "^3.5|^4.0",
-                "phpstan/extension-installer": "^1.3|^2.0",
-                "phpstan/phpstan-deprecation-rules": "^1.1|^2.0",
-                "phpstan/phpstan-phpunit": "^1.3|^2.0",
-                "rector/rector": "^2.1",
-                "spatie/laravel-ray": "^1.40"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "BezhanSalleh\\PluginEssentials\\PluginEssentialsServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "BezhanSalleh\\PluginEssentials\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bezhan Salleh",
-                    "email": "bezhan_salleh@yahoo.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A collection of essential traits that streamline Filament plugin development by taking care of the boilerplate, so you can focus on shipping real features faster",
-            "homepage": "https://github.com/bezhansalleh/filament-plugin-essentials",
-            "keywords": [
-                "Bezhan Salleh",
-                "filament-plugin-essentials",
-                "laravel"
-            ],
-            "support": {
-                "issues": "https://github.com/bezhanSalleh/filament-plugin-essentials/issues",
-                "source": "https://github.com/bezhanSalleh/filament-plugin-essentials/tree/1.2.1"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/bezhanSalleh",
-                    "type": "github"
-                }
-            ],
-            "time": "2026-03-22T08:15:32+00:00"
-        },
-        {
-            "name": "bezhansalleh/filament-shield",
-            "version": "4.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bezhanSalleh/filament-shield.git",
-                "reference": "a48ea9ca115c644ce40380b853142afcd65e38d1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bezhanSalleh/filament-shield/zipball/a48ea9ca115c644ce40380b853142afcd65e38d1",
-                "reference": "a48ea9ca115c644ce40380b853142afcd65e38d1",
-                "shasum": ""
-            },
-            "require": {
-                "bezhansalleh/filament-plugin-essentials": "^1.0",
-                "filament/filament": "^4.0|^5.0",
-                "illuminate/contracts": "^11.28|^12.0|^13.0",
-                "illuminate/support": "^11.28|^12.0|^13.0",
-                "php": "^8.2|^8.3",
-                "spatie/laravel-package-tools": "^1.0",
-                "spatie/laravel-permission": "^6.0|^7.0"
-            },
-            "require-dev": {
-                "larastan/larastan": "^3.0",
-                "laravel/pint": "^1.26",
-                "nunomaduro/collision": "^8.8",
-                "orchestra/testbench": "^9.0|^10.0|^11.0",
-                "pestphp/pest": "^3.8|^4.0",
-                "pestphp/pest-plugin-laravel": "^3.2|^4.0",
-                "pestphp/pest-plugin-livewire": "^3.0|^4.0",
-                "pestphp/pest-plugin-type-coverage": "^3.6|^4.0",
-                "phpstan/extension-installer": "^1.4",
-                "phpstan/phpstan": "^2.1",
-                "phpstan/phpstan-deprecation-rules": "^2.0",
-                "phpstan/phpstan-phpunit": "^2.0",
-                "phpunit/phpunit": "^11.0|^12.0",
-                "rector/jack": "^0.4.0",
-                "rector/rector": "^2.2",
-                "spatie/laravel-ray": "^1.43"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "aliases": {
-                        "FilamentShield": "BezhanSalleh\\FilamentShield\\Facades\\FilamentShield"
-                    },
-                    "providers": [
-                        "BezhanSalleh\\FilamentShield\\FilamentShieldServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "BezhanSalleh\\FilamentShield\\": "src",
-                    "BezhanSalleh\\FilamentShield\\Database\\Factories\\": "database/factories"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bezhan Salleh",
-                    "email": "bezhan_salleh@yahoo.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Filament support for `spatie/laravel-permission`.",
-            "homepage": "https://github.com/bezhansalleh/filament-shield",
-            "keywords": [
-                "acl",
-                "bezhanSalleh",
-                "filament",
-                "filament-shield",
-                "laravel",
-                "permission",
-                "permissions",
-                "rbac",
-                "roles",
-                "security"
-            ],
-            "support": {
-                "issues": "https://github.com/bezhanSalleh/filament-shield/issues",
-                "source": "https://github.com/bezhanSalleh/filament-shield/tree/4.2.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/bezhanSalleh",
-                    "type": "github"
-                }
-            ],
-            "time": "2026-03-22T08:31:44+00:00"
+            "time": "2026-04-21T10:48:02+00:00"
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -5604,80 +5329,6 @@
             "time": "2025-09-24T15:06:41+00:00"
         },
         {
-            "name": "phiki/phiki",
-            "version": "v2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phikiphp/phiki.git",
-                "reference": "24375dbc474dbc484de7d53c6bab0bb9e198f647"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phikiphp/phiki/zipball/24375dbc474dbc484de7d53c6bab0bb9e198f647",
-                "reference": "24375dbc474dbc484de7d53c6bab0bb9e198f647",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": "^8.2",
-                "psr/simple-cache": "^3.0"
-            },
-            "require-dev": {
-                "illuminate/support": "^11.45",
-                "laravel/pint": "^1.18.1",
-                "league/commonmark": "^2.5.3",
-                "orchestra/testbench": "^9.15",
-                "pestphp/pest": "^3.5.1",
-                "phpstan/extension-installer": "^1.4.3",
-                "phpstan/phpstan": "^2.0",
-                "symfony/var-dumper": "^7.1.6"
-            },
-            "suggest": {
-                "league/commonmark": "Required to use the CommonMark adapter (^2.5.3)"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Phiki\\Adapters\\Laravel\\PhikiServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Phiki\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ryan Chandler",
-                    "email": "support@ryangjchandler.co.uk",
-                    "homepage": "https://ryangjchandler.co.uk",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Syntax highlighting using TextMate grammars in PHP.",
-            "support": {
-                "issues": "https://github.com/phikiphp/phiki/issues",
-                "source": "https://github.com/phikiphp/phiki/tree/v2.2.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/ryangjchandler",
-                    "type": "github"
-                },
-                {
-                    "url": "https://buymeacoffee.com/ryangjchandler",
-                    "type": "other"
-                }
-            ],
-            "time": "2026-04-01T15:56:08+00:00"
-        },
-        {
             "name": "phpdocumentor/reflection-common",
             "version": "2.2.0",
             "source": {
@@ -6717,6 +6368,80 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.2"
             },
             "time": "2025-12-14T04:43:48+00:00"
+        },
+        {
+            "name": "rmsramos/activitylog",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rmsramos/activitylog.git",
+                "reference": "05b2e2f32c0866d2e914dec08911aaeb214ed54c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rmsramos/activitylog/zipball/05b2e2f32c0866d2e914dec08911aaeb214ed54c",
+                "reference": "05b2e2f32c0866d2e914dec08911aaeb214ed54c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^10.0||^11.0||^12.0",
+                "php": "^8.2",
+                "spatie/laravel-activitylog": "^4.8",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "filament/filament": "^3.3",
+                "larastan/larastan": "^2.9",
+                "laravel/pint": "^1.16",
+                "nunomaduro/collision": "^8.1.1||^7.10.0",
+                "orchestra/testbench": "^9.0.0||^8.22.0",
+                "pestphp/pest": "^2.34",
+                "pestphp/pest-plugin-arch": "^2.7",
+                "pestphp/pest-plugin-laravel": "^2.3",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan-deprecation-rules": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Activitylog": "Rmsramos\\Activitylog\\Facades\\Activitylog"
+                    },
+                    "providers": [
+                        "Rmsramos\\Activitylog\\ActivitylogServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rmsramos\\Activitylog\\": "src/",
+                    "Rmsramos\\Activitylog\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rômulo Ramos",
+                    "email": "rmsramos@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This is my package activitylog",
+            "homepage": "https://github.com/rmsramos/activitylog",
+            "keywords": [
+                "Rmsramos",
+                "activitylog",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/rmsramos/activitylog/issues",
+                "source": "https://github.com/rmsramos/activitylog/tree/v2.0.0"
+            },
+            "time": "2025-08-16T17:20:00+00:00"
         },
         {
             "name": "ryangjchandler/blade-capture-directive",
