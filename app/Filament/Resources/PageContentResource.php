@@ -12,6 +12,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -69,6 +70,9 @@ class PageContentResource extends Resource
                                     'about' => 'Hakkımızda',
                                     'support' => 'Destek',
                                     'accessories' => 'Aksesuarlar',
+                                    'privacy' => 'Gizlilik',
+                                    'cookies' => 'Çerezler',
+                                    'terms' => 'Kullanım Şartları',
                                 ])
                                 ->required()
                                 ->native(false)
@@ -634,6 +638,58 @@ class PageContentResource extends Resource
                     ->visible(fn (Get $get): bool => $get('type') === 'accessories')
                     ->collapsible(),
 
+                // ════════════════════════════════════════
+                //  YASAL SAYFALAR (Gizlilik / Çerezler / Kullanım Şartları)
+                // ════════════════════════════════════════
+
+                Section::make('Yasal Sayfa İçeriği')
+                    ->description('Gizlilik, Çerezler ve Kullanım Şartları sayfalarının ortak şablonu. Yalnızca içerik değişir.')
+                    ->schema([
+                        TextInput::make('content.eyebrow')
+                            ->label('Üst Etiket (Eyebrow)')
+                            ->helperText('Hero üstündeki küçük etiket. örn: "Yasal" / "Legal".')
+                            ->maxLength(100)
+                            ->columnSpanFull(),
+                        TextInput::make('content.title')
+                            ->label('Başlık')
+                            ->required()
+                            ->maxLength(255)
+                            ->helperText('Sayfanın H1 başlığı.')
+                            ->columnSpanFull(),
+                        Textarea::make('content.lede')
+                            ->label('Kısa Açıklama (Lede)')
+                            ->rows(2)
+                            ->maxLength(500)
+                            ->helperText('Başlık altındaki kısa özet.')
+                            ->columnSpanFull(),
+                        TextInput::make('content.last_updated')
+                            ->label('Son Güncelleme Etiketi')
+                            ->maxLength(100)
+                            ->helperText('örn: "Son güncelleme: 10 Haziran 2026".')
+                            ->columnSpanFull(),
+                        RichEditor::make('content.body')
+                            ->label('Sayfa İçeriği')
+                            ->required()
+                            ->toolbarButtons([
+                                ['bold', 'italic', 'underline', 'strike', 'link'],
+                                ['h2', 'h3', 'blockquote', 'codeBlock'],
+                                ['bulletList', 'orderedList'],
+                                ['undo', 'redo'],
+                            ])
+                            ->columnSpanFull(),
+                        TextInput::make('content.meta_title')
+                            ->label('SEO Başlığı')
+                            ->maxLength(255)
+                            ->columnSpanFull(),
+                        Textarea::make('content.meta_description')
+                            ->label('SEO Açıklaması')
+                            ->rows(2)
+                            ->maxLength(500)
+                            ->columnSpanFull(),
+                    ])
+                    ->visible(fn (Get $get): bool => in_array($get('type'), ['privacy', 'cookies', 'terms'], true))
+                    ->collapsible(),
+
             ])->columnSpanFull(),
         ]);
     }
@@ -650,6 +706,9 @@ class PageContentResource extends Resource
                         'about' => 'Hakkımızda',
                         'support' => 'Destek',
                         'accessories' => 'Aksesuarlar',
+                        'privacy' => 'Gizlilik',
+                        'cookies' => 'Çerezler',
+                        'terms' => 'Kullanım Şartları',
                         default => $state ?? '-',
                     })
                     ->sortable(),
@@ -677,6 +736,9 @@ class PageContentResource extends Resource
                         'about' => 'Hakkımızda',
                         'support' => 'Destek',
                         'accessories' => 'Aksesuarlar',
+                        'privacy' => 'Gizlilik',
+                        'cookies' => 'Çerezler',
+                        'terms' => 'Kullanım Şartları',
                     ])
                     ->native(false),
                 SelectFilter::make('locale')

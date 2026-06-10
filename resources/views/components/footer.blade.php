@@ -4,6 +4,18 @@
   $company = app(\Afea\Cms\Settings\Settings\CompanySettings::class);
   $blocks = \App\Support\FooterRenderer::blocks($footerSettings->blocks ?? [], $isEn);
 
+  $legalLocale = $isEn ? 'en' : 'tr';
+  $availableLegalTypes = \App\Models\PageContent::query()
+    ->where('locale', $legalLocale)
+    ->whereIn('type', ['privacy', 'cookies', 'terms'])
+    ->pluck('type')
+    ->all();
+  $legalLinks = collect([
+    ['type' => 'privacy', 'label' => __('ui.footer_privacy'), 'route' => $isEn ? 'en.legal.privacy' : 'legal.privacy'],
+    ['type' => 'cookies', 'label' => __('ui.footer_cookies'), 'route' => $isEn ? 'en.legal.cookies' : 'legal.cookies'],
+    ['type' => 'terms',   'label' => __('ui.footer_terms'),   'route' => $isEn ? 'en.legal.terms'   : 'legal.terms'],
+  ])->filter(fn ($link) => in_array($link['type'], $availableLegalTypes, true))->values();
+
   $socials = collect([
     'facebook'  => $company->social_facebook,
     'twitter'   => $company->social_twitter,
@@ -187,11 +199,13 @@
 
     <div class="foot-bot">
       <div>{{ __('ui.footer_copyright') }}</div>
+      @if($legalLinks->isNotEmpty())
       <div style="display:flex; gap:18px;">
-        <a href="#">{{ __('ui.footer_privacy') }}</a>
-        <a href="#">{{ __('ui.footer_cookies') }}</a>
-        <a href="#">{{ __('ui.footer_terms') }}</a>
+        @foreach($legalLinks as $link)
+          <a href="{{ route($link['route']) }}">{{ $link['label'] }}</a>
+        @endforeach
       </div>
+      @endif
     </div>
     <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--line-2); text-align:center; font-size:12px; color:var(--muted); letter-spacing:0.02em;">
       Produced by <a href="https://afeayazilim.com" target="_blank" rel="noopener" style="color:var(--muted); text-decoration:underline; text-underline-offset:3px; transition:color .15s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--muted)'">AFEA Software</a>

@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\DestekController;
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\LegalController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,9 @@ Route::get('/saatler/{slug}', [ProductController::class, 'watch'])->name('watche
 Route::get('/kulakliklar/{slug}', [ProductController::class, 'headphone'])->name('headphones.show');
 Route::get('/aksesuarlar', [AccessoriesController::class, 'index'])->name('aksesuarlar');
 Route::get('/arama', [SearchController::class, 'index'])->name('search');
+Route::get('/gizlilik', [LegalController::class, 'show'])->defaults('page', 'privacy')->name('legal.privacy');
+Route::get('/cerezler', [LegalController::class, 'show'])->defaults('page', 'cookies')->name('legal.cookies');
+Route::get('/kullanim-sartlari', [LegalController::class, 'show'])->defaults('page', 'terms')->name('legal.terms');
 
 // Auth
 Route::middleware('guest')->group(function (): void {
@@ -53,6 +57,9 @@ Route::prefix('en')->name('en.')->group(function (): void {
     Route::get('/headphones/{slug}', [ProductController::class, 'headphone'])->name('headphones.show');
     Route::get('/accessories', [AccessoriesController::class, 'index'])->name('accessories');
     Route::get('/search', [SearchController::class, 'index'])->name('search');
+    Route::get('/privacy', [LegalController::class, 'show'])->defaults('page', 'privacy')->name('legal.privacy');
+    Route::get('/cookies', [LegalController::class, 'show'])->defaults('page', 'cookies')->name('legal.cookies');
+    Route::get('/terms', [LegalController::class, 'show'])->defaults('page', 'terms')->name('legal.terms');
 
     Route::middleware('guest')->group(function (): void {
         Route::get('/register', [AuthController::class, 'showRegister'])->name('register');

@@ -29,4 +29,12 @@ class PageContent extends Model
 
         return collect($record?->content ?? []);
     }
+
+    public static function existsFor(string $type, string $locale): bool
+    {
+        return static::query()
+            ->where('type', $type)
+            ->where('locale', $locale)
+            ->exists();
+    }
 }
