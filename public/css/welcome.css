@@ -322,7 +322,7 @@ p { text-wrap: pretty; color: var(--ink-2); }
   .nav-mega .mega-card-media               { display: none; }
   .nav-mega .mega-card-body                { border-top: none; padding: 0; }
   .nav-mega .mega-card-cat                 { display: none; }
-  .nav-mega .mega-card-body > p:last-child { display: none; }
+  .nav-mega .mega-card-body > p:not(.mega-card-name) { display: none; }
   .nav-mega .mega-card-name                { font-size: 14.5px; font-weight: 400; color: var(--ink-2); margin: 0; }
   .nav-mega .mega-card:hover .mega-card-name { color: var(--ink); }
 }
