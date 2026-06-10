@@ -163,11 +163,11 @@ p { text-wrap: pretty; color: var(--ink-2); }
   overflow: hidden;
   background: var(--bg-2);
   display: flex; align-items: center; justify-content: center;
-  padding: 12px;
+  padding: 0;
 }
 .mega-card-media img {
   width: 100%; height: 100%; object-fit: cover;
-  border-radius: 14px;
+  border-radius: 0;
   transition: transform .4s var(--ease);
 }
 .mega-card:hover .mega-card-media img { transform: scale(1.05); }
@@ -953,8 +953,7 @@ img[data-loading="true"] { filter: blur(10px) saturate(.8); }
 .pshowcase {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr;
-  aspect-ratio: 2 / 1;
+  grid-auto-rows: auto;
   gap: 12px;
   margin-top: clamp(24px, 3vw, 36px);
   align-items: stretch;
@@ -995,17 +994,18 @@ img[data-loading="true"] { filter: blur(10px) saturate(.8); }
 .pshowcase-card--soon { opacity: .72; pointer-events: none; }
 
 .pshowcase-card-media {
-  flex: 1;
-  min-height: 0;
+  flex: none;
+  width: 100%;
   aspect-ratio: 1/1;
   background: var(--bg-2);
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
 }
 .pshowcase-card-media img {
-  max-width: 70%; max-height: 80%;
-  object-fit: contain;
-  border-radius: 18px;
+  width: 100%; height: 100%;
+  max-width: none; max-height: none;
+  object-fit: cover;
+  border-radius: 0;
   transition: transform .45s var(--ease);
 }
 .pshowcase-card:hover .pshowcase-card-media img { transform: scale(1.05); }
@@ -1035,14 +1035,16 @@ img[data-loading="true"] { filter: blur(10px) saturate(.8); }
   .pshowcase-card.is-featured { grid-column: 1 / -1; grid-row: auto; }
 }
 .pshowcase-card.is-featured .pshowcase-card-media {
-  aspect-ratio: auto;
-  min-height: 0;
-  flex: 1;
-  padding: clamp(24px, 3vw, 48px);
+  aspect-ratio: 1/1;
+  width: 100%;
+  flex: none;
+  padding: 0;
 }
 .pshowcase-card.is-featured .pshowcase-card-media img {
-  max-width: 100%; max-height: 340px;
-  border-radius: 22px;
+  width: 100%; height: 100%;
+  max-width: none; max-height: none;
+  object-fit: cover;
+  border-radius: 0;
 }
 .pshowcase-card.is-featured:hover .pshowcase-card-media img { transform: scale(1.04); }
 .pshowcase-card.is-featured .pshowcase-card-body {
@@ -1093,13 +1095,16 @@ img[data-loading="true"] { filter: blur(10px) saturate(.8); }
     grid-column: 1 / -1;
   }
   .pshowcase-card.is-featured .pshowcase-card-media {
-    padding: 14px;
-    aspect-ratio: 16 / 11;
+    padding: 0;
+    aspect-ratio: 1 / 1;
     flex: none;
   }
   .pshowcase-card.is-featured .pshowcase-card-media img {
-    max-height: 100%;
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
   }
   .pshowcase-card.is-featured .pshowcase-card-body {
     padding: 12px 14px 16px;
@@ -1117,17 +1122,20 @@ img[data-loading="true"] { filter: blur(10px) saturate(.8); }
   }
 
   .pshowcase-card:not(.is-featured) {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: auto;
   }
   .pshowcase-card:not(.is-featured) .pshowcase-card-media {
-    aspect-ratio: auto;
-    flex: 1;
-    min-height: 0;
-    padding: 8px;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    flex: none;
+    padding: 0;
   }
   .pshowcase-card:not(.is-featured) .pshowcase-card-media img {
-    max-width: 55%;
-    max-height: 65%;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
   }
   .pshowcase-card:not(.is-featured) .pshowcase-cat,
   .pshowcase-card:not(.is-featured) .pshowcase-link {
@@ -1777,8 +1785,6 @@ a.trust-card:hover .trust-link { gap: 8px; }
 .ov-hero-shade {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%);
   z-index: 1;
 }
 
@@ -2250,6 +2256,12 @@ a.trust-card:hover .trust-link { gap: 8px; }
 .nav-icon-btn:hover {
   background: color-mix(in oklab, var(--ink) 6%, transparent);
   border-color: var(--ink);
+}
+.nav-icon-btn--lang {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none;
 }
 
 /* ── Mobile footer fixes ─────────────────────── */

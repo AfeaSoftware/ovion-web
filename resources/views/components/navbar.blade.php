@@ -137,7 +137,7 @@
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
         </svg>
       </a>
-      <a href="{{ $altUrl ?? '#' }}" class="nav-lang-switch" aria-label="{{ __('ui.lang_switch_label') }}">
+      <a href="{{ $altUrl ?? '#' }}" class="nav-icon-btn nav-icon-btn--lang" aria-label="{{ __('ui.lang_switch_label') }}" title="{{ __('ui.lang_switch_label') }}">
         {{ __('ui.lang_switch') }}
       </a>
     </div>
