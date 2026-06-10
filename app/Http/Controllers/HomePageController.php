@@ -34,10 +34,11 @@ class HomePageController extends Controller
             : null;
 
         $showcaseProducts = Product::active()
+            ->orderByRaw("CASE WHEN type = 'phone' THEN 0 ELSE 1 END")
             ->orderByDesc('is_spotlight')
             ->orderBy('order')
             ->with('media')
-            ->limit(4)
+            ->limit(8)
             ->get();
 
         $showcaseAccessories = Accessory::query()
