@@ -28,6 +28,16 @@
   $cinemaSlides = collect(data_get($product->content, 'cinema.slides') ?? []);
   $cinemaMedia = $product->getMedia('cinema');
   $designImg = $cinemaMedia->first()?->getUrl();
+
+  $has = fn (array $keys) => \App\Support\PageContentHelper::hasAny($content ?? null, $keys);
+  $showCamera = $has(['camera.eyebrow', 'camera.title', 'camera.description']) || $cameraCards->isNotEmpty();
+  $showDisplay = $has(['display.eyebrow', 'display.title', 'display.description']) || $displayItems->isNotEmpty();
+  $showPerformance = $has(['performance.eyebrow', 'performance.title', 'performance.description']) || $performanceCards->isNotEmpty();
+  $showBattery = $has(['battery.eyebrow', 'battery.title', 'battery.description']) || $batteryItems->isNotEmpty();
+  $showDesign = $cinemaSlides->isNotEmpty() || $cinemaMedia->count() > 0;
+  $showStory = $showCamera || $showDisplay || $showPerformance || $showBattery || $showDesign;
+  $showSpecsSection = $has(['specs_section.eyebrow', 'specs_section.title']) || ! empty($product->specs ?? []);
+  $showBuySection = $has(['buy_section.eyebrow', 'buy_section.title']) || $product->price !== null;
 @endphp
 
 {{-- ═══════════════════════════════════════ SUB-NAV ════════ --}}
@@ -38,12 +48,12 @@
     </button>
     <ul class="pd-subnav-links">
       <li><a class="pd-subnav-link" href="#pd-hero">{{ __('ui.pd_overview') }}</a></li>
-      <li><a class="pd-subnav-link" href="#pd-camera">{{ __('ui.pd_camera') }}</a></li>
-      <li><a class="pd-subnav-link" href="#pd-display">{{ __('ui.pd_display') }}</a></li>
-      <li><a class="pd-subnav-link" href="#pd-performance">{{ __('ui.pd_performance') }}</a></li>
-      <li><a class="pd-subnav-link" href="#pd-battery">{{ __('ui.pd_battery') }}</a></li>
-      <li><a class="pd-subnav-link" href="#pd-design">{{ __('ui.pd_design') }}</a></li>
-      <li><a class="pd-subnav-link" href="#pd-specs">{{ __('ui.pd_specs') }}</a></li>
+      @if($showCamera)<li><a class="pd-subnav-link" href="#pd-camera">{{ __('ui.pd_camera') }}</a></li>@endif
+      @if($showDisplay)<li><a class="pd-subnav-link" href="#pd-display">{{ __('ui.pd_display') }}</a></li>@endif
+      @if($showPerformance)<li><a class="pd-subnav-link" href="#pd-performance">{{ __('ui.pd_performance') }}</a></li>@endif
+      @if($showBattery)<li><a class="pd-subnav-link" href="#pd-battery">{{ __('ui.pd_battery') }}</a></li>@endif
+      @if($showDesign)<li><a class="pd-subnav-link" href="#pd-design">{{ __('ui.pd_design') }}</a></li>@endif
+      @if($showSpecsSection)<li><a class="pd-subnav-link" href="#pd-specs">{{ __('ui.pd_specs') }}</a></li>@endif
       @if(($compatibleAccessories ?? collect())->isNotEmpty())
         <li><a class="pd-subnav-link" href="#pd-compat">{{ __('ui.pd_compat_ey') }}</a></li>
       @endif
@@ -110,8 +120,10 @@
   @endif
 
   {{-- ═══════════════════════════════════════ STORY (flowing narrative) ══ --}}
+  @if($showStory)
   <section class="pd-story">
 
+    @if($showCamera)
     {{-- 01 · KAMERA ───────────────────────── --}}
     <article class="pd-story-block" id="pd-camera" data-pd-section="pd-camera">
       <div class="pd-story-visual">
@@ -144,7 +156,9 @@
         @endif
       </div>
     </article>
+    @endif
 
+    @if($showDisplay)
     {{-- 02 · EKRAN ──────────────────────────── --}}
     <article class="pd-story-block pd-story-block--flip" id="pd-display" data-pd-section="pd-display">
       <div class="pd-story-visual">
@@ -174,7 +188,9 @@
         @endif
       </div>
     </article>
+    @endif
 
+    @if($showPerformance)
     {{-- 03 · PERFORMANS ────────────────────── --}}
     <article class="pd-story-block pd-story-block--flip" id="pd-performance" data-pd-section="pd-performance">
       <div class="pd-story-visual">
@@ -217,7 +233,9 @@
         @endif
       </div>
     </article>
+    @endif
 
+    @if($showBattery)
     {{-- 04 · PİL ──────────────────────────── --}}
     <article class="pd-story-block" id="pd-battery" data-pd-section="pd-battery">
       <div class="pd-story-visual">
@@ -262,7 +280,9 @@
         @endif
       </div>
     </article>
+    @endif
 
+    @if($showDesign)
     {{-- 05 · TASARIM ──────────────────────────── --}}
     @php $cinemaCount = max($cinemaMedia->count(), $cinemaSlides->count(), 1); @endphp
     <section class="pd-story-cinema" id="pd-design" data-pd-section="pd-design" style="--slides: {{ $cinemaCount }};">
@@ -296,10 +316,13 @@
         </div>
       </div>
     </section>
+    @endif
 
   </section>
+  @endif
 
   {{-- ═══════════════════════════════════════ FULL SPECS ════════ --}}
+  @if($showSpecsSection)
   <section class="pd-specs-section" id="pd-specs" data-pd-section="pd-specs">
     <div class="wrap">
       <p class="eyebrow pd-reveal">@pc('specs_section.eyebrow', '')</p>
@@ -315,11 +338,13 @@
       </div>
     </div>
   </section>
+  @endif
 
   {{-- ═══════════════════════════════════════ COMPATIBLE ACCESSORIES ══ --}}
   @include('pages.partials.product-compatible-accessories')
 
   {{-- ═══════════════════════════════════════ BUY ════════════════ --}}
+  @if($showBuySection)
   <section class="pd-buy" id="pd-buy" data-pd-section="pd-buy">
     <div class="wrap pd-reveal">
       <p class="eyebrow" style="justify-content:center">@pc('buy_section.eyebrow', '')</p>
@@ -338,6 +363,7 @@
       <p class="pd-buy-note">{{ __('ui.ph_buy_note') }}</p>
     </div>
   </section>
+  @endif
 
 </article>
 

@@ -23,6 +23,36 @@ class PageContentHelper
         return self::resolve($content, $key, $fallback);
     }
 
+    /**
+     * Check whether any of the provided dotted keys resolves to a non-empty value
+     * inside the page content payload. Used to skip rendering whole sections when
+     * the editor left every field blank.
+     *
+     * @param  array<int, string>  $keys
+     */
+    public static function hasAny(?Collection $content, array $keys): bool
+    {
+        $data = $content?->all() ?? [];
+
+        foreach ($keys as $key) {
+            $value = data_get($data, $key);
+
+            if (is_string($value) && trim($value) !== '') {
+                return true;
+            }
+
+            if (is_array($value) && ! empty($value)) {
+                return true;
+            }
+
+            if (is_numeric($value)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private static function resolve(?Collection $content, string $key, string $fallback): string
     {
         $value = data_get($content?->all() ?? [], $key);

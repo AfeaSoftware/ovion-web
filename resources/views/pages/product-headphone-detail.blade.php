@@ -27,6 +27,17 @@
   $designItems = collect(data_get($product->content, 'design.items') ?? []);
   $batteryStats = collect(data_get($product->content, 'battery.stats') ?? []);
   $connectivityCards = collect(data_get($product->content, 'connectivity.cards') ?? []);
+
+  $has = fn (array $keys) => \App\Support\PageContentHelper::hasAny($content ?? null, $keys);
+  $showAncBillboard = $has(['anc.eyebrow', 'anc.title', 'anc.description']);
+  $showAncCards = $has(['anc_cards.eyebrow', 'anc_cards.title']) || $ancCards->isNotEmpty();
+  $showAncSection = $showAncBillboard || $showAncCards;
+  $showSound = $has(['sound.eyebrow', 'sound.title', 'sound.description']) || $soundItems->isNotEmpty();
+  $showDesign = $has(['design.eyebrow', 'design.title', 'design.description']) || $designItems->isNotEmpty();
+  $showBattery = $has(['battery.eyebrow', 'battery.title', 'battery.description']) || $batteryStats->isNotEmpty();
+  $showConnectivity = $has(['connectivity.eyebrow', 'connectivity.title']) || $connectivityCards->isNotEmpty();
+  $showSpecsSection = $has(['specs_section.eyebrow', 'specs_section.title']) || ! empty($product->specs ?? []);
+  $showBuySection = $has(['buy_section.eyebrow', 'buy_section.title']) || $product->price !== null;
 @endphp
 
 {{-- ═══════════════════════════════════════ SUB-NAV ════════ --}}
@@ -37,11 +48,11 @@
     </button>
     <ul class="hd-subnav-links">
       <li><a class="hd-subnav-link" href="#hd-hero">{{ __('ui.pd_overview') }}</a></li>
-      <li><a class="hd-subnav-link" href="#pd-anc">{{ __('ui.pd_anc') }}</a></li>
-      <li><a class="hd-subnav-link" href="#pd-sound">{{ __('ui.pd_sound') }}</a></li>
-      <li><a class="hd-subnav-link" href="#pd-design">{{ __('ui.pd_design') }}</a></li>
-      <li><a class="hd-subnav-link" href="#pd-connectivity">{{ __('ui.pd_connectivity') }}</a></li>
-      <li><a class="hd-subnav-link" href="#pd-specs">{{ __('ui.pd_specs') }}</a></li>
+      @if($showAncSection)<li><a class="hd-subnav-link" href="#pd-anc">{{ __('ui.pd_anc') }}</a></li>@endif
+      @if($showSound)<li><a class="hd-subnav-link" href="#pd-sound">{{ __('ui.pd_sound') }}</a></li>@endif
+      @if($showDesign)<li><a class="hd-subnav-link" href="#pd-design">{{ __('ui.pd_design') }}</a></li>@endif
+      @if($showConnectivity)<li><a class="hd-subnav-link" href="#pd-connectivity">{{ __('ui.pd_connectivity') }}</a></li>@endif
+      @if($showSpecsSection)<li><a class="hd-subnav-link" href="#pd-specs">{{ __('ui.pd_specs') }}</a></li>@endif
       @if(($compatibleAccessories ?? collect())->isNotEmpty())
         <li><a class="hd-subnav-link" href="#pd-compat">{{ __('ui.pd_compat_ey') }}</a></li>
       @endif
@@ -97,6 +108,7 @@
 </section>
 @endif
 
+@if($showAncBillboard)
 {{-- ═══════════════════════════════════════ ANC BILLBOARD ═══ --}}
 <section class="hd-billboard hd-billboard--decor" id="pd-anc" data-pd-section="pd-anc">
   <div class="hd-billboard-decor" aria-hidden="true">
@@ -112,7 +124,9 @@
     <p>@pc('anc.description', '')</p>
   </div>
 </section>
+@endif
 
+@if($showAncCards)
 {{-- ═══════════════════════════════════════ ANC FEATURES ════ --}}
 <section class="hd-cards-section" id="pd-anc-features" data-pd-section="pd-anc">
   <div class="wrap">
@@ -154,7 +168,9 @@
 
   </div>
 </section>
+@endif
 
+@if($showSound)
 {{-- ═══════════════════════════════════════ SOUND SPLIT ══════ --}}
 <section class="hd-split hd-split--decor" id="pd-sound" data-pd-section="pd-sound">
   <div class="hd-split-media hd-split-media--decor" aria-hidden="true">
@@ -176,7 +192,9 @@
     </ul>
   </div>
 </section>
+@endif
 
+@if($showDesign)
 {{-- ═══════════════════════════════════════ DESIGN SPLIT ═════ --}}
 <section class="hd-split hd-split--flip hd-split--decor" id="pd-design" data-pd-section="pd-design" style="background:var(--bg-2);">
   <div class="hd-split-media hd-split-media--decor" aria-hidden="true">
@@ -197,7 +215,9 @@
     </ul>
   </div>
 </section>
+@endif
 
+@if($showBattery)
 {{-- ═══════════════════════════════════════ BATTERY BILLBOARD ══ --}}
 <section class="hd-battery-billboard" id="pd-battery" data-pd-section="pd-battery">
   <div class="hd-battery-billboard-inner">
@@ -216,7 +236,9 @@
     </div>
   </div>
 </section>
+@endif
 
+@if($showConnectivity)
 {{-- ═══════════════════════════════════════ CONNECTIVITY CARDS ══ --}}
 <section class="hd-cards-section" id="pd-connectivity" data-pd-section="pd-connectivity" style="background:var(--bg);">
   <div class="wrap">
@@ -237,7 +259,9 @@
     </div>
   </div>
 </section>
+@endif
 
+@if($showSpecsSection)
 {{-- ═══════════════════════════════════════ FULL SPECS ═══════ --}}
 <section class="hd-specs-section" id="pd-specs" data-pd-section="pd-specs">
   <div class="wrap">
@@ -254,10 +278,12 @@
     </div>
   </div>
 </section>
+@endif
 
 {{-- ═══════════════════════════════════════ COMPATIBLE ACCESSORIES ══ --}}
 @include('pages.partials.product-compatible-accessories')
 
+@if($showBuySection)
 {{-- ═══════════════════════════════════════ BUY ══════════════ --}}
 <section class="hd-buy" id="pd-buy" data-pd-section="pd-buy">
   <div class="wrap hd-reveal">
@@ -277,6 +303,7 @@
     <p class="hd-buy-note">{{ __('ui.hp_buy_note') }}</p>
   </div>
 </section>
+@endif
 
 @endsection
 

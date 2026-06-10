@@ -19,6 +19,16 @@
   $designItems = collect(data_get($product->content, 'design.items') ?? []);
   $activityStats = collect(data_get($product->content, 'activity.stats') ?? []);
   $batteryItems = collect(data_get($product->content, 'battery.items') ?? []);
+
+  $has = fn (array $keys) => \App\Support\PageContentHelper::hasAny($content ?? null, $keys);
+  $showHealth = $has(['health.eyebrow', 'health.title', 'health.description']);
+  $showHealthCards = $has(['health_cards.eyebrow', 'health_cards.title']) || $healthCards->isNotEmpty();
+  $showHealthSection = $showHealth || $showHealthCards;
+  $showDesign = $has(['design.eyebrow', 'design.title', 'design.description']) || $designItems->isNotEmpty();
+  $showActivity = $has(['activity.eyebrow', 'activity.title', 'activity.description']) || $activityStats->isNotEmpty();
+  $showBattery = $has(['battery.eyebrow', 'battery.title', 'battery.description']) || $batteryItems->isNotEmpty();
+  $showSpecsSection = $has(['specs_section.eyebrow', 'specs_section.title']) || ! empty($product->specs ?? []);
+  $showBuySection = $has(['buy_section.eyebrow', 'buy_section.title']) || $product->price !== null;
 @endphp
 
 {{-- ═══════════════════════════════════════ SUB-NAV ════════ --}}
@@ -29,11 +39,11 @@
     </button>
     <ul class="pd-subnav-links">
       <li><a class="pd-subnav-link wd-subnav-link" href="#wd-hero">{{ __('ui.pd_overview') }}</a></li>
-      <li><a class="pd-subnav-link wd-subnav-link" href="#wd-health">{{ __('ui.pd_health') }}</a></li>
-      <li><a class="pd-subnav-link wd-subnav-link" href="#wd-faces">{{ __('ui.pd_watch_faces') }}</a></li>
-      <li><a class="pd-subnav-link wd-subnav-link" href="#wd-design">{{ __('ui.pd_design') }}</a></li>
-      <li><a class="pd-subnav-link wd-subnav-link" href="#wd-activity">{{ __('ui.pd_activity') }}</a></li>
-      <li><a class="pd-subnav-link wd-subnav-link" href="#wd-specs">{{ __('ui.pd_specs') }}</a></li>
+      @if($showHealthSection)<li><a class="pd-subnav-link wd-subnav-link" href="#wd-health">{{ __('ui.pd_health') }}</a></li>@endif
+      @if($faces->isNotEmpty())<li><a class="pd-subnav-link wd-subnav-link" href="#wd-faces">{{ __('ui.pd_watch_faces') }}</a></li>@endif
+      @if($showDesign)<li><a class="pd-subnav-link wd-subnav-link" href="#wd-design">{{ __('ui.pd_design') }}</a></li>@endif
+      @if($showActivity)<li><a class="pd-subnav-link wd-subnav-link" href="#wd-activity">{{ __('ui.pd_activity') }}</a></li>@endif
+      @if($showSpecsSection)<li><a class="pd-subnav-link wd-subnav-link" href="#wd-specs">{{ __('ui.pd_specs') }}</a></li>@endif
       @if(($compatibleAccessories ?? collect())->isNotEmpty())
         <li><a class="pd-subnav-link wd-subnav-link" href="#pd-compat">{{ __('ui.pd_compat_ey') }}</a></li>
       @endif
@@ -93,6 +103,7 @@
 </section>
 @endif
 
+@if($showHealth)
 {{-- ═══════════════════════════════════════ HEALTH BILLBOARD ══ --}}
 <section class="wd-health-billboard wd-health-billboard--decor" id="wd-health" data-wd-section="wd-health">
   <div class="wd-health-billboard-decor" aria-hidden="true">
@@ -106,7 +117,9 @@
     <p>@pc('health.description', '')</p>
   </div>
 </section>
+@endif
 
+@if($showHealthCards)
 {{-- ═══════════════════════════════════════ HEALTH CARDS ══════ --}}
 <section class="wd-cards-section" id="wd-health-features">
   <div class="wrap">
@@ -126,7 +139,9 @@
     </div>
   </div>
 </section>
+@endif
 
+@if($showDesign)
 {{-- ═══════════════════════════════════════ DESIGN SPLIT ═══════ --}}
 <section class="wd-split wd-split--decor" id="wd-design" data-wd-section="wd-design">
   <div class="wd-split-media wd-split-media--decor" style="background:#e8e8ed; min-height:520px;" aria-hidden="true">
@@ -151,7 +166,9 @@
     </ul>
   </div>
 </section>
+@endif
 
+@if($showActivity)
 {{-- ═══════════════════════════════════════ ACTIVITY BILLBOARD ══ --}}
 <section class="wd-activity-billboard wd-activity-billboard--decor" id="wd-activity" data-wd-section="wd-activity">
   <div class="wd-activity-content wd-reveal">
@@ -180,7 +197,9 @@
     </svg>
   </div>
 </section>
+@endif
 
+@if($showBattery)
 {{-- ═══════════════════════════════════════ BATTERY SPLIT ═══════ --}}
 <section class="wd-split wd-split--flip wd-split--decor" style="background:var(--bg);">
   <div class="wd-split-copy wd-reveal" style="background:var(--bg);">
@@ -200,7 +219,9 @@
     </span>
   </div>
 </section>
+@endif
 
+@if($showSpecsSection)
 {{-- ═══════════════════════════════════════ FULL SPECS ════════ --}}
 <section class="wd-specs-section" id="wd-specs" data-wd-section="wd-specs">
   <div class="wrap">
@@ -217,10 +238,12 @@
     </div>
   </div>
 </section>
+@endif
 
 {{-- ═══════════════════════════════════════ COMPATIBLE ACCESSORIES ══ --}}
 @include('pages.partials.product-compatible-accessories')
 
+@if($showBuySection)
 {{-- ═══════════════════════════════════════ BUY ════════════════ --}}
 <section class="wd-buy" id="wd-buy" data-wd-section="wd-buy">
   <div class="wrap wd-reveal">
@@ -240,6 +263,7 @@
     <p class="wd-buy-note">{{ __('ui.wt_buy_note') }}</p>
   </div>
 </section>
+@endif
 
 @endsection
 
