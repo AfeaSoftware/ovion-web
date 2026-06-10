@@ -11,6 +11,7 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -235,6 +236,8 @@ class ProductResource extends Resource
             ->disk('public')
             ->visibility('public')
             ->image()
+            ->imageEditor()
+            ->optimize('webp')
             ->maxSize(50 * 1024)
             ->columnSpanFull();
 
@@ -260,7 +263,7 @@ class ProductResource extends Resource
 
                 // ── 1. Ürün Kimliği ─────────────────────────────────────
                 Section::make('Ürün Kimliği')
-                    ->description('Tip, ad, slug ve görünürlük ayarları.')
+                    ->description('Tip, ad ve görünürlük ayarları.')
                     ->schema([
                         Grid::make(3)->schema([
                             Select::make('type')
@@ -311,15 +314,7 @@ class ProductResource extends Resource
                             })
                             ->columnSpanFull(),
 
-                        TextInput::make('slug')
-                            ->label('Slug (URL)')
-                            ->required()
-                            ->maxLength(255)
-                            ->helperText(fn ($livewire): string => self::isSecondaryLocale($livewire)
-                                ? 'Bu dile özel slug. Boş bırakılırsa Türkçe slug kullanılır.'
-                                : 'örn: ovion-v11-lite — her dil için ayrı slug verilebilir.'
-                            )
-                            ->columnSpanFull(),
+                        Hidden::make('slug'),
                     ]),
 
                 // ── 2. Anasayfa "Tüm Ürünler" Kart Görseli ──────────────
@@ -328,7 +323,7 @@ class ProductResource extends Resource
                     ->schema([
                         self::imageUpload(
                             'collection_card',
-                            hint: 'Önerilen: 800×1000 px, transparan PNG. Hero\'dan farklı bir görsel için bu alana yükle.',
+                            hint: 'Önerilen: 1:1 oranında, tercihen 800×800 px veya daha büyük kare görseller. Yüklenen görsel, anasayfa kartında kırpılarak gösterilir.',
                         ),
 
                         Textarea::make('content.collection_card.description')
@@ -366,7 +361,7 @@ class ProductResource extends Resource
 
                         self::imageUpload(
                             'hero',
-                            hint: 'Telefon: 900×1100 · Saat: 600×700 · Kulaklık: 800×700 — şeffaf arka plan, PNG önerilir.',
+                            hint: 'Önerilen: 1920x1080px boyutlarında, ürünün öne çıkan özelliklerini göstermek için kullanılır. Yüklenen görsel, sayfanın üst kısmında hero alanında gösterilir.',
                         ),
                     ])
                     ->visible(fn (Get $get) => filled($get('type')))

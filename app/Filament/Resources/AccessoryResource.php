@@ -151,6 +151,7 @@ class AccessoryResource extends Resource
                             ->disk('public')
                             ->visibility('public')
                             ->image()
+                            ->optimize('webp')
                             ->maxSize(50 * 1024)
                             ->helperText('Önerilen: 800×800 px transparan PNG.')
                             ->columnSpanFull(),

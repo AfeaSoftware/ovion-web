@@ -34,6 +34,9 @@
       <li><a class="pd-subnav-link wd-subnav-link" href="#wd-design">{{ __('ui.pd_design') }}</a></li>
       <li><a class="pd-subnav-link wd-subnav-link" href="#wd-activity">{{ __('ui.pd_activity') }}</a></li>
       <li><a class="pd-subnav-link wd-subnav-link" href="#wd-specs">{{ __('ui.pd_specs') }}</a></li>
+      @if(($compatibleAccessories ?? collect())->isNotEmpty())
+        <li><a class="pd-subnav-link wd-subnav-link" href="#pd-compat">{{ __('ui.pd_compat_ey') }}</a></li>
+      @endif
     </ul>
     <button class="pd-subnav-arrow pd-subnav-arrow--next" aria-label="{{ __('ui.nav_next') }}">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>

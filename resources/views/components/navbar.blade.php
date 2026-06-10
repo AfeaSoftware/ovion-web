@@ -27,7 +27,7 @@
   };
 
   $heroUrl = function (Product $p): ?string {
-    return $p->heroUrl();
+    return $p->collectionCardUrl();
   };
 @endphp
 <header class="nav">
@@ -92,10 +92,40 @@
 
         <li><a href="{{ $r('destek', 'en.support') }}">{{ __('ui.nav_support') }}</a></li>
 
+        <li class="nav-mobile-only nav-mobile-divider" aria-hidden="true"></li>
+
+        <li class="nav-mobile-only">
+          <a href="{{ auth()->check() ? $r('account', 'en.account') : $r('login', 'en.login') }}">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+            {{ auth()->check() ? __('ui.nav_account') : __('ui.nav_login') }}
+          </a>
+        </li>
+
+        <li class="nav-mobile-only">
+          <a href="{{ $r('cart.index', 'en.cart.index') }}">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            {{ __('ui.nav_cart') }}
+          </a>
+        </li>
+
+        <li class="nav-mobile-only">
+          <a href="{{ $altUrl ?? '#' }}" aria-label="{{ __('ui.lang_switch_label') }}">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            {{ __('ui.lang_switch') }}
+          </a>
+        </li>
+
       </ul>
     </nav>
 
-    <div class="nav-actions" style="display:flex; align-items:center; gap:12px;">
+    <div class="nav-actions">
       <a href="{{ $r('cart.index', 'en.cart.index') }}" class="nav-icon-btn" aria-label="{{ __('ui.nav_cart') }}" title="{{ __('ui.nav_cart') }}">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>

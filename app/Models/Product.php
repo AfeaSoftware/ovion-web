@@ -129,6 +129,14 @@ class Product extends Model implements HasMedia
         return $url ? preg_replace('#^https?://[^/]+#', '', $url) : null;
     }
 
+    public function collectionCardUrl(?string $conversion = null): ?string
+    {
+        $url = $this->getFirstMediaUrl('collection_card', $conversion ?? '');
+        $url = $url !== '' ? $url : null;
+
+        return $url ? preg_replace('#^https?://[^/]+#', '', $url) : $this->heroUrl($conversion);
+    }
+
     public function scopeActive(Builder $query): Builder
     {
         return $query->where('is_active', true);

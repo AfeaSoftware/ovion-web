@@ -569,8 +569,6 @@
 
 /* ── Mobile global fixes ─────────────────────── */
 @media (max-width: 560px) {
-  /* Nav: hide links on product pages, keep brand + cta */
-  .nav .nav-links { display: none; }
   .nav-inner { height: 56px; }
 
   /* Hero */

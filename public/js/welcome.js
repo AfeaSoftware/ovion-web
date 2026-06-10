@@ -4,6 +4,7 @@
   if (!slider) return;
 
   const slides  = slider.querySelectorAll('.ov-hero-slide, .hero-slide');
+  if (slides.length <= 1) return;
   const dots    = slider.querySelectorAll('.ov-hero-dot, .hero-dot');
   const prev    = slider.querySelector('.hero-slider-prev');
   const next    = slider.querySelector('.hero-slider-next');
@@ -141,14 +142,16 @@ document.querySelectorAll('.nav-has-drop > a').forEach(link => {
     const wasOpen = li.classList.contains('is-open');
     document.querySelectorAll('.nav-has-drop.is-open').forEach(el => el.classList.remove('is-open'));
     if (!wasOpen) li.classList.add('is-open');
+    link.blur();
   });
 });
 
-// Nav dropdowns — delay on close so mouse can travel button → menu
+// Nav dropdowns — delay on close so mouse can travel button → menu (desktop only)
 document.querySelectorAll('.nav-has-drop').forEach(li => {
   let closeTimer;
-  const open  = () => { clearTimeout(closeTimer); li.classList.add('is-open'); };
-  const close = () => { closeTimer = setTimeout(() => li.classList.remove('is-open'), 180); };
+  const isDesktop = () => window.matchMedia('(min-width: 821px)').matches && window.matchMedia('(hover: hover)').matches;
+  const open  = () => { if (!isDesktop()) return; clearTimeout(closeTimer); li.classList.add('is-open'); };
+  const close = () => { if (!isDesktop()) return; closeTimer = setTimeout(() => li.classList.remove('is-open'), 180); };
   li.addEventListener('mouseenter', open);
   li.addEventListener('mouseleave', close);
   li.querySelector('.nav-drop')?.addEventListener('mouseenter', open);

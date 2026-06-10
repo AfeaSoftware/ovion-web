@@ -4,16 +4,17 @@
   --hd-blue-dim: color-mix(in oklab, #0a84ff 80%, transparent);
 }
 
-.nav .nav-links {
-  flex-wrap: nowrap;
-  gap: 2px;
-}
-.nav .nav-links > li > a {
-  font-size: 13px;
-  padding: 6px 10px;
+@media (min-width: 821px) {
+  .nav .nav-links {
+    flex-wrap: nowrap;
+    gap: 2px;
+  }
+  .nav .nav-links > li > a {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
 }
 @media (max-width: 560px) {
-  .nav .nav-links { display: none; }
   .nav-inner { height: 56px; }
   .hd-subnav { top: 56px; }
 }
