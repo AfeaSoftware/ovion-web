@@ -91,7 +91,7 @@ return [
     */
 
     'filament' => [
-        'navigation_group' => 'Content',
+        'navigation_group' => 'İçerik',
         'navigation_sort' => 8,
 
         /*

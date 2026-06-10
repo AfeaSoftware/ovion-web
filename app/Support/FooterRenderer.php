@@ -53,7 +53,10 @@ class FooterRenderer
         return match ($type) {
             'static' => $base + ['links' => self::staticLinks($block['links'] ?? [])],
             'dynamic' => $base + ['links' => self::dynamicLinks($block, $isEnglish)],
-            'brand' => $base + ['description' => $block['description'] ?? ''],
+            'brand' => $base + [
+                'description' => $block['description'] ?? '',
+                'image' => $block['image'] ?? null,
+            ],
             'contact' => $base + ['contact' => true],
             default => null,
         };

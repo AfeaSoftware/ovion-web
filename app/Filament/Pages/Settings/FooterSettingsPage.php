@@ -5,6 +5,7 @@ namespace App\Filament\Pages\Settings;
 use Afea\Cms\Settings\Filament\Pages\AbstractSettingsPage;
 use Afea\Cms\Settings\Settings\FooterSettings;
 use BackedEnum;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -161,6 +162,17 @@ class FooterSettingsPage extends AbstractSettingsPage
                                 ])
                                 ->columnSpanFull()
                                 ->visible(fn (Get $get): bool => $get('block_type') === 'static'),
+
+                            FileUpload::make('image')
+                                ->label('Marka Görseli')
+                                ->helperText('PNG veya SVG önerilir. Boş bırakılırsa varsayılan Ovion logosu gösterilir.')
+                                ->image()
+                                ->disk('public')
+                                ->directory('footer/brand')
+                                ->visibility('public')
+                                ->maxSize(5 * 1024)
+                                ->columnSpanFull()
+                                ->visible(fn (Get $get): bool => $get('block_type') === 'brand'),
 
                             Textarea::make('description')
                                 ->label('Açıklama')

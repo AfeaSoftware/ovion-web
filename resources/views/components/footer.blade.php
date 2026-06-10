@@ -29,9 +29,14 @@
       @foreach($blocks as $block)
         <div class="foot-block foot-block--{{ $block['type'] }}" style="grid-column: span {{ $block['colspan'] }};">
           @if($block['type'] === 'brand')
+            @php
+              $brandImage = !empty($block['image'])
+                ? \Illuminate\Support\Facades\Storage::disk('public')->url($block['image'])
+                : asset('images/ovion-logo.png');
+            @endphp
             <div class="foot-brand-col">
               <div class="brand">
-                <img src="{{ asset('images/ovion-logo.png') }}" alt="{{ $block['title'] }}" class="brand-logo" />
+                <img src="{{ $brandImage }}" alt="{{ $block['title'] }}" class="brand-logo" />
               </div>
               @if(!empty($block['description']))
                 <p class="foot-about">{{ $block['description'] }}</p>
