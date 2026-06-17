@@ -16,1507 +16,1796 @@ class ProductSeeder extends Seeder
             [
                 'type' => 'phone',
                 'slug' => [
-                    'tr' => 'ovion-v11-lite',
-                    'en' => 'ovion-v11-lite',
+                    'tr' => 'v20-pro',
+                    'en' => 'v20-pro',
                 ],
                 'name' => [
-                    'tr' => 'Ovion V11 Lite',
-                    'en' => 'Ovion V11 Lite',
+                    'tr' => 'V20 Pro',
+                    'en' => 'V20 Pro',
                 ],
                 'eyebrow' => [
                     'tr' => 'Yeni — 2026',
                     'en' => 'New — 2026',
                 ],
                 'tagline' => [
-                    'tr' => 'İnce. Akıllı. Türkiye\'nin.',
-                    'en' => 'Slim. Smart. Türkiye\'s.',
+                    'tr' => 'Gücünü Hisset. Her Detayı Yaşa.',
+                    'en' => 'Feel the Power. Live Every Detail.',
                 ],
                 'strip_stats' => [
                     'tr' => [
-                        [
-                            'value' => '6.56″',
-                            'label' => 'HD+ · 90 Hz',
-                        ],
-                        [
-                            'value' => '50 MP',
-                            'label' => 'AI Ana Kamera',
-                        ],
-                        [
-                            'value' => '5000 mAh',
-                            'label' => 'Batarya · 18 W',
-                        ],
-                        [
-                            'value' => '8.45 mm',
-                            'label' => 'İnce Profil · 179 g',
-                        ],
-                        [
-                            'value' => '24 ay',
-                            'label' => 'Türkiye Garantisi',
-                        ],
+                        ['value' => '6.7″', 'label' => 'FHD+ AMOLED · 120 Hz'],
+                        ['value' => '64 MP', 'label' => 'AI Ana Kamera'],
+                        ['value' => '5000 mAh', 'label' => 'Batarya · 33 W'],
+                        ['value' => '8 + 8 GB', 'label' => 'RAM · 256 GB Depolama'],
+                        ['value' => '24 ay', 'label' => 'Türkiye Garantisi'],
                     ],
                     'en' => [
-                        [
-                            'value' => '6.56″',
-                            'label' => 'HD+ · 90 Hz',
-                        ],
-                        [
-                            'value' => '50 MP',
-                            'label' => 'AI Main Camera',
-                        ],
-                        [
-                            'value' => '5000 mAh',
-                            'label' => 'Battery · 18 W',
-                        ],
-                        [
-                            'value' => '8.45 mm',
-                            'label' => 'Slim Profile · 179 g',
-                        ],
-                        [
-                            'value' => '24 mo.',
-                            'label' => 'Türkiye Warranty',
-                        ],
+                        ['value' => '6.7″', 'label' => 'FHD+ AMOLED · 120 Hz'],
+                        ['value' => '64 MP', 'label' => 'AI Main Camera'],
+                        ['value' => '5000 mAh', 'label' => 'Battery · 33 W'],
+                        ['value' => '8 + 8 GB', 'label' => 'RAM · 256 GB Storage'],
+                        ['value' => '24 mo.', 'label' => 'Türkiye Warranty'],
                     ],
                 ],
                 'content' => [
                     'tr' => [
-                        'collection_card' => [
-                            'description' => '90 Hz · 50 MP AI Kamera · 5000 mAh',
-                        ],
-                        'hero' => [
-                            'byline' => '50 MP AI kamera ile tanışın.',
-                        ],
+                        'collection_card' => ['description' => '120 Hz AMOLED · 64 MP AI Kamera · 5000 mAh'],
+                        'hero' => ['byline' => '64 MP yapay zekâ destekli kamera ile tanışın.'],
                         'camera' => [
                             'eyebrow' => 'Kamera',
-                            'title' => '50 MP sensör.<br/>Işığı okumak için<br/>eğitildi.',
+                            'title' => '64 MP sensör.<br/>Her anıyı en ince<br/>ayrıntısına kadar.',
                             'cards' => [
-                                [
-                                    'icon' => 'camera',
-                                    'metric' => '50 MP',
-                                    'title' => 'Ana Kamera',
-                                    'description' => 'Büyük piksel sensörü, düşük ışıkta detayı korur ve ten tonlarını doğal yansıtır.',
-                                ],
-                                [
-                                    'icon' => 'eye',
-                                    'metric' => '40+ Sahne',
-                                    'title' => 'AI Sahne Modu',
-                                    'description' => 'Gece, yemek, portre dahil 40\'tan fazla sahneyi tanır; renk, kontrast ve netliği otomatik ayarlar.',
-                                ],
-                                [
-                                    'icon' => 'bolt',
-                                    'metric' => '0.3 sn',
-                                    'title' => 'Phase-Detect AF',
-                                    'description' => 'Faz algılama otomatik odaklama, hareket eden nesneleri bile 0.3 saniye altında kilitler.',
-                                ],
-                                [
-                                    'icon' => 'star',
-                                    'metric' => 'HDR',
-                                    'title' => 'HDR',
-                                    'description' => 'Yüksek dinamik aralık, arka ışıkta bile hem gölgeleri hem açık alanları dengede tutar.',
-                                ],
-                                [
-                                    'icon' => 'camera',
-                                    'metric' => '8 MP',
-                                    'title' => 'Ön Kamera',
-                                    'description' => 'Punch-hole ön kamera, gün ışığında ve iç mekânda doğal ten tonları için ayarlanmıştır.',
-                                ],
-                                [
-                                    'icon' => 'music',
-                                    'metric' => '1080p',
-                                    'title' => 'Video',
-                                    'description' => '1080p Full HD video, elektronik görüntü sabitleme ve yapay zekâ gürültü azaltma ile.',
-                                ],
+                                ['icon' => 'camera', 'metric' => '64 MP', 'title' => 'Ana Kamera', 'description' => '64 MP yapay zekâ destekli ana kamera, yüksek çözünürlüklü çekimler yapmanıza yardımcı olur; gün ışığında da gece çekimlerinde de detayları korur.'],
+                                ['icon' => 'eye', 'metric' => '2 MP', 'title' => 'Makro Kamera', 'description' => 'Makro lens sayesinde günlük hayatta fark edilmeyen küçük detayları yakın çekimlerle ortaya çıkarabilirsiniz.'],
+                                ['icon' => 'camera', 'metric' => '16 MP', 'title' => 'Ön Kamera', 'description' => '16 MP ön kamera ile görüntülü görüşmelerden selfie çekimlerine kadar her karede net ve doğal görüntüler.'],
+                                ['icon' => 'star', 'metric' => 'AI', 'title' => 'Yapay Zekâ', 'description' => 'Yapay zekâ desteği, sahneyi tanıyarak renk, kontrast ve netliği otomatik ayarlar ve her çekimi daha etkileyici kılar.'],
+                                ['icon' => 'bolt', 'metric' => 'PDAF', 'title' => 'Hızlı Odak', 'description' => 'Hızlı otomatik odaklama, hareketli sahnelerde bile anı kaçırmadan keskin kareler yakalamanızı sağlar.'],
+                                ['icon' => 'music', 'metric' => '1080p', 'title' => 'Video', 'description' => '1080p Full HD video kaydı, akıcı ve detaylı görüntülerle anılarınızı hareketli olarak ölümsüzleştirir.'],
                             ],
                         ],
-                        'camera_cards' => [
-                            'eyebrow' => 'Kamera Sistemi',
-                            'title' => 'Her açıdan<br/>mükemmel çekim.',
-                        ],
+                        'camera_cards' => ['eyebrow' => 'Kamera Sistemi', 'title' => 'Her açıdan<br/>mükemmel çekim.'],
                         'display' => [
                             'eyebrow' => 'Ekran',
-                            'title' => '90 Hz akıcılık.<br/>Her kaydırmada<br/>hissedilir.',
+                            'title' => '120 Hz akıcılık.<br/>Canlılığın yeni<br/>seviyesi.',
                             'items' => [
-                                [
-                                    'text' => '6.56 inç HD+ IPS LCD · 1612 × 720 px',
-                                ],
-                                [
-                                    'text' => '90 Hz yüksek yenileme hızı',
-                                ],
-                                [
-                                    'text' => 'Punch-hole ön kamera',
-                                ],
-                                [
-                                    'text' => 'Multi-touch kapasitif dokunmatik',
-                                ],
+                                ['text' => '6.7 inç FHD+ AMOLED ekran'],
+                                ['text' => '120 Hz yüksek yenileme hızı'],
+                                ['text' => 'Canlı renkler ve yüksek kontrast'],
+                                ['text' => 'Akıcı kaydırma, oyun ve video deneyimi'],
                             ],
                         ],
                         'performance' => [
                             'eyebrow' => 'Performans',
-                            'title' => 'Hızlı. Verimli.<br/>Tüm gün yanında.',
+                            'title' => 'Güçlü performans.<br/>Akıcı deneyim.',
                             'cards' => [
-                                [
-                                    'icon' => 'cpu',
-                                    'metric' => 'Octa-core',
-                                    'title' => 'İşlemci',
-                                    'description' => 'Octa-core 1.6 GHz işlemci, 12 nm süreçle verimli ve hızlı çok görevli kullanım sunar.',
-                                ],
-                                [
-                                    'icon' => 'bolt',
-                                    'metric' => '4 GB RAM',
-                                    'title' => 'Bellek',
-                                    'description' => '4 GB RAM ile uygulamalar arasında akıcı geçiş. 128 GB dahili depolama, microSD ile genişletilebilir.',
-                                ],
-                                [
-                                    'icon' => 'battery',
-                                    'metric' => '18 W',
-                                    'title' => 'Hızlı Şarj',
-                                    'description' => '5000 mAh batarya, 18 W hızlı şarj desteğiyle kısa bir molada saatlerce ek kullanım sağlar.',
-                                ],
-                                [
-                                    'icon' => 'shield',
-                                    'metric' => null,
-                                    'title' => 'Güvenlik',
-                                    'description' => 'Yan parmak izi sensörü + yüz tanıma. Çift katmanlı kimlik doğrulamayla verileriniz güvende.',
-                                ],
-                                [
-                                    'icon' => 'wifi',
-                                    'metric' => '4G LTE',
-                                    'title' => 'Bağlantı',
-                                    'description' => '4G LTE, Wi-Fi 802.11 a/b/g/n, Bluetooth 5.0, GPS + GLONASS ve USB-C 2.0.',
-                                ],
-                                [
-                                    'icon' => 'star',
-                                    'metric' => null,
-                                    'title' => 'Türkiye Yapımı',
-                                    'description' => 'Her V11 Lite, yerli üretim tesislerimizde üretilir. 24 aylık Türkiye garantisi ile teslim edilir.',
-                                ],
+                                ['icon' => 'cpu', 'metric' => 'Helio G99', 'title' => 'İşlemci', 'description' => 'MediaTek Helio G99 işlemci; uygulamalar, oyunlar ve çoklu görevde hızlı ve stabil performans sunar.'],
+                                ['icon' => 'bolt', 'metric' => '8 + 8 GB', 'title' => 'Bellek', 'description' => '8 GB fiziksel RAM + 8 GB genişletilmiş sanal RAM ile uygulamalar arasında daha akıcı geçiş.'],
+                                ['icon' => 'shield', 'metric' => '256 GB', 'title' => 'Depolama', 'description' => '256 GB dahili depolama, tüm fotoğraflarınız, videolarınız ve uygulamalarınız için geniş alan sunar.'],
+                                ['icon' => 'battery', 'metric' => '33 W', 'title' => 'Hızlı Şarj', 'description' => '5000 mAh batarya ve 33 W hızlı şarj desteğiyle kısa sürelerde daha fazla enerji kazanırsınız.'],
+                                ['icon' => 'wifi', 'metric' => 'NFC', 'title' => 'Bağlantı', 'description' => 'NFC desteğiyle temassız işlemler parmaklarınızın ucunda. Çift SIM ile iş ve özel hayatınızı ayırın.'],
+                                ['icon' => 'star', 'metric' => 'Android U', 'title' => 'İşletim Sistemi', 'description' => 'Android U ile modern, kullanıcı dostu ve akıcı bir deneyim. 24 aylık Türkiye garantisi ile teslim edilir.'],
                             ],
                         ],
                         'battery' => [
                             'eyebrow' => 'Batarya',
-                            'title' => 'Bir şarjla<br/>tüm gün.',
+                            'title' => 'Gün boyu<br/>enerji yanınızda.',
                             'items' => [
-                                [
-                                    'text' => '5000 mAh Li-ion batarya',
-                                ],
-                                [
-                                    'text' => '18 W kablolu hızlı şarj',
-                                ],
-                                [
-                                    'text' => 'USB-C bağlantısı',
-                                ],
+                                ['text' => '5000 mAh yüksek kapasiteli batarya'],
+                                ['text' => '33 W kablolu hızlı şarj'],
+                                ['text' => 'Yoğun kullanımda bile gün boyu dayanıklılık'],
                             ],
                         ],
                         'cinema' => [
                             'slides' => [
-                                [
-                                    'eyebrow' => 'Tasarım',
-                                    'title' => 'Kamera mühendisliği<br/>sahnede.',
-                                    'description' => '50 MP dairesel kamera modülü, Ovion imzası ve parmak izi dirençli İnci Beyazı yüzey.',
-                                ],
-                                [
-                                    'eyebrow' => 'Profil',
-                                    'title' => '8.45 mm.<br/>Elde kaybolur.',
-                                    'description' => '164 mm gövdede 8.45 mm ince profil. Alüminyum çerçeve, her kenarda milimetrenin onda biri hassasiyetinde.',
-                                ],
-                                [
-                                    'eyebrow' => 'Tuşlar',
-                                    'title' => 'Yan tuştan<br/>güce ulaş.',
-                                    'description' => 'Yan yerleşimli parmak izi sensörü, fiziksel ses tuşları ve USB-C bağlantısı.',
-                                ],
-                                [
-                                    'eyebrow' => 'Renk',
-                                    'title' => 'İnci Beyazı.<br/>Bir ton, sonsuz ışık.',
-                                    'description' => 'Işıkla oynayan İnci Beyazı kaplama, günün her saatinde farklı bir görünüm sunar.',
-                                ],
+                                ['eyebrow' => 'Ekran', 'title' => '120 Hz AMOLED.<br/>Akıcılığı hisset.', 'description' => '6.7 inç FHD+ AMOLED ekran, canlı renkler ve yüksek kontrast sunarken 120 Hz yenileme hızıyla her dokunuşu daha hızlı kılar.'],
+                                ['eyebrow' => 'Kamera', 'title' => '64 MP.<br/>Her detayı yakala.', 'description' => '64 MP yapay zekâ destekli kamera, makro ve 16 MP ön kamera ile anılarınızı en ince ayrıntısına kadar ölümsüzleştirir.'],
+                                ['eyebrow' => 'Performans', 'title' => 'Helio G99.<br/>Güce ulaş.', 'description' => 'MediaTek Helio G99 işlemci, 8+8 GB RAM ve 256 GB depolama ile günlük kullanımın ötesine geçen bir güç.'],
+                                ['eyebrow' => 'Enerji', 'title' => '33 W hızlı şarj.<br/>Beklemeye az zaman.', 'description' => '5000 mAh batarya ve 33 W hızlı şarj desteğiyle günün her anında yanınızda olmaya hazır.'],
                             ],
                         ],
-                        'specs_section' => [
-                            'eyebrow' => 'Teknik Özellikler',
-                            'title' => 'Her detayı<br/>burada bulursunuz.',
-                        ],
-                        'buy_section' => [
-                            'eyebrow' => 'Satın Al',
-                            'title' => 'Hazır olduğunda<br/>buradayız.',
-                        ],
+                        'specs_section' => ['eyebrow' => 'Teknik Özellikler', 'title' => 'Her detayı<br/>burada bulursunuz.'],
+                        'buy_section' => ['eyebrow' => 'Satın Al', 'title' => 'Hazır olduğunda<br/>buradayız.'],
                     ],
                     'en' => [
-                        'collection_card' => [
-                            'description' => '90 Hz · 50 MP AI Camera · 5000 mAh',
-                        ],
-                        'hero' => [
-                            'byline' => 'Meet the 50 MP AI camera.',
-                        ],
+                        'collection_card' => ['description' => '120 Hz AMOLED · 64 MP AI Camera · 5000 mAh'],
+                        'hero' => ['byline' => 'Meet the 64 MP AI-powered camera.'],
                         'camera' => [
                             'eyebrow' => 'Camera',
-                            'title' => '50 MP sensor.<br/>Trained to read<br/>the light.',
+                            'title' => '64 MP sensor.<br/>Every memory in its<br/>finest detail.',
                             'cards' => [
-                                [
-                                    'icon' => 'camera',
-                                    'metric' => '50 MP',
-                                    'title' => 'Main Camera',
-                                    'description' => 'A large-pixel sensor that holds detail in low light without flattening skin tones.',
-                                ],
-                                [
-                                    'icon' => 'eye',
-                                    'metric' => '40+ Scenes',
-                                    'title' => 'AI Scene Mode',
-                                    'description' => 'Recognises over 40 scenes including night, food and portrait, automatically tuning colour, contrast and sharpening.',
-                                ],
-                                [
-                                    'icon' => 'bolt',
-                                    'metric' => '0.3 s',
-                                    'title' => 'Phase-Detect AF',
-                                    'description' => 'Phase-detect autofocus locks even on moving subjects in under 0.3 s.',
-                                ],
-                                [
-                                    'icon' => 'star',
-                                    'metric' => 'HDR',
-                                    'title' => 'HDR',
-                                    'description' => 'High dynamic range keeps shadows and highlights balanced, even in backlight.',
-                                ],
-                                [
-                                    'icon' => 'camera',
-                                    'metric' => '8 MP',
-                                    'title' => 'Front Camera',
-                                    'description' => 'A punch-hole front camera tuned for natural skin tones in daylight and indoors.',
-                                ],
-                                [
-                                    'icon' => 'music',
-                                    'metric' => '1080p',
-                                    'title' => 'Video',
-                                    'description' => '1080p Full HD video with electronic image stabilisation and AI noise reduction.',
-                                ],
+                                ['icon' => 'camera', 'metric' => '64 MP', 'title' => 'Main Camera', 'description' => 'A 64 MP AI-powered main camera helps you capture high-resolution shots, holding detail in daylight and night scenes alike.'],
+                                ['icon' => 'eye', 'metric' => '2 MP', 'title' => 'Macro Camera', 'description' => 'A macro lens reveals the small details overlooked in everyday life through close-up shots.'],
+                                ['icon' => 'camera', 'metric' => '16 MP', 'title' => 'Front Camera', 'description' => 'A 16 MP front camera delivers clear, natural images in every frame, from video calls to selfies.'],
+                                ['icon' => 'star', 'metric' => 'AI', 'title' => 'Artificial Intelligence', 'description' => 'AI support recognises the scene and automatically tunes colour, contrast and sharpness, making every shot more striking.'],
+                                ['icon' => 'bolt', 'metric' => 'PDAF', 'title' => 'Fast Focus', 'description' => 'Fast autofocus lets you capture sharp frames without missing the moment, even in fast-moving scenes.'],
+                                ['icon' => 'music', 'metric' => '1080p', 'title' => 'Video', 'description' => '1080p Full HD video recording immortalises your memories in motion with smooth, detailed footage.'],
                             ],
                         ],
-                        'camera_cards' => [
-                            'eyebrow' => 'Camera System',
-                            'title' => 'A perfect shot<br/>from every angle.',
-                        ],
+                        'camera_cards' => ['eyebrow' => 'Camera System', 'title' => 'A perfect shot<br/>from every angle.'],
                         'display' => [
                             'eyebrow' => 'Display',
-                            'title' => '90 Hz fluidity.<br/>Felt with every<br/>swipe.',
+                            'title' => '120 Hz fluidity.<br/>A new level of<br/>vividness.',
                             'items' => [
-                                [
-                                    'text' => '6.56-inch HD+ IPS LCD · 1612 × 720 px',
-                                ],
-                                [
-                                    'text' => '90 Hz high refresh rate',
-                                ],
-                                [
-                                    'text' => 'Punch-hole front camera',
-                                ],
-                                [
-                                    'text' => 'Multi-touch capacitive surface',
-                                ],
-                            ],
-                        ],
-                        'display_list' => [
-                            'eyebrow' => 'Display Technology',
-                            'title' => 'Brightness tuned<br/>for every kind of content.',
-                            'description' => 'A multi-touch 6.56-inch HD+ IPS panel with a punch-hole front camera offers maximum screen area. Readable even in sunlight.',
-                        ],
-                        'cinema' => [
-                            'slides' => [
-                                [
-                                    'eyebrow' => 'Design',
-                                    'title' => 'Camera engineering<br/>on display.',
-                                    'description' => 'A 50 MP circular camera module, the Ovion signature and a fingerprint-resistant Pearl White surface.',
-                                ],
-                                [
-                                    'eyebrow' => 'Profile',
-                                    'title' => '8.45 mm.<br/>Disappears in your hand.',
-                                    'description' => '8.45 mm slim profile in a 164 mm body. An aluminium frame, accurate to within a tenth of a millimetre on every edge.',
-                                ],
-                                [
-                                    'eyebrow' => 'Buttons',
-                                    'title' => 'Power at<br/>your fingertip.',
-                                    'description' => 'A side-mounted fingerprint sensor, physical volume keys and a USB-C port.',
-                                ],
-                                [
-                                    'eyebrow' => 'Colour',
-                                    'title' => 'Pearl White.<br/>One tone, infinite light.',
-                                    'description' => 'A Pearl White finish that plays with light, looking different from morning to night.',
-                                ],
+                                ['text' => '6.7-inch FHD+ AMOLED display'],
+                                ['text' => '120 Hz high refresh rate'],
+                                ['text' => 'Vivid colours and high contrast'],
+                                ['text' => 'Smooth scrolling, gaming and video experience'],
                             ],
                         ],
                         'performance' => [
                             'eyebrow' => 'Performance',
-                            'title' => 'Fast. Efficient.<br/>By your side all day.',
+                            'title' => 'Powerful performance.<br/>Fluid experience.',
                             'cards' => [
-                                [
-                                    'icon' => 'cpu',
-                                    'metric' => 'Octa-core',
-                                    'title' => 'Processor',
-                                    'description' => 'Octa-core 1.6 GHz CPU on a 12 nm process for fast, efficient multitasking.',
-                                ],
-                                [
-                                    'icon' => 'bolt',
-                                    'metric' => '4 GB RAM',
-                                    'title' => 'Memory',
-                                    'description' => 'Smooth app switching with 4 GB RAM. 128 GB internal storage, expandable via microSD.',
-                                ],
-                                [
-                                    'icon' => 'battery',
-                                    'metric' => '18 W',
-                                    'title' => 'Fast Charging',
-                                    'description' => 'A 5000 mAh battery with 18 W fast charging gives you hours of extra use after a short break.',
-                                ],
-                                [
-                                    'icon' => 'shield',
-                                    'metric' => null,
-                                    'title' => 'Security',
-                                    'description' => 'Side fingerprint sensor + face recognition. Two layers of authentication keep your data safe.',
-                                ],
-                                [
-                                    'icon' => 'wifi',
-                                    'metric' => '4G LTE',
-                                    'title' => 'Connectivity',
-                                    'description' => '4G LTE, Wi-Fi 802.11 a/b/g/n, Bluetooth 5.0, GPS + GLONASS and USB-C 2.0.',
-                                ],
-                                [
-                                    'icon' => 'star',
-                                    'metric' => null,
-                                    'title' => 'Made in Türkiye',
-                                    'description' => 'Every V11 Lite is built in our domestic facilities. Delivered with a 24-month Türkiye warranty.',
-                                ],
+                                ['icon' => 'cpu', 'metric' => 'Helio G99', 'title' => 'Processor', 'description' => 'The MediaTek Helio G99 processor delivers fast, stable performance across apps, games and multitasking.'],
+                                ['icon' => 'bolt', 'metric' => '8 + 8 GB', 'title' => 'Memory', 'description' => '8 GB physical RAM + 8 GB extended virtual RAM for even smoother switching between apps.'],
+                                ['icon' => 'shield', 'metric' => '256 GB', 'title' => 'Storage', 'description' => '256 GB internal storage offers ample space for all your photos, videos and apps.'],
+                                ['icon' => 'battery', 'metric' => '33 W', 'title' => 'Fast Charging', 'description' => 'A 5000 mAh battery with 33 W fast charging lets you gain more energy in less time.'],
+                                ['icon' => 'wifi', 'metric' => 'NFC', 'title' => 'Connectivity', 'description' => 'NFC support puts contactless transactions at your fingertips. Dual SIM keeps work and personal life separate.'],
+                                ['icon' => 'star', 'metric' => 'Android U', 'title' => 'Operating System', 'description' => 'Android U brings a modern, user-friendly and fluid experience. Delivered with a 24-month Türkiye warranty.'],
                             ],
                         ],
                         'battery' => [
                             'eyebrow' => 'Battery',
-                            'title' => 'A full day<br/>on one charge.',
+                            'title' => 'All-day energy<br/>by your side.',
                             'items' => [
-                                [
-                                    'text' => '5000 mAh Li-ion battery',
-                                ],
-                                [
-                                    'text' => '18 W wired fast charging',
-                                ],
-                                [
-                                    'text' => 'USB-C connection',
-                                ],
+                                ['text' => '5000 mAh high-capacity battery'],
+                                ['text' => '33 W wired fast charging'],
+                                ['text' => 'All-day endurance even under heavy use'],
                             ],
                         ],
-                        'specs_section' => [
-                            'eyebrow' => 'Specifications',
-                            'title' => 'Every detail,<br/>right here.',
+                        'cinema' => [
+                            'slides' => [
+                                ['eyebrow' => 'Display', 'title' => '120 Hz AMOLED.<br/>Feel the fluidity.', 'description' => 'A 6.7-inch FHD+ AMOLED display delivers vivid colours and high contrast, while the 120 Hz refresh rate makes every touch faster.'],
+                                ['eyebrow' => 'Camera', 'title' => '64 MP.<br/>Capture every detail.', 'description' => 'A 64 MP AI-powered camera, a macro lens and a 16 MP front camera immortalise your memories in their finest detail.'],
+                                ['eyebrow' => 'Performance', 'title' => 'Helio G99.<br/>Reach the power.', 'description' => 'The MediaTek Helio G99 processor, 8+8 GB RAM and 256 GB storage deliver power that goes beyond everyday use.'],
+                                ['eyebrow' => 'Energy', 'title' => '33 W fast charge.<br/>Less time waiting.', 'description' => 'A 5000 mAh battery with 33 W fast charging is ready to stay by your side at every moment of the day.'],
+                            ],
                         ],
-                        'buy_section' => [
-                            'eyebrow' => 'Buy',
-                            'title' => 'Ready when<br/>you are.',
-                        ],
+                        'specs_section' => ['eyebrow' => 'Specifications', 'title' => 'Every detail,<br/>right here.'],
+                        'buy_section' => ['eyebrow' => 'Buy', 'title' => 'Ready when<br/>you are.'],
                     ],
                 ],
                 'specs' => [
                     'tr' => [
-                        [
-                            'key' => 'Ekran',
-                            'value' => '6.56 inç HD+ IPS LCD',
-                            'note' => '1612 × 720 px · 90 Hz · Multi-touch',
-                        ],
-                        [
-                            'key' => 'İşlemci',
-                            'value' => 'Unisoc T606',
-                            'note' => 'Octa-core · 1.6 GHz · 12 nm',
-                        ],
-                        [
-                            'key' => 'Bellek',
-                            'value' => '4 GB RAM · 128 GB Depolama',
-                            'note' => 'microSD ile genişletilebilir',
-                        ],
-                        [
-                            'key' => 'Ana Kamera',
-                            'value' => '50 MP f/1.8',
-                            'note' => 'PDAF · HDR · AI Sahne Modu',
-                        ],
-                        [
-                            'key' => 'Ön Kamera',
-                            'value' => '8 MP f/2.0',
-                            'note' => 'Punch-hole · Sabit odak',
-                        ],
-                        [
-                            'key' => 'Batarya',
-                            'value' => '5000 mAh',
-                            'note' => '18 W hızlı şarj · USB-C',
-                        ],
-                        [
-                            'key' => 'İşletim Sistemi',
-                            'value' => 'Android 14',
-                            'note' => 'Özelleştirilmiş OvionUI arayüzü',
-                        ],
-                        [
-                            'key' => 'Bağlantı',
-                            'value' => '4G LTE · Wi-Fi ac · BT 5.0 · GPS',
-                            'note' => 'GLONASS · USB-C 2.0 · 3.5 mm jack',
-                        ],
-                        [
-                            'key' => 'Güvenlik',
-                            'value' => 'Yan parmak izi sensörü',
-                            'note' => 'Yüz tanıma',
-                        ],
-                        [
-                            'key' => 'Boyutlar',
-                            'value' => '164.3 × 76.0 × 8.45 mm',
-                            'note' => '179 g',
-                        ],
-                        [
-                            'key' => 'SIM',
-                            'value' => 'Çift Nano-SIM',
-                            'note' => 'Dual Standby',
-                        ],
-                        [
-                            'key' => 'Renk',
-                            'value' => 'İnci Beyazı',
-                            'note' => 'Türkiye\'de tasarlandı ve üretildi',
-                        ],
+                        ['key' => 'Ekran', 'value' => '6.7 inç FHD+ AMOLED', 'note' => '120 Hz · Canlı renkler · Yüksek kontrast'],
+                        ['key' => 'İşlemci', 'value' => 'MediaTek Helio G99', 'note' => 'Octa-core · Yüksek verimli performans'],
+                        ['key' => 'Bellek', 'value' => '8 GB + 8 GB RAM · 256 GB Depolama', 'note' => 'Genişletilmiş sanal RAM · TF kart desteği'],
+                        ['key' => 'Ana Kamera', 'value' => '64 MP', 'note' => 'Yapay zekâ destekli · PDAF'],
+                        ['key' => 'Makro Kamera', 'value' => '2 MP', 'note' => 'Yakın çekim makro lens'],
+                        ['key' => 'Ön Kamera', 'value' => '16 MP', 'note' => 'Net ve doğal selfie ve görüntülü görüşme'],
+                        ['key' => 'Batarya', 'value' => '5000 mAh', 'note' => '33 W hızlı şarj'],
+                        ['key' => 'İşletim Sistemi', 'value' => 'Android U', 'note' => 'Modern ve kullanıcı dostu arayüz'],
+                        ['key' => 'Bağlantı', 'value' => 'NFC · Wi-Fi · Bluetooth · GPS', 'note' => 'Temassız işlem desteği'],
+                        ['key' => 'SIM', 'value' => 'Çift SIM', 'note' => 'Dual Standby'],
+                        ['key' => 'Genişletilebilir Depolama', 'value' => 'TF Kart Desteği', 'note' => 'Harici hafıza kartı ile genişletilebilir'],
+                        ['key' => 'Garanti', 'value' => '24 ay Türkiye garantisi', 'note' => 'Yetkili servis güvencesi'],
                     ],
                     'en' => [
-                        [
-                            'key' => 'Display',
-                            'value' => '6.56-inch HD+ IPS LCD',
-                            'note' => '1612 × 720 px · 90 Hz · Multi-touch',
-                        ],
-                        [
-                            'key' => 'Processor',
-                            'value' => 'Unisoc T606',
-                            'note' => 'Octa-core · 1.6 GHz · 12 nm',
-                        ],
-                        [
-                            'key' => 'Memory',
-                            'value' => '4 GB RAM · 128 GB Storage',
-                            'note' => 'Expandable via microSD',
-                        ],
-                        [
-                            'key' => 'Main Camera',
-                            'value' => '50 MP f/1.8',
-                            'note' => 'PDAF · HDR · AI Scene Mode',
-                        ],
-                        [
-                            'key' => 'Front Camera',
-                            'value' => '8 MP f/2.0',
-                            'note' => 'Punch-hole · Fixed focus',
-                        ],
-                        [
-                            'key' => 'Battery',
-                            'value' => '5000 mAh',
-                            'note' => '18 W fast charge · USB-C',
-                        ],
-                        [
-                            'key' => 'Operating System',
-                            'value' => 'Android 14',
-                            'note' => 'Custom OvionUI interface',
-                        ],
-                        [
-                            'key' => 'Connectivity',
-                            'value' => '4G LTE · Wi-Fi ac · BT 5.0 · GPS',
-                            'note' => 'GLONASS · USB-C 2.0 · 3.5 mm jack',
-                        ],
-                        [
-                            'key' => 'Security',
-                            'value' => 'Side fingerprint sensor',
-                            'note' => 'Face recognition',
-                        ],
-                        [
-                            'key' => 'Dimensions',
-                            'value' => '164.3 × 76.0 × 8.45 mm',
-                            'note' => '179 g',
-                        ],
-                        [
-                            'key' => 'SIM',
-                            'value' => 'Dual Nano-SIM',
-                            'note' => 'Dual Standby',
-                        ],
-                        [
-                            'key' => 'Colour',
-                            'value' => 'Pearl White',
-                            'note' => 'Designed and made in Türkiye',
-                        ],
+                        ['key' => 'Display', 'value' => '6.7-inch FHD+ AMOLED', 'note' => '120 Hz · Vivid colours · High contrast'],
+                        ['key' => 'Processor', 'value' => 'MediaTek Helio G99', 'note' => 'Octa-core · Highly efficient performance'],
+                        ['key' => 'Memory', 'value' => '8 GB + 8 GB RAM · 256 GB Storage', 'note' => 'Extended virtual RAM · TF card support'],
+                        ['key' => 'Main Camera', 'value' => '64 MP', 'note' => 'AI-powered · PDAF'],
+                        ['key' => 'Macro Camera', 'value' => '2 MP', 'note' => 'Close-up macro lens'],
+                        ['key' => 'Front Camera', 'value' => '16 MP', 'note' => 'Clear, natural selfies and video calls'],
+                        ['key' => 'Battery', 'value' => '5000 mAh', 'note' => '33 W fast charge'],
+                        ['key' => 'Operating System', 'value' => 'Android U', 'note' => 'Modern, user-friendly interface'],
+                        ['key' => 'Connectivity', 'value' => 'NFC · Wi-Fi · Bluetooth · GPS', 'note' => 'Contactless transaction support'],
+                        ['key' => 'SIM', 'value' => 'Dual SIM', 'note' => 'Dual Standby'],
+                        ['key' => 'Expandable Storage', 'value' => 'TF Card Support', 'note' => 'Expandable via external memory card'],
+                        ['key' => 'Warranty', 'value' => '24-month Türkiye warranty', 'note' => 'Authorised service assurance'],
                     ],
                 ],
-                'price' => 4999,
-                'price_label' => [
-                    'tr' => null,
-                ],
+                'price' => null,
+                'price_label' => ['tr' => null],
                 'price_note' => [
                     'tr' => '24 ay Türkiye garantisi · Ücretsiz kargo · Ücretsiz iade (30 gün)',
                     'en' => '24-month Türkiye warranty · Free shipping · Free returns (30 days)',
                 ],
-                'cta_primary' => [
-                    'tr' => 'Sepete Ekle',
-                    'en' => 'Add to Cart',
-                ],
-                'cta_secondary' => [
-                    'tr' => 'Teknik Özellikler',
-                    'en' => 'Specifications',
-                ],
+                'cta_primary' => ['tr' => 'Sepete Ekle', 'en' => 'Add to Cart'],
+                'cta_secondary' => ['tr' => 'Teknik Özellikler', 'en' => 'Specifications'],
                 'buy_url' => null,
                 'cta_secondary_url' => null,
                 'meta_title' => [
-                    'tr' => 'Ovion V11 Lite — 50 MP AI Kamera · 90 Hz · 5000 mAh',
-                    'en' => 'Ovion V11 Lite — 50 MP AI Camera · 90 Hz · 5000 mAh',
+                    'tr' => 'V20 Pro — 64 MP AI Kamera · 120 Hz AMOLED · 5000 mAh',
+                    'en' => 'V20 Pro — 64 MP AI Camera · 120 Hz AMOLED · 5000 mAh',
                 ],
                 'meta_description' => [
-                    'tr' => 'Ovion V11 Lite: 6.56 inç 90 Hz ekran, 50 MP yapay zekâ destekli kamera ve 5000 mAh batarya. İstanbul tasarımı, Türkiye üretimi.',
-                    'en' => 'Ovion V11 Lite: 6.56-inch 90 Hz display, 50 MP AI-powered camera and 5000 mAh battery. Designed in Istanbul, made in Türkiye.',
+                    'tr' => 'V20 Pro: 6.7 inç 120 Hz AMOLED ekran, 64 MP yapay zekâ destekli kamera, Helio G99 işlemci, 8+8 GB RAM, 256 GB depolama ve 33 W hızlı şarjlı 5000 mAh batarya.',
+                    'en' => 'V20 Pro: 6.7-inch 120 Hz AMOLED display, 64 MP AI-powered camera, Helio G99 processor, 8+8 GB RAM, 256 GB storage and a 5000 mAh battery with 33 W fast charging.',
                 ],
                 'is_active' => 1,
                 'order' => 1,
-                'is_spotlight' => 0,
-            ],
-            [
-                'type' => 'watch',
-                'slug' => [
-                    'tr' => 'ovion-s3-pro',
-                ],
-                'name' => [
-                    'tr' => 'Ovion S3 Pro',
-                    'en' => 'Ovion S3 Pro',
-                ],
-                'eyebrow' => [
-                    'tr' => 'Yeni — 2026',
-                    'en' => 'New — 2026',
-                ],
-                'tagline' => [
-                    'tr' => 'Sadece saatiniz değil,<br/>sağlık partneriniz.',
-                    'en' => 'More than a watch —<br/>your health partner.',
-                ],
-                'strip_stats' => [
-                    'tr' => [
-                        [
-                            'value' => '14 gün',
-                            'label' => 'Batarya',
-                        ],
-                        [
-                            'value' => '100+',
-                            'label' => 'Spor Modu',
-                        ],
-                        [
-                            'value' => '5 ATM',
-                            'label' => 'Su Direnci',
-                        ],
-                        [
-                            'value' => 'GPS',
-                            'label' => 'Yerleşik',
-                        ],
-                        [
-                            'value' => '24 ay',
-                            'label' => 'Türkiye Garantisi',
-                        ],
-                    ],
-                    'en' => [
-                        [
-                            'value' => '14 days',
-                            'label' => 'Battery',
-                        ],
-                        [
-                            'value' => '100+',
-                            'label' => 'Sport Modes',
-                        ],
-                        [
-                            'value' => '5 ATM',
-                            'label' => 'Water resistance',
-                        ],
-                        [
-                            'value' => 'GPS',
-                            'label' => 'Built-in',
-                        ],
-                        [
-                            'value' => '24 mo.',
-                            'label' => 'Türkiye Warranty',
-                        ],
-                    ],
-                ],
-                'content' => [
-                    'tr' => [
-                        'collection_card' => [
-                            'description' => '14 Gün Batarya · 100+ Spor Modu · 5 ATM',
-                        ],
-                        'health' => [
-                            'eyebrow' => 'Sağlık',
-                            'title' => 'Vücudunuzu<br/>dinleyen saat.',
-                            'description' => 'Kalp ritminizden uykunuza, stres seviyenizden kan oksijenine — S3 Pro günün her saati sizi izler, siz izlemeden.',
-                            'cards' => [
-                                [
-                                    'icon' => 'heart',
-                                    'metric' => 'İzleme',
-                                    'title' => 'Kalp Ritmi',
-                                    'description' => 'Optik kalp ritmi sensörü istirahat, egzersiz ve uyku sırasında sürekli ölçüm yapar. Anormal ritimde uyarı verir.',
-                                ],
-                                [
-                                    'icon' => 'drop',
-                                    'metric' => 'Sensörü',
-                                    'title' => 'Kan Oksijeni',
-                                    'description' => 'Kan oksijen doygunluğunu (SpO2) saniyeler içinde ölçer. Yüksek irtifa uyarısı ve uyku apnesi tespiti sunar.',
-                                ],
-                                [
-                                    'icon' => 'moon',
-                                    'metric' => 'Aşama',
-                                    'title' => 'Uyku Takibi',
-                                    'description' => 'REM, derin uyku ve hafif uyku aşamalarını ayrı ayrı analiz eder. Sabah uyku kalite raporu sunar.',
-                                ],
-                                [
-                                    'icon' => 'eye',
-                                    'metric' => 'Analiz',
-                                    'title' => 'Stres Seviyesi',
-                                    'description' => 'Kalp ritmi değişkenliği (HRV) analizi ile günlük stres seviyenizi takip eder, nefes egzersizleri önerir.',
-                                ],
-                                [
-                                    'icon' => 'clock',
-                                    'metric' => 'Gün',
-                                    'title' => 'Döngü Takibi',
-                                    'description' => 'Kadın sağlığı özelliği ile menstrüel döngüyü takip eder, semptomları kaydeder ve tahmin sunar.',
-                                ],
-                                [
-                                    'icon' => 'star',
-                                    'metric' => 'Max',
-                                    'title' => 'Fitness Skoru',
-                                    'description' => 'VO₂ Max tahmini ile kardiyo kondisyonunuzu ölçer. Zaman içindeki gelişiminizi grafikle gösterir.',
-                                ],
-                            ],
-                        ],
-                        'health_cards' => [
-                            'eyebrow' => 'Sağlık Sistemi',
-                            'title' => 'Her nabzınızda<br/>bir adım öteye.',
-                        ],
-                        'customization' => [
-                            'eyebrow' => 'Kişiselleştirme',
-                            'title' => 'Her güne başka<br/>bir yüz.',
-                            'faces' => [
-                                [
-                                    'name' => 'Sport Ring',
-                                    'tags' => 'Aktivite halkaları · Kalp ritmi',
-                                ],
-                                [
-                                    'name' => 'Klasik Altın',
-                                    'tags' => 'Analog stil · Tarih · Şehir',
-                                ],
-                                [
-                                    'name' => 'Minimal',
-                                    'tags' => 'Sade · Şık · Odaklanma',
-                                ],
-                                [
-                                    'name' => 'Data Pro',
-                                    'tags' => 'GPS · Hava · SpO2',
-                                ],
-                            ],
-                        ],
-                        'design' => [
-                            'eyebrow' => 'Tasarım',
-                            'title' => 'Alüminyum.<br/>Hafif. Dayanıklı.',
-                            'description' => 'Havacılık sınıfı alüminyum gövde, 1.96 inç AMOLED ekran ve değiştirilebilir kordon sistemi. İş toplantısından spor pistine kadar her ortama uyum sağlar.',
-                            'items' => [
-                                [
-                                    'text' => '1.96 inç AMOLED · 410 × 502 px · 326 ppi',
-                                ],
-                                [
-                                    'text' => 'Havacılık sınıfı alüminyum gövde',
-                                ],
-                                [
-                                    'text' => 'Florüre kauçuk · silikon kordon dahil',
-                                ],
-                                [
-                                    'text' => 'Değiştirilebilir 22 mm kordon sistemi',
-                                ],
-                                [
-                                    'text' => '5 ATM su direnci · yüzme uyumlu',
-                                ],
-                            ],
-                        ],
-                        'activity' => [
-                            'eyebrow' => 'Aktivite & GPS',
-                            'title' => 'Koşuyor,<br/>izliyor,<br/>analiz ediyor.',
-                            'description' => 'Yerleşik GPS ile parkur haritanızı çizin. 100\'den fazla spor modundan birini seçin. S3 Pro her adımı, her kaloriyi, her rakım değişimini kaydeder.',
-                            'stats' => [
-                                [
-                                    'value' => '100+',
-                                    'label' => 'Spor Modu',
-                                ],
-                                [
-                                    'value' => 'GPS',
-                                    'label' => '+ GLONASS',
-                                ],
-                                [
-                                    'value' => '5 ATM',
-                                    'label' => 'Su Direnci',
-                                ],
-                            ],
-                        ],
-                        'battery' => [
-                            'eyebrow' => 'Batarya',
-                            'title' => '14 gün.<br/>Şarj\'ı<br/>unutun.',
-                            'description' => 'Gelişmiş düşük güç mimarisi sayesinde S3 Pro tek şarjla 14 güne kadar dayanır. GPS aktifken bile 30 saate kadar sürekli çalışır.',
-                            'items' => [
-                                [
-                                    'text' => '14 gün tipik kullanım',
-                                ],
-                                [
-                                    'text' => '30 saat GPS modu',
-                                ],
-                                [
-                                    'text' => 'Manyetik hızlı şarj · 2 saatte tam dolu',
-                                ],
-                                [
-                                    'text' => 'Güç tasarrufu modunda 30 güne kadar',
-                                ],
-                            ],
-                        ],
-                        'specs_section' => [
-                            'eyebrow' => 'Teknik Özellikler',
-                            'title' => 'Her detay,<br/>burada.',
-                        ],
-                        'buy_section' => [
-                            'eyebrow' => 'Satın Al',
-                            'title' => 'Sağlığınıza<br/>en iyi yatırım.',
-                        ],
-                    ],
-                    'en' => [
-                        'collection_card' => [
-                            'description' => '14 Gün Batarya · 100+ Spor Modu · 5 ATM',
-                        ],
-                        'health' => [
-                            'eyebrow' => 'Health',
-                            'title' => 'A watch that<br/>listens to your body.',
-                            'description' => 'From heart rate to sleep, stress level to blood oxygen — the S3 Pro watches over you every hour, without you having to.',
-                            'cards' => [
-                                [
-                                    'icon' => 'heart',
-                                    'metric' => 'Monitoring',
-                                    'title' => 'Heart Rate',
-                                    'description' => 'An optical heart rate sensor measures continuously at rest, during exercise and while you sleep. Alerts you to abnormal rhythms.',
-                                ],
-                                [
-                                    'icon' => 'drop',
-                                    'metric' => 'Sensor',
-                                    'title' => 'Blood Oxygen',
-                                    'description' => 'Measures blood oxygen saturation (SpO2) in seconds. Includes high-altitude alerts and sleep apnoea detection.',
-                                ],
-                                [
-                                    'icon' => 'moon',
-                                    'metric' => 'Stages',
-                                    'title' => 'Sleep Tracking',
-                                    'description' => 'Analyses REM, deep and light sleep stages separately. Delivers a sleep quality report in the morning.',
-                                ],
-                                [
-                                    'icon' => 'eye',
-                                    'metric' => 'Analysis',
-                                    'title' => 'Stress Level',
-                                    'description' => 'Tracks daily stress via heart rate variability (HRV) analysis and suggests breathing exercises.',
-                                ],
-                                [
-                                    'icon' => 'clock',
-                                    'metric' => 'Day',
-                                    'title' => 'Cycle Tracking',
-                                    'description' => 'Women\'s health features track the menstrual cycle, log symptoms and provide predictions.',
-                                ],
-                                [
-                                    'icon' => 'star',
-                                    'metric' => 'Max',
-                                    'title' => 'Fitness Score',
-                                    'description' => 'VO₂ Max estimation measures cardio fitness. Tracks your progress over time on a graph.',
-                                ],
-                            ],
-                        ],
-                        'health_cards' => [
-                            'eyebrow' => 'Health System',
-                            'title' => 'One step further<br/>with every beat.',
-                        ],
-                        'customization' => [
-                            'eyebrow' => 'Personalisation',
-                            'title' => 'A new face<br/>for every day.',
-                            'faces' => [
-                                [
-                                    'name' => 'Sport Ring',
-                                    'tags' => 'Activity rings · Heart rate',
-                                ],
-                                [
-                                    'name' => 'Classic Gold',
-                                    'tags' => 'Analog style · Date · City',
-                                ],
-                                [
-                                    'name' => 'Minimal',
-                                    'tags' => 'Simple · Elegant · Focus',
-                                ],
-                                [
-                                    'name' => 'Data Pro',
-                                    'tags' => 'GPS · Weather · SpO2',
-                                ],
-                            ],
-                        ],
-                        'design' => [
-                            'eyebrow' => 'Design',
-                            'title' => 'Aluminium.<br/>Light. Durable.',
-                            'description' => 'Aerospace-grade aluminium body, 1.96-inch AMOLED display and an interchangeable strap system. Fits everywhere from the boardroom to the running track.',
-                            'items' => [
-                                [
-                                    'text' => '1.96-inch AMOLED · 410 × 502 px · 326 ppi',
-                                ],
-                                [
-                                    'text' => 'Aerospace-grade aluminium body',
-                                ],
-                                [
-                                    'text' => 'Fluoroelastomer · silicone strap included',
-                                ],
-                                [
-                                    'text' => 'Interchangeable 22 mm strap system',
-                                ],
-                                [
-                                    'text' => '5 ATM water resistance · swim-friendly',
-                                ],
-                            ],
-                        ],
-                        'activity' => [
-                            'eyebrow' => 'Activity & GPS',
-                            'title' => 'Running,<br/>watching,<br/>analysing.',
-                            'description' => 'Map your route with built-in GPS. Pick from over 100 sport modes. The S3 Pro records every step, every calorie, every change in elevation.',
-                            'stats' => [
-                                [
-                                    'value' => '100+',
-                                    'label' => 'Sport Modes',
-                                ],
-                                [
-                                    'value' => 'GPS',
-                                    'label' => '+ GLONASS',
-                                ],
-                                [
-                                    'value' => '5 ATM',
-                                    'label' => 'Water resistance',
-                                ],
-                            ],
-                        ],
-                        'battery' => [
-                            'eyebrow' => 'Battery',
-                            'title' => '14 days.<br/>Forget the<br/>charger.',
-                            'description' => 'Thanks to advanced low-power architecture, the S3 Pro lasts up to 14 days on a single charge. Even with GPS active, it runs continuously for up to 30 hours.',
-                            'items' => [
-                                [
-                                    'text' => '14 days typical use',
-                                ],
-                                [
-                                    'text' => '30 hours of GPS mode',
-                                ],
-                                [
-                                    'text' => 'Magnetic fast charge · full in 2 h',
-                                ],
-                                [
-                                    'text' => 'Up to 30 days in power-save mode',
-                                ],
-                            ],
-                        ],
-                        'specs_section' => [
-                            'eyebrow' => 'Specifications',
-                            'title' => 'Every detail,<br/>right here.',
-                        ],
-                        'buy_section' => [
-                            'eyebrow' => 'Buy',
-                            'title' => 'The best investment<br/>in your health.',
-                        ],
-                    ],
-                ],
-                'specs' => [
-                    'tr' => [
-                        [
-                            'key' => 'Ekran',
-                            'value' => '1.96 inç AMOLED',
-                            'note' => '410 × 502 px · 326 ppi · Always-On',
-                        ],
-                        [
-                            'key' => 'İşlemci',
-                            'value' => 'Dual-core akıllı saat SoC',
-                            'note' => 'Düşük güç + ana çekirdek',
-                        ],
-                        [
-                            'key' => 'Batarya',
-                            'value' => '500 mAh',
-                            'note' => '14 gün tipik · 30 saat GPS · 2 sa. şarj',
-                        ],
-                        [
-                            'key' => 'Sensörler',
-                            'value' => 'Kalp ritmi · SpO2 · İvme · Jiroskop',
-                            'note' => 'Barometre · Pusula · Sıcaklık',
-                        ],
-                        [
-                            'key' => 'Konum',
-                            'value' => 'GPS + GLONASS + BeiDou',
-                            'note' => 'Galileo dahil çoklu uydu sistemi',
-                        ],
-                        [
-                            'key' => 'Bağlantı',
-                            'value' => 'Bluetooth 5.3',
-                            'note' => 'Android 8+ / iOS 14+ uyumlu',
-                        ],
-                        [
-                            'key' => 'Spor Modları',
-                            'value' => '100\'den fazla mod',
-                            'note' => 'Koşu · Yüzme · Bisiklet · Yoga · HIIT',
-                        ],
-                        [
-                            'key' => 'Sağlık',
-                            'value' => '24/7 kalp ritmi · Uyku takibi',
-                            'note' => 'Stres · SpO2 · VO₂Max · Döngü takibi',
-                        ],
-                        [
-                            'key' => 'Su Direnci',
-                            'value' => '5 ATM (50 metre)',
-                            'note' => 'Yüzme uyumlu · Su sporları',
-                        ],
-                        [
-                            'key' => 'Gövde',
-                            'value' => 'Havacılık alüminyum · Mineral cam',
-                            'note' => '46 mm · 39 g (kordon hariç)',
-                        ],
-                        [
-                            'key' => 'Kordon',
-                            'value' => '22 mm değiştirilebilir',
-                            'note' => 'Florüre kauçuk · silikon · naylon seçenek',
-                        ],
-                        [
-                            'key' => 'Renk',
-                            'value' => 'Uzay Grisi · Yıldız Işığı · Koral',
-                            'note' => 'Türkiye\'de tasarlandı ve üretildi',
-                        ],
-                    ],
-                    'en' => [
-                        [
-                            'key' => 'Display',
-                            'value' => '1.96-inch AMOLED',
-                            'note' => '410 × 502 px · 326 ppi · Always-On',
-                        ],
-                        [
-                            'key' => 'Processor',
-                            'value' => 'Dual-core smartwatch SoC',
-                            'note' => 'Low-power + main core',
-                        ],
-                        [
-                            'key' => 'Battery',
-                            'value' => '500 mAh',
-                            'note' => '14 days typical · 30 h GPS · 2 h charge',
-                        ],
-                        [
-                            'key' => 'Sensors',
-                            'value' => 'Heart rate · SpO2 · Accelerometer · Gyroscope',
-                            'note' => 'Barometer · Compass · Temperature',
-                        ],
-                        [
-                            'key' => 'Location',
-                            'value' => 'GPS + GLONASS + BeiDou',
-                            'note' => 'Multi-satellite system including Galileo',
-                        ],
-                        [
-                            'key' => 'Connectivity',
-                            'value' => 'Bluetooth 5.3',
-                            'note' => 'Android 8+ / iOS 14+ compatible',
-                        ],
-                        [
-                            'key' => 'Sport Modes',
-                            'value' => 'Over 100 modes',
-                            'note' => 'Running · Swimming · Cycling · Yoga · HIIT',
-                        ],
-                        [
-                            'key' => 'Health',
-                            'value' => '24/7 heart rate · Sleep tracking',
-                            'note' => 'Stress · SpO2 · VO₂Max · Cycle tracking',
-                        ],
-                        [
-                            'key' => 'Water Resistance',
-                            'value' => '5 ATM (50 metres)',
-                            'note' => 'Swim-friendly · Water sports',
-                        ],
-                        [
-                            'key' => 'Body',
-                            'value' => 'Aerospace aluminium · Mineral glass',
-                            'note' => '46 mm · 39 g (without strap)',
-                        ],
-                        [
-                            'key' => 'Strap',
-                            'value' => '22 mm interchangeable',
-                            'note' => 'Fluoroelastomer · silicone · nylon options',
-                        ],
-                        [
-                            'key' => 'Colour',
-                            'value' => 'Space Grey · Starlight · Coral',
-                            'note' => 'Designed and made in Türkiye',
-                        ],
-                    ],
-                ],
-                'price' => 2499,
-                'price_label' => [
-                    'tr' => null,
-                ],
-                'price_note' => [
-                    'tr' => '24 ay Türkiye garantisi · Ücretsiz kargo · Ücretsiz iade (30 gün)',
-                    'en' => '24-month Türkiye warranty · Free shipping · Free returns (30 days)',
-                ],
-                'cta_primary' => [
-                    'tr' => 'Sepete Ekle',
-                    'en' => 'Add to Cart',
-                ],
-                'cta_secondary' => [
-                    'tr' => 'Teknik Özellikler',
-                    'en' => 'Specifications',
-                ],
-                'buy_url' => null,
-                'cta_secondary_url' => null,
-                'meta_title' => [
-                    'tr' => 'Ovion S3 Pro — Sağlık · GPS · 14 Gün Batarya',
-                    'en' => 'Ovion S3 Pro — Health · GPS · 14-Day Battery',
-                ],
-                'meta_description' => [
-                    'tr' => 'Ovion S3 Pro akıllı saat: 100\'den fazla spor modu, 14 gün batarya ömrü, kalp ritmi ve SpO2 takibi ile her anınızda yanınızda.',
-                    'en' => 'Ovion S3 Pro smartwatch: over 100 sport modes, 14-day battery life, heart rate and SpO2 tracking — by your side every moment.',
-                ],
-                'is_active' => 1,
-                'order' => 2,
                 'is_spotlight' => 1,
             ],
             [
-                'type' => 'headphone',
-                'slug' => [
-                    'tr' => 'ovion-h1-pro',
-                ],
-                'name' => [
-                    'tr' => 'Ovion H1 Pro',
-                    'en' => 'Ovion H1 Pro',
-                ],
-                'eyebrow' => [
-                    'tr' => 'Yeni — 2025',
-                    'en' => 'New — 2025',
-                ],
+                'type' => 'phone',
+                'slug' => ['tr' => 'v8-lite', 'en' => 'v8-lite'],
+                'name' => ['tr' => 'V8 Lite', 'en' => 'V8 Lite'],
+                'eyebrow' => ['tr' => 'Uygun Fiyat', 'en' => 'Value'],
                 'tagline' => [
-                    'tr' => 'Sessizlik. Müzik. Özgürlük.',
-                    'en' => 'Silence. Music. Freedom.',
+                    'tr' => 'Günlük İhtiyaçların İçin Tasarlanan Akıllı Güç',
+                    'en' => 'Smart Power Designed for Your Everyday Needs',
                 ],
                 'strip_stats' => [
                     'tr' => [
-                        [
-                            'value' => '30 saat',
-                            'label' => 'Batarya (ANC Açık)',
-                        ],
-                        [
-                            'value' => '40 mm',
-                            'label' => 'Hi-Fi Sürücü',
-                        ],
-                        [
-                            'value' => 'ANC',
-                            'label' => '–38 dB Azaltma',
-                        ],
-                        [
-                            'value' => '3',
-                            'label' => 'Mikrofon Sistemi',
-                        ],
-                        [
-                            'value' => 'BT 5.3',
-                            'label' => 'Multipoint',
-                        ],
+                        ['value' => '6.56″', 'label' => 'HD+ IPS · 60 Hz'],
+                        ['value' => '13 MP', 'label' => 'Ana Kamera'],
+                        ['value' => '5000 mAh', 'label' => 'Batarya · 10 W'],
+                        ['value' => '4 GB / 128 GB', 'label' => 'RAM · Depolama'],
+                        ['value' => '24 ay', 'label' => 'Türkiye Garantisi'],
                     ],
                     'en' => [
-                        [
-                            'value' => '30 h',
-                            'label' => 'Battery (ANC On)',
-                        ],
-                        [
-                            'value' => '40 mm',
-                            'label' => 'Hi-Fi Driver',
-                        ],
-                        [
-                            'value' => 'ANC',
-                            'label' => '–38 dB Reduction',
-                        ],
-                        [
-                            'value' => '3',
-                            'label' => 'Microphone System',
-                        ],
-                        [
-                            'value' => 'BT 5.3',
-                            'label' => 'Multipoint',
-                        ],
+                        ['value' => '6.56″', 'label' => 'HD+ IPS · 60 Hz'],
+                        ['value' => '13 MP', 'label' => 'Main Camera'],
+                        ['value' => '5000 mAh', 'label' => 'Battery · 10 W'],
+                        ['value' => '4 GB / 128 GB', 'label' => 'RAM · Storage'],
+                        ['value' => '24 mo.', 'label' => 'Türkiye Warranty'],
                     ],
                 ],
                 'content' => [
                     'tr' => [
-                        'collection_card' => [
-                            'description' => 'Hibrit ANC · 40 mm Hi-Fi · 30 saat batarya',
-                        ],
-                        'anc' => [
-                            'eyebrow' => 'Aktif Gürültü Engelleme',
-                            'title' => 'Dünyanın gürültüsünü<br/>kapat.',
-                            'description' => 'Hibrit ANC teknolojisi, çevrenizi gerçek zamanlı analiz ederek –38 dB\'e kadar gürültü azaltma sağlar. Uçakta, metroda, ofiste — tam sessizlik.',
-                            'db_value' => '38',
+                        'collection_card' => ['description' => '6.56″ HD+ · 13 MP Kamera · 5000 mAh'],
+                        'hero' => ['byline' => 'Günlük kullanım için tasarlanan akıllı güç.'],
+                        'camera' => [
+                            'eyebrow' => 'Kamera',
+                            'title' => '13 MP ana kamera.<br/>Önemli anları<br/>net yakalayın.',
                             'cards' => [
-                                [
-                                    'icon' => 'shield',
-                                    'metric' => '–38 dB',
-                                    'title' => 'Hibrit ANC',
-                                    'description' => '3 mikrofon sistemi, kulak içi ve kulak dışı sesi eş zamanlı analiz ederek –38 dB gürültü azaltma sağlar. Uçak motoru, metro gürültüsü, ofis kalabalığı — hepsi sessizliğe döner.',
-                                ],
-                                [
-                                    'icon' => 'mic',
-                                    'metric' => null,
-                                    'title' => 'Çevre Sesi Modu',
-                                    'description' => 'Havalimanı anonsları, trafik uyarıları veya bir konuşmayı kaçırmak istemiyorsanız Çevre Sesi Modu çevrenizle bağlantıda kalmanızı sağlar. Kulaklığı çıkarmaya gerek yok.',
-                                ],
-                                [
-                                    'icon' => 'cpu',
-                                    'metric' => 'AI',
-                                    'title' => 'Adaptif ANC',
-                                    'description' => 'Ortamı sürekli dinleyen yapay zekâ algoritması, ANC seviyesini otomatik olarak ayarlar. Sakin bir kafede hafif, kalabalık bir metroda maksimum koruma — sizin müdahalenize gerek yok.',
-                                ],
+                                ['icon' => 'camera', 'metric' => '13 MP', 'title' => 'Ana Kamera', 'description' => '13 MP ana kamera, önemli anlarınızı net ve detaylı şekilde yakalamanızı sağlar.'],
+                                ['icon' => 'eye', 'metric' => '2 MP', 'title' => 'Yardımcı Kamera', 'description' => '2 MP yardımcı kamera, karelerinize daha fazla derinlik katarak çekimlerinizi etkileyici hale getirir.'],
+                                ['icon' => 'camera', 'metric' => '8 MP', 'title' => 'Ön Kamera', 'description' => '8 MP ön kamera, her karede doğal ve dengeli bir görünüm sunar.'],
+                                ['icon' => 'star', 'metric' => 'HD', 'title' => 'Net Çekim', 'description' => 'Gündüz çekimlerinde canlı renkler ve dengeli kontrastla net sonuçlar elde edersiniz.'],
+                                ['icon' => 'eye', 'metric' => 'Derinlik', 'title' => 'Derinlik Algısı', 'description' => 'Çift kamera kurgusu, arka planı yumuşatarak özneyi öne çıkaran etkileyici kareler oluşturur.'],
+                                ['icon' => 'music', 'metric' => 'Video', 'title' => 'Video Kaydı', 'description' => 'Günlük video çekimleri için dengeli ve akıcı bir kayıt deneyimi sunar.'],
                             ],
                         ],
-                        'anc_cards' => [
-                            'eyebrow' => 'Gürültü Engelleme Sistemi',
-                            'title' => 'Üç katmanlı<br/>sessizlik teknolojisi.',
-                        ],
-                        'sound' => [
-                            'eyebrow' => 'Ses Kalitesi',
-                            'title' => 'Stüdyo kalitesi<br/>kulağınızda.',
-                            'description' => '40 mm özel Hi-Fi sürücüler, 20 Hz – 20 kHz tam frekans aralığında kusursuz ses yeniden üretimi sağlar. LDAC ve aptX HD codec desteğiyle kayıpsız kablosuz ses.',
+                        'camera_cards' => ['eyebrow' => 'Kamera Sistemi', 'title' => 'Her anı<br/>kolayca yakalayın.'],
+                        'display' => [
+                            'eyebrow' => 'Ekran',
+                            'title' => '6.56 inç HD+ ekran.<br/>Geniş görüş,<br/>konforlu kullanım.',
                             'items' => [
-                                [
-                                    'text' => '40 mm özel dinamik sürücü',
-                                ],
-                                [
-                                    'text' => '20 Hz – 20 kHz frekans yanıtı',
-                                ],
-                                [
-                                    'text' => 'LDAC · aptX HD · AAC · SBC codec',
-                                ],
-                                [
-                                    'text' => '32 Ω empedans · 103 dB/mW hassasiyet',
-                                ],
+                                ['text' => '6.56 inç HD+ IPS ekran, canlı renkler ve geniş görüş açısı'],
+                                ['text' => '60 Hz yenileme hızı ile akıcı ve dengeli görüntü'],
+                                ['text' => 'Multi-touch kapasitif dokunmatik'],
+                                ['text' => 'Günlük kullanım için optimize edilmiş geniş ekran alanı'],
                             ],
                         ],
-                        'design' => [
-                            'eyebrow' => 'Tasarım',
-                            'title' => 'Taşınmak için<br/>tasarlandı.',
-                            'description' => 'Katlanabilir tasarımı sayesinde çantanıza sığar, 285 g ağırlığıyla saatlerce konforla taşınır. Bellek köpüğü kulak yastıkları, uzun dinleme seanslarında kulağınızı rahat tutar.',
-                            'items' => [
-                                [
-                                    'text' => 'Katlanabilir tasarım — seyahat dostu',
-                                ],
-                                [
-                                    'text' => '285 g hafif gövde',
-                                ],
-                                [
-                                    'text' => 'Bellek köpüğü kulak yastıkları',
-                                ],
-                                [
-                                    'text' => 'Ayarlanabilir alüminyum kafa bandı',
-                                ],
+                        'performance' => [
+                            'eyebrow' => 'Performans',
+                            'title' => 'Günlük performans<br/>için optimize edildi.',
+                            'cards' => [
+                                ['icon' => 'cpu', 'metric' => 'Octa-core', 'title' => 'İşlemci', 'description' => 'SC9863 1.8 GHz octa-core işlemci, 12 nm üretim teknolojisiyle verimlilik ve güç dengesi sunar.'],
+                                ['icon' => 'bolt', 'metric' => '4 GB RAM', 'title' => 'Bellek', 'description' => '4 GB RAM ile ihtiyacınız olan akıcılık. 128 GB depolama, daha fazla içerik ve daha fazla özgürlük sağlar.'],
+                                ['icon' => 'bolt', 'metric' => 'UFS + LPDDR4', 'title' => 'Hızlı Veri', 'description' => 'UFS + LPDDR4 teknolojisi, daha hızlı veri erişimiyle akıcı bir kullanım deneyimi sunar.'],
+                                ['icon' => 'battery', 'metric' => '10 W', 'title' => 'Şarj Desteği', 'description' => '5000 mAh batarya, 10 W şarj desteği ve Type-C bağlantısıyla pratik ve güvenilir bir şarj deneyimi sunar.'],
+                                ['icon' => 'wifi', 'metric' => '4G · NFC', 'title' => 'Bağlantı', 'description' => '4G bağlantı, NFC ile temassız teknoloji, GPS ve Dual SIM ile her an bağlantıda kalın.'],
+                                ['icon' => 'star', 'metric' => 'Android U', 'title' => 'Güncel Deneyim', 'description' => 'Android U işletim sistemi, güncel ve kullanıcı dostu bir deneyim sunar.'],
                             ],
                         ],
                         'battery' => [
                             'eyebrow' => 'Batarya',
-                            'title' => '30 saat<br/>kesintisiz müzik.',
-                            'description' => 'ANC açık olsa bile 30 saat çalma süresi sunar. ANC\'yi kapattığınızda 40 saate ulaşır. Sabah kahveniz hazırlanırken 10 dakika şarjla 3 saatlik müzik.',
-                            'stats' => [
-                                [
-                                    'value' => '30 saat',
-                                    'label' => 'ANC Açık',
-                                ],
-                                [
-                                    'value' => '40 saat',
-                                    'label' => 'ANC Kapalı',
-                                ],
-                                [
-                                    'value' => '3 saat',
-                                    'label' => '10 dk Şarjla',
-                                ],
+                            'title' => 'Enerjiniz<br/>gün boyunca sizinle.',
+                            'items' => [
+                                ['text' => '5000 mAh batarya, gün boyu enerji'],
+                                ['text' => '10 W şarj desteği ile pratik şarj deneyimi'],
+                                ['text' => 'Type-C bağlantı ile modern ve kullanışlı şarj'],
                             ],
                         ],
-                        'connectivity' => [
-                            'eyebrow' => 'Bağlantı',
-                            'title' => 'Her cihaza,<br/>her anda bağlı.',
-                            'cards' => [
-                                [
-                                    'icon' => 'wifi',
-                                    'metric' => '2 cihaz',
-                                    'title' => 'Bluetooth 5.3 Multipoint',
-                                    'description' => 'Telefon ve bilgisayarınıza aynı anda bağlı kalın. Toplantıya giren çağrıyı bilgisayardan telefona anında aktarın — kesinti yok, kapatma yok.',
-                                ],
-                                [
-                                    'icon' => 'bolt',
-                                    'metric' => null,
-                                    'title' => 'USB-C + 3.5 mm',
-                                    'description' => 'USB-C ile hızlı şarj ve kablolu dinleme. 3.5 mm jack bağlantısıyla uçakta veya pili biten cihazlarda kablo üzerinden kayıpsız ses deneyimi yaşayın.',
-                                ],
-                                [
-                                    'icon' => 'headphone',
-                                    'metric' => null,
-                                    'title' => 'Touch Kontrol',
-                                    'description' => 'Sağ kulak kupasındaki dokunmatik yüzey; müzik oynatma/duraklatma, ses seviyesi, ANC modu ve aramaları telefona dokunmadan yönetmenizi sağlar.',
-                                ],
+                        'cinema' => [
+                            'slides' => [
+                                ['eyebrow' => 'Tasarım', 'title' => 'Glossy Glass<br/>Back Cover.', 'description' => 'Parlak cam görünümlü arka yüzey, ışıltılı ve modern bir tasarımla premium bir his sunar.'],
+                                ['eyebrow' => 'Profil', 'title' => 'İnce ve<br/>ergonomik tasarım.', 'description' => '163.94 × 75.7 × 8.7 mm boyutlarıyla ince ve ergonomik gövde, gün boyu rahat kullanım sağlar.'],
+                                ['eyebrow' => 'Ekran', 'title' => 'Geniş görüş,<br/>konforlu kullanım.', 'description' => '6.56 inç HD+ IPS ekran, canlı renkler ve geniş görüş açısıyla günlük deneyimi daha keyifli hale getirir.'],
+                                ['eyebrow' => 'Bağlantı', 'title' => 'İki hat,<br/>tek cihaz.', 'description' => 'Dual SIM, NFC ve TF kart desteğiyle hem bağlantıda kalın hem de depolama alanınızı genişletin.'],
                             ],
                         ],
-                        'specs_section' => [
-                            'eyebrow' => 'Teknik Özellikler',
-                            'title' => 'Her detayı<br/>burada bulursunuz.',
-                        ],
-                        'buy_section' => [
-                            'eyebrow' => 'Satın Al',
-                            'title' => 'Şimdi<br/>Sahip Ol.',
-                        ],
+                        'specs_section' => ['eyebrow' => 'Teknik Özellikler', 'title' => 'Her detayı<br/>burada bulursunuz.'],
+                        'buy_section' => ['eyebrow' => 'Satın Al', 'title' => 'Hazır olduğunda<br/>buradayız.'],
                     ],
                     'en' => [
-                        'collection_card' => [
-                            'description' => 'Hibrit ANC · 40 mm Hi-Fi · 30 saat batarya',
-                        ],
-                        'anc' => [
-                            'eyebrow' => 'Active Noise Cancellation',
-                            'title' => 'Shut out<br/>the world\'s noise.',
-                            'description' => 'Hybrid ANC technology analyses your surroundings in real time and reduces noise by up to –38 dB. On a plane, on the subway, in the office — total silence.',
-                            'db_value' => '38',
+                        'collection_card' => ['description' => '6.56″ HD+ · 13 MP Camera · 5000 mAh'],
+                        'hero' => ['byline' => 'Smart power designed for everyday use.'],
+                        'camera' => [
+                            'eyebrow' => 'Camera',
+                            'title' => '13 MP main camera.<br/>Capture the moments<br/>that matter, clearly.',
                             'cards' => [
-                                [
-                                    'icon' => 'shield',
-                                    'metric' => '–38 dB',
-                                    'title' => 'Hybrid ANC',
-                                    'description' => 'A 3-microphone system simultaneously analyses sound inside and outside the cup, delivering –38 dB of noise reduction. Aircraft engine, subway noise, office crowd — all turned to silence.',
-                                ],
-                                [
-                                    'icon' => 'mic',
-                                    'metric' => null,
-                                    'title' => 'Ambient Sound Mode',
-                                    'description' => 'When you don\'t want to miss airport announcements, traffic alerts or a conversation, Ambient Sound Mode keeps you connected to your surroundings. No need to take the headphones off.',
-                                ],
-                                [
-                                    'icon' => 'cpu',
-                                    'metric' => 'AI',
-                                    'title' => 'Adaptive ANC',
-                                    'description' => 'An AI algorithm continuously listens to your environment and automatically adjusts the ANC level. Light in a quiet café, maximum protection on a crowded subway — no input needed from you.',
-                                ],
+                                ['icon' => 'camera', 'metric' => '13 MP', 'title' => 'Main Camera', 'description' => 'The 13 MP main camera lets you capture the moments that matter clearly and in detail.'],
+                                ['icon' => 'eye', 'metric' => '2 MP', 'title' => 'Depth Camera', 'description' => 'A 2 MP depth camera adds more depth to your shots, making your frames more striking.'],
+                                ['icon' => 'camera', 'metric' => '8 MP', 'title' => 'Front Camera', 'description' => 'The 8 MP front camera delivers a natural, balanced look in every frame.'],
+                                ['icon' => 'star', 'metric' => 'HD', 'title' => 'Clear Shots', 'description' => 'Get clear results with vivid colours and balanced contrast in daylight shots.'],
+                                ['icon' => 'eye', 'metric' => 'Depth', 'title' => 'Depth Sensing', 'description' => 'The dual-camera setup softens the background to make the subject stand out in striking frames.'],
+                                ['icon' => 'music', 'metric' => 'Video', 'title' => 'Video Recording', 'description' => 'Offers a balanced, smooth recording experience for everyday video capture.'],
                             ],
                         ],
-                        'anc_cards' => [
-                            'eyebrow' => 'Noise Cancellation System',
-                            'title' => 'Three-layer<br/>silence technology.',
-                        ],
-                        'sound' => [
-                            'eyebrow' => 'Sound Quality',
-                            'title' => 'Studio-grade<br/>in your ears.',
-                            'description' => '40 mm custom Hi-Fi drivers deliver flawless sound reproduction across the full 20 Hz – 20 kHz range. LDAC and aptX HD codecs bring lossless wireless audio.',
+                        'camera_cards' => ['eyebrow' => 'Camera System', 'title' => 'Capture every<br/>moment with ease.'],
+                        'display' => [
+                            'eyebrow' => 'Display',
+                            'title' => '6.56-inch HD+ display.<br/>Wide view,<br/>comfortable use.',
                             'items' => [
-                                [
-                                    'text' => '40 mm custom dynamic driver',
-                                ],
-                                [
-                                    'text' => '20 Hz – 20 kHz frequency response',
-                                ],
-                                [
-                                    'text' => 'LDAC · aptX HD · AAC · SBC codecs',
-                                ],
-                                [
-                                    'text' => '32 Ω impedance · 103 dB/mW sensitivity',
-                                ],
+                                ['text' => '6.56-inch HD+ IPS display with vivid colours and a wide viewing angle'],
+                                ['text' => '60 Hz refresh rate for a smooth, balanced image'],
+                                ['text' => 'Multi-touch capacitive surface'],
+                                ['text' => 'A wide screen area optimised for everyday use'],
                             ],
                         ],
-                        'design' => [
-                            'eyebrow' => 'Design',
-                            'title' => 'Built<br/>to travel.',
-                            'description' => 'A foldable design fits into your bag, and at 285 g it stays comfortable for hours. Memory-foam ear cushions keep your ears comfortable through long listening sessions.',
-                            'items' => [
-                                [
-                                    'text' => 'Foldable design — travel-friendly',
-                                ],
-                                [
-                                    'text' => '285 g lightweight body',
-                                ],
-                                [
-                                    'text' => 'Memory-foam ear cushions',
-                                ],
-                                [
-                                    'text' => 'Adjustable aluminium headband',
-                                ],
+                        'performance' => [
+                            'eyebrow' => 'Performance',
+                            'title' => 'Optimised for<br/>everyday performance.',
+                            'cards' => [
+                                ['icon' => 'cpu', 'metric' => 'Octa-core', 'title' => 'Processor', 'description' => 'The SC9863 1.8 GHz octa-core processor, built on a 12 nm process, balances efficiency and power.'],
+                                ['icon' => 'bolt', 'metric' => '4 GB RAM', 'title' => 'Memory', 'description' => 'The fluidity you need with 4 GB RAM. 128 GB storage gives you more content and more freedom.'],
+                                ['icon' => 'bolt', 'metric' => 'UFS + LPDDR4', 'title' => 'Fast Data', 'description' => 'UFS + LPDDR4 technology delivers faster data access for a smooth user experience.'],
+                                ['icon' => 'battery', 'metric' => '10 W', 'title' => 'Charging Support', 'description' => 'A 5000 mAh battery with 10 W charging and a Type-C connection offers a practical, reliable charging experience.'],
+                                ['icon' => 'wifi', 'metric' => '4G · NFC', 'title' => 'Connectivity', 'description' => '4G connectivity, NFC for contactless technology, GPS and Dual SIM keep you connected at all times.'],
+                                ['icon' => 'star', 'metric' => 'Android U', 'title' => 'Up-to-date Experience', 'description' => 'The Android U operating system delivers a current, user-friendly experience.'],
                             ],
                         ],
                         'battery' => [
                             'eyebrow' => 'Battery',
-                            'title' => '30 hours<br/>of non-stop music.',
-                            'description' => 'Even with ANC on, you get 30 hours of playback. Turn ANC off and reach 40 hours. While your morning coffee brews, a 10-minute charge is good for 3 hours of music.',
-                            'stats' => [
-                                [
-                                    'value' => '30 h',
-                                    'label' => 'ANC On',
-                                ],
-                                [
-                                    'value' => '40 h',
-                                    'label' => 'ANC Off',
-                                ],
-                                [
-                                    'value' => '3 h',
-                                    'label' => 'on a 10-min charge',
-                                ],
+                            'title' => 'Your energy,<br/>with you all day.',
+                            'items' => [
+                                ['text' => '5000 mAh battery for all-day energy'],
+                                ['text' => '10 W charging support for a practical charging experience'],
+                                ['text' => 'Type-C connection for modern, convenient charging'],
                             ],
                         ],
-                        'connectivity' => [
-                            'eyebrow' => 'Connectivity',
-                            'title' => 'Connected<br/>to every device, every moment.',
-                            'cards' => [
-                                [
-                                    'icon' => 'wifi',
-                                    'metric' => '2 devices',
-                                    'title' => 'Bluetooth 5.3 Multipoint',
-                                    'description' => 'Stay connected to your phone and computer at the same time. Hand off an incoming meeting call from computer to phone instantly — no drops, no disconnects.',
-                                ],
-                                [
-                                    'icon' => 'bolt',
-                                    'metric' => null,
-                                    'title' => 'USB-C + 3.5 mm',
-                                    'description' => 'Fast charging and wired listening over USB-C. The 3.5 mm jack lets you enjoy lossless wired audio on a plane or with devices that have run out of battery.',
-                                ],
-                                [
-                                    'icon' => 'headphone',
-                                    'metric' => null,
-                                    'title' => 'Touch Control',
-                                    'description' => 'The touch surface on the right ear cup lets you control playback, volume, ANC mode and calls — all without touching your phone.',
-                                ],
+                        'cinema' => [
+                            'slides' => [
+                                ['eyebrow' => 'Design', 'title' => 'Glossy Glass<br/>Back Cover.', 'description' => 'A glossy glass-look back surface delivers a luminous, modern design with a premium feel.'],
+                                ['eyebrow' => 'Profile', 'title' => 'Slim and<br/>ergonomic design.', 'description' => 'At 163.94 × 75.7 × 8.7 mm, the slim, ergonomic body keeps it comfortable in hand all day long.'],
+                                ['eyebrow' => 'Display', 'title' => 'Wide view,<br/>comfortable use.', 'description' => 'The 6.56-inch HD+ IPS display, with vivid colours and a wide viewing angle, makes the everyday experience more enjoyable.'],
+                                ['eyebrow' => 'Connectivity', 'title' => 'Two lines,<br/>one device.', 'description' => 'With Dual SIM, NFC and TF card support, stay connected while expanding your storage space.'],
                             ],
                         ],
-                        'specs_section' => [
-                            'eyebrow' => 'Specifications',
-                            'title' => 'Every detail,<br/>right here.',
-                        ],
-                        'buy_section' => [
-                            'eyebrow' => 'Buy',
-                            'title' => 'Get yours<br/>now.',
-                        ],
+                        'specs_section' => ['eyebrow' => 'Specifications', 'title' => 'Every detail,<br/>right here.'],
+                        'buy_section' => ['eyebrow' => 'Buy', 'title' => 'Ready when<br/>you are.'],
                     ],
                 ],
                 'specs' => [
                     'tr' => [
-                        [
-                            'key' => 'Sürücü',
-                            'value' => '40 mm Dinamik Hi-Fi',
-                            'note' => 'Özel diyafram · Neodimyum mıknatıs',
-                        ],
-                        [
-                            'key' => 'Frekans',
-                            'value' => '20 Hz – 20.000 Hz',
-                            'note' => 'Tam işitme aralığı',
-                        ],
-                        [
-                            'key' => 'Empedans',
-                            'value' => '32 Ω',
-                            'note' => '103 dB/mW hassasiyet',
-                        ],
-                        [
-                            'key' => 'Batarya',
-                            'value' => '30 saat (ANC açık) · 40 saat (ANC kapalı)',
-                            'note' => '10 dk şarj = 3 saat · USB-C',
-                        ],
-                        [
-                            'key' => 'ANC',
-                            'value' => 'Hibrit Aktif Gürültü Engelleme',
-                            'note' => '–38 dB · Adaptif mod · Çevre sesi modu',
-                        ],
-                        [
-                            'key' => 'Bluetooth',
-                            'value' => '5.3 · Multipoint (2 cihaz)',
-                            'note' => '10 m menzil',
-                        ],
-                        [
-                            'key' => 'Codec',
-                            'value' => 'LDAC · aptX HD · AAC · SBC',
-                            'note' => 'Kayıpsız kablosuz ses',
-                        ],
-                        [
-                            'key' => 'Ağırlık',
-                            'value' => '285 g',
-                            'note' => 'Katlanabilir tasarım',
-                        ],
-                        [
-                            'key' => 'Bağlantı',
-                            'value' => 'USB-C · 3.5 mm stereo jack',
-                            'note' => 'Kablolu mod desteği',
-                        ],
-                        [
-                            'key' => 'Garanti',
-                            'value' => '24 ay Türkiye Garantisi',
-                            'note' => 'Türkiye\'de tasarlandı',
-                        ],
+                        ['key' => 'Ekran', 'value' => '6.56 inç HD+ IPS LCD', 'note' => '60 Hz · Multi-touch · Geniş görüş açısı'],
+                        ['key' => 'İşlemci', 'value' => 'SC9863', 'note' => 'Octa-core · 1.8 GHz · 12 nm'],
+                        ['key' => 'Bellek', 'value' => '4 GB RAM · 128 GB Depolama', 'note' => 'UFS + LPDDR4 · TF kart ile genişletilebilir'],
+                        ['key' => 'Ana Kamera', 'value' => '13 MP + 2 MP', 'note' => '13 MP ana · 2 MP yardımcı (derinlik)'],
+                        ['key' => 'Ön Kamera', 'value' => '8 MP', 'note' => 'Doğal ten tonları'],
+                        ['key' => 'Batarya', 'value' => '5000 mAh', 'note' => '10 W şarj · Type-C'],
+                        ['key' => 'İşletim Sistemi', 'value' => 'Android U', 'note' => 'Güncel ve kullanıcı dostu arayüz'],
+                        ['key' => 'Bağlantı', 'value' => '4G · Wi-Fi · BT · NFC · GPS', 'note' => 'Type-C bağlantı'],
+                        ['key' => 'SIM', 'value' => 'Çift SIM (Dual SIM)', 'note' => 'TF kart desteği'],
+                        ['key' => 'Boyutlar', 'value' => '163.94 × 75.7 × 8.7 mm', 'note' => 'İnce ve ergonomik tasarım'],
+                        ['key' => 'Genişletilebilir Depolama', 'value' => 'TF Kart', 'note' => 'Depolama alanını genişletin'],
+                        ['key' => 'Tasarım', 'value' => 'Glossy Glass Back Cover', 'note' => 'Parlak cam görünümlü arka yüzey'],
                     ],
                     'en' => [
-                        [
-                            'key' => 'Driver',
-                            'value' => '40 mm Dynamic Hi-Fi',
-                            'note' => 'Custom diaphragm · Neodymium magnet',
-                        ],
-                        [
-                            'key' => 'Frequency',
-                            'value' => '20 Hz – 20,000 Hz',
-                            'note' => 'Full hearing range',
-                        ],
-                        [
-                            'key' => 'Impedance',
-                            'value' => '32 Ω',
-                            'note' => '103 dB/mW sensitivity',
-                        ],
-                        [
-                            'key' => 'Battery',
-                            'value' => '30 h (ANC on) · 40 h (ANC off)',
-                            'note' => '10-min charge = 3 h · USB-C',
-                        ],
-                        [
-                            'key' => 'ANC',
-                            'value' => 'Hybrid Active Noise Cancellation',
-                            'note' => '–38 dB · Adaptive mode · Ambient mode',
-                        ],
-                        [
-                            'key' => 'Bluetooth',
-                            'value' => '5.3 · Multipoint (2 devices)',
-                            'note' => '10 m range',
-                        ],
-                        [
-                            'key' => 'Codec',
-                            'value' => 'LDAC · aptX HD · AAC · SBC',
-                            'note' => 'Lossless wireless audio',
-                        ],
-                        [
-                            'key' => 'Weight',
-                            'value' => '285 g',
-                            'note' => 'Foldable design',
-                        ],
-                        [
-                            'key' => 'Connectivity',
-                            'value' => 'USB-C · 3.5 mm stereo jack',
-                            'note' => 'Wired mode supported',
-                        ],
-                        [
-                            'key' => 'Warranty',
-                            'value' => '24-month Türkiye Warranty',
-                            'note' => 'Designed in Türkiye',
-                        ],
+                        ['key' => 'Display', 'value' => '6.56-inch HD+ IPS LCD', 'note' => '60 Hz · Multi-touch · Wide viewing angle'],
+                        ['key' => 'Processor', 'value' => 'SC9863', 'note' => 'Octa-core · 1.8 GHz · 12 nm'],
+                        ['key' => 'Memory', 'value' => '4 GB RAM · 128 GB Storage', 'note' => 'UFS + LPDDR4 · Expandable via TF card'],
+                        ['key' => 'Main Camera', 'value' => '13 MP + 2 MP', 'note' => '13 MP main · 2 MP depth assist'],
+                        ['key' => 'Front Camera', 'value' => '8 MP', 'note' => 'Natural skin tones'],
+                        ['key' => 'Battery', 'value' => '5000 mAh', 'note' => '10 W charge · Type-C'],
+                        ['key' => 'Operating System', 'value' => 'Android U', 'note' => 'Current, user-friendly interface'],
+                        ['key' => 'Connectivity', 'value' => '4G · Wi-Fi · BT · NFC · GPS', 'note' => 'Type-C connection'],
+                        ['key' => 'SIM', 'value' => 'Dual SIM', 'note' => 'TF card support'],
+                        ['key' => 'Dimensions', 'value' => '163.94 × 75.7 × 8.7 mm', 'note' => 'Slim, ergonomic design'],
+                        ['key' => 'Expandable Storage', 'value' => 'TF Card', 'note' => 'Expand your storage space'],
+                        ['key' => 'Design', 'value' => 'Glossy Glass Back Cover', 'note' => 'Glossy glass-look back surface'],
                     ],
                 ],
-                'price' => 2499,
-                'price_label' => [
-                    'tr' => null,
-                ],
+                'price' => null,
+                'price_label' => ['tr' => null],
                 'price_note' => [
                     'tr' => '24 ay Türkiye garantisi · Ücretsiz kargo · Ücretsiz iade (30 gün)',
                     'en' => '24-month Türkiye warranty · Free shipping · Free returns (30 days)',
                 ],
-                'cta_primary' => [
-                    'tr' => 'Sepete Ekle',
-                    'en' => 'Add to Cart',
-                ],
-                'cta_secondary' => [
-                    'tr' => 'Teknik Özellikler',
-                    'en' => 'Specifications',
-                ],
+                'cta_primary' => ['tr' => 'Sepete Ekle', 'en' => 'Add to Cart'],
+                'cta_secondary' => ['tr' => 'Teknik Özellikler', 'en' => 'Specifications'],
                 'buy_url' => null,
                 'cta_secondary_url' => null,
                 'meta_title' => [
-                    'tr' => 'Ovion H1 Pro — ANC Kablosuz Kulak Üstü Kulaklık · 30 Saat Batarya',
-                    'en' => 'Ovion H1 Pro — ANC Wireless Over-Ear Headphones · 30-Hour Battery',
+                    'tr' => 'V8 Lite — 6.56″ HD+ · 13 MP Kamera · 5000 mAh',
+                    'en' => 'V8 Lite — 6.56″ HD+ · 13 MP Camera · 5000 mAh',
                 ],
                 'meta_description' => [
-                    'tr' => 'Ovion H1 Pro: Hibrit ANC, 40 mm Hi-Fi sürücüler, 30 saat batarya ve Bluetooth 5.3 multipoint. Sessizlik, müzik, özgürlük.',
-                    'en' => 'Ovion H1 Pro: hybrid ANC, 40 mm Hi-Fi drivers, 30-hour battery and Bluetooth 5.3 multipoint. Silence, music, freedom.',
+                    'tr' => 'V8 Lite: 6.56 inç HD+ IPS ekran, 13 MP ana kamera, 5000 mAh batarya ve 4 GB / 128 GB hafıza. Günlük kullanım için tasarlanan uygun fiyatlı akıllı telefon.',
+                    'en' => 'V8 Lite: 6.56-inch HD+ IPS display, 13 MP main camera, 5000 mAh battery and 4 GB / 128 GB memory. An affordable smartphone designed for everyday use.',
+                ],
+                'is_active' => 1,
+                'order' => 2,
+                'is_spotlight' => 0,
+            ],
+            [
+                'type' => 'phone',
+                'slug' => ['tr' => 'v21-pro', 'en' => 'v21-pro'],
+                'name' => ['tr' => 'V21 Pro', 'en' => 'V21 Pro'],
+                'eyebrow' => ['tr' => 'Yeni — 2026', 'en' => 'New — 2026'],
+                'tagline' => [
+                    'tr' => 'Daha Fazla Güç. Daha Fazla Depolama. Daha Fazla Özgürlük.',
+                    'en' => 'More Power. More Storage. More Freedom.',
+                ],
+                'strip_stats' => [
+                    'tr' => [
+                        ['value' => '6.67″', 'label' => 'LCD · 120 Hz'],
+                        ['value' => '50 MP', 'label' => 'Ana Kamera'],
+                        ['value' => '6000 mAh', 'label' => 'Batarya · 18 W'],
+                        ['value' => '8+8 / 256 GB', 'label' => 'RAM · Depolama'],
+                        ['value' => '24 ay', 'label' => 'Türkiye Garantisi'],
+                    ],
+                    'en' => [
+                        ['value' => '6.67″', 'label' => 'LCD · 120 Hz'],
+                        ['value' => '50 MP', 'label' => 'Main Camera'],
+                        ['value' => '6000 mAh', 'label' => 'Battery · 18 W'],
+                        ['value' => '8+8 / 256 GB', 'label' => 'RAM · Storage'],
+                        ['value' => '24 mo.', 'label' => 'Türkiye Warranty'],
+                    ],
+                ],
+                'content' => [
+                    'tr' => [
+                        'collection_card' => ['description' => '120 Hz · 50 MP Kamera · 6000 mAh'],
+                        'hero' => ['byline' => '120Hz ekranı, 6000mAh bataryası ve geniş depolamasıyla günlük kullanımın ötesine geçiyor.'],
+                        'camera' => [
+                            'eyebrow' => 'Kamera',
+                            'title' => '50 MP ana kamera.<br/>Her detayı net<br/>şekilde yakalayın.',
+                            'cards' => [
+                                ['icon' => 'camera', 'metric' => '50 MP', 'title' => 'Ana Kamera', 'description' => '50 MP ana kamera, gündüz ve gece çekimlerinde her detayı net ve canlı şekilde yakalar.'],
+                                ['icon' => 'eye', 'metric' => '0.8 MP', 'title' => 'Yardımcı Kamera', 'description' => '0.8 MP yardımcı kamera, fotoğraflarınıza daha fazla derinlik ve boyut katar.'],
+                                ['icon' => 'camera', 'metric' => '8 MP', 'title' => 'Ön Kamera', 'description' => '8 MP ön kamera, selfie ve görüntülü görüşmelerde netliği her zaman korur.'],
+                                ['icon' => 'star', 'metric' => 'HDR', 'title' => 'Görüntü İşleme', 'description' => 'Gelişmiş görüntü işleme, arka ışıkta bile gölgeleri ve açık alanları dengede tutar.'],
+                                ['icon' => 'eye', 'metric' => 'Derinlik', 'title' => 'Çift Kamera', 'description' => 'Ana ve yardımcı kameranın birlikte çalışması, portrelerde doğal bir bulanıklık sunar.'],
+                                ['icon' => 'music', 'metric' => 'Video', 'title' => 'Video Kayıt', 'description' => 'Akıcı video kaydı, anılarınızı net ve kararlı bir görüntüyle ölümsüzleştirir.'],
+                            ],
+                        ],
+                        'camera_cards' => ['eyebrow' => 'Kamera Sistemi', 'title' => 'Her açıdan<br/>net çekim.'],
+                        'display' => [
+                            'eyebrow' => 'Ekran',
+                            'title' => '120 Hz akıcılık.<br/>Geniş ekranda<br/>daha fazlası.',
+                            'items' => [
+                                ['text' => '6.67 inç LCD In-Cell ekran'],
+                                ['text' => '120 Hz yüksek yenileme hızı'],
+                                ['text' => '480 nit parlaklık · her ortamda net görüntü'],
+                                ['text' => 'Dinamik Ada · bilgileriniz her zaman görünür'],
+                            ],
+                        ],
+                        'performance' => [
+                            'eyebrow' => 'Performans',
+                            'title' => 'Güçlü. Verimli.<br/>Gün boyu yanında.',
+                            'cards' => [
+                                ['icon' => 'cpu', 'metric' => 'MediaTek G81', 'title' => 'İşlemci', 'description' => 'MediaTek G81 işlemci, 2x Cortex-A75 2.0 GHz + 6x Cortex-A55 1.7 GHz yapısıyla güç ve verimliliği dengeler.'],
+                                ['icon' => 'bolt', 'metric' => '8+8 GB', 'title' => 'Bellek', 'description' => '8 GB + 8 GB genişletilmiş RAM, çoklu görevlerde daha akıcı bir deneyim sunar. UFS + LPDDR4 teknolojisi daha hızlı veri erişimi sağlar.'],
+                                ['icon' => 'battery', 'metric' => '18 W', 'title' => 'Hızlı Şarj', 'description' => '6000 mAh yüksek kapasiteli batarya, 18 W şarj desteğiyle enerjinizi günlerce yanınızda tutar.'],
+                                ['icon' => 'shield', 'metric' => 'IP64', 'title' => 'Güvenlik & Koruma', 'description' => 'Yandan parmak izi okuyucu hızlı ve güvenli erişim sağlar. IP64 koruma, günlük kullanım için ekstra dayanıklılık sunar.'],
+                                ['icon' => 'wifi', 'metric' => '4G · NFC', 'title' => 'Bağlantı', 'description' => '4G bağlantı, NFC temassız teknoloji, GPS ve Type-C bağlantı ile her an bağlantıda kalın.'],
+                                ['icon' => 'star', 'metric' => 'Android 16', 'title' => 'Yazılım & Ses', 'description' => 'Android 16 yeni nesil kullanıcı deneyimi sunar. Stereo çift hoparlör ile daha etkileyici bir ses deneyimi yaşayın.'],
+                            ],
+                        ],
+                        'battery' => [
+                            'eyebrow' => 'Batarya',
+                            'title' => 'Gücünüz<br/>günlerce yanınızda.',
+                            'items' => [
+                                ['text' => '6000 mAh yüksek kapasiteli batarya'],
+                                ['text' => '18 W kablolu şarj desteği'],
+                                ['text' => 'Type-C bağlantı'],
+                            ],
+                        ],
+                        'cinema' => [
+                            'slides' => [
+                                ['eyebrow' => 'Ekran', 'title' => '6.67 inç.<br/>Daha fazlasını keşfedin.', 'description' => '6.67 inç LCD In-Cell ekran, 120 Hz yenileme hızı ve 480 nit parlaklıkla her ortamda net ve akıcı bir görüntü sunar.'],
+                                ['eyebrow' => 'Batarya', 'title' => '6000 mAh.<br/>Günlerce güç.', 'description' => '6000 mAh yüksek kapasiteli batarya ve 18 W şarj desteği, gün boyunca ihtiyaç duyduğunuz enerjiyi sunar.'],
+                                ['eyebrow' => 'Tasarım', 'title' => '8.67 mm.<br/>İnce ve modern.', 'description' => 'İnce ve modern tasarım, 165.6 x 77.8 x 8.67 mm gövdesiyle elinizde şık bir duruş sağlar.'],
+                                ['eyebrow' => 'Özgürlük', 'title' => 'İki hat.<br/>Tek cihaz.', 'description' => 'Dual SIM desteği ve TF kart ile depolama genişletme; daha fazla özgürlük, tek cihazda.'],
+                            ],
+                        ],
+                        'specs_section' => ['eyebrow' => 'Teknik Özellikler', 'title' => 'Her detayı<br/>burada bulursunuz.'],
+                        'buy_section' => ['eyebrow' => 'Satın Al', 'title' => 'Hazır olduğunda<br/>buradayız.'],
+                    ],
+                    'en' => [
+                        'collection_card' => ['description' => '120 Hz · 50 MP Camera · 6000 mAh'],
+                        'hero' => ['byline' => 'Goes beyond everyday use with a 120 Hz display, 6000 mAh battery and ample storage.'],
+                        'camera' => [
+                            'eyebrow' => 'Camera',
+                            'title' => '50 MP main camera.<br/>Capture every<br/>detail clearly.',
+                            'cards' => [
+                                ['icon' => 'camera', 'metric' => '50 MP', 'title' => 'Main Camera', 'description' => 'A 50 MP main camera captures every detail sharply and vividly, day or night.'],
+                                ['icon' => 'eye', 'metric' => '0.8 MP', 'title' => 'Auxiliary Camera', 'description' => 'A 0.8 MP auxiliary camera adds more depth and dimension to your photos.'],
+                                ['icon' => 'camera', 'metric' => '8 MP', 'title' => 'Front Camera', 'description' => 'An 8 MP front camera keeps your selfies and video calls clear at all times.'],
+                                ['icon' => 'star', 'metric' => 'HDR', 'title' => 'Image Processing', 'description' => 'Advanced image processing keeps shadows and highlights balanced, even in backlight.'],
+                                ['icon' => 'eye', 'metric' => 'Depth', 'title' => 'Dual Camera', 'description' => 'The main and auxiliary cameras work together to deliver a natural blur in portraits.'],
+                                ['icon' => 'music', 'metric' => 'Video', 'title' => 'Video Recording', 'description' => 'Smooth video recording captures your memories with a clear and stable image.'],
+                            ],
+                        ],
+                        'camera_cards' => ['eyebrow' => 'Camera System', 'title' => 'A sharp shot<br/>from every angle.'],
+                        'display' => [
+                            'eyebrow' => 'Display',
+                            'title' => '120 Hz fluidity.<br/>Discover more on<br/>a bigger screen.',
+                            'items' => [
+                                ['text' => '6.67-inch LCD In-Cell display'],
+                                ['text' => '120 Hz high refresh rate'],
+                                ['text' => '480 nit brightness · clear image in any environment'],
+                                ['text' => 'Dynamic Island · your information always visible'],
+                            ],
+                        ],
+                        'performance' => [
+                            'eyebrow' => 'Performance',
+                            'title' => 'Powerful. Efficient.<br/>By your side all day.',
+                            'cards' => [
+                                ['icon' => 'cpu', 'metric' => 'MediaTek G81', 'title' => 'Processor', 'description' => 'The MediaTek G81 processor, with 2x Cortex-A75 2.0 GHz + 6x Cortex-A55 1.7 GHz, balances power and efficiency.'],
+                                ['icon' => 'bolt', 'metric' => '8+8 GB', 'title' => 'Memory', 'description' => '8 GB + 8 GB extended RAM delivers a smoother multitasking experience. UFS + LPDDR4 technology enables faster data access.'],
+                                ['icon' => 'battery', 'metric' => '18 W', 'title' => 'Fast Charging', 'description' => 'A 6000 mAh high-capacity battery with 18 W charging keeps your energy by your side for days.'],
+                                ['icon' => 'shield', 'metric' => 'IP64', 'title' => 'Security & Protection', 'description' => 'A side fingerprint reader provides fast, secure access. IP64 protection adds extra durability for everyday use.'],
+                                ['icon' => 'wifi', 'metric' => '4G · NFC', 'title' => 'Connectivity', 'description' => 'Stay connected at all times with 4G connectivity, NFC contactless technology, GPS and a Type-C port.'],
+                                ['icon' => 'star', 'metric' => 'Android 16', 'title' => 'Software & Sound', 'description' => 'Android 16 delivers a next-generation user experience. Enjoy a more immersive sound experience with stereo dual speakers.'],
+                            ],
+                        ],
+                        'battery' => [
+                            'eyebrow' => 'Battery',
+                            'title' => 'Your power<br/>by your side for days.',
+                            'items' => [
+                                ['text' => '6000 mAh high-capacity battery'],
+                                ['text' => '18 W wired charging support'],
+                                ['text' => 'Type-C connection'],
+                            ],
+                        ],
+                        'cinema' => [
+                            'slides' => [
+                                ['eyebrow' => 'Display', 'title' => '6.67-inch.<br/>Discover more.', 'description' => 'A 6.67-inch LCD In-Cell display with a 120 Hz refresh rate and 480 nit brightness offers a clear, fluid image in any environment.'],
+                                ['eyebrow' => 'Battery', 'title' => '6000 mAh.<br/>Power for days.', 'description' => 'A 6000 mAh high-capacity battery with 18 W charging gives you the energy you need throughout the day.'],
+                                ['eyebrow' => 'Design', 'title' => '8.67 mm.<br/>Slim and modern.', 'description' => 'A slim, modern design with a 165.6 x 77.8 x 8.67 mm body gives you an elegant feel in the hand.'],
+                                ['eyebrow' => 'Freedom', 'title' => 'Two lines.<br/>One device.', 'description' => 'Dual SIM support and TF card storage expansion deliver more freedom in a single device.'],
+                            ],
+                        ],
+                        'specs_section' => ['eyebrow' => 'Specifications', 'title' => 'Every detail,<br/>right here.'],
+                        'buy_section' => ['eyebrow' => 'Buy', 'title' => 'Ready when<br/>you are.'],
+                    ],
+                ],
+                'specs' => [
+                    'tr' => [
+                        ['key' => 'Ekran', 'value' => '6.67 inç LCD In-Cell', 'note' => '120 Hz · 480 nit · Dinamik Ada'],
+                        ['key' => 'İşlemci', 'value' => 'MediaTek G81', 'note' => '2x Cortex-A75 2.0 GHz + 6x Cortex-A55 1.7 GHz'],
+                        ['key' => 'Bellek', 'value' => '8 GB + 8 GB RAM · 256 GB Depolama', 'note' => 'UFS + LPDDR4 · TF kart ile genişletilebilir'],
+                        ['key' => 'Ana Kamera', 'value' => '50 MP + 0.8 MP', 'note' => 'Çift kamera · HDR'],
+                        ['key' => 'Ön Kamera', 'value' => '8 MP', 'note' => 'Selfie ve görüntülü görüşme'],
+                        ['key' => 'Batarya', 'value' => '6000 mAh', 'note' => '18 W şarj · Type-C'],
+                        ['key' => 'İşletim Sistemi', 'value' => 'Android 16', 'note' => 'Yeni nesil kullanıcı deneyimi'],
+                        ['key' => 'Bağlantı', 'value' => '4G · NFC · GPS', 'note' => 'Type-C · Stereo çift hoparlör'],
+                        ['key' => 'Güvenlik', 'value' => 'Yandan parmak izi okuyucu', 'note' => 'IP64 koruma'],
+                        ['key' => 'SIM', 'value' => 'Çift SIM (Dual SIM)', 'note' => 'TF kart desteği'],
+                        ['key' => 'Boyutlar', 'value' => '165.6 × 77.8 × 8.67 mm', 'note' => 'İnce ve modern tasarım'],
+                        ['key' => 'Garanti', 'value' => '24 ay Türkiye garantisi', 'note' => 'Türkiye\'de tasarlandı ve üretildi'],
+                    ],
+                    'en' => [
+                        ['key' => 'Display', 'value' => '6.67-inch LCD In-Cell', 'note' => '120 Hz · 480 nit · Dynamic Island'],
+                        ['key' => 'Processor', 'value' => 'MediaTek G81', 'note' => '2x Cortex-A75 2.0 GHz + 6x Cortex-A55 1.7 GHz'],
+                        ['key' => 'Memory', 'value' => '8 GB + 8 GB RAM · 256 GB Storage', 'note' => 'UFS + LPDDR4 · Expandable via TF card'],
+                        ['key' => 'Main Camera', 'value' => '50 MP + 0.8 MP', 'note' => 'Dual camera · HDR'],
+                        ['key' => 'Front Camera', 'value' => '8 MP', 'note' => 'Selfie and video calls'],
+                        ['key' => 'Battery', 'value' => '6000 mAh', 'note' => '18 W charging · Type-C'],
+                        ['key' => 'Operating System', 'value' => 'Android 16', 'note' => 'Next-generation user experience'],
+                        ['key' => 'Connectivity', 'value' => '4G · NFC · GPS', 'note' => 'Type-C · Stereo dual speakers'],
+                        ['key' => 'Security', 'value' => 'Side fingerprint reader', 'note' => 'IP64 protection'],
+                        ['key' => 'SIM', 'value' => 'Dual SIM', 'note' => 'TF card support'],
+                        ['key' => 'Dimensions', 'value' => '165.6 × 77.8 × 8.67 mm', 'note' => 'Slim and modern design'],
+                        ['key' => 'Warranty', 'value' => '24-month Türkiye warranty', 'note' => 'Designed and made in Türkiye'],
+                    ],
+                ],
+                'price' => null,
+                'price_label' => ['tr' => null],
+                'price_note' => [
+                    'tr' => '24 ay Türkiye garantisi · Ücretsiz kargo · Ücretsiz iade (30 gün)',
+                    'en' => '24-month Türkiye warranty · Free shipping · Free returns (30 days)',
+                ],
+                'cta_primary' => ['tr' => 'Sepete Ekle', 'en' => 'Add to Cart'],
+                'cta_secondary' => ['tr' => 'Teknik Özellikler', 'en' => 'Specifications'],
+                'buy_url' => null,
+                'cta_secondary_url' => null,
+                'meta_title' => [
+                    'tr' => 'V21 Pro — 50 MP Kamera · 120 Hz · 6000 mAh · 256 GB',
+                    'en' => 'V21 Pro — 50 MP Camera · 120 Hz · 6000 mAh · 256 GB',
+                ],
+                'meta_description' => [
+                    'tr' => 'V21 Pro: 6.67 inç 120 Hz ekran, MediaTek G81 işlemci, 8+8 GB RAM, 256 GB depolama, 50 MP kamera ve 6000 mAh batarya. Android 16, NFC ve IP64 koruma.',
+                    'en' => 'V21 Pro: 6.67-inch 120 Hz display, MediaTek G81 processor, 8+8 GB RAM, 256 GB storage, 50 MP camera and 6000 mAh battery. Android 16, NFC and IP64 protection.',
                 ],
                 'is_active' => 1,
                 'order' => 3,
                 'is_spotlight' => 0,
             ],
+            [
+                'type' => 'phone',
+                'slug' => ['tr' => 'n50-pro', 'en' => 'n50-pro'],
+                'name' => ['tr' => 'N50 Pro', 'en' => 'N50 Pro'],
+                'eyebrow' => ['tr' => '5G — Yeni', 'en' => '5G — New'],
+                'tagline' => [
+                    'tr' => '5G Hızını Keşfet. Geleceğe Şimdi Bağlan.',
+                    'en' => 'Discover 5G Speed. Connect to the Future Now.',
+                ],
+                'strip_stats' => [
+                    'tr' => [
+                        ['value' => '5G', 'label' => 'Yeni Nesil Bağlantı'],
+                        ['value' => '6.67″', 'label' => 'LCD · 120 Hz'],
+                        ['value' => '50 MP', 'label' => 'Ana Kamera'],
+                        ['value' => '5000 mAh', 'label' => 'Batarya · 18 W'],
+                        ['value' => '8+8 / 256 GB', 'label' => 'RAM · Depolama'],
+                    ],
+                    'en' => [
+                        ['value' => '5G', 'label' => 'Next-Gen Connectivity'],
+                        ['value' => '6.67″', 'label' => 'LCD · 120 Hz'],
+                        ['value' => '50 MP', 'label' => 'Main Camera'],
+                        ['value' => '5000 mAh', 'label' => 'Battery · 18 W'],
+                        ['value' => '8+8 / 256 GB', 'label' => 'RAM · Storage'],
+                    ],
+                ],
+                'content' => [
+                    'tr' => [
+                        'collection_card' => ['description' => '5G · 120 Hz · 50 MP Kamera · 256 GB'],
+                        'hero' => ['byline' => '5G hızıyla geleceğe bağlanın.'],
+                        'camera' => [
+                            'eyebrow' => 'Kamera',
+                            'title' => '50 MP ana kamera.<br/>Anılarınızı<br/>detaylarıyla kaydedin.',
+                            'cards' => [
+                                ['icon' => 'camera', 'metric' => '50 MP', 'title' => 'Ana Kamera', 'description' => '50 MP ana kamera, anılarınızı her detayıyla yüksek çözünürlükte ve net renklerle kaydeder.'],
+                                ['icon' => 'eye', 'metric' => '2 MP', 'title' => 'Yardımcı Kamera', 'description' => '2 MP yardımcı kamera, fotoğraflarınıza daha fazla derinlik katarak alan ayrımını güçlendirir.'],
+                                ['icon' => 'camera', 'metric' => '8 MP', 'title' => 'Ön Kamera', 'description' => '8 MP ön kamera, her karede doğal ve canlı bir görünüm sunar.'],
+                                ['icon' => 'star', 'metric' => 'Dinamik Ada', 'title' => 'Dinamik Ada', 'description' => 'Önemli bilgiler ve bildirimler her zaman elinizin altında; ekranınız akıllıca uyum sağlar.'],
+                                ['icon' => 'bolt', 'metric' => '5G', 'title' => 'Hızlı Paylaşım', 'description' => '5G bağlantı desteğiyle çektiğiniz yüksek çözünürlüklü içerikleri saniyeler içinde paylaşın.'],
+                                ['icon' => 'music', 'metric' => 'Video', 'title' => 'Video Kaydı', 'description' => 'Gelişmiş kamera sistemi, günlük anlarınızı akıcı ve dengeli video kaydıyla ölümsüzleştirir.'],
+                            ],
+                        ],
+                        'camera_cards' => ['eyebrow' => 'Kamera Sistemi', 'title' => 'Her açıdan<br/>mükemmel çekim.'],
+                        'display' => [
+                            'eyebrow' => 'Ekran',
+                            'title' => '120 Hz akıcılık.<br/>Akıcılığı her<br/>harekette hissedin.',
+                            'items' => [
+                                ['text' => '6.67 inç LCD In-Cell ekran'],
+                                ['text' => '120 Hz yüksek yenileme hızı'],
+                                ['text' => '480 nit parlaklık · günlük kullanım için net görüntü'],
+                                ['text' => 'Dinamik Ada · Multi-touch dokunmatik'],
+                            ],
+                        ],
+                        'performance' => [
+                            'eyebrow' => 'Performans',
+                            'title' => 'Hızlı. Güçlü.<br/>5G ile geleceğe hazır.',
+                            'cards' => [
+                                ['icon' => 'cpu', 'metric' => 'T765', 'title' => 'İşlemci', 'description' => 'UNISOC T765 işlemci, yeni nesil performansın gücüyle akıcı ve verimli bir kullanım sunar.'],
+                                ['icon' => 'bolt', 'metric' => '8 + 8 GB', 'title' => 'Bellek', 'description' => '8 GB RAM + 8 GB genişletilmiş RAM ile daha akıcı çoklu görev deneyimi. 256 GB depolama, TF kart ile genişletilebilir.'],
+                                ['icon' => 'wifi', 'metric' => '5G', 'title' => '5G Bağlantı', 'description' => '5G bağlantı desteğiyle yüksek hızın avantajlarını yaşayın; 4G desteğiyle her zaman güçlü bağlantı.'],
+                                ['icon' => 'battery', 'metric' => '18 W', 'title' => 'Hızlı Şarj', 'description' => '5000 mAh batarya gün boyu yanınızda; 18 W şarj desteğiyle enerjinizi kısa sürede yenileyin.'],
+                                ['icon' => 'shield', 'metric' => null, 'title' => 'Güvenlik', 'description' => 'Yandan parmak izi okuyucu, hızlı ve güvenli erişim sağlar. Verileriniz her zaman korunur.'],
+                                ['icon' => 'star', 'metric' => 'UFS', 'title' => 'Depolama Teknolojisi', 'description' => 'UFS + LPDDR4 teknolojisi, daha hızlı veri erişimi ve verimli bir kullanım deneyimi sunar.'],
+                            ],
+                        ],
+                        'battery' => [
+                            'eyebrow' => 'Batarya',
+                            'title' => 'Gün boyu<br/>yanınızda.',
+                            'items' => [
+                                ['text' => '5000 mAh batarya'],
+                                ['text' => '18 W kablolu hızlı şarj'],
+                                ['text' => 'Type-C bağlantı · modern ve pratik kullanım'],
+                            ],
+                        ],
+                        'cinema' => [
+                            'slides' => [
+                                ['eyebrow' => 'Bağlantı', 'title' => '5G hızı.<br/>Geleceğe şimdi bağlan.', 'description' => '5G ve 4G bağlantı desteğiyle yüksek hızın avantajlarını her an yaşayın; NFC ve GPS her zaman hizmetinizde.'],
+                                ['eyebrow' => 'Tasarım', 'title' => 'İnce ve modern.<br/>Elinize tam oturur.', 'description' => '165.6 × 77.8 × 8.67 mm ince ve modern tasarım, günlük kullanımda zarif bir his sunar.'],
+                                ['eyebrow' => 'Ekran', 'title' => '120 Hz.<br/>Her harekette akıcı.', 'description' => '6.67 inç LCD In-Cell ekran, 120 Hz yenileme hızı ve 480 nit parlaklıkla geniş bir deneyim sunar.'],
+                                ['eyebrow' => 'Kullanım', 'title' => 'Dinamik Ada.<br/>Bilgi her zaman elinizde.', 'description' => 'Dinamik Ada, yandan parmak izi okuyucu ve TF kart desteğiyle modern kullanıcı özelliklerinin tamamı yanınızda.'],
+                            ],
+                        ],
+                        'specs_section' => ['eyebrow' => 'Teknik Özellikler', 'title' => 'Her detayı<br/>burada bulursunuz.'],
+                        'buy_section' => ['eyebrow' => 'Satın Al', 'title' => 'Hazır olduğunda<br/>buradayız.'],
+                    ],
+                    'en' => [
+                        'collection_card' => ['description' => '5G · 120 Hz · 50 MP Camera · 256 GB'],
+                        'hero' => ['byline' => 'Connect to the future at 5G speed.'],
+                        'camera' => [
+                            'eyebrow' => 'Camera',
+                            'title' => '50 MP main camera.<br/>Capture your memories<br/>in detail.',
+                            'cards' => [
+                                ['icon' => 'camera', 'metric' => '50 MP', 'title' => 'Main Camera', 'description' => 'The 50 MP main camera records your memories in high resolution with every detail and crisp colour.'],
+                                ['icon' => 'eye', 'metric' => '2 MP', 'title' => 'Auxiliary Camera', 'description' => 'The 2 MP auxiliary camera adds more depth to your photos, strengthening subject separation.'],
+                                ['icon' => 'camera', 'metric' => '8 MP', 'title' => 'Front Camera', 'description' => 'The 8 MP front camera delivers a natural, vivid look in every frame.'],
+                                ['icon' => 'star', 'metric' => 'Dynamic Island', 'title' => 'Dynamic Island', 'description' => 'Important information and notifications are always at hand as your display adapts intelligently.'],
+                                ['icon' => 'bolt', 'metric' => '5G', 'title' => 'Fast Sharing', 'description' => 'With 5G connectivity, share the high-resolution content you capture in seconds.'],
+                                ['icon' => 'music', 'metric' => 'Video', 'title' => 'Video Capture', 'description' => 'The advanced camera system immortalises your everyday moments with smooth, balanced video.'],
+                            ],
+                        ],
+                        'camera_cards' => ['eyebrow' => 'Camera System', 'title' => 'A perfect shot<br/>from every angle.'],
+                        'display' => [
+                            'eyebrow' => 'Display',
+                            'title' => '120 Hz fluidity.<br/>Feel the smoothness<br/>in every move.',
+                            'items' => [
+                                ['text' => '6.67-inch LCD In-Cell display'],
+                                ['text' => '120 Hz high refresh rate'],
+                                ['text' => '480-nit brightness · clear image for everyday use'],
+                                ['text' => 'Dynamic Island · multi-touch surface'],
+                            ],
+                        ],
+                        'performance' => [
+                            'eyebrow' => 'Performance',
+                            'title' => 'Fast. Powerful.<br/>Ready for the future with 5G.',
+                            'cards' => [
+                                ['icon' => 'cpu', 'metric' => 'T765', 'title' => 'Processor', 'description' => 'The UNISOC T765 processor delivers smooth, efficient use with the power of next-generation performance.'],
+                                ['icon' => 'bolt', 'metric' => '8 + 8 GB', 'title' => 'Memory', 'description' => '8 GB RAM + 8 GB extended RAM for a smoother multitasking experience. 256 GB storage, expandable via TF card.'],
+                                ['icon' => 'wifi', 'metric' => '5G', 'title' => '5G Connectivity', 'description' => 'Experience the benefits of high speed with 5G connectivity; stay strongly connected at all times with 4G support.'],
+                                ['icon' => 'battery', 'metric' => '18 W', 'title' => 'Fast Charging', 'description' => 'The 5000 mAh battery is with you all day; renew your energy quickly with 18 W charging support.'],
+                                ['icon' => 'shield', 'metric' => null, 'title' => 'Security', 'description' => 'The side fingerprint reader provides fast, secure access. Your data is always protected.'],
+                                ['icon' => 'star', 'metric' => 'UFS', 'title' => 'Storage Technology', 'description' => 'UFS + LPDDR4 technology offers faster data access and a more efficient experience.'],
+                            ],
+                        ],
+                        'battery' => [
+                            'eyebrow' => 'Battery',
+                            'title' => 'By your side<br/>all day.',
+                            'items' => [
+                                ['text' => '5000 mAh battery'],
+                                ['text' => '18 W wired fast charging'],
+                                ['text' => 'Type-C connection · modern and practical use'],
+                            ],
+                        ],
+                        'cinema' => [
+                            'slides' => [
+                                ['eyebrow' => 'Connectivity', 'title' => '5G speed.<br/>Connect to the future now.', 'description' => 'With 5G and 4G connectivity, enjoy the benefits of high speed at all times; NFC and GPS are always at your service.'],
+                                ['eyebrow' => 'Design', 'title' => 'Slim and modern.<br/>Fits your hand perfectly.', 'description' => 'A slim, modern design at 165.6 × 77.8 × 8.67 mm offers an elegant feel in daily use.'],
+                                ['eyebrow' => 'Display', 'title' => '120 Hz.<br/>Smooth with every move.', 'description' => 'The 6.67-inch LCD In-Cell display delivers a wide experience with a 120 Hz refresh rate and 480-nit brightness.'],
+                                ['eyebrow' => 'Experience', 'title' => 'Dynamic Island.<br/>Information always at hand.', 'description' => 'With Dynamic Island, a side fingerprint reader and TF card support, all modern user features are by your side.'],
+                            ],
+                        ],
+                        'specs_section' => ['eyebrow' => 'Specifications', 'title' => 'Every detail,<br/>right here.'],
+                        'buy_section' => ['eyebrow' => 'Buy', 'title' => 'Ready when<br/>you are.'],
+                    ],
+                ],
+                'specs' => [
+                    'tr' => [
+                        ['key' => 'Ekran', 'value' => '6.67 inç LCD In-Cell', 'note' => '120 Hz · 480 nit · Dinamik Ada'],
+                        ['key' => 'İşlemci', 'value' => 'UNISOC T765', 'note' => 'Yeni nesil performans'],
+                        ['key' => 'Bellek', 'value' => '8 GB + 8 GB RAM · 256 GB Depolama', 'note' => 'UFS + LPDDR4 · TF kart ile genişletilebilir'],
+                        ['key' => 'Ana Kamera', 'value' => '50 MP + 2 MP', 'note' => 'Çift kamera sistemi'],
+                        ['key' => 'Ön Kamera', 'value' => '8 MP', 'note' => 'Doğal görünüm'],
+                        ['key' => 'Batarya', 'value' => '5000 mAh', 'note' => '18 W şarj · Type-C'],
+                        ['key' => 'İşletim Sistemi', 'value' => 'Android 16', 'note' => 'Modern ve güncel deneyim'],
+                        ['key' => 'Bağlantı', 'value' => '5G · 4G · NFC · GPS', 'note' => 'Yüksek hızlı yeni nesil bağlantı'],
+                        ['key' => 'Güvenlik', 'value' => 'Yandan parmak izi okuyucu', 'note' => 'Hızlı ve güvenli erişim'],
+                        ['key' => 'SIM', 'value' => 'Çift SIM (Dual SIM)', 'note' => 'İki hat, tek cihaz · TF kart desteği'],
+                        ['key' => 'Boyutlar', 'value' => '165.6 × 77.8 × 8.67 mm', 'note' => 'İnce ve modern tasarım'],
+                    ],
+                    'en' => [
+                        ['key' => 'Display', 'value' => '6.67-inch LCD In-Cell', 'note' => '120 Hz · 480 nit · Dynamic Island'],
+                        ['key' => 'Processor', 'value' => 'UNISOC T765', 'note' => 'Next-generation performance'],
+                        ['key' => 'Memory', 'value' => '8 GB + 8 GB RAM · 256 GB Storage', 'note' => 'UFS + LPDDR4 · Expandable via TF card'],
+                        ['key' => 'Main Camera', 'value' => '50 MP + 2 MP', 'note' => 'Dual camera system'],
+                        ['key' => 'Front Camera', 'value' => '8 MP', 'note' => 'Natural look'],
+                        ['key' => 'Battery', 'value' => '5000 mAh', 'note' => '18 W charging · Type-C'],
+                        ['key' => 'Operating System', 'value' => 'Android 16', 'note' => 'A modern, up-to-date experience'],
+                        ['key' => 'Connectivity', 'value' => '5G · 4G · NFC · GPS', 'note' => 'High-speed next-generation connectivity'],
+                        ['key' => 'Security', 'value' => 'Side fingerprint reader', 'note' => 'Fast and secure access'],
+                        ['key' => 'SIM', 'value' => 'Dual SIM', 'note' => 'Two lines, one device · TF card support'],
+                        ['key' => 'Dimensions', 'value' => '165.6 × 77.8 × 8.67 mm', 'note' => 'Slim and modern design'],
+                    ],
+                ],
+                'price' => null,
+                'price_label' => ['tr' => null],
+                'price_note' => [
+                    'tr' => '24 ay Türkiye garantisi · Ücretsiz kargo · Ücretsiz iade (30 gün)',
+                    'en' => '24-month Türkiye warranty · Free shipping · Free returns (30 days)',
+                ],
+                'cta_primary' => ['tr' => 'Sepete Ekle', 'en' => 'Add to Cart'],
+                'cta_secondary' => ['tr' => 'Teknik Özellikler', 'en' => 'Specifications'],
+                'buy_url' => null,
+                'cta_secondary_url' => null,
+                'meta_title' => [
+                    'tr' => 'N50 Pro — 5G Flagship · 120 Hz · 50 MP · 256 GB',
+                    'en' => 'N50 Pro — 5G Flagship · 120 Hz · 50 MP · 256 GB',
+                ],
+                'meta_description' => [
+                    'tr' => 'N50 Pro 5G amiral telefon: yeni nesil 5G bağlantı, 6.67 inç 120 Hz ekran, 50 MP kamera, 8+8 GB RAM ve 256 GB depolama. Hızın ve gücün yeni adı.',
+                    'en' => 'N50 Pro 5G flagship: next-gen 5G connectivity, a 6.67-inch 120 Hz display, 50 MP camera, 8+8 GB RAM and 256 GB storage. The new name for speed and power.',
+                ],
+                'is_active' => 1,
+                'order' => 4,
+                'is_spotlight' => 0,
+            ],
+            [
+                'type' => 'watch',
+                'slug' => ['tr' => 'vio-watch-curved', 'en' => 'vio-watch-curved'],
+                'name' => ['tr' => 'Vio Watch Curved', 'en' => 'Vio Watch Curved'],
+                'eyebrow' => ['tr' => 'Yeni — 2026', 'en' => 'New — 2026'],
+                'tagline' => [
+                    'tr' => 'Zamana şıklık katın.<br/>Hayatın ritmini bileğinizden yakalayın.',
+                    'en' => 'Add elegance to time.<br/>Catch life\'s rhythm from your wrist.',
+                ],
+                'strip_stats' => [
+                    'tr' => [
+                        ['value' => '2.06"', 'label' => 'Kavisli AMOLED'],
+                        ['value' => '7 gün', 'label' => 'Pil Ömrü'],
+                        ['value' => '110', 'label' => 'Spor Modu'],
+                        ['value' => 'SpO2', 'label' => 'Sağlık Sensörleri'],
+                        ['value' => 'IP68', 'label' => 'Su & Toz Direnci'],
+                    ],
+                    'en' => [
+                        ['value' => '2.06"', 'label' => 'Curved AMOLED'],
+                        ['value' => '7 days', 'label' => 'Battery Life'],
+                        ['value' => '110', 'label' => 'Sport Modes'],
+                        ['value' => 'SpO2', 'label' => 'Health Sensors'],
+                        ['value' => 'IP68', 'label' => 'Water & Dust Resistance'],
+                    ],
+                ],
+                'content' => [
+                    'tr' => [
+                        'collection_card' => ['description' => '2.06" Kavisli AMOLED · 110 Spor Modu · IP68'],
+                        'health' => [
+                            'eyebrow' => 'Sağlık',
+                            'title' => 'Sağlığınızı<br/>bileğinizden izleyin.',
+                            'description' => 'Vio Watch Curved, nabız takibinden kan oksijenine, uyku analizinden günlük sağlık verilerine kadar gelişmiş sağlık takibiyle her an yanınızda.',
+                            'cards' => [
+                                ['icon' => 'heart', 'metric' => 'Takibi', 'title' => 'Nabız Takibi', 'description' => 'Optik sensör kalbinizin ritmini gün boyu izler. İstirahat, egzersiz ve uyku sırasında sürekli ölçüm yapar.'],
+                                ['icon' => 'drop', 'metric' => 'Sensörü', 'title' => 'Kan Oksijen Takibi', 'description' => 'Kan oksijen doygunluğunuzu (SpO2) ölçerek günlük sağlık verilerinizi net bir şekilde görüntülemenizi sağlar.'],
+                                ['icon' => 'moon', 'metric' => 'Aşama', 'title' => 'Uyku Takibi', 'description' => 'Uyku aşamalarınızı analiz ederek dinlenmenizi daha iyi anlamanıza yardımcı olur. Sabah uyku kalite raporu sunar.'],
+                                ['icon' => 'activity', 'metric' => 'Modu', 'title' => '110 Spor Modu', 'description' => '110 farklı spor modu ile koşudan yüzmeye, bisikletten yogaya kadar her hareketinizi takip edin.'],
+                                ['icon' => 'phone', 'metric' => 'Görüşme', 'title' => 'Telefon Görüşmesi', 'description' => 'Su geçirmez özel hoparlörü ve telefon görüşmesi özelliğiyle bileğinizden iletişimde kalın.'],
+                                ['icon' => 'shield', 'metric' => 'Koruma', 'title' => 'IP68 Dayanıklılık', 'description' => 'IP68 su ve toz geçirmezlik ile günlük hayatın her anına hazır. Yağmurdan tere kadar her koşulda yanınızda.'],
+                            ],
+                        ],
+                        'health_cards' => ['eyebrow' => 'Sağlık Sistemi', 'title' => 'Her nabzınızda<br/>bir adım öteye.'],
+                        'customization' => [
+                            'eyebrow' => 'Kişiselleştirme',
+                            'title' => 'Her güne başka<br/>bir yüz.',
+                            'faces' => [
+                                ['name' => 'Curved Sport', 'tags' => 'Aktivite halkaları · Nabız'],
+                                ['name' => 'Klasik Şıklık', 'tags' => 'Analog stil · Tarih · Şehir'],
+                                ['name' => 'Minimal', 'tags' => 'Sade · Şık · Odaklanma'],
+                                ['name' => 'Data Pro', 'tags' => 'Nabız · SpO2 · Adım'],
+                            ],
+                        ],
+                        'design' => [
+                            'eyebrow' => 'Tasarım',
+                            'title' => 'Kavisli ekran.<br/>Şık. Dayanıklı.',
+                            'description' => '2.06 inç 3D kavisli AMOLED ekran, canlı renkler ve premium bir görünüm sunar. Zinc Alloy + IML gövde, dayanıklılığı şıklıkla buluşturarak günün her anına eşlik eder.',
+                            'items' => [
+                                ['text' => '2.06" 3D Curved AMOLED · 410 × 480 px'],
+                                ['text' => 'Zinc Alloy + IML gövde · premium görünüm'],
+                                ['text' => 'Canlı renkler · kusursuz kavisli görünüm'],
+                                ['text' => 'Su geçirmez özel hoparlör entegre'],
+                                ['text' => 'IP68 su ve toz geçirmezlik'],
+                            ],
+                        ],
+                        'activity' => [
+                            'eyebrow' => 'Aktivite & Bağlantı',
+                            'title' => '110 mod,<br/>tek bilek,<br/>sınırsız takip.',
+                            'description' => '110 farklı spor modundan birini seçin. Bluetooth 5.2 ile daha stabil ve güçlü bağlantı kurun, 50-80 metre menzille özgürce hareket edin. Android ve iOS uyumludur.',
+                            'stats' => [
+                                ['value' => '110', 'label' => 'Spor Modu'],
+                                ['value' => 'BT 5.2', 'label' => 'Bağlantı'],
+                                ['value' => '50-80 m', 'label' => 'Menzil'],
+                            ],
+                        ],
+                        'battery' => [
+                            'eyebrow' => 'Batarya',
+                            'title' => '7 gün.<br/>Şarj\'ı<br/>unutun.',
+                            'description' => '300mAh batarya ile günlerce süren kullanım özgürlüğü. Normal kullanımda 7 gün, açık ekran kullanımında 4 gün, hazır bekleme modunda 15 güne kadar dayanır. Manyetik şarj ile pratik ve kolay.',
+                            'items' => [
+                                ['text' => '300mAh batarya · günlerce kullanım'],
+                                ['text' => '7 gün normal kullanım'],
+                                ['text' => '4 gün açık ekran kullanımı'],
+                                ['text' => '15 gün standby · manyetik şarj'],
+                            ],
+                        ],
+                        'specs_section' => ['eyebrow' => 'Teknik Özellikler', 'title' => 'Her detay,<br/>burada.'],
+                        'buy_section' => ['eyebrow' => 'Satın Al', 'title' => 'Şıklığı<br/>bileğinize takın.'],
+                    ],
+                    'en' => [
+                        'collection_card' => ['description' => '2.06" Curved AMOLED · 110 Sport Modes · IP68'],
+                        'health' => [
+                            'eyebrow' => 'Health',
+                            'title' => 'Track your health<br/>from your wrist.',
+                            'description' => 'The Vio Watch Curved is by your side at all times with advanced health tracking — from heart rate to blood oxygen, sleep analysis to daily health data.',
+                            'cards' => [
+                                ['icon' => 'heart', 'metric' => 'Monitoring', 'title' => 'Heart Rate', 'description' => 'An optical sensor monitors your heart\'s rhythm throughout the day, measuring continuously at rest, during exercise and while you sleep.'],
+                                ['icon' => 'drop', 'metric' => 'Sensor', 'title' => 'Blood Oxygen', 'description' => 'Measures your blood oxygen saturation (SpO2) so you can view your daily health data clearly.'],
+                                ['icon' => 'moon', 'metric' => 'Stages', 'title' => 'Sleep Tracking', 'description' => 'Analyses your sleep stages to help you better understand your rest. Delivers a sleep quality report in the morning.'],
+                                ['icon' => 'activity', 'metric' => 'Modes', 'title' => '110 Sport Modes', 'description' => 'With 110 different sport modes, track every move from running to swimming, cycling to yoga.'],
+                                ['icon' => 'phone', 'metric' => 'Calling', 'title' => 'Phone Calls', 'description' => 'Stay connected from your wrist with phone call support and a dedicated waterproof speaker.'],
+                                ['icon' => 'shield', 'metric' => 'Protection', 'title' => 'IP68 Durability', 'description' => 'IP68 water and dust resistance keeps it ready for every moment of daily life — from rain to sweat, in any condition.'],
+                            ],
+                        ],
+                        'health_cards' => ['eyebrow' => 'Health System', 'title' => 'One step further<br/>with every beat.'],
+                        'customization' => [
+                            'eyebrow' => 'Personalisation',
+                            'title' => 'A new face<br/>for every day.',
+                            'faces' => [
+                                ['name' => 'Curved Sport', 'tags' => 'Activity rings · Heart rate'],
+                                ['name' => 'Classic Elegance', 'tags' => 'Analog style · Date · City'],
+                                ['name' => 'Minimal', 'tags' => 'Simple · Elegant · Focus'],
+                                ['name' => 'Data Pro', 'tags' => 'Heart rate · SpO2 · Steps'],
+                            ],
+                        ],
+                        'design' => [
+                            'eyebrow' => 'Design',
+                            'title' => 'Curved display.<br/>Elegant. Durable.',
+                            'description' => 'The 2.06-inch 3D curved AMOLED display delivers vivid colours and a premium look. The Zinc Alloy + IML body unites durability with elegance to accompany you at every moment of the day.',
+                            'items' => [
+                                ['text' => '2.06" 3D Curved AMOLED · 410 × 480 px'],
+                                ['text' => 'Zinc Alloy + IML body · premium look'],
+                                ['text' => 'Vivid colours · flawless curved look'],
+                                ['text' => 'Integrated waterproof speaker'],
+                                ['text' => 'IP68 water and dust resistance'],
+                            ],
+                        ],
+                        'activity' => [
+                            'eyebrow' => 'Activity & Connectivity',
+                            'title' => '110 modes,<br/>one wrist,<br/>endless tracking.',
+                            'description' => 'Pick from 110 different sport modes. Connect with Bluetooth 5.2 for a more stable and powerful link, and move freely within a 50-80 metre range. Compatible with Android and iOS.',
+                            'stats' => [
+                                ['value' => '110', 'label' => 'Sport Modes'],
+                                ['value' => 'BT 5.2', 'label' => 'Connectivity'],
+                                ['value' => '50-80 m', 'label' => 'Range'],
+                            ],
+                        ],
+                        'battery' => [
+                            'eyebrow' => 'Battery',
+                            'title' => '7 days.<br/>Forget the<br/>charger.',
+                            'description' => 'A 300mAh battery delivers days of freedom. It lasts 7 days in normal use, 4 days with the always-on display, and up to 15 days in standby. Magnetic charging makes it practical and easy.',
+                            'items' => [
+                                ['text' => '300mAh battery · days of use'],
+                                ['text' => '7 days of normal use'],
+                                ['text' => '4 days with always-on display'],
+                                ['text' => '15 days standby · magnetic charging'],
+                            ],
+                        ],
+                        'specs_section' => ['eyebrow' => 'Specifications', 'title' => 'Every detail,<br/>right here.'],
+                        'buy_section' => ['eyebrow' => 'Buy', 'title' => 'Wear elegance<br/>on your wrist.'],
+                    ],
+                ],
+                'specs' => [
+                    'tr' => [
+                        ['key' => 'Ekran', 'value' => '2.06" 3D Curved AMOLED', 'note' => '410 × 480 px · canlı renkler · premium görünüm'],
+                        ['key' => 'Gövde', 'value' => 'Zinc Alloy + IML', 'note' => 'Dayanıklılığı şıklıkla buluşturur'],
+                        ['key' => 'Batarya', 'value' => '300 mAh', 'note' => '7 gün normal · 4 gün açık ekran · 15 gün standby'],
+                        ['key' => 'Spor Modları', 'value' => '110 farklı mod', 'note' => 'Koşu · Yüzme · Bisiklet · Yoga · HIIT'],
+                        ['key' => 'Sensörler', 'value' => 'Nabız · Kan Oksijeni (SpO2) · Uyku', 'note' => 'Günlük sağlık verileri takibi'],
+                        ['key' => 'Su Direnci', 'value' => 'IP68 su ve toz geçirmezlik', 'note' => 'Günlük hayatın her anına hazır'],
+                        ['key' => 'Bağlantı', 'value' => 'Bluetooth 5.2', 'note' => 'Daha stabil ve güçlü bağlantı'],
+                        ['key' => 'Şarj', 'value' => 'Manyetik şarj', 'note' => 'Pratik ve kolay şarj deneyimi'],
+                        ['key' => 'Uyumluluk', 'value' => 'Android ve iOS', 'note' => 'Hangi telefonu kullanırsanız kullanın'],
+                        ['key' => 'Telefon Görüşmesi', 'value' => 'Su geçirmez özel hoparlör', 'note' => 'Bileğinizden iletişimde kalın'],
+                        ['key' => 'Bağlantı Mesafesi', 'value' => '50-80 metre', 'note' => 'Özgürce hareket edin'],
+                    ],
+                    'en' => [
+                        ['key' => 'Display', 'value' => '2.06" 3D Curved AMOLED', 'note' => '410 × 480 px · vivid colours · premium look'],
+                        ['key' => 'Body', 'value' => 'Zinc Alloy + IML', 'note' => 'Unites durability with elegance'],
+                        ['key' => 'Battery', 'value' => '300 mAh', 'note' => '7 days normal · 4 days always-on · 15 days standby'],
+                        ['key' => 'Sport Modes', 'value' => '110 different modes', 'note' => 'Running · Swimming · Cycling · Yoga · HIIT'],
+                        ['key' => 'Sensors', 'value' => 'Heart rate · Blood Oxygen (SpO2) · Sleep', 'note' => 'Daily health data tracking'],
+                        ['key' => 'Water Resistance', 'value' => 'IP68 water and dust resistance', 'note' => 'Ready for every moment of daily life'],
+                        ['key' => 'Connectivity', 'value' => 'Bluetooth 5.2', 'note' => 'More stable and powerful connection'],
+                        ['key' => 'Charging', 'value' => 'Magnetic charging', 'note' => 'Practical and easy charging experience'],
+                        ['key' => 'Compatibility', 'value' => 'Android and iOS', 'note' => 'Whichever phone you use'],
+                        ['key' => 'Phone Calls', 'value' => 'Dedicated waterproof speaker', 'note' => 'Stay connected from your wrist'],
+                        ['key' => 'Connection Range', 'value' => '50-80 metres', 'note' => 'Move freely'],
+                    ],
+                ],
+                'price' => null,
+                'price_label' => ['tr' => null],
+                'price_note' => [
+                    'tr' => '24 ay Türkiye garantisi · Ücretsiz kargo · Ücretsiz iade (30 gün)',
+                    'en' => '24-month Türkiye warranty · Free shipping · Free returns (30 days)',
+                ],
+                'cta_primary' => ['tr' => 'Sepete Ekle', 'en' => 'Add to Cart'],
+                'cta_secondary' => ['tr' => 'Teknik Özellikler', 'en' => 'Specifications'],
+                'buy_url' => null,
+                'cta_secondary_url' => null,
+                'meta_title' => [
+                    'tr' => 'Vio Watch Curved — Kavisli AMOLED · 110 Spor Modu · 7 Gün Pil',
+                    'en' => 'Vio Watch Curved — Curved AMOLED · 110 Sport Modes · 7-Day Battery',
+                ],
+                'meta_description' => [
+                    'tr' => 'Vio Watch Curved akıllı saat: 2.06" kavisli AMOLED ekran, 110 spor modu, nabız ve SpO2 takibi, telefon görüşmesi ve 7 güne varan pil ömrüyle teknolojiyi şıklıkla buluşturur.',
+                    'en' => 'Vio Watch Curved smartwatch: 2.06" curved AMOLED display, 110 sport modes, heart rate and SpO2 tracking, phone calls and up to 7-day battery life — technology meets elegance.',
+                ],
+                'is_active' => 1,
+                'order' => 5,
+                'is_spotlight' => 0,
+            ],
+            [
+                'type' => 'watch',
+                'slug' => ['tr' => 'vio-watch-time-line', 'en' => 'vio-watch-time-line'],
+                'name' => ['tr' => 'Vio Watch Time Line', 'en' => 'Vio Watch Time Line'],
+                'eyebrow' => ['tr' => 'Yeni — 2026', 'en' => 'New — 2026'],
+                'tagline' => [
+                    'tr' => 'Zamanın Ritmini Yakala.<br/>Her An Kontrol Sende.',
+                    'en' => 'Catch the Rhythm of Time.<br/>You\'re Always in Control.',
+                ],
+                'strip_stats' => [
+                    'tr' => [
+                        ['value' => '1.43"', 'label' => 'AMOLED · 500 Nit'],
+                        ['value' => '10 gün', 'label' => 'Standby'],
+                        ['value' => '110', 'label' => 'Spor Modu'],
+                        ['value' => '5 ATM', 'label' => 'IP68 Su Direnci'],
+                        ['value' => 'BT 5.4', 'label' => 'Bağlantı'],
+                    ],
+                    'en' => [
+                        ['value' => '1.43"', 'label' => 'AMOLED · 500 nits'],
+                        ['value' => '10 days', 'label' => 'Standby'],
+                        ['value' => '110', 'label' => 'Sport Modes'],
+                        ['value' => '5 ATM', 'label' => 'IP68 Water resistance'],
+                        ['value' => 'BT 5.4', 'label' => 'Connectivity'],
+                    ],
+                ],
+                'content' => [
+                    'tr' => [
+                        'collection_card' => ['description' => '1.43" AMOLED · 110 Spor Modu · 5 ATM / IP68'],
+                        'health' => [
+                            'eyebrow' => 'Sağlık',
+                            'title' => 'Ritminizi<br/>okuyan saat.',
+                            'description' => 'Nabız takibinden kan oksijenine, uyku analizinden günlük dengeye — Vio Watch Time Line sağlık verilerinizi bileğinizde toplar, siz fark etmeden.',
+                            'cards' => [
+                                ['icon' => 'heart', 'metric' => 'İzleme', 'title' => 'Nabız Takibi', 'description' => 'Optik kalp ritmi sensörü gün içindeki nabzınızı sürekli ölçer. İstirahatte, sporda ve uykuda ritminizi kesintisiz takip eder.'],
+                                ['icon' => 'drop', 'metric' => 'Sensörü', 'title' => 'Kan Oksijeni', 'description' => 'Kan oksijen doygunluğunuza (SpO2) saniyeler içinde erişin. Sağlık verilerinize kolay ve hızlı bir bakış sunar.'],
+                                ['icon' => 'moon', 'metric' => 'Aşama', 'title' => 'Uyku Takibi', 'description' => 'Uyku aşamalarınızı ayrıntılı analiz eder ve daha kaliteli dinlenmeyi keşfetmeniz için sabah uyku raporu sunar.'],
+                                ['icon' => 'eye', 'metric' => 'Analiz', 'title' => 'Günlük Denge', 'description' => 'Kalp ritmi verilerinizden yola çıkarak günlük dengenizi takip eder ve daha sakin anlar için nefes önerileri sunar.'],
+                                ['icon' => 'clock', 'metric' => 'Mod', 'title' => '110 Spor Modu', 'description' => '110 farklı spor modu ile koşudan yürüyüşe, bisikletten yogaya her hareketinizi doğru şekilde takip eder.'],
+                                ['icon' => 'star', 'metric' => 'Skor', 'title' => 'Aktivite Skoru', 'description' => 'Günlük adım, kalori ve hareket verilerinizi bir araya getirir. Gelişiminizi grafiklerle net biçimde gösterir.'],
+                            ],
+                        ],
+                        'health_cards' => ['eyebrow' => 'Sağlık Sistemi', 'title' => 'Her nabzınızda<br/>bir adım öteye.'],
+                        'customization' => [
+                            'eyebrow' => 'Kişiselleştirme',
+                            'title' => 'Her güne başka<br/>bir yüz.',
+                            'faces' => [
+                                ['name' => 'Sport Ring', 'tags' => 'Aktivite halkaları · Nabız'],
+                                ['name' => 'Klasik', 'tags' => 'Analog stil · Tarih · Şehir'],
+                                ['name' => 'Minimal', 'tags' => 'Sade · Şık · Odaklanma'],
+                                ['name' => 'Data Pro', 'tags' => 'Nabız · SpO2 · Adım'],
+                            ],
+                        ],
+                        'design' => [
+                            'eyebrow' => 'Tasarım',
+                            'title' => 'Zinc Alloy.<br/>Zarif. Dayanıklı.',
+                            'description' => 'Zinc Alloy gövde, sand blasting ve metal wire drawing işlemeyle premium bir görünüm sunar. 1.43 inç AMOLED ekran ve solid silikon kordon gün boyu konfor sağlar.',
+                            'items' => [
+                                ['text' => '1.43 inç AMOLED · 540 × 493 px'],
+                                ['text' => '500 nit parlaklık · gün ışığında net'],
+                                ['text' => 'Zinc Alloy gövde · premium tasarım'],
+                                ['text' => 'Sand blasting & metal wire drawing işleme'],
+                                ['text' => 'Solid silikon kordon · gün boyu konfor'],
+                            ],
+                        ],
+                        'activity' => [
+                            'eyebrow' => 'Aktivite & Spor',
+                            'title' => 'Hareket ediyor,<br/>izliyor,<br/>analiz ediyor.',
+                            'description' => '110 farklı spor modundan birini seçin. Vio Watch Time Line her adımınızı, her kalorinizi ve her hareketinizi takip eder. 5 ATM ve IP68 ile hareket özgürlüğünüzü korur.',
+                            'stats' => [
+                                ['value' => '110', 'label' => 'Spor Modu'],
+                                ['value' => '5 ATM', 'label' => 'Su Dayanıklılığı'],
+                                ['value' => 'IP68', 'label' => 'Su & Toz Geçirmez'],
+                            ],
+                        ],
+                        'battery' => [
+                            'eyebrow' => 'Batarya',
+                            'title' => '10 gün<br/>standby.<br/>Hep hazır.',
+                            'description' => '350mAh batarya gücünü uzun süre korur. Normal kullanımda 5 güne, standby modunda 10 güne kadar dayanır. Manyetik şarj ile tek dokunuşla kolayca şarj edin.',
+                            'items' => [
+                                ['text' => '350mAh batarya'],
+                                ['text' => '10 gün standby süresi'],
+                                ['text' => '5 gün normal kullanım'],
+                                ['text' => '3 gün açık ekran (Always-On) kullanımı'],
+                                ['text' => 'Manyetik şarj · tek dokunuşla kolay'],
+                            ],
+                        ],
+                        'specs_section' => ['eyebrow' => 'Teknik Özellikler', 'title' => 'Her detay,<br/>burada.'],
+                        'buy_section' => ['eyebrow' => 'Satın Al', 'title' => 'Zaman<br/>bileğinizde.'],
+                    ],
+                    'en' => [
+                        'collection_card' => ['description' => '1.43" AMOLED · 110 Sport Modes · 5 ATM / IP68'],
+                        'health' => [
+                            'eyebrow' => 'Health',
+                            'title' => 'A watch that<br/>reads your rhythm.',
+                            'description' => 'From heart rate to blood oxygen, sleep analysis to daily balance — the Vio Watch Time Line gathers your health data on your wrist, without you noticing.',
+                            'cards' => [
+                                ['icon' => 'heart', 'metric' => 'Monitoring', 'title' => 'Heart Rate', 'description' => 'An optical heart rate sensor measures your pulse continuously through the day — at rest, during sport and while you sleep.'],
+                                ['icon' => 'drop', 'metric' => 'Sensor', 'title' => 'Blood Oxygen', 'description' => 'Access your blood oxygen saturation (SpO2) in seconds. Offers an easy, fast glance at your health data.'],
+                                ['icon' => 'moon', 'metric' => 'Stages', 'title' => 'Sleep Tracking', 'description' => 'Analyses your sleep stages in detail and delivers a morning sleep report to help you discover better rest.'],
+                                ['icon' => 'eye', 'metric' => 'Analysis', 'title' => 'Daily Balance', 'description' => 'Tracks your daily balance from your heart rate data and suggests breathing exercises for calmer moments.'],
+                                ['icon' => 'clock', 'metric' => 'Mode', 'title' => '110 Sport Modes', 'description' => 'With 110 different sport modes, it accurately tracks every move — from running and walking to cycling and yoga.'],
+                                ['icon' => 'star', 'metric' => 'Score', 'title' => 'Activity Score', 'description' => 'Brings together your daily steps, calories and movement data. Shows your progress clearly with graphs.'],
+                            ],
+                        ],
+                        'health_cards' => ['eyebrow' => 'Health System', 'title' => 'One step further<br/>with every beat.'],
+                        'customization' => [
+                            'eyebrow' => 'Personalisation',
+                            'title' => 'A new face<br/>for every day.',
+                            'faces' => [
+                                ['name' => 'Sport Ring', 'tags' => 'Activity rings · Heart rate'],
+                                ['name' => 'Classic', 'tags' => 'Analog style · Date · City'],
+                                ['name' => 'Minimal', 'tags' => 'Simple · Elegant · Focus'],
+                                ['name' => 'Data Pro', 'tags' => 'Heart rate · SpO2 · Steps'],
+                            ],
+                        ],
+                        'design' => [
+                            'eyebrow' => 'Design',
+                            'title' => 'Zinc Alloy.<br/>Elegant. Durable.',
+                            'description' => 'A zinc alloy body with sand blasting and metal wire drawing finishing delivers a premium look. The 1.43-inch AMOLED display and solid silicone strap provide all-day comfort.',
+                            'items' => [
+                                ['text' => '1.43-inch AMOLED · 540 × 493 px'],
+                                ['text' => '500 nits brightness · clear in daylight'],
+                                ['text' => 'Zinc alloy body · premium design'],
+                                ['text' => 'Sand blasting & metal wire drawing finish'],
+                                ['text' => 'Solid silicone strap · all-day comfort'],
+                            ],
+                        ],
+                        'activity' => [
+                            'eyebrow' => 'Activity & Sport',
+                            'title' => 'Moving,<br/>watching,<br/>analysing.',
+                            'description' => 'Choose from 110 different sport modes. The Vio Watch Time Line records every step, every calorie and every movement. With 5 ATM and IP68, it protects your freedom to move.',
+                            'stats' => [
+                                ['value' => '110', 'label' => 'Sport Modes'],
+                                ['value' => '5 ATM', 'label' => 'Water resistance'],
+                                ['value' => 'IP68', 'label' => 'Water & dust proof'],
+                            ],
+                        ],
+                        'battery' => [
+                            'eyebrow' => 'Battery',
+                            'title' => '10 days<br/>standby.<br/>Always ready.',
+                            'description' => 'The 350mAh battery holds its power for a long time. It lasts up to 5 days in normal use and up to 10 days in standby. Charge easily with a single touch via magnetic charging.',
+                            'items' => [
+                                ['text' => '350mAh battery'],
+                                ['text' => '10 days standby time'],
+                                ['text' => '5 days normal use'],
+                                ['text' => '3 days always-on display use'],
+                                ['text' => 'Magnetic charging · easy with one touch'],
+                            ],
+                        ],
+                        'specs_section' => ['eyebrow' => 'Specifications', 'title' => 'Every detail,<br/>right here.'],
+                        'buy_section' => ['eyebrow' => 'Buy', 'title' => 'Time,<br/>on your wrist.'],
+                    ],
+                ],
+                'specs' => [
+                    'tr' => [
+                        ['key' => 'Ekran', 'value' => '1.43 inç AMOLED', 'note' => '540 × 493 px · 500 nit parlaklık'],
+                        ['key' => 'Gövde', 'value' => 'Zinc Alloy', 'note' => 'Sand blasting & metal wire drawing işleme'],
+                        ['key' => 'Kordon', 'value' => 'Solid silikon kordon', 'note' => 'Gün boyu konfor'],
+                        ['key' => 'Batarya', 'value' => '350 mAh', 'note' => '10 gün standby · 5 gün normal · 3 gün açık ekran'],
+                        ['key' => 'Spor Modları', 'value' => '110 farklı spor modu', 'note' => 'Koşu · Yürüyüş · Bisiklet · Yoga'],
+                        ['key' => 'Sensörler', 'value' => 'Nabız · Kan oksijeni (SpO2)', 'note' => 'Uyku takibi · Aktivite takibi'],
+                        ['key' => 'Su Direnci', 'value' => 'IP68 · 5 ATM', 'note' => 'Su ve toz geçirmez · su dayanıklılığı'],
+                        ['key' => 'Bağlantı', 'value' => 'Bluetooth 5.4', 'note' => '50-80 metre bağlantı mesafesi'],
+                        ['key' => 'Şarj', 'value' => 'Manyetik şarj', 'note' => 'Tek dokunuşla kolay şarj'],
+                        ['key' => 'Uyumluluk', 'value' => 'Android ve iOS', 'note' => 'Tüm ekosistemlerle uyumlu'],
+                        ['key' => 'Arama', 'value' => 'Telefon görüşmesi özelliği', 'note' => 'Su geçirmez özel hoparlör · net ses'],
+                        ['key' => 'Renk', 'value' => 'Uzay Grisi · Gümüş · Siyah', 'note' => 'Türkiye\'de tasarlandı'],
+                    ],
+                    'en' => [
+                        ['key' => 'Display', 'value' => '1.43-inch AMOLED', 'note' => '540 × 493 px · 500 nits brightness'],
+                        ['key' => 'Body', 'value' => 'Zinc Alloy', 'note' => 'Sand blasting & metal wire drawing finish'],
+                        ['key' => 'Strap', 'value' => 'Solid silicone strap', 'note' => 'All-day comfort'],
+                        ['key' => 'Battery', 'value' => '350 mAh', 'note' => '10 days standby · 5 days normal · 3 days always-on'],
+                        ['key' => 'Sport Modes', 'value' => '110 different sport modes', 'note' => 'Running · Walking · Cycling · Yoga'],
+                        ['key' => 'Sensors', 'value' => 'Heart rate · Blood oxygen (SpO2)', 'note' => 'Sleep tracking · Activity tracking'],
+                        ['key' => 'Water Resistance', 'value' => 'IP68 · 5 ATM', 'note' => 'Water & dust proof · water resistance'],
+                        ['key' => 'Connectivity', 'value' => 'Bluetooth 5.4', 'note' => '50-80 metre connection range'],
+                        ['key' => 'Charging', 'value' => 'Magnetic charging', 'note' => 'Easy charging with one touch'],
+                        ['key' => 'Compatibility', 'value' => 'Android and iOS', 'note' => 'Compatible with all ecosystems'],
+                        ['key' => 'Calling', 'value' => 'Phone calling feature', 'note' => 'Waterproof dedicated speaker · clear sound'],
+                        ['key' => 'Colour', 'value' => 'Space Grey · Silver · Black', 'note' => 'Designed in Türkiye'],
+                    ],
+                ],
+                'price' => null,
+                'price_label' => ['tr' => null],
+                'price_note' => [
+                    'tr' => '24 ay Türkiye garantisi · Ücretsiz kargo · Ücretsiz iade (30 gün)',
+                    'en' => '24-month Türkiye warranty · Free shipping · Free returns (30 days)',
+                ],
+                'cta_primary' => ['tr' => 'Sepete Ekle', 'en' => 'Add to Cart'],
+                'cta_secondary' => ['tr' => 'Teknik Özellikler', 'en' => 'Specifications'],
+                'buy_url' => null,
+                'cta_secondary_url' => null,
+                'meta_title' => [
+                    'tr' => 'Vio Watch Time Line — 1.43" AMOLED · 110 Spor Modu · Telefon Görüşmesi',
+                    'en' => 'Vio Watch Time Line — 1.43" AMOLED · 110 Sport Modes · Calling',
+                ],
+                'meta_description' => [
+                    'tr' => 'Vio Watch Time Line akıllı saat: 1.43 inç AMOLED ekran, 110 spor modu, nabız ve SpO2 takibi, telefon görüşmesi ve 5 ATM / IP68 dayanıklılık ile her an bileğinizde.',
+                    'en' => 'Vio Watch Time Line smartwatch: 1.43-inch AMOLED display, 110 sport modes, heart rate and SpO2 tracking, phone calling and 5 ATM / IP68 durability — on your wrist every moment.',
+                ],
+                'is_active' => 1,
+                'order' => 6,
+                'is_spotlight' => 0,
+            ],
+            [
+                'type' => 'watch',
+                'slug' => ['tr' => 'vio-watch-ultra-ii', 'en' => 'vio-watch-ultra-ii'],
+                'name' => ['tr' => 'Vio Watch Ultra II', 'en' => 'Vio Watch Ultra II'],
+                'eyebrow' => ['tr' => 'Ultra — 2026', 'en' => 'Ultra — 2026'],
+                'tagline' => [
+                    'tr' => 'Daha Güçlü. Daha Akıllı.<br/>Daha Ultra.',
+                    'en' => 'More Powerful. Smarter.<br/>More Ultra.',
+                ],
+                'strip_stats' => [
+                    'tr' => [
+                        ['value' => '1.73"', 'label' => 'Super AMOLED'],
+                        ['value' => '30 gün', 'label' => 'Standby · 10 gün Kullanım'],
+                        ['value' => '100', 'label' => 'Spor Modu'],
+                        ['value' => 'Çoklu', 'label' => 'Sağlık Sensörü'],
+                        ['value' => 'IP68', 'label' => 'Su & Toz Direnci'],
+                    ],
+                    'en' => [
+                        ['value' => '1.73"', 'label' => 'Super AMOLED'],
+                        ['value' => '30 days', 'label' => 'Standby · 10-day Use'],
+                        ['value' => '100', 'label' => 'Sport Modes'],
+                        ['value' => 'Multi', 'label' => 'Health Sensors'],
+                        ['value' => 'IP68', 'label' => 'Water & Dust'],
+                    ],
+                ],
+                'content' => [
+                    'tr' => [
+                        'collection_card' => ['description' => '1.73" Super AMOLED · 30 Gün Standby · 100 Spor Modu'],
+                        'health' => [
+                            'eyebrow' => 'Sağlık',
+                            'title' => 'Sağlığınızı<br/>bileğinizde takip edin.',
+                            'description' => 'Vio Watch Ultra II; nabzınızdan kan oksijeninize, uyku kalitenizden günlük aktivitenize kadar sağlık verilerinizi gün boyu kontrol altında tutar.',
+                            'cards' => [
+                                ['icon' => 'heart', 'metric' => 'Takip', 'title' => 'Nabız Takibi', 'description' => 'Gün içindeki performansınızı izleyin. Optik sensör istirahat, egzersiz ve uyku sırasında nabzınızı sürekli ölçer.'],
+                                ['icon' => 'drop', 'metric' => 'Sensörü', 'title' => 'Kan Oksijen Takibi', 'description' => 'Kan oksijen doygunluğunuzu (SpO2) ölçerek sağlık verilerinizi kontrol altında tutmanızı sağlar.'],
+                                ['icon' => 'moon', 'metric' => 'Kalite', 'title' => 'Uyku Takibi', 'description' => 'Daha kaliteli dinlenmenin anahtarı. Uyku aşamalarınızı analiz eder ve günlük uyku kalitenizi raporlar.'],
+                                ['icon' => 'star', 'metric' => '100 Mod', 'title' => 'Spor Modları', 'description' => '100 farklı spor modu ile her hareketinizi takip edin. Koşudan yüzmeye her aktivitenizi kaydedin.'],
+                                ['icon' => 'eye', 'metric' => 'Açık Ekran', 'title' => 'Always-On Ekran', 'description' => 'Açık ekran kullanımıyla bilgileriniz her an görünür. Bileğinizi kaldırmadan saat, nabız ve adım verilerinizi görün.'],
+                                ['icon' => 'clock', 'metric' => '30 Gün', 'title' => 'Uzun Pil Ömrü', 'description' => '400mAh batarya ve 30 güne kadar standby süresiyle enerjisi uzun süre sizinle kalır, daha az şarj edersiniz.'],
+                            ],
+                        ],
+                        'health_cards' => ['eyebrow' => 'Sağlık Sistemi', 'title' => 'Her nabzınızda<br/>bir adım öteye.'],
+                        'customization' => [
+                            'eyebrow' => 'Kişiselleştirme',
+                            'title' => 'Her güne başka<br/>bir yüz.',
+                            'faces' => [
+                                ['name' => 'Ultra Sport', 'tags' => 'Aktivite halkaları · Nabız'],
+                                ['name' => 'Klasik', 'tags' => 'Analog stil · Tarih · Şehir'],
+                                ['name' => 'Minimal', 'tags' => 'Sade · Şık · Odaklanma'],
+                                ['name' => 'Data Pro', 'tags' => 'Nabız · SpO2 · Adım'],
+                            ],
+                        ],
+                        'design' => [
+                            'eyebrow' => 'Tasarım',
+                            'title' => 'Zinc Alloy.<br/>Şık. Dayanıklı.',
+                            'description' => 'Zinc Alloy + IML gövde, dayanıklılığı ve şıklığı bir araya getirir. 1.73 inç Super AMOLED ekran ve IP68 sertifikasıyla günlük kullanıma karşı dayanıklıdır.',
+                            'items' => [
+                                ['text' => '1.73" Super AMOLED · 510 × 510 px'],
+                                ['text' => 'Zinc Alloy + IML gövde'],
+                                ['text' => 'IP68 su ve toz geçirmezlik'],
+                                ['text' => 'Su geçirmez özel hoparlör'],
+                                ['text' => 'Akıllı yaşam için tasarlandı'],
+                            ],
+                        ],
+                        'activity' => [
+                            'eyebrow' => 'Aktivite & Spor',
+                            'title' => 'Koşuyor,<br/>izliyor,<br/>analiz ediyor.',
+                            'description' => '100 farklı spor modundan birini seçin. Vio Watch Ultra II her adımı, her kaloriyi ve her hareketinizi kaydederek günlük temponuza ayak uydurur.',
+                            'stats' => [
+                                ['value' => '100', 'label' => 'Spor Modu'],
+                                ['value' => 'SpO2', 'label' => '+ Nabız'],
+                                ['value' => 'IP68', 'label' => 'Su Direnci'],
+                            ],
+                        ],
+                        'battery' => [
+                            'eyebrow' => 'Batarya',
+                            'title' => '30 gün.<br/>Şarj\'ı<br/>unutun.',
+                            'description' => '400mAh batarya sayesinde daha uzun kullanım, daha az şarj. 30 güne kadar standby süresi ve 10 güne kadar normal kullanımla enerjisi uzun süre sizinle.',
+                            'items' => [
+                                ['text' => '30 gün standby süresi'],
+                                ['text' => '10 gün normal kullanım'],
+                                ['text' => '4 gün açık ekran kullanımı'],
+                                ['text' => 'Manyetik şarj · kolay ve pratik'],
+                            ],
+                        ],
+                        'specs_section' => ['eyebrow' => 'Teknik Özellikler', 'title' => 'Her detay,<br/>burada.'],
+                        'buy_section' => ['eyebrow' => 'Satın Al', 'title' => 'Teknolojiyi<br/>bileğinize taşıyın.'],
+                    ],
+                    'en' => [
+                        'collection_card' => ['description' => '1.73" Super AMOLED · 30-Day Standby · 100 Sport Modes'],
+                        'health' => [
+                            'eyebrow' => 'Health',
+                            'title' => 'Track your health<br/>right on your wrist.',
+                            'description' => 'The Vio Watch Ultra II keeps your health data in check all day — from heart rate to blood oxygen, sleep quality to daily activity.',
+                            'cards' => [
+                                ['icon' => 'heart', 'metric' => 'Tracking', 'title' => 'Heart Rate', 'description' => 'Monitor your performance throughout the day. The optical sensor measures your heart rate continuously at rest, during exercise and while you sleep.'],
+                                ['icon' => 'drop', 'metric' => 'Sensor', 'title' => 'Blood Oxygen', 'description' => 'Measures your blood oxygen saturation (SpO2), helping you keep your health data under control.'],
+                                ['icon' => 'moon', 'metric' => 'Quality', 'title' => 'Sleep Tracking', 'description' => 'The key to higher-quality rest. Analyses your sleep stages and reports your daily sleep quality.'],
+                                ['icon' => 'star', 'metric' => '100 Modes', 'title' => 'Sport Modes', 'description' => 'Track every movement with 100 different sport modes. Record every activity, from running to swimming.'],
+                                ['icon' => 'eye', 'metric' => 'Always-On', 'title' => 'Always-On Display', 'description' => 'With always-on display, your information is visible at all times. See the time, heart rate and step data without lifting your wrist.'],
+                                ['icon' => 'clock', 'metric' => '30 Days', 'title' => 'Long Battery Life', 'description' => 'With a 400mAh battery and up to 30 days of standby, its energy stays with you longer so you charge less.'],
+                            ],
+                        ],
+                        'health_cards' => ['eyebrow' => 'Health System', 'title' => 'One step further<br/>with every beat.'],
+                        'customization' => [
+                            'eyebrow' => 'Personalisation',
+                            'title' => 'A new face<br/>for every day.',
+                            'faces' => [
+                                ['name' => 'Ultra Sport', 'tags' => 'Activity rings · Heart rate'],
+                                ['name' => 'Classic', 'tags' => 'Analog style · Date · City'],
+                                ['name' => 'Minimal', 'tags' => 'Simple · Elegant · Focus'],
+                                ['name' => 'Data Pro', 'tags' => 'Heart rate · SpO2 · Steps'],
+                            ],
+                        ],
+                        'design' => [
+                            'eyebrow' => 'Design',
+                            'title' => 'Zinc Alloy.<br/>Elegant. Durable.',
+                            'description' => 'A Zinc Alloy + IML body brings together durability and elegance. With a 1.73-inch Super AMOLED display and IP68 certification, it is built to withstand daily use.',
+                            'items' => [
+                                ['text' => '1.73" Super AMOLED · 510 × 510 px'],
+                                ['text' => 'Zinc Alloy + IML body'],
+                                ['text' => 'IP68 water and dust resistance'],
+                                ['text' => 'Waterproof dedicated speaker'],
+                                ['text' => 'Designed for the smart life'],
+                            ],
+                        ],
+                        'activity' => [
+                            'eyebrow' => 'Activity & Sport',
+                            'title' => 'Running,<br/>watching,<br/>analysing.',
+                            'description' => 'Pick from 100 different sport modes. The Vio Watch Ultra II records every step, every calorie and every movement, keeping pace with your daily rhythm.',
+                            'stats' => [
+                                ['value' => '100', 'label' => 'Sport Modes'],
+                                ['value' => 'SpO2', 'label' => '+ Heart rate'],
+                                ['value' => 'IP68', 'label' => 'Water resistance'],
+                            ],
+                        ],
+                        'battery' => [
+                            'eyebrow' => 'Battery',
+                            'title' => '30 days.<br/>Forget the<br/>charger.',
+                            'description' => 'Thanks to its 400mAh battery, you get longer use and less charging. With up to 30 days of standby and up to 10 days of normal use, its energy stays with you for the long haul.',
+                            'items' => [
+                                ['text' => '30 days standby time'],
+                                ['text' => '10 days normal use'],
+                                ['text' => '4 days always-on display use'],
+                                ['text' => 'Magnetic charging · easy and practical'],
+                            ],
+                        ],
+                        'specs_section' => ['eyebrow' => 'Specifications', 'title' => 'Every detail,<br/>right here.'],
+                        'buy_section' => ['eyebrow' => 'Buy', 'title' => 'Bring technology<br/>to your wrist.'],
+                    ],
+                ],
+                'specs' => [
+                    'tr' => [
+                        ['key' => 'Ekran', 'value' => '1.73 inç Super AMOLED', 'note' => '510 × 510 px · Always-On'],
+                        ['key' => 'Gövde', 'value' => 'Zinc Alloy + IML', 'note' => 'Dayanıklı ve şık tasarım'],
+                        ['key' => 'Batarya', 'value' => '400 mAh', 'note' => '30 gün standby · 10 gün kullanım · 4 gün açık ekran'],
+                        ['key' => 'Sensörler', 'value' => 'Nabız · Kan Oksijeni (SpO2)', 'note' => 'Uyku takibi · Aktivite sensörü'],
+                        ['key' => 'Spor Modları', 'value' => '100 farklı mod', 'note' => 'Koşu · Yüzme · Bisiklet · Yoga · HIIT'],
+                        ['key' => 'Su Direnci', 'value' => 'IP68', 'note' => 'Su ve toz geçirmezlik'],
+                        ['key' => 'Bağlantı', 'value' => 'Bluetooth 5.4', 'note' => 'Daha güçlü ve daha stabil bağlantı'],
+                        ['key' => 'Şarj', 'value' => 'Manyetik şarj', 'note' => 'Kolay ve pratik şarj deneyimi'],
+                        ['key' => 'Uyumluluk', 'value' => 'Android ve iOS', 'note' => 'Tüm cihazlarla uyumlu deneyim'],
+                        ['key' => 'Görüşme', 'value' => 'Telefon görüşmesi özelliği', 'note' => 'Su geçirmez özel hoparlör · net ve güçlü ses'],
+                    ],
+                    'en' => [
+                        ['key' => 'Display', 'value' => '1.73-inch Super AMOLED', 'note' => '510 × 510 px · Always-On'],
+                        ['key' => 'Body', 'value' => 'Zinc Alloy + IML', 'note' => 'Durable and elegant design'],
+                        ['key' => 'Battery', 'value' => '400 mAh', 'note' => '30-day standby · 10-day use · 4-day always-on'],
+                        ['key' => 'Sensors', 'value' => 'Heart rate · Blood Oxygen (SpO2)', 'note' => 'Sleep tracking · Activity sensor'],
+                        ['key' => 'Sport Modes', 'value' => '100 different modes', 'note' => 'Running · Swimming · Cycling · Yoga · HIIT'],
+                        ['key' => 'Water Resistance', 'value' => 'IP68', 'note' => 'Water and dust resistance'],
+                        ['key' => 'Connectivity', 'value' => 'Bluetooth 5.4', 'note' => 'Stronger and more stable connection'],
+                        ['key' => 'Charging', 'value' => 'Magnetic charging', 'note' => 'Easy and practical charging experience'],
+                        ['key' => 'Compatibility', 'value' => 'Android and iOS', 'note' => 'Compatible experience with all devices'],
+                        ['key' => 'Calling', 'value' => 'Phone call feature', 'note' => 'Waterproof dedicated speaker · clear and powerful sound'],
+                    ],
+                ],
+                'price' => null,
+                'price_label' => ['tr' => null],
+                'price_note' => [
+                    'tr' => '24 ay Türkiye garantisi · Ücretsiz kargo · Ücretsiz iade (30 gün)',
+                    'en' => '24-month Türkiye warranty · Free shipping · Free returns (30 days)',
+                ],
+                'cta_primary' => ['tr' => 'Sepete Ekle', 'en' => 'Add to Cart'],
+                'cta_secondary' => ['tr' => 'Teknik Özellikler', 'en' => 'Specifications'],
+                'buy_url' => null,
+                'cta_secondary_url' => null,
+                'meta_title' => [
+                    'tr' => 'Vio Watch Ultra II — Super AMOLED · 30 Gün Standby · 100 Spor Modu',
+                    'en' => 'Vio Watch Ultra II — Super AMOLED · 30-Day Standby · 100 Sport Modes',
+                ],
+                'meta_description' => [
+                    'tr' => 'Vio Watch Ultra II akıllı saat: 1.73" Super AMOLED ekran, 400mAh batarya, 100 spor modu, nabız ve SpO2 takibi, IP68 dayanıklılık ve telefon görüşmesi özelliğiyle teknolojiyi bileğinize taşıyor.',
+                    'en' => 'Vio Watch Ultra II smartwatch: 1.73" Super AMOLED display, 400mAh battery, 100 sport modes, heart rate and SpO2 tracking, IP68 durability and phone call support — bringing technology to your wrist.',
+                ],
+                'is_active' => 1,
+                'order' => 7,
+                'is_spotlight' => 0,
+            ],
+            [
+                'type' => 'watch',
+                'slug' => ['tr' => 'vio-watch-ultra-3', 'en' => 'vio-watch-ultra-3'],
+                'name' => ['tr' => 'Vio Watch Ultra 3', 'en' => 'Vio Watch Ultra 3'],
+                'eyebrow' => ['tr' => 'Ultra — 2026', 'en' => 'Ultra — 2026'],
+                'tagline' => [
+                    'tr' => 'Günlük temponuza<br/>uyum sağlayan akıllı güç.',
+                    'en' => 'Smart power that keeps<br/>pace with your day.',
+                ],
+                'strip_stats' => [
+                    'tr' => [
+                        ['value' => '2.01"', 'label' => 'IPS Ekran'],
+                        ['value' => '220 mAh', 'label' => 'Batarya'],
+                        ['value' => '100', 'label' => 'Spor Modu'],
+                        ['value' => '3 Sensör', 'label' => 'Sağlık Takibi'],
+                        ['value' => 'IP65', 'label' => 'Su Direnci'],
+                    ],
+                    'en' => [
+                        ['value' => '2.01"', 'label' => 'IPS Display'],
+                        ['value' => '220 mAh', 'label' => 'Battery'],
+                        ['value' => '100', 'label' => 'Sport Modes'],
+                        ['value' => '3 Sensors', 'label' => 'Health Tracking'],
+                        ['value' => 'IP65', 'label' => 'Water resistance'],
+                    ],
+                ],
+                'content' => [
+                    'tr' => [
+                        'collection_card' => ['description' => '2.01" IPS Ekran · 100 Spor Modu · Telefon Görüşmesi'],
+                        'health' => [
+                            'eyebrow' => 'Sağlık',
+                            'title' => 'Sağlığınızı<br/>bileğinizden takip edin.',
+                            'description' => 'Nabızdan kan oksijenine, uykudan günlük aktiviteye — Vio Watch Ultra 3 sağlık verilerinizi gün boyu takip eder, siz fark etmeden.',
+                            'cards' => [
+                                ['icon' => 'heart', 'metric' => 'Takibi', 'title' => 'Nabız Takibi', 'description' => 'Optik nabız sensörü gün boyu sürekli ölçüm yaparak günlük aktivitenizi daha iyi takip etmenizi sağlar.'],
+                                ['icon' => 'drop', 'metric' => 'Sensörü', 'title' => 'Kan Oksijen Takibi', 'description' => 'Kan oksijen doygunluğunu (SpO2) ölçer ve sağlık verilerinizi kolayca kontrol etmenize yardımcı olur.'],
+                                ['icon' => 'moon', 'metric' => 'Aşama', 'title' => 'Uyku Takibi', 'description' => 'Uyku aşamalarınızı analiz eder, dinlenme kalitenizi keşfetmeniz için sabah raporu sunar.'],
+                                ['icon' => 'star', 'metric' => 'Mod', 'title' => '100 Spor Modu', 'description' => '100 farklı spor modu ile hedeflerinize daha yakından ulaşın, her antrenmanı ayrı ayrı kaydedin.'],
+                                ['icon' => 'eye', 'metric' => 'Veri', 'title' => 'Tüm Veriler Tek Yerde', 'description' => 'Da Fit uygulama desteği ile tüm sağlık ve aktivite verilerinizi tek bir yerden yönetin.'],
+                                ['icon' => 'clock', 'metric' => 'Günlük', 'title' => 'Aktivite Takibi', 'description' => 'Adım, kalori ve günlük hareketinizi takip ederek gününüzü daha verimli planlamanızı sağlar.'],
+                            ],
+                        ],
+                        'health_cards' => ['eyebrow' => 'Sağlık Sistemi', 'title' => 'Her nabzınızda<br/>bir adım öteye.'],
+                        'customization' => [
+                            'eyebrow' => 'Kişiselleştirme',
+                            'title' => 'Her güne başka<br/>bir yüz.',
+                            'faces' => [
+                                ['name' => 'Sport Ring', 'tags' => 'Aktivite halkaları · Nabız'],
+                                ['name' => 'Klasik', 'tags' => 'Analog stil · Tarih · Şehir'],
+                                ['name' => 'Minimal', 'tags' => 'Sade · Şık · Odaklanma'],
+                                ['name' => 'Data Pro', 'tags' => 'Nabız · SpO2 · Adım'],
+                            ],
+                        ],
+                        'design' => [
+                            'eyebrow' => 'Tasarım',
+                            'title' => 'Zinc Alloy.<br/>Güçlü. Şık.',
+                            'description' => 'Zinc Alloy metal gövde, 2.01 inç IPS ekran ve zamansız Silver renk. Güçlü ve şık tasarımıyla günlük yaşamınızın her anına uyum sağlar.',
+                            'items' => [
+                                ['text' => '2.01 inç IPS ekran · 320 × 396 px'],
+                                ['text' => 'Zinc Alloy metal gövde · güçlü ve şık'],
+                                ['text' => 'Silver renk · zamansız ve modern stil'],
+                                ['text' => 'Telefon görüşmesi özelliği · bileğinizden iletişim'],
+                                ['text' => 'IP65 koruma · günlük kullanıma uygun dayanıklılık'],
+                            ],
+                        ],
+                        'activity' => [
+                            'eyebrow' => 'Aktivite & Spor',
+                            'title' => 'Çalışıyor,<br/>izliyor,<br/>kaydediyor.',
+                            'description' => '100 farklı spor modundan birini seçin. Vio Watch Ultra 3 her adımı, her kaloriyi ve her antrenmanı kaydederek hedeflerinize daha yakından ulaşmanızı sağlar.',
+                            'stats' => [
+                                ['value' => '100', 'label' => 'Spor Modu'],
+                                ['value' => '3', 'label' => 'Sağlık Sensörü'],
+                                ['value' => 'IP65', 'label' => 'Su Direnci'],
+                            ],
+                        ],
+                        'battery' => [
+                            'eyebrow' => 'Batarya',
+                            'title' => '220 mAh.<br/>Gün boyu<br/>enerji.',
+                            'description' => '220 mAh batarya günlük kullanım için güvenilir enerji sunar. Manyetik şarj ile hızlı ve pratik bir şarj deneyimi yaşarsınız.',
+                            'items' => [
+                                ['text' => '220 mAh batarya · günlük kullanım için güvenilir enerji'],
+                                ['text' => 'Manyetik şarj · hızlı ve pratik şarj deneyimi'],
+                                ['text' => 'Bluetooth 5.4 · güçlü ve kararlı bağlantı'],
+                                ['text' => 'Da Fit uygulama desteği · tüm verileriniz tek yerde'],
+                            ],
+                        ],
+                        'specs_section' => ['eyebrow' => 'Teknik Özellikler', 'title' => 'Her detay,<br/>burada.'],
+                        'buy_section' => ['eyebrow' => 'Satın Al', 'title' => 'Akıllı yaşamın<br/>yeni yardımcısı.'],
+                    ],
+                    'en' => [
+                        'collection_card' => ['description' => '2.01" IPS Display · 100 Sport Modes · Phone Calls'],
+                        'health' => [
+                            'eyebrow' => 'Health',
+                            'title' => 'Track your health<br/>right from your wrist.',
+                            'description' => 'From heart rate to blood oxygen, sleep to daily activity — the Vio Watch Ultra 3 tracks your health data all day long, without you having to.',
+                            'cards' => [
+                                ['icon' => 'heart', 'metric' => 'Tracking', 'title' => 'Heart Rate', 'description' => 'An optical heart rate sensor measures continuously throughout the day, helping you keep better track of your daily activity.'],
+                                ['icon' => 'drop', 'metric' => 'Sensor', 'title' => 'Blood Oxygen', 'description' => 'Measures blood oxygen saturation (SpO2) and helps you easily keep your health data in check.'],
+                                ['icon' => 'moon', 'metric' => 'Stages', 'title' => 'Sleep Tracking', 'description' => 'Analyses your sleep stages and delivers a morning report so you can discover the quality of your rest.'],
+                                ['icon' => 'star', 'metric' => 'Modes', 'title' => '100 Sport Modes', 'description' => 'Get closer to your goals with 100 different sport modes, recording every workout individually.'],
+                                ['icon' => 'eye', 'metric' => 'Data', 'title' => 'All Data in One Place', 'description' => 'With Da Fit app support, manage all your health and activity data from a single place.'],
+                                ['icon' => 'clock', 'metric' => 'Daily', 'title' => 'Activity Tracking', 'description' => 'Tracks your steps, calories and daily movement so you can plan your day more efficiently.'],
+                            ],
+                        ],
+                        'health_cards' => ['eyebrow' => 'Health System', 'title' => 'One step further<br/>with every beat.'],
+                        'customization' => [
+                            'eyebrow' => 'Personalisation',
+                            'title' => 'A new face<br/>for every day.',
+                            'faces' => [
+                                ['name' => 'Sport Ring', 'tags' => 'Activity rings · Heart rate'],
+                                ['name' => 'Classic', 'tags' => 'Analog style · Date · City'],
+                                ['name' => 'Minimal', 'tags' => 'Simple · Elegant · Focus'],
+                                ['name' => 'Data Pro', 'tags' => 'Heart rate · SpO2 · Steps'],
+                            ],
+                        ],
+                        'design' => [
+                            'eyebrow' => 'Design',
+                            'title' => 'Zinc Alloy.<br/>Strong. Stylish.',
+                            'description' => 'Zinc alloy metal body, a 2.01-inch IPS display and a timeless Silver finish. Its strong, stylish design fits every moment of your daily life.',
+                            'items' => [
+                                ['text' => '2.01-inch IPS display · 320 × 396 px'],
+                                ['text' => 'Zinc alloy metal body · strong and stylish'],
+                                ['text' => 'Silver finish · timeless, modern style'],
+                                ['text' => 'Phone call feature · stay in touch from your wrist'],
+                                ['text' => 'IP65 protection · durability for daily use'],
+                            ],
+                        ],
+                        'activity' => [
+                            'eyebrow' => 'Activity & Sport',
+                            'title' => 'Running,<br/>watching,<br/>recording.',
+                            'description' => 'Choose from 100 different sport modes. The Vio Watch Ultra 3 records every step, every calorie and every workout, helping you get closer to your goals.',
+                            'stats' => [
+                                ['value' => '100', 'label' => 'Sport Modes'],
+                                ['value' => '3', 'label' => 'Health Sensors'],
+                                ['value' => 'IP65', 'label' => 'Water resistance'],
+                            ],
+                        ],
+                        'battery' => [
+                            'eyebrow' => 'Battery',
+                            'title' => '220 mAh.<br/>All-day<br/>energy.',
+                            'description' => 'The 220 mAh battery delivers reliable energy for daily use. With magnetic charging, you get a fast and practical charging experience.',
+                            'items' => [
+                                ['text' => '220 mAh battery · reliable energy for daily use'],
+                                ['text' => 'Magnetic charging · fast and practical experience'],
+                                ['text' => 'Bluetooth 5.4 · strong and stable connection'],
+                                ['text' => 'Da Fit app support · all your data in one place'],
+                            ],
+                        ],
+                        'specs_section' => ['eyebrow' => 'Specifications', 'title' => 'Every detail,<br/>right here.'],
+                        'buy_section' => ['eyebrow' => 'Buy', 'title' => 'The new helper<br/>for smart living.'],
+                    ],
+                ],
+                'specs' => [
+                    'tr' => [
+                        ['key' => 'Ekran', 'value' => '2.01 inç IPS', 'note' => '320 × 396 px · günlük kullanım için net görüntü'],
+                        ['key' => 'Gövde', 'value' => 'Zinc Alloy · Silver', 'note' => 'Güçlü ve şık tasarım · zamansız stil'],
+                        ['key' => 'Batarya', 'value' => '220 mAh', 'note' => 'Günlük kullanım için güvenilir enerji'],
+                        ['key' => 'Spor Modları', 'value' => '100 farklı mod', 'note' => 'Hedeflerinize daha yakından ulaşın'],
+                        ['key' => 'Sensörler', 'value' => 'Nabız · Kan Oksijeni · Uyku', 'note' => 'Günlük aktivite ve sağlık takibi'],
+                        ['key' => 'Su Direnci', 'value' => 'IP65', 'note' => 'Günlük kullanıma uygun dayanıklılık'],
+                        ['key' => 'Bağlantı', 'value' => 'Bluetooth 5.4', 'note' => 'Güçlü ve kararlı bağlantı'],
+                        ['key' => 'Şarj', 'value' => 'Manyetik şarj', 'note' => 'Hızlı ve pratik şarj deneyimi'],
+                        ['key' => 'Uygulama', 'value' => 'Da Fit uygulama desteği', 'note' => 'Tüm verilerinizi tek yerde yönetin'],
+                        ['key' => 'Arama', 'value' => 'Telefon görüşmesi özelliği', 'note' => 'Bileğinizden iletişimde kalın'],
+                    ],
+                    'en' => [
+                        ['key' => 'Display', 'value' => '2.01-inch IPS', 'note' => '320 × 396 px · clear image for daily use'],
+                        ['key' => 'Body', 'value' => 'Zinc Alloy · Silver', 'note' => 'Strong, stylish design · timeless look'],
+                        ['key' => 'Battery', 'value' => '220 mAh', 'note' => 'Reliable energy for daily use'],
+                        ['key' => 'Sport Modes', 'value' => '100 different modes', 'note' => 'Get closer to your goals'],
+                        ['key' => 'Sensors', 'value' => 'Heart Rate · Blood Oxygen · Sleep', 'note' => 'Daily activity and health tracking'],
+                        ['key' => 'Water Resistance', 'value' => 'IP65', 'note' => 'Durability for daily use'],
+                        ['key' => 'Connectivity', 'value' => 'Bluetooth 5.4', 'note' => 'Strong and stable connection'],
+                        ['key' => 'Charging', 'value' => 'Magnetic charging', 'note' => 'Fast and practical charging experience'],
+                        ['key' => 'App', 'value' => 'Da Fit app support', 'note' => 'Manage all your data in one place'],
+                        ['key' => 'Calling', 'value' => 'Phone call feature', 'note' => 'Stay in touch from your wrist'],
+                    ],
+                ],
+                'price' => null,
+                'price_label' => ['tr' => null],
+                'price_note' => [
+                    'tr' => '24 ay Türkiye garantisi · Ücretsiz kargo · Ücretsiz iade (30 gün)',
+                    'en' => '24-month Türkiye warranty · Free shipping · Free returns (30 days)',
+                ],
+                'cta_primary' => ['tr' => 'Sepete Ekle', 'en' => 'Add to Cart'],
+                'cta_secondary' => ['tr' => 'Teknik Özellikler', 'en' => 'Specifications'],
+                'buy_url' => null,
+                'cta_secondary_url' => null,
+                'meta_title' => [
+                    'tr' => 'Vio Watch Ultra 3 — 2.01" IPS · 100 Spor Modu · Telefon Görüşmesi',
+                    'en' => 'Vio Watch Ultra 3 — 2.01" IPS · 100 Sport Modes · Phone Calls',
+                ],
+                'meta_description' => [
+                    'tr' => 'Vio Watch Ultra 3 akıllı saat: 2.01" IPS ekran, 100 spor modu, telefon görüşmesi desteği, nabız ve kan oksijen takibi ile gün boyu yanınızda.',
+                    'en' => 'Vio Watch Ultra 3 smartwatch: 2.01" IPS display, 100 sport modes, phone call support, heart rate and blood oxygen tracking — by your side all day.',
+                ],
+                'is_active' => 1,
+                'order' => 8,
+                'is_spotlight' => 0,
+            ],
+            [
+                'type' => 'headphone',
+                'slug' => ['tr' => 'vio-pod-3', 'en' => 'vio-pod-3'],
+                'name' => ['tr' => 'Vio Pod 3', 'en' => 'Vio Pod 3'],
+                'eyebrow' => ['tr' => 'Yeni — 2026', 'en' => 'New — 2026'],
+                'tagline' => [
+                    'tr' => 'Ritmi Hisset. Özgürlüğün Sesini Dinle.',
+                    'en' => 'Feel the Rhythm. Hear the Sound of Freedom.',
+                ],
+                'strip_stats' => [
+                    'tr' => [
+                        ['value' => '5-6 saat', 'label' => 'Oynatma Süresi'],
+                        ['value' => '~100 saat', 'label' => 'Bekleme Süresi'],
+                        ['value' => 'BT 5.4', 'label' => 'Hızlı Eşleşme'],
+                        ['value' => '10 m', 'label' => 'Bağlantı Mesafesi'],
+                        ['value' => '50 dk', 'label' => 'Kulaklık Şarjı'],
+                    ],
+                    'en' => [
+                        ['value' => '5-6 h', 'label' => 'Playtime'],
+                        ['value' => '~100 h', 'label' => 'Standby Time'],
+                        ['value' => 'BT 5.4', 'label' => 'Fast Pairing'],
+                        ['value' => '10 m', 'label' => 'Connection Range'],
+                        ['value' => '50 min', 'label' => 'Earbud Charge'],
+                    ],
+                ],
+                'content' => [
+                    'tr' => [
+                        'collection_card' => ['description' => 'Bluetooth 5.4 · 100Hz – 20KHz · ~100 saat bekleme'],
+                        'anc' => [
+                            'eyebrow' => 'Kablosuz Ses Deneyimi',
+                            'title' => 'Günün her anında<br/>yanınızda.',
+                            'description' => 'Vio Pod 3, günlük kullanım için tasarlanan güçlü kablosuz ses deneyimini kompakt tasarımıyla bir araya getiriyor. Bluetooth 5.4 bağlantısı, uzun kullanım süresi ve hızlı şarj desteğiyle müzikten görüşmelere kadar yanınızda.',
+                            'db_value' => '5.4',
+                            'cards' => [
+                                ['icon' => 'music', 'metric' => '100Hz–20KHz', 'title' => 'Dengeli Ses', 'description' => '100Hz – 20KHz frekans aralığı ve 32 Ohm empedans, dengeli ve keyifli bir ses deneyimi sunar. Verimli ve kararlı ses performansıyla müziğinizin her detayını net duyarsınız.'],
+                                ['icon' => 'bluetooth', 'metric' => null, 'title' => 'Kararlı Bağlantı', 'description' => 'Bluetooth 5.4 teknolojisi daha hızlı eşleşme ve daha güçlü bağlantı sağlar. 10 metreye varan bağlantı mesafesiyle cihazınızdan uzaklaşsanız bile kesintisiz dinleme keyfi sürer.'],
+                                ['icon' => 'star', 'metric' => null, 'title' => 'Konforlu Kullanım', 'description' => 'Hafif, pratik ve her zaman yanınızda. Günlük yaşam için tasarlanan kompakt yapısı; müzik, görüşme ve hareket özgürlüğünü bir arada sunarak günün temposuna uyum sağlar.'],
+                            ],
+                        ],
+                        'anc_cards' => ['eyebrow' => 'Kablosuz Ses Sistemi', 'title' => 'Günlük yaşam için<br/>tasarlanan teknoloji.'],
+                        'sound' => [
+                            'eyebrow' => 'Ses Kalitesi',
+                            'title' => 'Dengeli ses<br/>kulağınızda.',
+                            'description' => '100Hz – 20KHz frekans aralığı, dengeli ve keyifli bir ses deneyimi sunar. 32 Ohm empedans değeriyle verimli ve kararlı ses performansı sağlar.',
+                            'items' => [
+                                ['text' => '100Hz – 20KHz frekans aralığı'],
+                                ['text' => '32 Ohm empedans · kararlı performans'],
+                                ['text' => 'Dengeli ve keyifli ses deneyimi'],
+                                ['text' => 'Müzik ve görüşmeler için optimize edildi'],
+                            ],
+                        ],
+                        'design' => [
+                            'eyebrow' => 'Tasarım',
+                            'title' => 'Hafif, pratik ve<br/>her zaman yanınızda.',
+                            'description' => 'Günlük yaşam için tasarlanan kompakt yapısı; müzik, görüşme ve hareket özgürlüğünü bir araya getirir. Hafif ve pratik tasarımıyla günün temposuna kolayca uyum sağlar.',
+                            'items' => [
+                                ['text' => 'Kompakt ve hafif tasarım'],
+                                ['text' => 'Günlük kullanım için optimize edildi'],
+                                ['text' => 'Müzik, görüşme ve hareket özgürlüğü'],
+                                ['text' => 'Şarj kutusuyla her an kullanıma hazır'],
+                            ],
+                        ],
+                        'battery' => [
+                            'eyebrow' => 'Batarya',
+                            'title' => 'Gün boyunca<br/>sizinle.',
+                            'description' => '%50 ses seviyesinde 5-6 saat oynatma ve 4-5 saat konuşma süresi sunar. Yaklaşık 100 saat bekleme süresiyle her an kullanıma hazırdır. 50 dakikada kulaklık, 90 dakikada şarj kutusu tam dolar.',
+                            'stats' => [
+                                ['value' => '5-6 saat', 'label' => 'Oynatma (%50 ses)'],
+                                ['value' => '4-5 saat', 'label' => 'Konuşma (%50 ses)'],
+                                ['value' => '50 dk', 'label' => 'Kulaklık Şarjı'],
+                            ],
+                        ],
+                        'connectivity' => [
+                            'eyebrow' => 'Bağlantı',
+                            'title' => 'Daha hızlı eşleşme,<br/>daha güçlü bağlantı.',
+                            'cards' => [
+                                ['icon' => 'bluetooth', 'metric' => '10 m', 'title' => 'Bluetooth 5.4', 'description' => 'Bluetooth 5.4 teknolojisi daha hızlı eşleşme ve daha güçlü bağlantı sunar. 10 metreye varan bağlantı mesafesiyle özgürce hareket eder, cihazınızdan uzaklaşsanız bile bağlı kalırsınız.'],
+                                ['icon' => 'bolt', 'metric' => '50 dk', 'title' => 'Hızlı Şarj', 'description' => 'Kulaklık 50 dakikada, şarj kutusu 90 dakikada tam dolar. Kısa sürede kullanıma hazır olarak pratik ve hızlı enerji yönetimi sağlar.'],
+                                ['icon' => 'music', 'metric' => null, 'title' => 'Günlük Kullanım', 'description' => 'Müzikten görüşmelere kadar günün her anında yanınızda. Günlük yaşam için tasarlanan yapısıyla müzik, görüşme ve hareket özgürlüğünü bir arada sunar.'],
+                            ],
+                        ],
+                        'specs_section' => ['eyebrow' => 'Teknik Özellikler', 'title' => 'Her detayı<br/>burada bulursunuz.'],
+                        'buy_section' => ['eyebrow' => 'Satın Al', 'title' => 'Şimdi<br/>Sahip Ol.'],
+                    ],
+                    'en' => [
+                        'collection_card' => ['description' => 'Bluetooth 5.4 · 100Hz – 20KHz · ~100 h standby'],
+                        'anc' => [
+                            'eyebrow' => 'Wireless Audio Experience',
+                            'title' => 'With you<br/>every moment of the day.',
+                            'description' => 'The Vio Pod 3 combines a powerful wireless audio experience designed for everyday use with a compact form factor. With Bluetooth 5.4 connectivity, long usage time and fast-charge support, it is with you from music to calls.',
+                            'db_value' => '5.4',
+                            'cards' => [
+                                ['icon' => 'music', 'metric' => '100Hz–20KHz', 'title' => 'Balanced Sound', 'description' => 'A 100Hz – 20KHz frequency range and 32 Ohm impedance deliver a balanced and enjoyable sound experience. With efficient and stable audio performance, you hear every detail of your music clearly.'],
+                                ['icon' => 'bluetooth', 'metric' => null, 'title' => 'Stable Connection', 'description' => 'Bluetooth 5.4 technology provides faster pairing and a stronger connection. With a range of up to 10 metres, you enjoy uninterrupted listening even when you move away from your device.'],
+                                ['icon' => 'star', 'metric' => null, 'title' => 'Comfortable Use', 'description' => 'Lightweight, practical and always with you. Its compact build, designed for daily life, brings together music, calls and freedom of movement, keeping pace with your day.'],
+                            ],
+                        ],
+                        'anc_cards' => ['eyebrow' => 'Wireless Audio System', 'title' => 'Technology built<br/>for daily life.'],
+                        'sound' => [
+                            'eyebrow' => 'Sound Quality',
+                            'title' => 'Balanced sound<br/>in your ears.',
+                            'description' => 'The 100Hz – 20KHz frequency range delivers a balanced and enjoyable sound experience. With a 32 Ohm impedance, it provides efficient and stable audio performance.',
+                            'items' => [
+                                ['text' => '100Hz – 20KHz frequency range'],
+                                ['text' => '32 Ohm impedance · stable performance'],
+                                ['text' => 'Balanced and enjoyable sound experience'],
+                                ['text' => 'Optimised for music and calls'],
+                            ],
+                        ],
+                        'design' => [
+                            'eyebrow' => 'Design',
+                            'title' => 'Lightweight, practical<br/>and always with you.',
+                            'description' => 'Its compact build, designed for daily life, brings together music, calls and freedom of movement. With its lightweight and practical design, it easily keeps pace with your day.',
+                            'items' => [
+                                ['text' => 'Compact and lightweight design'],
+                                ['text' => 'Optimised for everyday use'],
+                                ['text' => 'Music, calls and freedom of movement'],
+                                ['text' => 'Ready to use anytime with the charging case'],
+                            ],
+                        ],
+                        'battery' => [
+                            'eyebrow' => 'Battery',
+                            'title' => 'With you<br/>all day long.',
+                            'description' => 'At 50% volume it offers 5-6 hours of playback and 4-5 hours of talk time. With around 100 hours of standby, it is ready to use at any moment. The earbuds charge fully in 50 minutes and the case in 90 minutes.',
+                            'stats' => [
+                                ['value' => '5-6 h', 'label' => 'Playback (50% volume)'],
+                                ['value' => '4-5 h', 'label' => 'Talk Time (50% volume)'],
+                                ['value' => '50 min', 'label' => 'Earbud Charge'],
+                            ],
+                        ],
+                        'connectivity' => [
+                            'eyebrow' => 'Connectivity',
+                            'title' => 'Faster pairing,<br/>stronger connection.',
+                            'cards' => [
+                                ['icon' => 'bluetooth', 'metric' => '10 m', 'title' => 'Bluetooth 5.4', 'description' => 'Bluetooth 5.4 technology offers faster pairing and a stronger connection. With a range of up to 10 metres, you move freely and stay connected even when you step away from your device.'],
+                                ['icon' => 'bolt', 'metric' => '50 min', 'title' => 'Fast Charging', 'description' => 'The earbuds charge fully in 50 minutes and the case in 90 minutes. Ready to use in a short time, it delivers practical and fast energy management.'],
+                                ['icon' => 'music', 'metric' => null, 'title' => 'Everyday Use', 'description' => 'From music to calls, it is with you every moment of the day. Built for daily life, it brings together music, calls and freedom of movement.'],
+                            ],
+                        ],
+                        'specs_section' => ['eyebrow' => 'Specifications', 'title' => 'Every detail,<br/>right here.'],
+                        'buy_section' => ['eyebrow' => 'Buy', 'title' => 'Get yours<br/>now.'],
+                    ],
+                ],
+                'specs' => [
+                    'tr' => [
+                        ['key' => 'Frekans', 'value' => '100Hz – 20KHz', 'note' => 'Dengeli ve keyifli ses deneyimi'],
+                        ['key' => 'Empedans', 'value' => '32 Ω', 'note' => 'Verimli ve kararlı ses performansı'],
+                        ['key' => 'Bluetooth', 'value' => '5.4', 'note' => 'Daha hızlı eşleşme · daha güçlü bağlantı'],
+                        ['key' => 'Bağlantı Mesafesi', 'value' => '10 m', 'note' => 'Özgürce hareket edin'],
+                        ['key' => 'Oynatma Süresi', 'value' => '5-6 saat', 'note' => '%50 ses seviyesinde'],
+                        ['key' => 'Konuşma Süresi', 'value' => '4-5 saat', 'note' => '%50 ses seviyesinde'],
+                        ['key' => 'Bekleme Süresi', 'value' => '~100 saat', 'note' => 'Her an kullanıma hazır'],
+                        ['key' => 'Kulaklık Şarjı', 'value' => '50 dakika', 'note' => '5V – 30 mA şarj desteği'],
+                        ['key' => 'Şarj Kutusu Şarjı', 'value' => '90 dakika', 'note' => '5V – 300 mA şarj kutusu'],
+                        ['key' => 'Tasarım', 'value' => 'Hafif ve kompakt', 'note' => 'Günlük yaşam için tasarlandı'],
+                        ['key' => 'Garanti', 'value' => '24 ay Türkiye Garantisi', 'note' => 'Türkiye\'de tasarlandı'],
+                    ],
+                    'en' => [
+                        ['key' => 'Frequency', 'value' => '100Hz – 20KHz', 'note' => 'Balanced and enjoyable sound experience'],
+                        ['key' => 'Impedance', 'value' => '32 Ω', 'note' => 'Efficient and stable audio performance'],
+                        ['key' => 'Bluetooth', 'value' => '5.4', 'note' => 'Faster pairing · stronger connection'],
+                        ['key' => 'Connection Range', 'value' => '10 m', 'note' => 'Move freely'],
+                        ['key' => 'Playtime', 'value' => '5-6 hours', 'note' => 'At 50% volume'],
+                        ['key' => 'Talk Time', 'value' => '4-5 hours', 'note' => 'At 50% volume'],
+                        ['key' => 'Standby Time', 'value' => '~100 hours', 'note' => 'Ready to use anytime'],
+                        ['key' => 'Earbud Charge', 'value' => '50 minutes', 'note' => '5V – 30 mA charge support'],
+                        ['key' => 'Case Charge', 'value' => '90 minutes', 'note' => '5V – 300 mA charging case'],
+                        ['key' => 'Design', 'value' => 'Lightweight and compact', 'note' => 'Designed for daily life'],
+                        ['key' => 'Warranty', 'value' => '24-month Türkiye Warranty', 'note' => 'Designed in Türkiye'],
+                    ],
+                ],
+                'price' => null,
+                'price_label' => ['tr' => null],
+                'price_note' => [
+                    'tr' => '24 ay Türkiye garantisi · Ücretsiz kargo · Ücretsiz iade (30 gün)',
+                    'en' => '24-month Türkiye warranty · Free shipping · Free returns (30 days)',
+                ],
+                'cta_primary' => ['tr' => 'Sepete Ekle', 'en' => 'Add to Cart'],
+                'cta_secondary' => ['tr' => 'Teknik Özellikler', 'en' => 'Specifications'],
+                'buy_url' => null,
+                'cta_secondary_url' => null,
+                'meta_title' => [
+                    'tr' => 'Vio Pod 3 — Bluetooth 5.4 TWS Kablosuz Kulak İçi Kulaklık · Hızlı Şarj',
+                    'en' => 'Vio Pod 3 — Bluetooth 5.4 TWS Wireless In-Ear Earbuds · Fast Charge',
+                ],
+                'meta_description' => [
+                    'tr' => 'Vio Pod 3: Bluetooth 5.4, 100Hz – 20KHz dengeli ses, 5-6 saat oynatma, ~100 saat bekleme ve hızlı şarj desteği. Ritmi hisset, özgürlüğün sesini dinle.',
+                    'en' => 'Vio Pod 3: Bluetooth 5.4, balanced 100Hz – 20KHz sound, 5-6 hours playback, ~100 hours standby and fast-charge support. Feel the rhythm, hear the sound of freedom.',
+                ],
+                'is_active' => 1,
+                'order' => 9,
+                'is_spotlight' => 0,
+            ],
         ];
+
+        $slugs = array_map(static fn (array $row): string => $row['slug']['tr'], $rows);
+
+        // Remove any products that are no longer part of the default catalogue.
+        Product::query()
+            ->get()
+            ->reject(static fn (Product $product): bool => in_array($product->getTranslation('slug', 'tr'), $slugs, true))
+            ->each(static fn (Product $product) => $product->delete());
 
         foreach ($rows as $row) {
             Product::updateOrCreate(
