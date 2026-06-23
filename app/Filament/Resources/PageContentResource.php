@@ -448,44 +448,10 @@ class PageContentResource extends Resource
                     ->collapsible(),
 
                 Section::make('Hızlı Erişim')
-                    ->description('Hızlı erişim kartları. İstediğin kadar kart ekleyebilirsin.')
+                    ->description('Hızlı erişim alanının başlığı. Kartlar "Destek Sayfaları" panelinden otomatik gelir.')
                     ->schema([
                         TextInput::make('content.quick_eyebrow')->label('Üst Etiket')->maxLength(255),
                         TextInput::make('content.quick_title')->label('Bölüm Başlığı')->maxLength(255)->columnSpanFull(),
-                        Repeater::make('content.quick_actions')
-                            ->label('Kartlar')
-                            ->reorderable()
-                            ->collapsible()
-                            ->collapsed()
-                            ->itemLabel(fn (array $state): ?string => $state['title'] ?? null)
-                            ->defaultItems(0)
-                            ->addActionLabel('Kart Ekle')
-                            ->schema([
-                                Grid::make(2)->schema([
-                                    Select::make('icon')
-                                        ->label('İkon')
-                                        ->options([
-                                            'shield' => 'Kalkan (Garanti)',
-                                            'wrench' => 'Anahtar (Servis)',
-                                            'book' => 'Kitap (Kılavuz)',
-                                            'question' => 'Soru (SSS)',
-                                            'chat' => 'Sohbet (Destek)',
-                                            'pin' => 'Konum (Bayi/Servis)',
-                                            'phone' => 'Telefon',
-                                            'mail' => 'E-posta',
-                                        ])
-                                        ->default('shield')
-                                        ->native(false)
-                                        ->required(),
-                                    TextInput::make('title')->label('Başlık')->required()->maxLength(150),
-                                ]),
-                                Textarea::make('desc')->label('Açıklama')->rows(2)->columnSpanFull(),
-                                Grid::make(2)->schema([
-                                    TextInput::make('cta')->label('Buton Metni')->maxLength(100),
-                                    TextInput::make('url')->label('Buton URL')->maxLength(500),
-                                ]),
-                            ])
-                            ->columnSpanFull(),
                     ])
                     ->visible(fn (Get $get): bool => $get('type') === 'support')
                     ->collapsible(),

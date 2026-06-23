@@ -136,7 +136,7 @@
 .hd-hero-img img {
   max-height: 48vh; width: auto;
   filter: drop-shadow(0 40px 80px color-mix(in oklab, var(--hd-blue) 28%, transparent));
-  animation: hd-float 8s ease-in-out infinite;
+animation: hd-float 8s ease-in-out infinite;
 }
 @keyframes hd-float {
   0%, 100% { transform: translateY(0); }

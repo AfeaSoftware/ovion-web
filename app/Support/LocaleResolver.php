@@ -3,6 +3,7 @@
 namespace App\Support;
 
 use App\Models\Product;
+use App\Models\SupportTopic;
 use Illuminate\Support\Facades\Route;
 
 /**
@@ -23,6 +24,10 @@ class LocaleResolver
     private const PRODUCT_SLUG_ROUTES = [
         'phones.show', 'watches.show', 'headphones.show',
         'en.phones.show', 'en.watches.show', 'en.headphones.show',
+    ];
+
+    private const SUPPORT_TOPIC_SLUG_ROUTES = [
+        'destek.show', 'en.support.show',
     ];
 
     public static function altUrl(?string $currentRoute, string $locale): string
@@ -98,6 +103,15 @@ class LocaleResolver
                 ->first();
 
             return $product?->getTranslation('slug', $altLocale, false) ?: $product?->getTranslation('slug', $currentLocale, false);
+        }
+
+        if (in_array($currentRoute, self::SUPPORT_TOPIC_SLUG_ROUTES, true)) {
+            $topic = SupportTopic::query()
+                ->where('slug->'.$currentLocale, $slug)
+                ->orWhere('slug->'.$altLocale, $slug)
+                ->first();
+
+            return $topic?->getTranslation('slug', $altLocale, false) ?: $topic?->getTranslation('slug', $currentLocale, false);
         }
 
         return null;

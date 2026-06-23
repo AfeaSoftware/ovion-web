@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomePageController::class, 'index'])->name('home');
 Route::get('/hakkimizda', [AboutController::class, 'index'])->name('about');
 Route::get('/destek', [DestekController::class, 'index'])->name('destek');
+Route::get('/destek/{slug}', [DestekController::class, 'show'])->name('destek.show');
 Route::get('/telefonlar/{slug}', [ProductController::class, 'phone'])->name('phones.show');
 Route::get('/saatler/{slug}', [ProductController::class, 'watch'])->name('watches.show');
 Route::get('/kulakliklar/{slug}', [ProductController::class, 'headphone'])->name('headphones.show');
@@ -52,6 +53,7 @@ Route::prefix('en')->name('en.')->group(function (): void {
     Route::get('/', [HomePageController::class, 'index'])->name('home');
     Route::get('/about', [AboutController::class, 'index'])->name('about');
     Route::get('/support', [DestekController::class, 'index'])->name('support');
+    Route::get('/support/{slug}', [DestekController::class, 'show'])->name('support.show');
     Route::get('/phones/{slug}', [ProductController::class, 'phone'])->name('phones.show');
     Route::get('/watches/{slug}', [ProductController::class, 'watch'])->name('watches.show');
     Route::get('/headphones/{slug}', [ProductController::class, 'headphone'])->name('headphones.show');
