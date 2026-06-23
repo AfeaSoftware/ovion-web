@@ -1969,18 +1969,6 @@ a.trust-card:hover .trust-link { gap: 8px; }
 .wd-hero .wd-hero-watch-placeholder,
 .hd-hero .hd-hero-placeholder { display: none !important; }
 
-/* Dark gradient overlay for legibility */
-.pd-hero::after,
-.wd-hero::after,
-.hd-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%);
-  z-index: 1;
-  pointer-events: none;
-}
-
 /* Content overlay (left-aligned, vertically centered, on top of image) */
 .pd-hero .pd-hero-content,
 .hd-hero .hd-hero-content {

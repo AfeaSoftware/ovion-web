@@ -15,7 +15,7 @@ window.OvionReveal?.init('.hd-reveal');
   const caption = document.getElementById('hd-anc-caption');
   if (!slider || !display) return;
 
-  const MAX_DB = 38;
+  const MAX_DB = parseFloat(slider.max) || 38;
   const captions = JSON.parse(slider.dataset.captions || '[]');
 
   const getCaption = pct => {
