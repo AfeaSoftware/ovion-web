@@ -260,11 +260,15 @@ p { text-wrap: pretty; color: var(--ink-2); }
 
   .nav-links {
     display: flex;
-    position: absolute; top: 100%; left: 0; right: 0;
+    position: fixed;
+    top: 64px; left: 0; right: 0; bottom: 0;
+    height: calc(100dvh - 64px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     flex-direction: column; gap: 4px;
     background: var(--card);
     border-bottom: 1px solid var(--line-2);
-    padding: 12px var(--gutter) 16px;
+    padding: 16px var(--gutter) 24px;
     font-size: 15px;
     box-shadow: 0 16px 40px color-mix(in oklab, var(--ink) 12%, transparent);
     z-index: 100;
@@ -1892,7 +1896,17 @@ a.trust-card:hover .trust-link { gap: 8px; }
     aspect-ratio: 9 / 16;
     max-height: 100svh;
   }
-  .ov-hero-content { padding: 56px 20px 80px; }
+  /* Metni alta yasla (görselin ortasına binmesin) + okunabilirlik için alt karartma */
+  .ov-hero-content {
+    justify-content: flex-end;
+    padding: 56px 20px 104px;
+  }
+  .ov-hero-slide .ov-hero-shade {
+    background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.74) 0%,
+      rgba(0, 0, 0, 0.32) 34%,
+      rgba(0, 0, 0, 0) 64%);
+  }
   .ov-hero-btn { width: 36px; height: 36px; }
   .ov-hero-img {
     object-fit: cover;
@@ -2087,9 +2101,63 @@ a.trust-card:hover .trust-link { gap: 8px; }
 .wd-hero .wd-hero-stat-lbl { color: rgba(255,255,255,0.7); }
 
 @media (max-width: 768px) {
-  .pd-hero, .wd-hero, .hd-hero { height: 80vh; min-height: 480px; }
+  /* id ile sayfa CSS'lerindeki min-height:100svh ezilir; hero viewport'a sığar */
+  #pd-hero, #wd-hero, #hd-hero,
+  .pd-hero, .wd-hero, .hd-hero { height: 78vh; min-height: 460px; }
+
+  /* Başlık/alt metni alta yasla, alt blok için yer aç */
+  .pd-hero .pd-hero-content,
+  .hd-hero .hd-hero-content {
+    justify-content: flex-end;
+    padding-bottom: 150px;
+  }
+
+  /* CTA bloğunu hero'nun en altına sabitle, tek kolon, taşmasız */
   .pd-hero .pd-hero-bottom,
-  .hd-hero .hd-hero-bottom,
+  .hd-hero .hd-hero-bottom {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    margin: 0;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 28px 20px 20px;
+    background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.5) 62%,
+      rgba(0, 0, 0, 0) 100%);
+  }
+  /* İki eşit kolon — yan yana butonlar (grid, içerikten bağımsız eşit) */
+  .pd-hero .pd-hero-actions,
+  .hd-hero .hd-hero-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  /* form sarmalı (primary) hücreyi doldursun */
+  .pd-hero .pd-hero-actions form,
+  .hd-hero .hd-hero-actions form {
+    display: block;
+    min-width: 0;
+  }
+  /* Butonlar hücreyi doldursun; küçük padding + nowrap, taşmasız */
+  .pd-hero .pd-hero-actions .btn,
+  .pd-hero .pd-hero-actions .btn-hd-primary,
+  .hd-hero .hd-hero-actions .btn,
+  .hd-hero .hd-hero-actions .btn-hd-primary {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    height: 48px !important;
+    padding: 0 10px !important;
+    font-size: 14px !important;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  /* Watch — farklı markup; alt şeridi statik bırak */
   .wd-hero .wd-hero-strip { position: static; padding: 24px 20px 20px; }
 }
 
