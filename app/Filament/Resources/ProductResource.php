@@ -2,16 +2,15 @@
 
 namespace App\Filament\Resources;
 
-use Afea\Cms\Core\Filament\Schemas\SeoSchema;
 use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers\AccessoriesRelationManager;
+use App\Filament\Schemas\SeoFieldsSchema;
 use App\Models\Product;
 use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -308,13 +307,19 @@ class ProductResource extends Resource
                                     return;
                                 }
 
-                                $slug = Str::slug($state);
-                                $set('slug', $slug);
-                                $set('seo_slug', $slug);
+                                $set('slug', Str::slug($state));
                             })
                             ->columnSpanFull(),
 
-                        Hidden::make('slug'),
+                        TextInput::make('slug')
+                            ->label('Slug (URL)')
+                            ->required()
+                            ->maxLength(255)
+                            ->helperText(fn ($livewire): string => self::isSecondaryLocale($livewire)
+                                ? 'Bu dile özel slug. Boş bırakılırsa Türkçe slug kullanılır.'
+                                : 'Ürün adından otomatik oluşturulur, gerekirse düzenleyebilirsiniz.'
+                            )
+                            ->columnSpanFull(),
                     ]),
 
                 // ── 2. Anasayfa "Tüm Ürünler" Kart Görseli ──────────────
@@ -637,7 +642,7 @@ class ProductResource extends Resource
                     ->collapsible(),
 
                 Section::make('SEO')
-                    ->schema(SeoSchema::make())
+                    ->schema(SeoFieldsSchema::make())
                     ->visible(fn (Get $get) => filled($get('type')))
                     ->collapsible()
                     ->collapsed(),

@@ -1,10 +1,13 @@
 @php
+  use App\Models\Accessory;
   use App\Models\Product;
 
   $isEn = ($locale ?? 'tr') === 'en';
   $r    = fn (string $tr, string $en, array $params = []) => route($isEn ? $en : $tr, $params);
 
   $navProducts = Product::active()->ordered()->with('media')->get(['id','type','name','slug','tagline']);
+
+  $hasAccessories = Accessory::active()->exists();
 
   $navPhones     = $navProducts->where('type', 'phone');
   $navWatches    = $navProducts->where('type', 'watch');
@@ -86,7 +89,9 @@
         @endif
         @endforeach
 
+        @if ($hasAccessories)
         <li><a href="{{ $r('aksesuarlar', 'en.accessories') }}">{{ __('ui.nav_accessories') }}</a></li>
+        @endif
 
         <li><a href="{{ $r('about', 'en.about') }}">{{ __('ui.nav_about') }}</a></li>
 

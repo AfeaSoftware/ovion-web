@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources;
 
-use Afea\Cms\Core\Filament\Schemas\SeoSchema;
 use App\Filament\Resources\AccessoryResource\Pages;
+use App\Filament\Schemas\SeoFieldsSchema;
 use App\Models\Accessory;
 use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkActionGroup;
@@ -126,9 +126,7 @@ class AccessoryResource extends Resource
                                     return;
                                 }
 
-                                $slug = Str::slug($state);
-                                $set('slug', $slug);
-                                $set('seo_slug', $slug);
+                                $set('slug', Str::slug($state));
                             })
                             ->columnSpanFull(),
 
@@ -198,7 +196,7 @@ class AccessoryResource extends Resource
                     ->collapsible(),
 
                 Section::make('SEO')
-                    ->schema(SeoSchema::make())
+                    ->schema(SeoFieldsSchema::make())
                     ->collapsible()
                     ->collapsed(),
 

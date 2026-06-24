@@ -4,13 +4,15 @@ namespace App\Filament\Resources\ProductResource\Pages;
 
 use Afea\Cms\Core\Concerns\InteractsWithSeoForm;
 use App\Filament\Concerns\HasTranslatableForm;
+use App\Filament\Concerns\SyncsSeoSlugFromSlug;
 use App\Filament\Resources\ProductResource;
+use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
 class EditProduct extends EditRecord
 {
-    use HasTranslatableForm, InteractsWithSeoForm {
+    use HasTranslatableForm, InteractsWithSeoForm, SyncsSeoSlugFromSlug {
         InteractsWithSeoForm::mutateFormDataBeforeFill as protected mutateSeoFormDataBeforeFill;
     }
 
@@ -33,6 +35,18 @@ class EditProduct extends EditRecord
 
     protected function mutateFormDataBeforeSave(array $data): array
     {
+        $this->syncSeoSlugFromData($data);
+
         return $this->persistTranslatableData($data);
+    }
+
+    /**
+     * Drop the default Cmd/Ctrl+S shortcut: it can fire a save request before
+     * the form (notably media uploads) finishes hydrating, causing an
+     * intermittent "page failed to load" error. Saving via the button is safe.
+     */
+    protected function getSaveFormAction(): Action
+    {
+        return parent::getSaveFormAction()->keyBindings([]);
     }
 }

@@ -18,6 +18,8 @@ class AccessoriesController extends Controller
             ->with('media', 'products:id,type')
             ->get();
 
+        abort_if($accessories->isEmpty(), 404);
+
         $spotlight = Accessory::active()
             ->spotlight()
             ->with('media', 'products:id,type')
