@@ -2101,32 +2101,53 @@ a.trust-card:hover .trust-link { gap: 8px; }
 .wd-hero .wd-hero-stat-lbl { color: rgba(255,255,255,0.7); }
 
 @media (max-width: 768px) {
-  /* id ile sayfa CSS'lerindeki min-height:100svh ezilir; hero viewport'a sığar */
+  /* Hero'yu dikey akışlı yap: görsel arka planda, içerik + CTA alta yaslı tek kolon.
+     id ile sayfa CSS'lerindeki min-height:100svh ezilir. Mutlak konumlu iki blok
+     yerine normal akış → byline ne kadar uzun olursa olsun çakışma olmaz. */
   #pd-hero, #wd-hero, #hd-hero,
-  .pd-hero, .wd-hero, .hd-hero { height: 78vh; min-height: 460px; }
-
-  /* Başlık/alt metni alta yasla, alt blok için yer aç */
-  .pd-hero .pd-hero-content,
-  .hd-hero .hd-hero-content {
+  .pd-hero, .wd-hero, .hd-hero {
+    height: auto;
+    min-height: 78vh;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-end;
-    padding-bottom: 150px;
   }
 
-  /* CTA bloğunu hero'nun en altına sabitle, tek kolon, taşmasız */
-  .pd-hero .pd-hero-bottom,
-  .hd-hero .hd-hero-bottom {
+  /* Okunabilirlik için alta karartma (içerik + CTA'yı kapsar) */
+  .pd-hero::after,
+  .hd-hero::after {
+    content: "";
     position: absolute;
     left: 0; right: 0; bottom: 0;
+    height: 72%;
+    background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.5) 46%,
+      rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* İçerik: mutlak değil, akışta, alta yaslı */
+  .pd-hero .pd-hero-content,
+  .hd-hero .hd-hero-content {
+    position: relative;
+    inset: auto;
+    height: auto;
+    padding: 0 20px 10px;
+  }
+
+  /* Alt blok (byline + CTA): akışta, içeriğin hemen altında — çakışma yok */
+  .pd-hero .pd-hero-bottom,
+  .hd-hero .hd-hero-bottom {
+    position: relative;
+    left: auto; right: auto; bottom: auto;
     margin: 0;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
     gap: 12px;
-    padding: 28px 20px 20px;
-    background: linear-gradient(to top,
-      rgba(0, 0, 0, 0.82) 0%,
-      rgba(0, 0, 0, 0.5) 62%,
-      rgba(0, 0, 0, 0) 100%);
+    padding: 0 20px 24px;
   }
   /* İki eşit kolon — yan yana butonlar (grid, içerikten bağımsız eşit) */
   .pd-hero .pd-hero-actions,

@@ -74,7 +74,9 @@
   <div class="hd-hero-content">
     <p class="hd-hero-eyebrow">{{ $product->eyebrow ?: __('ui.hp_hero_eyebrow') }}</p>
     <h1>{{ $product->name }}</h1>
-    <p class="hd-hero-sub">{{ $product->tagline ?: __('ui.hp_hero_sub') }}</p>
+    @if($product->tagline)
+      <p class="hd-hero-sub">{!! $product->tagline !!}</p>
+    @endif
   </div>
 
   <div class="hd-hero-img">

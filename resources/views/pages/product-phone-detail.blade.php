@@ -81,7 +81,9 @@
     <div class="pd-hero-content">
       <p class="pd-hero-eyebrow">{{ $product->eyebrow ?: __('ui.ph_hero_eyebrow') }}</p>
       <h1>{{ $product->name }}</h1>
-      <p class="pd-hero-sub">{{ $product->tagline ?: __('ui.ph_hero_sub') }}</p>
+      @if($product->tagline)
+        <p class="pd-hero-sub">{!! $product->tagline !!}</p>
+      @endif
     </div>
 
     <div class="pd-hero-img">
