@@ -51,15 +51,19 @@ class FooterSettingsPage extends AbstractSettingsPage
                         ->reorderable()
                         ->collapsible()
                         ->collapsed()
-                        ->itemLabel(fn (array $state): ?string => $state['title'] ?? null)
+                        ->itemLabel(fn (array $state): ?string => $state['title_tr'] ?? null)
                         ->maxItems(10)
                         ->addActionLabel('Blok ekle')
                         ->schema([
-                            TextInput::make('title')
-                                ->label('Blok başlığı')
-                                ->required()
-                                ->maxLength(150)
-                                ->columnSpanFull(),
+                            Grid::make(2)->schema([
+                                TextInput::make('title_tr')
+                                    ->label('Blok başlığı (TR)')
+                                    ->required()
+                                    ->maxLength(150),
+                                TextInput::make('title_en')
+                                    ->label('Blok başlığı (EN)')
+                                    ->maxLength(150),
+                            ])->columnSpanFull(),
 
                             Grid::make(2)->schema([
                                 TextInput::make('grid_size')
@@ -156,8 +160,10 @@ class FooterSettingsPage extends AbstractSettingsPage
                                 ->addActionLabel('Bağlantı ekle')
                                 ->schema([
                                     Grid::make(2)->schema([
-                                        TextInput::make('label')->label('Etiket')->required()->maxLength(150),
-                                        TextInput::make('url')->label('URL')->required()->maxLength(500),
+                                        TextInput::make('label_tr')->label('Etiket (TR)')->required()->maxLength(150),
+                                        TextInput::make('label_en')->label('Etiket (EN)')->maxLength(150),
+                                        TextInput::make('url_tr')->label('URL (TR)')->required()->maxLength(500),
+                                        TextInput::make('url_en')->label('URL (EN)')->maxLength(500),
                                     ]),
                                 ])
                                 ->columnSpanFull()
@@ -174,10 +180,16 @@ class FooterSettingsPage extends AbstractSettingsPage
                                 ->columnSpanFull()
                                 ->visible(fn (Get $get): bool => $get('block_type') === 'brand'),
 
-                            Textarea::make('description')
-                                ->label('Açıklama')
-                                ->rows(3)
-                                ->maxLength(500)
+                            Grid::make(2)->schema([
+                                Textarea::make('description_tr')
+                                    ->label('Açıklama (TR)')
+                                    ->rows(3)
+                                    ->maxLength(500),
+                                Textarea::make('description_en')
+                                    ->label('Açıklama (EN)')
+                                    ->rows(3)
+                                    ->maxLength(500),
+                            ])
                                 ->columnSpanFull()
                                 ->visible(fn (Get $get): bool => $get('block_type') === 'brand'),
                         ]),

@@ -37,7 +37,7 @@ class AccessoriesSeeder extends Seeder
                 'meta_description' => [
                     'tr' => null,
                 ],
-                'is_active' => 1,
+                'is_active' => 0,
                 'order' => 0,
                 'is_spotlight' => 1,
             ],
@@ -68,7 +68,7 @@ class AccessoriesSeeder extends Seeder
                 'meta_description' => [
                     'tr' => null,
                 ],
-                'is_active' => 1,
+                'is_active' => 0,
                 'order' => 1,
                 'is_spotlight' => 0,
             ],
@@ -99,7 +99,7 @@ class AccessoriesSeeder extends Seeder
                 'meta_description' => [
                     'tr' => null,
                 ],
-                'is_active' => 1,
+                'is_active' => 0,
                 'order' => 2,
                 'is_spotlight' => 0,
             ],
@@ -130,7 +130,7 @@ class AccessoriesSeeder extends Seeder
                 'meta_description' => [
                     'tr' => null,
                 ],
-                'is_active' => 1,
+                'is_active' => 0,
                 'order' => 3,
                 'is_spotlight' => 0,
             ],
@@ -161,7 +161,7 @@ class AccessoriesSeeder extends Seeder
                 'meta_description' => [
                     'tr' => null,
                 ],
-                'is_active' => 1,
+                'is_active' => 0,
                 'order' => 4,
                 'is_spotlight' => 0,
             ],
@@ -192,7 +192,7 @@ class AccessoriesSeeder extends Seeder
                 'meta_description' => [
                     'tr' => null,
                 ],
-                'is_active' => 1,
+                'is_active' => 0,
                 'order' => 5,
                 'is_spotlight' => 0,
             ],
@@ -223,7 +223,7 @@ class AccessoriesSeeder extends Seeder
                 'meta_description' => [
                     'tr' => null,
                 ],
-                'is_active' => 1,
+                'is_active' => 0,
                 'order' => 6,
                 'is_spotlight' => 0,
             ],
@@ -254,7 +254,7 @@ class AccessoriesSeeder extends Seeder
                 'meta_description' => [
                     'tr' => null,
                 ],
-                'is_active' => 1,
+                'is_active' => 0,
                 'order' => 7,
                 'is_spotlight' => 0,
             ],
@@ -285,7 +285,7 @@ class AccessoriesSeeder extends Seeder
                 'meta_description' => [
                     'tr' => null,
                 ],
-                'is_active' => 1,
+                'is_active' => 0,
                 'order' => 8,
                 'is_spotlight' => 0,
             ],

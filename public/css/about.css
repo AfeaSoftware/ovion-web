@@ -41,8 +41,9 @@
   .ab-story-year { border-right: none; border-bottom: 1px solid var(--line); min-height: 220px; }
 }
 .ab-story-year-num {
-  font-size: clamp(80px, 14vw, 200px); font-weight: 500;
-  letter-spacing: -0.05em; line-height: 0.85;
+  font-size: clamp(40px, 6vw, 72px); font-weight: 500;
+  letter-spacing: -0.03em; line-height: 0.9;
+  overflow-wrap: break-word;
   color: var(--ink);
 }
 .ab-story-year-lbl {

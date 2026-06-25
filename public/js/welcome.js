@@ -80,18 +80,40 @@
   // 1 featured (left, spans 2 rows) + 4 grid (2×2 right) = 5 cards in "all" view
   const MAX_ALL_VISIBLE = 5;
 
+  // For the "all" view: pick at least one card per type, then fill remaining
+  // slots in DOM order, capped at MAX_ALL_VISIBLE.
+  function pickAllVisible() {
+    const visible = new Set();
+    const seenTypes = new Set();
+
+    // First pass: one card per distinct type.
+    cards.forEach(card => {
+      if (visible.size >= MAX_ALL_VISIBLE) return;
+      if (!seenTypes.has(card.dataset.cat)) {
+        seenTypes.add(card.dataset.cat);
+        visible.add(card);
+      }
+    });
+
+    // Second pass: fill any remaining slots in DOM order.
+    cards.forEach(card => {
+      if (visible.size >= MAX_ALL_VISIBLE) return;
+      visible.add(card);
+    });
+
+    return visible;
+  }
+
   function applyFilter(cat) {
-    let shown = 0;
+    const allVisible = cat === 'all' ? pickAllVisible() : null;
     let firstVisible = null;
 
     cards.forEach(card => {
-      const matches = cat === 'all' || card.dataset.cat === cat;
-      const limitReached = cat === 'all' && shown >= MAX_ALL_VISIBLE;
+      const matches = cat === 'all' ? allVisible.has(card) : card.dataset.cat === cat;
 
-      if (matches && !limitReached) {
+      if (matches) {
         card.removeAttribute('hidden');
         if (!firstVisible) firstVisible = card;
-        shown++;
       } else {
         card.setAttribute('hidden', '');
       }

@@ -38,7 +38,7 @@ class HomePageController extends Controller
             ->orderByDesc('is_spotlight')
             ->orderBy('order')
             ->with('media')
-            ->limit(8)
+            ->limit(12)
             ->get();
 
         $showcaseAccessories = Accessory::query()
@@ -50,8 +50,8 @@ class HomePageController extends Controller
             ->flatMap(fn ($items) => $items->take(2))
             ->values();
 
-        $productTypes = Product::active()->pluck('type')->unique()->filter()->values();
-        $accessoryCategories = Accessory::query()->where('is_active', true)->pluck('category')->unique()->filter()->values();
+        $productTypes = Product::active()->orderBy('id')->pluck('type')->unique()->filter()->values();
+        $accessoryCategories = Accessory::query()->where('is_active', true)->orderBy('id')->pluck('category')->unique()->filter()->values();
 
         $showcaseTabs = $this->buildShowcaseTabs($productTypes, $accessoryCategories);
 

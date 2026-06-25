@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             AccessoriesSeeder::class,
             PageContentSeeder::class,
             SupportTopicSeeder::class,
+            FooterSettingsSeeder::class,
         ]);
     }
 }

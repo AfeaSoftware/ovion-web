@@ -58,7 +58,7 @@ class SupportTopicSeeder extends Seeder
             [
                 'icon' => 'doc',
                 'order' => 4,
-                'slug' => ['tr' => 'sertifikalar-ve-uygunluk', 'en' => 'certificates-and-compliance'],
+                'slug' => ['tr' => 'sertifikalar-uygunluk', 'en' => 'certificates-and-compliance'],
                 'title' => ['tr' => 'Sertifikalar & Uygunluk', 'en' => 'Certificates & Compliance'],
                 'summary' => [
                     'tr' => 'CE, uygunluk beyanları ve kalite sertifikalarına ulaşın.',

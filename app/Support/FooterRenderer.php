@@ -38,23 +38,22 @@ class FooterRenderer
 
     private static function resolve(array $block, bool $isEnglish): ?array
     {
-        $title = $block['title'] ?? '';
         $gridSize = (int) ($block['grid_size'] ?? 2);
         $colspan = (int) ($block['colspan'] ?? 2);
         $type = $block['block_type'] ?? 'static';
 
         $base = [
-            'title' => $title,
+            'title' => self::localized($block, 'title', $isEnglish),
             'grid_size' => $gridSize,
             'colspan' => $colspan,
             'type' => $type,
         ];
 
         return match ($type) {
-            'static' => $base + ['links' => self::staticLinks($block['links'] ?? [])],
+            'static' => $base + ['links' => self::staticLinks($block['links'] ?? [], $isEnglish)],
             'dynamic' => $base + ['links' => self::dynamicLinks($block, $isEnglish)],
             'brand' => $base + [
-                'description' => $block['description'] ?? '',
+                'description' => self::localized($block, 'description', $isEnglish),
                 'image' => $block['image'] ?? null,
             ],
             'contact' => $base + ['contact' => true],
@@ -63,13 +62,39 @@ class FooterRenderer
     }
 
     /**
-     * @param  array<int, array{label: string, url: string}>  $rawLinks
+     * Resolves a possibly bilingual field. Supports locale-specific values under
+     * `{$key}_tr` / `{$key}_en` and falls back to a legacy single-string `$key`.
+     *
+     * @param  array<string, mixed>  $data
+     */
+    private static function localized(array $data, string $key, bool $isEnglish): string
+    {
+        $primary = $isEnglish ? ($data["{$key}_en"] ?? null) : ($data["{$key}_tr"] ?? null);
+        $secondary = $isEnglish ? ($data["{$key}_tr"] ?? null) : ($data["{$key}_en"] ?? null);
+        $legacy = is_string($data[$key] ?? null) ? $data[$key] : null;
+
+        foreach ([$primary, $secondary, $legacy] as $candidate) {
+            if (is_string($candidate) && $candidate !== '') {
+                return $candidate;
+            }
+        }
+
+        return '';
+    }
+
+    /**
+     * @param  array<int, array<string, mixed>>  $rawLinks
      * @return array<int, array{label: string, url: string}>
      */
-    private static function staticLinks(array $rawLinks): array
+    private static function staticLinks(array $rawLinks, bool $isEnglish): array
     {
         return collect($rawLinks)
-            ->filter(fn ($link) => is_array($link) && ! empty($link['label']) && ! empty($link['url']))
+            ->filter(fn ($link) => is_array($link))
+            ->map(fn (array $link): array => [
+                'label' => self::localized($link, 'label', $isEnglish),
+                'url' => self::localized($link, 'url', $isEnglish),
+            ])
+            ->filter(fn (array $link): bool => $link['label'] !== '' && $link['url'] !== '')
             ->values()
             ->all();
     }

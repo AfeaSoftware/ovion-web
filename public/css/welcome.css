@@ -1993,6 +1993,7 @@ a.trust-card:hover .trust-link { gap: 8px; }
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  text-align: left;
   max-width: var(--wrap-max, 1200px);
   margin: 0 auto;
   padding: clamp(80px, 12vw, 140px) clamp(20px, 4vw, 48px) 0;
@@ -2111,6 +2112,7 @@ a.trust-card:hover .trust-link { gap: 8px; }
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: stretch;
   }
 
   /* Okunabilirlik için alta karartma (içerik + CTA'yı kapsar) */
@@ -2135,6 +2137,10 @@ a.trust-card:hover .trust-link { gap: 8px; }
     inset: auto;
     height: auto;
     padding: 0 20px 10px;
+    margin: 0;
+    max-width: none;
+    align-items: flex-start;
+    text-align: left;
   }
 
   /* Alt blok (byline + CTA): akışta, içeriğin hemen altında — çakışma yok */
