@@ -197,18 +197,20 @@
       </div>
     @endif
 
+    @if($legalLinks->isNotEmpty())
     <div class="foot-bot">
-      <div>{{ __('ui.footer_copyright') }}</div>
-      @if($legalLinks->isNotEmpty())
       <div style="display:flex; gap:18px;">
         @foreach($legalLinks as $link)
           <a href="{{ route($link['route']) }}">{{ $link['label'] }}</a>
         @endforeach
       </div>
-      @endif
     </div>
-    <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--line-2); text-align:center; font-size:12px; color:var(--muted); letter-spacing:0.02em;">
-      Produced by <a href="https://afeayazilim.com" target="_blank" rel="noopener" style="color:var(--muted); text-decoration:underline; text-underline-offset:3px; transition:color .15s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--muted)'">AFEA Software</a>
+    @endif
+    <div class="foot-bot" style="display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;">
+      <div>{{ __('ui.footer_copyright') }}</div>
+      <div style="font-size:12px; color:var(--muted); letter-spacing:0.02em;">
+        Produced by <a href="https://afeayazilim.com" target="_blank" rel="noopener" style="color:var(--muted); text-decoration:underline; text-underline-offset:3px; transition:color .15s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--muted)'">AFEA Software</a>
+      </div>
     </div>
   </div>
 </footer>

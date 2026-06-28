@@ -37,7 +37,8 @@
   $showDesign = $cinemaSlides->isNotEmpty() || $cinemaMedia->count() > 0;
   $showStory = $showCamera || $showDisplay || $showPerformance || $showBattery || $showDesign;
   $showSpecsSection = $has(['specs_section.eyebrow', 'specs_section.title']) || ! empty($product->specs ?? []);
-  $showBuySection = $has(['buy_section.eyebrow', 'buy_section.title']) || $product->price !== null;
+  $hasPrice = $product->price !== null;
+  $showBuySection = $hasPrice;
 @endphp
 
 {{-- ═══════════════════════════════════════ SUB-NAV ════════ --}}
@@ -61,10 +62,12 @@
     <button class="pd-subnav-arrow pd-subnav-arrow--next" aria-label="{{ __('ui.nav_next') }}">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
+    @if($hasPrice)
     <a href="#pd-buy" class="pd-subnav-cta">
-      {{ __('ui.pd_buy_phone') }}
+      {{ $product->priceLabel() }}
       <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
+    @endif
   </div>
 </div>
 
@@ -98,10 +101,12 @@
     <div class="pd-hero-bottom">
       <p class="pd-hero-sub" style="margin:0;">@pc('hero.byline', '')</p>
       <div class="pd-hero-actions">
+        @if($hasPrice)
         <form method="POST" action="{{ ($locale ?? 'tr') === 'en' ? route('en.cart.add', $product->slug) : route('cart.add', $product->slug) }}" style="display:inline;">
           @csrf
           <button type="submit" class="btn btn-primary">{{ __('ui.btn_add_to_cart') }}</button>
         </form>
+        @endif
         <a href="#pd-specs" class="btn btn-ghost">{{ __('ui.ph_hero_specs') }}</a>
       </div>
     </div>
@@ -352,7 +357,7 @@
       <p class="eyebrow" style="justify-content:center">@pc('buy_section.eyebrow', '')</p>
       <h2>@pcRaw('buy_section.title', '')</h2>
       <div class="pd-buy-price">
-        <strong>{{ $product->priceLabel() ?: __('ui.ph_buy_price') }}</strong>
+        <strong>{{ $product->priceLabel() }}</strong>
         @if($product->price !== null)<span style="color: var(--muted); margin-left: 8px;">{{ __('ui.price_tax_included') }}</span>@endif
       </div>
       <div class="pd-buy-actions">

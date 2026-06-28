@@ -26,6 +26,11 @@ class CartController extends Controller
             'quantity' => ['nullable', 'integer', 'min:1', 'max:50'],
         ]);
 
+        // Products without a price are not purchasable.
+        if ($product->price === null) {
+            return back()->with('status', __('ui.cart_unavailable'));
+        }
+
         // Require auth — this prevents guest/duplicate-customer accounts.
         if (! Auth::check()) {
             session()->put('pending_cart_product', $product->slug);

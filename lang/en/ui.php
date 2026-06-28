@@ -65,7 +65,7 @@ return [
     'footer_privacy' => 'Privacy',
     'footer_cookies' => 'Cookies',
     'footer_terms' => 'Terms of Use',
-    'footer_copyright' => '© 2026 Ovion Elektronik A.Ş. — Istanbul, Türkiye',
+    'footer_copyright' => 'Copyright © 2025 Ovion Inc. All rights reserved.',
 
     /* ── Common ─────────────────────────────── */
     'btn_explore' => 'Explore',
@@ -257,6 +257,7 @@ return [
     'cart_remove' => 'Remove',
     'cart_submit' => 'Submit Request',
     'cart_login_required' => 'Sign in to add items to your cart. Create an account if you don\'t have one.',
+    'cart_unavailable' => 'This product is currently unavailable for purchase.',
     'price_tax_included' => 'VAT included',
     'price_starting_from' => 'From :price',
     'btn_add_to_cart' => 'Add to Cart',

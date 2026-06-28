@@ -257,6 +257,7 @@ return [
     'cart_remove' => 'Kaldır',
     'cart_submit' => 'Talebi Gönder',
     'cart_login_required' => 'Sepete ürün eklemek için giriş yapmalısın. Hesabın yoksa kayıt ol.',
+    'cart_unavailable' => 'Bu ürün şu anda satın alınamıyor.',
     'price_tax_included' => 'KDV dahil',
     'price_starting_from' => ':price\'dan başlayan fiyatlarla',
     'btn_add_to_cart' => 'Sepete Ekle',
